@@ -14,6 +14,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-idrotermica-mazzarolo](./sito-idrotermica-mazzarolo) | https://sito-idrotermica-mazzarolo.vercel.app | [video](./sito-idrotermica-mazzarolo/video) |
 | [sito-incotess](./sito-incotess) | https://sito-incotess.vercel.app | [video](./sito-incotess/video) |
 | [sito-itd-serigrafia](./sito-itd-serigrafia) | https://sito-itd-serigrafia.vercel.app | [video](./sito-itd-serigrafia/video) |
+| [sito-lelettrica](./sito-lelettrica) | https://sito-lelettrica.vercel.app | [video](./sito-lelettrica/video) |
 | [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
 | [sito-residenza-al-fagare](./sito-residenza-al-fagare) | https://sito-residenza-al-fagare.vercel.app | [video](./sito-residenza-al-fagare/video) |
 | [sito-rossi-mario](./sito-rossi-mario) | https://sito-rossi-mario.vercel.app | [video](./sito-rossi-mario/video) |
