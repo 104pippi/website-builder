@@ -19,6 +19,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
 | [sito-residenza-al-fagare](./sito-residenza-al-fagare) | https://sito-residenza-al-fagare.vercel.app | [video](./sito-residenza-al-fagare/video) |
 | [sito-rossi-mario](./sito-rossi-mario) | https://sito-rossi-mario.vercel.app | [video](./sito-rossi-mario/video) |
+| [sito-sanitaria-cinel](./sito-sanitaria-cinel) | https://sito-sanitaria-cinel.vercel.app | [video](./sito-sanitaria-cinel/video) |
 | [sito-santucci-service](./sito-santucci-service) | https://sito-santucci-service.vercel.app | [video](./sito-santucci-service/video) |
 | [sito-si-viaggiare](./sito-si-viaggiare) | https://sito-si-viaggiare.vercel.app | [video](./sito-si-viaggiare/video) |
 | [sito-sipam-energy](./sito-sipam-energy) | https://sito-sipam-energy.vercel.app | [video](./sito-sipam-energy/video) |
