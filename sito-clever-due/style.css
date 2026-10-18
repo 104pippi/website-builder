@@ -286,7 +286,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .barra-cta .barra-cta-primaria { background: var(--cta); }
 
 /* ---------- Foto che entrano come una passata di vernice (solo con JS) ---------- */
-.js .svela img { clip-path: inset(0 100% 0 0); transform: scale(1.08); transition: clip-path 1.1s var(--passata), transform 1.5s var(--molla); }
+.js .svela img { clip-path: inset(0 100% 0 0); transform: scale(1.08); transition: clip-path .85s var(--passata), transform 1.2s var(--molla); }
 .js .svela.in-vista img { clip-path: inset(0 0 0 0); transform: none; }
 
 /* ---------- Tablet ---------- */

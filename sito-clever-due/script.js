@@ -103,7 +103,7 @@
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('in-vista'); io.unobserve(e.target); }
-    }), { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    }), { threshold: 0, rootMargin: '0px 0px 12% 0px' });
     svela.forEach(el => io.observe(el));
   } else svela.forEach(el => el.classList.add('in-vista'));
 
