@@ -7,6 +7,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 |---|---|---|
 | [sito-aquatek](./sito-aquatek) | https://sito-aquatek.vercel.app | [video](./sito-aquatek/video) |
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |
+| [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
 | [sito-duepigreco](./sito-duepigreco) | https://sito-duepigreco.vercel.app | [video](./sito-duepigreco/video) |
 | [sito-emmepi](./sito-emmepi) | https://sito-emmepi.vercel.app | [video](./sito-emmepi/video) |
 | [sito-europass](./sito-europass) | https://sito-europass.vercel.app | [video](./sito-europass/video) |
