@@ -18,6 +18,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-rossi-mario](./sito-rossi-mario) | https://sito-rossi-mario.vercel.app | [video](./sito-rossi-mario/video) |
 | [sito-sipam-energy](./sito-sipam-energy) | https://sito-sipam-energy.vercel.app | [video](./sito-sipam-energy/video) |
 | [sito-tlm-evolution](./sito-tlm-evolution) | https://sito-tlm-evolution.vercel.app | [video](./sito-tlm-evolution/video) |
+| [sito-trevisostampa](./sito-trevisostampa) | https://sito-trevisostampa.vercel.app | [video](./sito-trevisostampa/video) |
 | [sito-unionpark](./sito-unionpark) | https://sito-unionpark.vercel.app | [video](./sito-unionpark/video) |
 | [sito-utensilea](./sito-utensilea) | https://sito-utensilea.vercel.app | [video](./sito-utensilea/video) |
 | [sito-wildkart](./sito-wildkart) | https://sito-wildkart.vercel.app | [video](./sito-wildkart/video) |
