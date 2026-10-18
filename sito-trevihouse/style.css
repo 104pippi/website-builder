@@ -413,12 +413,12 @@ h1, h2, h3 { margin: 0; font-weight: 750; font-stretch: var(--stretto); line-hei
   .build__stage { padding-top: 76px; }
   .build__layout {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(32px, 5vw, 72px); row-gap: 18px;
-    grid-template-areas: "frames head" "frames phases" "ruler phases";
-    grid-template-rows: auto 1fr auto; align-items: start;
+    grid-template-areas: "frames head" "frames phases" "frames ruler";
+    grid-template-rows: auto auto 1fr; align-items: start;
   }
   .build__head { grid-area: head; }
   .build__title { font-size: clamp(2.6rem, 4.4vw, 4.2rem); }
-  .build__frames { grid-area: frames; max-height: calc(100vh - 190px); width: 100%; }
+  .build__frames { grid-area: frames; max-height: calc(100vh - 190px); width: 100%; align-self: center; }
   .build__phases { grid-area: phases; display: block; align-self: start; margin-top: 8px; }
   .build__phases li { opacity: .32; transform: none; padding: 10px 0; border-top: 1px solid var(--linea-chiara); }
   .build__phases li span { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .5s var(--ease), opacity .4s; }
