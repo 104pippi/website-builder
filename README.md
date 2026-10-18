@@ -13,6 +13,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-gdm-lattonerie-girotto](./sito-gdm-lattonerie-girotto) | https://sito-gdm-lattonerie-girotto.vercel.app | [video](./sito-gdm-lattonerie-girotto/video) |
 | [sito-idrotermica-mazzarolo](./sito-idrotermica-mazzarolo) | https://sito-idrotermica-mazzarolo.vercel.app | [video](./sito-idrotermica-mazzarolo/video) |
 | [sito-incotess](./sito-incotess) | https://sito-incotess.vercel.app | [video](./sito-incotess/video) |
+| [sito-italservice](./sito-italservice) | https://sito-italservice.vercel.app | [video](./sito-italservice/video) |
 | [sito-itd-serigrafia](./sito-itd-serigrafia) | https://sito-itd-serigrafia.vercel.app | [video](./sito-itd-serigrafia/video) |
 | [sito-lelettrica](./sito-lelettrica) | https://sito-lelettrica.vercel.app | [video](./sito-lelettrica/video) |
 | [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
