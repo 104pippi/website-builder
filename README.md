@@ -11,6 +11,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-as-group](./sito-as-group) | https://sito-as-group.vercel.app | [video](./sito-as-group/video) |
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
 | [sito-clever-due](./sito-clever-due) | https://sito-clever-due.vercel.app | [video](./sito-clever-due/video) |
+| [sito-dt-color](./sito-dt-color) | https://sito-dt-color.vercel.app | [video](./sito-dt-color/video) |
 | [sito-duepigreco](./sito-duepigreco) | https://sito-duepigreco.vercel.app | [video](./sito-duepigreco/video) |
 | [sito-emmepi](./sito-emmepi) | https://sito-emmepi.vercel.app | [video](./sito-emmepi/video) |
 | [sito-europass](./sito-europass) | https://sito-europass.vercel.app | [video](./sito-europass/video) |
