@@ -5,6 +5,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 
 | Cartella | Sito online | Video |
 |---|---|---|
+| [sito-allegranzi](./sito-allegranzi) | https://sito-allegranzi.vercel.app | [video](./sito-allegranzi/video) |
 | [sito-aquatek](./sito-aquatek) | https://sito-aquatek.vercel.app | [video](./sito-aquatek/video) |
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
