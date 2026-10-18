@@ -38,17 +38,17 @@
   testata.querySelectorAll('.testata__nav a').forEach((a) => a.addEventListener('click', chiudiMenu));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') chiudiMenu(); });
 
-  // Comparsa al passaggio: le foto si srotolano come una lamiera
+  // Comparsa al passaggio: le foto si srotolano come una lamiera, partendo poco prima di entrare nello schermo
   const osserva = new IntersectionObserver((voci) => {
     voci.forEach((v) => {
       if (!v.isIntersecting) return;
       v.target.classList.add('visto');
       osserva.unobserve(v.target);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });
   document.querySelectorAll('.srotola, .fiducia').forEach((el) => osserva.observe(el));
   document.querySelectorAll('.opera').forEach((el, i) => {
-    el.style.setProperty('--d', `${(i % 4) * 90}ms`);
+    el.style.setProperty('--d', `${(i % 4) * 60}ms`);
     osserva.observe(el);
   });
 

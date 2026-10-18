@@ -769,7 +769,7 @@ html.js .fiducia.visto .fiducia__lista li:nth-child(4)::before { transition-dela
 html.js .opera > * { clip-path: inset(0 0 100% 0); }
 html.js .opera.visto > * {
   clip-path: inset(0);
-  transition: clip-path 1.05s cubic-bezier(.65, 0, .15, 1) var(--d, 0ms);
+  transition: clip-path .85s cubic-bezier(.65, 0, .15, 1) var(--d, 0ms);
 }
 html.js .opera.entra > * { animation: srotola .8s cubic-bezier(.65, 0, .15, 1) var(--d, 0ms) both; }
 
@@ -1274,7 +1274,7 @@ html.js .pannello.disegna .quota-testo { animation: appare .6s 1.3s forwards; }
 html.js .srotola > * { clip-path: inset(0 0 100% 0); }
 html.js .srotola.visto > * {
   clip-path: inset(0);
-  transition: clip-path 1.15s cubic-bezier(.65, 0, .15, 1);
+  transition: clip-path .95s cubic-bezier(.65, 0, .15, 1);
 }
 
 /* ---------- Pagina privacy ---------- */
