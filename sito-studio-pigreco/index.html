@@ -22,9 +22,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/hero-isola.jpg" imagesrcset="assets/img/hero-isola-1200.jpg 1200w, assets/img/hero-isola.jpg 1920w" imagesizes="max(100vw, 133svh)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-tavola.jpg" imagesrcset="assets/img/hero-tavola-1200.jpg 1000w, assets/img/hero-tavola.jpg 1600w" imagesizes="max(100vw, 133svh)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-isola.jpg" imagesrcset="assets/img/hero-isola-1200.jpg 1200w, assets/img/hero-isola.jpg 1920w" imagesizes="max(100vw, 133svh)">
   <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
 
   <script type="application/ld+json">
   {
@@ -54,15 +60,16 @@
     }]
   }
   </script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="pigreco" viewBox="0 0 100 100">
       <g fill="none" stroke="currentColor" stroke-linecap="square">
-        <path d="M50 3 97 50 50 97 3 50Z" stroke-width="3.2"/>
-        <path d="M50 11 89 50 50 89 11 50Z" stroke-width="1.6"/>
-        <path d="M30.5 30.5 69.5 69.5M69.5 30.5 30.5 69.5" stroke-width="1.6"/>
-        <path d="M42.5 25h15M46 25v11M54 25v11M25.5 44v12M25.5 44h4.5a3.5 3.5 0 0 1 0 7h-4.5M44 75V65h12v10M50 65v10" stroke-width="2.6"/>
+        <path class="segno-tratto" pathLength="1" d="M50 3 97 50 50 97 3 50Z" stroke-width="3.2"/>
+        <path class="segno-tratto" pathLength="1" d="M50 11 89 50 50 89 11 50Z" stroke-width="1.6"/>
+        <path class="segno-tratto" pathLength="1" d="M30.5 30.5 69.5 69.5M69.5 30.5 30.5 69.5" stroke-width="1.6"/>
+        <path class="segno-tratto" pathLength="1" d="M42.5 25h15M46 25v11M54 25v11M25.5 44v12M25.5 44h4.5a3.5 3.5 0 0 1 0 7h-4.5M44 75V65h12v10M50 65v10" stroke-width="2.6"/>
       </g>
     </symbol>
   </svg>
@@ -93,162 +100,242 @@
         <span class="menu-btn-testo">Menu</span>
       </button>
     </div>
+    <div class="quota-pagina" aria-hidden="true"><span class="quota-pagina-riempi"></span></div>
   </header>
 
   <div class="menu" id="menu" hidden>
     <nav aria-label="Menu">
       <a href="#processo">Cosa facciamo</a>
+      <a href="#prototipo">Dal disegno al pezzo</a>
       <a href="#misura">Misura e controllo</a>
       <a href="#costruzioni">Costruzioni</a>
+      <a href="#ingranaggi">Revisione dentatrici</a>
       <a href="#lavori">Lavori</a>
-      <a href="#cad">Sistemi CAD</a>
       <a href="#chi-siamo">Chi siamo</a>
       <a href="#preventivo">Contatti</a>
     </nav>
     <div class="menu-piede">
       <a class="btn btn--cta" href="#preventivo">Richiedi un preventivo</a>
       <a class="menu-tel" href="tel:+39051810073">Chiama 051 810073</a>
-      <p>Lun–ven 8:30–17:30</p>
+      <p>Lunedì–venerdì, 8:30–17:30</p>
     </div>
   </div>
+
+  <div class="mirino" aria-hidden="true">
+    <span class="mirino-croce"></span>
+    <span class="mirino-xy"><span>X <b id="mx">0000</b></span><span>Y <b id="my">0000</b></span></span>
+  </div>
+  <div class="aggancio" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-titolo">
       <div class="hero-scena">
-        <div class="hero-tavola">
-          <img class="hero-foto" src="assets/img/hero-isola.jpg" srcset="assets/img/hero-isola-1200.jpg 1200w, assets/img/hero-isola.jpg 1920w" sizes="max(100vw, 133svh)" width="1920" height="1440" alt="Tornio verticale per un'isola automatica robotizzata, costruito da Studio Pigreco" fetchpriority="high">
+        <div class="strato strato--disegno">
+          <div class="tavola">
+            <img src="assets/img/hero-tavola.jpg" srcset="assets/img/hero-tavola-1200.jpg 1000w, assets/img/hero-tavola.jpg 1600w" sizes="max(100vw, 133svh)" width="1600" height="1200" alt="" fetchpriority="high">
+          </div>
         </div>
-        <div class="hero-tavola hero-richiami">
-          <svg class="richiami" viewBox="0 0 2048 1536" preserveAspectRatio="none" aria-hidden="true">
-            <g class="richiamo richiamo--largo">
-              <path d="M995 560 1180 330H1460" pathLength="1"/>
-              <circle cx="995" cy="560" r="9"/>
-            </g>
-            <g class="richiamo richiamo--largo">
-              <path d="M430 393 330 470H150" pathLength="1"/>
-              <circle cx="430" cy="393" r="9"/>
-            </g>
-            <g class="richiamo richiamo--stretto">
-              <path d="M995 600V330H1250" pathLength="1"/>
-              <circle cx="995" cy="600" r="11"/>
-            </g>
-          </svg>
-          <span class="etichetta etichetta--largo" style="--x:1460;--y:330">Tornio verticale</span>
-          <span class="etichetta etichetta--largo etichetta--sopra" style="--x:150;--y:470">Quadro operatore</span>
-          <span class="etichetta etichetta--stretto etichetta--sopra-fine" style="--x:1250;--y:330">Tornio verticale</span>
+        <div class="strato strato--foto">
+          <div class="tavola">
+            <img src="assets/img/hero-isola.jpg" srcset="assets/img/hero-isola-1200.jpg 1200w, assets/img/hero-isola.jpg 1920w" sizes="max(100vw, 133svh)" width="1920" height="1440" alt="Tornio verticale per un'isola automatica robotizzata, costruito da Studio Pigreco">
+          </div>
         </div>
-        <span class="scansione" aria-hidden="true"></span>
+        <div class="hero-velo"></div>
+        <div class="strato strato--richiami" aria-hidden="true">
+          <div class="tavola">
+            <svg class="richiami" viewBox="0 0 2048 1536" preserveAspectRatio="none">
+              <g class="richiamo richiamo--largo">
+                <path d="M995 560 1180 330H1460" pathLength="1"/>
+                <circle cx="995" cy="560" r="9"/>
+              </g>
+              <g class="richiamo richiamo--largo">
+                <path d="M430 393 330 470H150" pathLength="1"/>
+                <circle cx="430" cy="393" r="9"/>
+              </g>
+              <g class="richiamo richiamo--stretto">
+                <path d="M995 600V330H1250" pathLength="1"/>
+                <circle cx="995" cy="600" r="11"/>
+              </g>
+            </svg>
+            <span class="etichetta etichetta--largo" style="--x:1460;--y:330">Tornio verticale</span>
+            <span class="etichetta etichetta--largo etichetta--sopra" style="--x:150;--y:470">Quadro operatore</span>
+            <span class="etichetta etichetta--stretto etichetta--sopra-fine" style="--x:1250;--y:330">Tornio verticale</span>
+          </div>
+        </div>
+        <span class="penna" aria-hidden="true"></span>
+        <span class="render" aria-hidden="true"></span>
       </div>
 
       <div class="hero-testo">
-        <h1 id="hero-titolo">Progettiamo e costruiamo banchi di misura, automazioni e macchine speciali.</h1>
+        <h1 id="hero-titolo" data-parole>Progettiamo e costruiamo banchi di misura, automazioni e macchine speciali.</h1>
         <p class="hero-sotto">Studio di progettazione meccanica con officina interna a San Pietro in Casale (BO). Dal disegno CAD al collaudo, dal 1988.</p>
         <div class="hero-azioni">
           <a class="btn btn--cta btn--grande" href="#preventivo">Richiedi un preventivo</a>
           <a class="btn btn--vuoto btn--grande" href="tel:+39051810073">Chiama 051 810073</a>
         </div>
       </div>
+      <a class="hero-scorri" href="#processo" aria-label="Scorri alla sezione successiva"><span></span></a>
     </section>
 
-    <section class="cartiglio-sez" aria-label="Lo studio in breve">
+    <section class="cartiglio-sez" aria-label="Lo studio in breve" data-rivela>
       <div class="contenitore">
         <dl class="cartiglio">
           <div class="cella">
             <dt>Fondato</dt>
-            <dd class="cella-valore">1988</dd>
+            <dd class="cella-valore" data-scrivi>1988</dd>
             <dd class="cella-nota">come studio di progettazione meccanica</dd>
           </div>
           <div class="cella">
             <dt>Sede</dt>
-            <dd class="cella-valore">500 m²</dd>
+            <dd class="cella-valore"><span data-conta="500">500</span> m²</dd>
             <dd class="cella-nota">metà studio tecnico, metà officina</dd>
           </div>
           <div class="cella">
             <dt>Montaggio e collaudo</dt>
-            <dd class="cella-valore">In casa</dd>
+            <dd class="cella-valore" data-scrivi>In casa</dd>
             <dd class="cella-nota">macchine consegnate con marcatura CE</dd>
           </div>
           <div class="cella">
             <dt>Assistenza</dt>
-            <dd class="cella-valore">Italia ed estero</dd>
+            <dd class="cella-valore" data-scrivi>Italia ed estero</dd>
             <dd class="cella-nota">manutenzione ordinaria e straordinaria</dd>
           </div>
         </dl>
       </div>
     </section>
 
+    <div class="nastro" aria-hidden="true">
+      <div class="nastro-riga" data-nastro="-1">
+        <span>Banchi di misura</span><i></i><span>Automazioni</span><i></i><span>Attrezzature</span><i></i><span>Macchine speciali</span><i></i><span>Banchi di misura</span><i></i><span>Automazioni</span><i></i><span>Attrezzature</span><i></i><span>Macchine speciali</span><i></i>
+      </div>
+      <div class="nastro-riga nastro-riga--vuota" data-nastro="1">
+        <span>Prototipi</span><i></i><span>Revisioni</span><i></i><span>Progettazione CAD</span><i></i><span>Collaudo</span><i></i><span>Prototipi</span><i></i><span>Revisioni</span><i></i><span>Progettazione CAD</span><i></i><span>Collaudo</span><i></i>
+      </div>
+    </div>
+
     <section class="sez sez--processo" id="processo" aria-labelledby="processo-titolo">
       <div class="contenitore">
         <div class="sez-testa">
-          <h2 id="processo-titolo">Dal disegno al collaudo, sotto lo stesso tetto.</h2>
-          <p>Un solo interlocutore dall'idea alla macchina che lavora: progettiamo, costruiamo, montiamo e collaudiamo. Poi restiamo a disposizione per l'assistenza.</p>
+          <h2 id="processo-titolo" data-parole>Dal disegno al collaudo, sotto lo stesso tetto.</h2>
+          <p data-rivela>Un solo interlocutore dall'idea alla macchina che lavora: progettiamo, costruiamo, montiamo e collaudiamo. Poi restiamo a disposizione per l'assistenza.</p>
         </div>
 
-        <ol class="passi" id="passi">
-          <li class="catena" aria-hidden="true"><span class="catena-riempi"></span></li>
-          <li class="passo">
-            <span class="passo-n">1</span>
-            <h3>Progettazione</h3>
-            <figure class="passo-foto">
-              <img src="assets/img/progetto-3d.jpg" width="978" height="882" loading="lazy" decoding="async" alt="Modello 3D di un manipolatore autocentrante con l'analisi delle sollecitazioni">
-            </figure>
-            <p>Siamo nati come studio di progettazione nel 1988, al tecnigrafo e con i primi CAD sul mercato. Oggi modelliamo in 3D e sviluppiamo studi, particolari, complessivi, distinte e documentazione: diventiamo il tuo ufficio tecnico, o lo potenziamo.</p>
+        <ol class="pila" id="pila">
+          <li class="scheda" style="--n:0">
+            <div class="scheda-catena" aria-hidden="true"><b>1</b><span></span><b>2</b><span></span><b>3</b></div>
+            <figure class="scheda-foto"><img src="assets/img/progetto-3d.jpg" width="978" height="882" loading="lazy" decoding="async" alt="Modello 3D di un manipolatore autocentrante con l'analisi delle sollecitazioni"></figure>
+            <div class="scheda-testo">
+              <h3>Progettazione</h3>
+              <p>Siamo nati come studio di progettazione nel 1988, al tecnigrafo e con i primi CAD sul mercato. Oggi modelliamo in 3D e sviluppiamo studi, particolari, complessivi, distinte e documentazione: diventiamo il tuo ufficio tecnico, o lo potenziamo.</p>
+            </div>
           </li>
-          <li class="passo">
-            <span class="passo-n">2</span>
-            <h3>Costruzione</h3>
-            <figure class="passo-foto">
-              <img src="assets/img/officina.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="L'officina di costruzione e assemblaggio di Studio Pigreco">
-            </figure>
-            <p>Costruiamo chiavi in mano, dal singolo pezzo all'isola di lavoro robotizzata: impianti pneumatici, oleodinamici ed elettrici, manuali d'uso e manutenzione, marcatura CE secondo la direttiva macchine. Le lavorazioni passano da una rete di fornitori collaudata, montaggio e collaudo li facciamo in officina. Montiamo anche conto terzi.</p>
+          <li class="scheda" style="--n:1">
+            <div class="scheda-catena" aria-hidden="true"><b>1</b><span></span><b>2</b><span></span><b>3</b></div>
+            <figure class="scheda-foto"><img src="assets/img/officina.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="L'officina di costruzione e assemblaggio di Studio Pigreco"></figure>
+            <div class="scheda-testo">
+              <h3>Costruzione</h3>
+              <p>Costruiamo chiavi in mano, dal singolo pezzo all'isola di lavoro robotizzata: impianti pneumatici, oleodinamici ed elettrici, manuali d'uso e manutenzione, marcatura CE secondo la direttiva macchine. Le lavorazioni passano da una rete di fornitori collaudata, montaggio e collaudo li facciamo in officina. Montiamo anche conto terzi.</p>
+            </div>
           </li>
-          <li class="passo">
-            <span class="passo-n">3</span>
-            <h3>Assistenza</h3>
-            <figure class="passo-foto">
-              <img src="assets/img/dentatrice-revisionata.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Dentatrice Lorenz revisionata da Studio Pigreco">
-            </figure>
-            <p>Interveniamo sulle nostre costruzioni in Italia e all'estero, per la manutenzione ordinaria e straordinaria. Revisioniamo anche macchine utensili datate, dentatrici in testa, con preventivo dettagliato e garanzia sull'intervento. E ti aiutiamo a impostare e gestire i sistemi CAD.</p>
+          <li class="scheda" style="--n:2">
+            <div class="scheda-catena" aria-hidden="true"><b>1</b><span></span><b>2</b><span></span><b>3</b></div>
+            <figure class="scheda-foto"><img src="assets/img/dentatrice-revisionata.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Dentatrice Lorenz revisionata da Studio Pigreco"></figure>
+            <div class="scheda-testo">
+              <h3>Assistenza</h3>
+              <p>Interveniamo sulle nostre costruzioni in Italia e all'estero, per la manutenzione ordinaria e straordinaria. Revisioniamo anche macchine utensili datate, dentatrici in testa, con preventivo dettagliato e garanzia sull'intervento. E ti aiutiamo a impostare e gestire i sistemi CAD.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
+    <section class="prototipo" id="prototipo" aria-labelledby="prototipo-titolo">
+      <div class="prototipo-pista">
+        <div class="prototipo-palco">
+          <div class="prototipo-testo">
+            <h2 id="prototipo-titolo" data-parole>Lo disegniamo. Poi lo costruiamo.</h2>
+            <p>Il prototipo di un parchimetro in lamiera inox di grosso spessore, finemente satinata: studiato nel design sul modello 3D, costruito in officina e poi portato alla serie.</p>
+            <div class="fasi" aria-hidden="true">
+              <span class="fase fase--a">Modello 3D</span>
+              <span class="fase-linea"><span class="fase-punto"></span></span>
+              <span class="fase fase--b">Prototipo in inox</span>
+            </div>
+          </div>
+          <div class="carta-scena">
+            <div class="carta" id="carta">
+              <figure class="carta-faccia carta-fronte">
+                <img src="assets/img/prototipo-cad.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Modello 3D in SolidWorks del prototipo di parchimetro">
+                <figcaption>Modello 3D in SolidWorks</figcaption>
+              </figure>
+              <figure class="carta-faccia carta-retro">
+                <img src="assets/img/prototipo-inox.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Il prototipo di parchimetro costruito in lamiera inox satinata, in officina">
+                <figcaption>Prototipo costruito in officina</figcaption>
+              </figure>
+              <span class="carta-luce" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="sez sez--misura" id="misura" aria-labelledby="misura-titolo">
       <div class="contenitore">
-        <div class="sez-testa sez-testa--larga">
-          <h2 id="misura-titolo">La misura è la nostra specialità.</h2>
-          <p>Dal tampone manuale alla macchina che esegue decine di controlli dimensionali e geometrici: progettiamo e costruiamo sistemi di controllo dimensionale ad altissima precisione, anche abbinati alle prove non distruttive.</p>
+        <div class="misura-testa">
+          <div class="sez-testa sez-testa--larga">
+            <h2 id="misura-titolo" data-parole>La misura è la nostra specialità.</h2>
+            <p data-rivela>Dal tampone manuale alla macchina che esegue decine di controlli dimensionali e geometrici: progettiamo e costruiamo sistemi di controllo dimensionale ad altissima precisione, anche abbinati alle prove non distruttive.</p>
+          </div>
+          <div class="comparatore" id="comparatore" aria-hidden="true">
+            <svg viewBox="0 0 240 330">
+              <path class="comp-pezzo" d="M40 313H200"/>
+              <path class="comp-pezzo-tratti" d="M48 313l-8 9M64 313l-8 9M80 313l-8 9M96 313l-8 9M112 313l-8 9M128 313l-8 9M144 313l-8 9M160 313l-8 9M176 313l-8 9M192 313l-8 9"/>
+              <g class="comp-stelo" id="comp-stelo">
+                <rect x="112" y="222" width="16" height="44" rx="2"/>
+                <rect x="117" y="262" width="6" height="40"/>
+                <circle cx="120" cy="305" r="6"/>
+              </g>
+              <circle class="comp-ghiera" cx="120" cy="120" r="104"/>
+              <circle class="comp-quadrante" cx="120" cy="120" r="94"/>
+              <g class="comp-tacche" id="comp-tacche"></g>
+              <g class="comp-numeri" id="comp-numeri"></g>
+              <circle class="comp-contagiri" cx="120" cy="160" r="15"/>
+              <line class="comp-contagiri-ago" id="comp-giri" x1="120" y1="160" x2="120" y2="148"/>
+              <g class="comp-ago" id="comp-ago">
+                <path d="M120 132 117.5 120 120 34 122.5 120Z"/>
+              </g>
+              <circle class="comp-perno" cx="120" cy="120" r="7"/>
+            </svg>
+          </div>
         </div>
 
-        <div class="scala">
+        <div class="scala" data-rivela>
           <div class="scala-quota" aria-hidden="true">
             <span class="scala-linea"></span>
             <span class="scala-testo">dal banco manuale alla macchina automatica</span>
           </div>
-          <figure class="scala-voce">
-            <img src="assets/img/banco-verifica.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Banco di verifica pezzo">
+          <figure class="scala-voce" style="--k:0">
+            <div class="scopri"><img src="assets/img/banco-verifica.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Banco di verifica pezzo"></div>
             <figcaption>Banco di verifica pezzo</figcaption>
           </figure>
-          <figure class="scala-voce">
-            <img src="assets/img/banco-braccio.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Banco di misura per braccio oscillante, con il pezzo in posizione">
+          <figure class="scala-voce" style="--k:1">
+            <div class="scopri"><img src="assets/img/banco-braccio.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Banco di misura per braccio oscillante, con il pezzo in posizione"></div>
             <figcaption>Banco di misura per braccio oscillante</figcaption>
           </figure>
-          <figure class="scala-voce">
-            <img src="assets/img/banco-analisi.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Banco automatico di analisi pezzi con controllo non distruttivo">
+          <figure class="scala-voce" style="--k:2">
+            <div class="scopri"><img src="assets/img/banco-analisi.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Banco automatico di analisi pezzi con controllo non distruttivo"></div>
             <figcaption>Banco automatico di analisi pezzi</figcaption>
           </figure>
         </div>
 
         <div class="misura-piede">
-          <ul class="elenco-misura">
-            <li>Misuratori e sistemi di compensazione per rettifiche e altre macchine utensili</li>
-            <li>Stazioni di misura manuali, sensori e componenti di misura</li>
-            <li>Stazioni di misura automatiche</li>
-            <li>Hardware e software per la raccolta dati e l'analisi del processo</li>
-            <li>Sistemi di controllo non distruttivo</li>
+          <ul class="elenco-misura" data-rivela>
+            <li style="--k:0">Misuratori e sistemi di compensazione per rettifiche e altre macchine utensili</li>
+            <li style="--k:1">Stazioni di misura manuali, sensori e componenti di misura</li>
+            <li style="--k:2">Stazioni di misura automatiche</li>
+            <li style="--k:3">Hardware e software per la raccolta dati e l'analisi del processo</li>
+            <li style="--k:4">Sistemi di controllo non distruttivo</li>
           </ul>
-          <div class="misura-cta">
+          <div class="misura-cta" data-rivela>
             <p>Hai un pezzo da misurare o controllare? Mandaci il disegno: ti diciamo come lo faremmo.</p>
             <a class="btn btn--cta" href="#preventivo">Richiedi un preventivo</a>
           </div>
@@ -259,8 +346,8 @@
     <section class="sez sez--costruzioni" id="costruzioni" aria-labelledby="costruzioni-titolo">
       <div class="contenitore">
         <div class="sez-testa">
-          <h2 id="costruzioni-titolo">Macchine, automazioni e attrezzature su misura.</h2>
-          <p>Ogni costruzione parte dal pezzo e dal ciclo del cliente. Questi sono gli ambiti in cui lavoriamo più spesso: tocca una voce per vederla.</p>
+          <h2 id="costruzioni-titolo" data-parole>Macchine, automazioni e attrezzature su misura.</h2>
+          <p data-rivela>Ogni costruzione parte dal pezzo e dal ciclo del cliente. Questi sono gli ambiti in cui lavoriamo più spesso: tocca una voce per vederla.</p>
         </div>
 
         <div class="voci" id="voci">
@@ -271,7 +358,7 @@
             </button>
             <div class="voce-corpo" id="voce-1" role="region" aria-labelledby="voce-1-t">
               <div class="voce-dentro">
-                <img src="assets/img/tornio-doppio-mandrino.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Tornio automatico a doppio mandrino">
+                <div class="voce-foto"><img src="assets/img/tornio-doppio-mandrino.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Tornio automatico a doppio mandrino"></div>
                 <p>Macchine che automatizzano una o più lavorazioni su un pezzo o su una famiglia di pezzi. Spesso le abbiniamo ai banchi di misura che verificano subito la lavorazione eseguita.</p>
               </div>
             </div>
@@ -283,7 +370,7 @@
             </button>
             <div class="voce-corpo" id="voce-2" role="region" aria-labelledby="voce-2-t">
               <div class="voce-dentro">
-                <img class="foto-v" src="assets/img/assemblaggio-automatico.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Macchina automatica per l'assemblaggio di pezzi">
+                <div class="voce-foto"><img class="foto-v" src="assets/img/assemblaggio-automatico.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Macchina automatica per l'assemblaggio di pezzi"></div>
                 <p>Macchine automatiche che assemblano un gruppo di pezzi per creare un componente, o che svolgono le operazioni che preparano il montaggio: selezione, orientamento, alimentazione.</p>
               </div>
             </div>
@@ -295,7 +382,7 @@
             </button>
             <div class="voce-corpo" id="voce-3" role="region" aria-labelledby="voce-3-t">
               <div class="voce-dentro">
-                <img src="assets/img/caricatore.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Caricatore automatico di pezzi">
+                <div class="voce-foto"><img src="assets/img/caricatore.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Caricatore automatico di pezzi"></div>
                 <p>Operazioni molto ripetitive svolte in autonomia, o quasi: confezionamento, movimentazione e carico dei pezzi. Collaboriamo da anni con le aziende più importanti del territorio e anche fuori regione.</p>
               </div>
             </div>
@@ -307,7 +394,7 @@
             </button>
             <div class="voce-corpo" id="voce-4" role="region" aria-labelledby="voce-4-t">
               <div class="voce-dentro">
-                <img class="foto-v" src="assets/img/cubo-staffaggio.jpg" width="860" height="930" loading="lazy" decoding="async" alt="Modello 3D di un cubo di staffaggio per pezzi">
+                <div class="voce-foto"><img class="foto-v" src="assets/img/cubo-staffaggio.jpg" width="860" height="930" loading="lazy" decoding="async" alt="Modello 3D di un cubo di staffaggio per pezzi"></div>
                 <p>Attrezzature che bloccano uno o più pezzi in modo preciso, stabile e sicuro durante la lavorazione. L'esempio tipico è il cubo di staffaggio: centraggi, perni di orientamento, staffe e irrigiditori su ogni faccia.</p>
               </div>
             </div>
@@ -319,7 +406,7 @@
             </button>
             <div class="voce-corpo" id="voce-5" role="region" aria-labelledby="voce-5-t">
               <div class="voce-dentro">
-                <img class="foto-v" src="assets/img/attrezzo-staffaggio.jpg" width="800" height="433" loading="lazy" decoding="async" alt="Disegno CAD di un'attrezzatura di staffaggio">
+                <div class="voce-foto"><img class="foto-v" src="assets/img/attrezzo-staffaggio.jpg" width="800" height="433" loading="lazy" decoding="async" alt="Disegno CAD di un'attrezzatura di staffaggio"></div>
                 <p>Attrezzi manuali che aiutano l'operatore nelle operazioni di montaggio più ripetitive, per assemblaggi veloci, facili, precisi e sicuri.</p>
               </div>
             </div>
@@ -331,7 +418,7 @@
             </button>
             <div class="voce-corpo" id="voce-6" role="region" aria-labelledby="voce-6-t">
               <div class="voce-dentro">
-                <img class="foto-v" src="assets/img/banco-controllo-nd.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Banco di controllo non distruttivo">
+                <div class="voce-foto"><img class="foto-v" src="assets/img/banco-controllo-nd.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Banco di controllo non distruttivo"></div>
                 <p>Verificano l'integrità del pezzo e le proprietà del materiale, di solito con prove non distruttive. Spesso controllo e misura convivono nella stessa macchina.</p>
               </div>
             </div>
@@ -343,8 +430,8 @@
             </button>
             <div class="voce-corpo" id="voce-7" role="region" aria-labelledby="voce-7-t">
               <div class="voce-dentro">
-                <img src="assets/img/tornio-revisione.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Tornio automatico speciale revisionato">
-                <p>Recuperiamo macchine utensili obsolete o con problemi meccanici ed elettrici. Sulle dentatrici facciamo revisioni complete, anche presso il cliente: smontaggio, raschiettatura delle guide, revisione di testa, divisore e impianti, nuovo impianto elettrico, collaudo.</p>
+                <div class="voce-foto"><img src="assets/img/tornio-revisione.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Tornio automatico speciale revisionato"></div>
+                <p>Recuperiamo macchine utensili obsolete o con problemi meccanici ed elettrici, come questo tornio automatico speciale. Sulle dentatrici facciamo revisioni complete, anche presso il cliente.</p>
               </div>
             </div>
           </div>
@@ -355,8 +442,8 @@
             </button>
             <div class="voce-corpo" id="voce-8" role="region" aria-labelledby="voce-8-t">
               <div class="voce-dentro">
-                <img class="foto-v" src="assets/img/prototipo-inox.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Prototipo di parchimetro in lamiera inox satinata">
-                <p>Con il CAD e la costruzione in casa passiamo in fretta dall'idea all'oggetto: come il prototipo di parchimetro in lamiera inox di grosso spessore, finemente satinata, studiato nel design e poi portato alla serie.</p>
+                <div class="voce-foto"><img class="foto-v" src="assets/img/g/colonna-accesso-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Colonna per accesso pedonale"></div>
+                <p>Con il CAD e la costruzione in casa passiamo in fretta dall'idea all'oggetto: prototipi come il parchimetro in inox o la colonna per accesso pedonale, poi l'industrializzazione per la serie.</p>
               </div>
             </div>
           </div>
@@ -364,42 +451,66 @@
       </div>
     </section>
 
+    <section class="sez sez--ingranaggi" id="ingranaggi" aria-labelledby="ingranaggi-titolo">
+      <div class="contenitore ing-griglia">
+        <div class="ing-testo">
+          <h2 id="ingranaggi-titolo" data-parole>Nel passo di ogni ingranaggio c'è π.</h2>
+          <p class="pi-formula" data-rivela><span>p</span> = <span>π</span> · <span>m</span></p>
+          <p class="pi-legenda" data-rivela>p è il passo, m il modulo: la stessa π che abbiamo nel nome.</p>
+          <p data-rivela>Le dentatrici sono le macchine che tagliano gli ingranaggi. Le revisioniamo da cima a fondo, anche presso il cliente: pulizia e smontaggio completo, raschiettatura delle guide, revisione di testa porta-creatore, divisore e impianti, nuovo impianto elettrico, riverniciatura e collaudo. Con preventivo dettagliato e garanzia sull'intervento.</p>
+          <a class="btn btn--cta" href="#preventivo" data-rivela>Richiedi un preventivo</a>
+        </div>
+        <div class="ing-scena" id="ing-scena">
+          <svg class="ingranaggi" viewBox="0 0 560 420" aria-hidden="true">
+            <g class="ing-assi"><path d="M10 230H550M215 40V410M425 110V350"/></g>
+            <circle class="ing-primitiva" cx="215" cy="230" r="140"/>
+            <circle class="ing-primitiva" cx="425" cy="230" r="70"/>
+            <g id="ruota-a" class="ruota"></g>
+            <g id="ruota-b" class="ruota"></g>
+            <circle class="ing-mozzo" cx="215" cy="230" r="24"/>
+            <circle class="ing-mozzo" cx="425" cy="230" r="14"/>
+          </svg>
+          <canvas class="ing-canvas" id="ing-canvas" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </section>
+
     <section class="sez sez--lavori" id="lavori" aria-labelledby="lavori-titolo">
       <div class="contenitore">
         <div class="sez-testa">
-          <h2 id="lavori-titolo">Alcuni lavori usciti dalla nostra officina.</h2>
-          <p>Ne mostriamo solo una piccola parte: quasi tutti i progetti sono coperti da accordi di riservatezza e dai brevetti dei nostri clienti.</p>
+          <h2 id="lavori-titolo" data-parole>Alcuni lavori usciti dalla nostra officina.</h2>
+          <p data-rivela>Ne mostriamo solo una piccola parte: quasi tutti i progetti sono coperti da accordi di riservatezza e dai brevetti dei nostri clienti.</p>
         </div>
 
         <div class="filtri" role="group" aria-label="Filtra i lavori">
-          <button type="button" class="filtro" aria-pressed="true" data-filtro="tutti">Tutti</button>
-          <button type="button" class="filtro" aria-pressed="false" data-filtro="misura">Misura e controllo</button>
-          <button type="button" class="filtro" aria-pressed="false" data-filtro="auto">Automazioni</button>
-          <button type="button" class="filtro" aria-pressed="false" data-filtro="revisioni">Revisioni</button>
-          <button type="button" class="filtro" aria-pressed="false" data-filtro="speciali">Costruzioni speciali</button>
+          <button type="button" class="filtro" aria-pressed="true" data-filtro="tutti">Tutti <sup>20</sup></button>
+          <button type="button" class="filtro" aria-pressed="false" data-filtro="misura">Misura e controllo <sup>7</sup></button>
+          <button type="button" class="filtro" aria-pressed="false" data-filtro="auto">Automazioni <sup>8</sup></button>
+          <button type="button" class="filtro" aria-pressed="false" data-filtro="revisioni">Revisioni <sup>2</sup></button>
+          <button type="button" class="filtro" aria-pressed="false" data-filtro="speciali">Costruzioni speciali <sup>3</sup></button>
         </div>
 
         <ul class="galleria compatta" id="galleria">
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/isola-robotizzata.jpg"><img src="assets/img/g/isola-robotizzata-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio verticale per isola automatica robotizzata"><span>Tornio verticale per isola automatica robotizzata</span></button></li>
-          <li class="opera opera--alta" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-analisi.jpg"><img src="assets/img/g/banco-analisi-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Banco analisi pezzi"><span>Banco analisi pezzi</span></button></li>
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/tornio-doppio-mandrino.jpg"><img src="assets/img/g/tornio-doppio-mandrino-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio automatico doppio mandrino"><span>Tornio automatico doppio mandrino</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-stress-test.jpg"><img src="assets/img/g/banco-stress-test-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco per lo stress test"><span>Banco per lo stress test</span></button></li>
-          <li class="opera" data-cat="revisioni"><button type="button" data-grande="assets/img/g/dentatrice-revisionata.jpg"><img src="assets/img/g/dentatrice-revisionata-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Dentatrice Lorenz revisionata"><span>Dentatrice Lorenz revisionata</span></button></li>
-          <li class="opera opera--alta" data-cat="auto"><button type="button" data-grande="assets/img/g/assemblaggio-automatico.jpg"><img src="assets/img/g/assemblaggio-automatico-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Macchina automatica per assemblaggio pezzi"><span>Macchina automatica per assemblaggio pezzi</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-basamento.jpg"><img src="assets/img/g/banco-basamento-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di controllo e misura per basamento"><span>Banco di controllo e misura per basamento</span></button></li>
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/caricatore.jpg"><img src="assets/img/g/caricatore-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Caricatore pezzi automatico"><span>Caricatore pezzi automatico</span></button></li>
-          <li class="opera" data-cat="speciali"><button type="button" data-grande="assets/img/g/carrello-mobile.jpg"><img src="assets/img/g/carrello-mobile-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Carrello mobile per la visione di pannelli"><span>Carrello mobile per la visione di pannelli</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-braccio.jpg"><img src="assets/img/g/banco-braccio-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di misura per braccio oscillante"><span>Banco di misura per braccio oscillante</span></button></li>
-          <li class="opera opera--alta" data-cat="speciali"><button type="button" data-grande="assets/img/g/colonna-accesso.jpg"><img src="assets/img/g/colonna-accesso-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Colonna per accesso pedonale"><span>Colonna accesso pedonale</span></button></li>
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/selezionatore.jpg"><img src="assets/img/g/selezionatore-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Selezionatore pezzi automatico"><span>Selezionatore pezzi automatico</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banchi-misura.jpg"><img src="assets/img/g/banchi-misura-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banchi di misura in linea"><span>Banchi di misura</span></button></li>
-          <li class="opera" data-cat="revisioni"><button type="button" data-grande="assets/img/g/tornio-speciale.jpg"><img src="assets/img/g/tornio-speciale-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio automatico speciale revisionato"><span>Tornio automatico speciale</span></button></li>
-          <li class="opera opera--alta" data-cat="auto"><button type="button" data-grande="assets/img/g/spazzolatrice.jpg"><img src="assets/img/g/spazzolatrice-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Macchina spazzolatrice pezzi"><span>Macchina spazzolatrice pezzi</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/stazione-misura.jpg"><img src="assets/img/g/stazione-misura-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Stazione di misura in process"><span>Stazione di misura in process</span></button></li>
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/rulliera.jpg"><img src="assets/img/g/rulliera-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Rulliera con postazione operatore"><span>Rulliera con postazione operatore</span></button></li>
-          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-verifica.jpg"><img src="assets/img/g/banco-verifica-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di verifica pezzo"><span>Banco di verifica pezzo</span></button></li>
-          <li class="opera opera--alta" data-cat="speciali"><button type="button" data-grande="assets/img/g/prototipo-inox.jpg"><img src="assets/img/g/prototipo-inox-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Prototipo di parchimetro in inox satinato"><span>Prototipo di parchimetro in inox</span></button></li>
-          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/banco-semiautomatico.jpg"><img src="assets/img/g/banco-semiautomatico-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco semiautomatico per monoblocco"><span>Banco semiautomatico per monoblocco</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/isola-robotizzata.jpg"><span class="opera-foto"><img src="assets/img/g/isola-robotizzata-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio verticale per isola automatica robotizzata"></span><span class="opera-nome">Tornio verticale per isola automatica robotizzata</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-analisi.jpg"><span class="opera-foto"><img src="assets/img/g/banco-analisi-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Banco analisi pezzi"></span><span class="opera-nome">Banco analisi pezzi</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/tornio-doppio-mandrino.jpg"><span class="opera-foto"><img src="assets/img/g/tornio-doppio-mandrino-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio automatico doppio mandrino"></span><span class="opera-nome">Tornio automatico doppio mandrino</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-stress-test.jpg"><span class="opera-foto"><img src="assets/img/g/banco-stress-test-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco per lo stress test"></span><span class="opera-nome">Banco per lo stress test</span></button></li>
+          <li class="opera" data-cat="revisioni"><button type="button" data-grande="assets/img/g/dentatrice-revisionata.jpg"><span class="opera-foto"><img src="assets/img/g/dentatrice-revisionata-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Dentatrice Lorenz revisionata"></span><span class="opera-nome">Dentatrice Lorenz revisionata</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/assemblaggio-automatico.jpg"><span class="opera-foto"><img src="assets/img/g/assemblaggio-automatico-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Macchina automatica per assemblaggio pezzi"></span><span class="opera-nome">Macchina automatica per assemblaggio pezzi</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-basamento.jpg"><span class="opera-foto"><img src="assets/img/g/banco-basamento-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di controllo e misura per basamento"></span><span class="opera-nome">Banco di controllo e misura per basamento</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/caricatore.jpg"><span class="opera-foto"><img src="assets/img/g/caricatore-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Caricatore pezzi automatico"></span><span class="opera-nome">Caricatore pezzi automatico</span></button></li>
+          <li class="opera" data-cat="speciali"><button type="button" data-grande="assets/img/g/carrello-mobile.jpg"><span class="opera-foto"><img src="assets/img/g/carrello-mobile-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Carrello mobile per la visione di pannelli"></span><span class="opera-nome">Carrello mobile per la visione di pannelli</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-braccio.jpg"><span class="opera-foto"><img src="assets/img/g/banco-braccio-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di misura per braccio oscillante"></span><span class="opera-nome">Banco di misura per braccio oscillante</span></button></li>
+          <li class="opera" data-cat="speciali"><button type="button" data-grande="assets/img/g/colonna-accesso.jpg"><span class="opera-foto"><img src="assets/img/g/colonna-accesso-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Colonna per accesso pedonale"></span><span class="opera-nome">Colonna accesso pedonale</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/selezionatore.jpg"><span class="opera-foto"><img src="assets/img/g/selezionatore-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Selezionatore pezzi automatico"></span><span class="opera-nome">Selezionatore pezzi automatico</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banchi-misura.jpg"><span class="opera-foto"><img src="assets/img/g/banchi-misura-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banchi di misura in linea"></span><span class="opera-nome">Banchi di misura</span></button></li>
+          <li class="opera" data-cat="revisioni"><button type="button" data-grande="assets/img/g/tornio-speciale.jpg"><span class="opera-foto"><img src="assets/img/g/tornio-speciale-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Tornio automatico speciale revisionato"></span><span class="opera-nome">Tornio automatico speciale</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/spazzolatrice.jpg"><span class="opera-foto"><img src="assets/img/g/spazzolatrice-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Macchina spazzolatrice pezzi"></span><span class="opera-nome">Macchina spazzolatrice pezzi</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/stazione-misura.jpg"><span class="opera-foto"><img src="assets/img/g/stazione-misura-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Stazione di misura in process"></span><span class="opera-nome">Stazione di misura in process</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/rulliera.jpg"><span class="opera-foto"><img src="assets/img/g/rulliera-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Rulliera con postazione operatore"></span><span class="opera-nome">Rulliera con postazione operatore</span></button></li>
+          <li class="opera" data-cat="misura"><button type="button" data-grande="assets/img/g/banco-verifica.jpg"><span class="opera-foto"><img src="assets/img/g/banco-verifica-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco di verifica pezzo"></span><span class="opera-nome">Banco di verifica pezzo</span></button></li>
+          <li class="opera" data-cat="speciali"><button type="button" data-grande="assets/img/g/prototipo-inox.jpg"><span class="opera-foto"><img src="assets/img/g/prototipo-inox-s.jpg" width="540" height="720" loading="lazy" decoding="async" alt="Prototipo di parchimetro in inox satinato"></span><span class="opera-nome">Prototipo di parchimetro in inox</span></button></li>
+          <li class="opera" data-cat="auto"><button type="button" data-grande="assets/img/g/banco-semiautomatico.jpg"><span class="opera-foto"><img src="assets/img/g/banco-semiautomatico-s.jpg" width="720" height="540" loading="lazy" decoding="async" alt="Banco semiautomatico per monoblocco"></span><span class="opera-nome">Banco semiautomatico per monoblocco</span></button></li>
         </ul>
         <button class="galleria-tutti" type="button" id="galleria-tutti">Mostra tutti i 20 lavori</button>
       </div>
@@ -408,9 +519,9 @@
     <section class="sez sez--cad" id="cad" aria-labelledby="cad-titolo">
       <div class="contenitore cad-griglia">
         <div class="sez-testa">
-          <h2 id="cad-titolo">Lavoriamo nel CAD che usi già.</h2>
-          <p>Lavorare con aziende leader di settori diversi ci ha portato ad adottare molti sistemi, anche in più versioni insieme: ci adeguiamo a quello che usa il cliente. Sugli stessi sistemi offriamo anche consulenza.</p>
-          <div class="settori">
+          <h2 id="cad-titolo" data-parole>Lavoriamo nel CAD che usi già.</h2>
+          <p data-rivela>Lavorare con aziende leader di settori diversi ci ha portato ad adottare molti sistemi, anche in più versioni insieme: ci adeguiamo a quello che usa il cliente. Sugli stessi sistemi offriamo anche consulenza.</p>
+          <div class="settori" data-rivela>
             <h3>Dove abbiamo più esperienza</h3>
             <ul>
               <li><strong>Industria farmaceutica:</strong> macchine per dosaggio e compresse, conteggio capsule e riempimento flaconi, riempimento di liquidi in ambiente non sterile</li>
@@ -421,23 +532,23 @@
           </div>
         </div>
 
-        <div class="distinta-box">
+        <div class="distinta-box" data-rivela>
           <table class="distinta">
             <caption>Distinta dei sistemi CAD in dotazione</caption>
             <thead>
               <tr><th scope="col">Pos.</th><th scope="col">Sistema</th><th scope="col">Produttore</th><th scope="col">Tipo</th></tr>
             </thead>
             <tbody>
-              <tr><td>1</td><td>Creo (Pro/Engineer, dalla v. 18 a Wildfire 5.0)</td><td>PTC</td><td>3D</td></tr>
-              <tr><td>2</td><td>SolidWorks Premium</td><td>Dassault Systèmes</td><td>3D</td></tr>
-              <tr><td>3</td><td>Inventor Fusion</td><td>Autodesk</td><td>3D</td></tr>
-              <tr><td>4</td><td>AutoCAD e AutoCAD Mechanical</td><td>Autodesk</td><td>2D</td></tr>
-              <tr><td>5</td><td>Professional CADAM (workstation AIX IBM RISC)</td><td>IBM</td><td>2D</td></tr>
-              <tr><td>6</td><td>CADAM Drafting</td><td>Dassault Systèmes</td><td>2D</td></tr>
-              <tr><td>7</td><td>Helix Drafting 2000 e MicroCADAM</td><td>CADAM</td><td>2D</td></tr>
-              <tr><td>8</td><td>Cimatron It</td><td>Microsystem</td><td>2D</td></tr>
-              <tr><td>9</td><td>ME10 (workstation UNIX)</td><td>HP</td><td>2D</td></tr>
-              <tr><td>10</td><td>GBG Draft Maker</td><td>Cad.Lab</td><td>2D</td></tr>
+              <tr style="--k:0"><td>1</td><td>Creo (Pro/Engineer, dalla v. 18 a Wildfire 5.0)</td><td>PTC</td><td>3D</td></tr>
+              <tr style="--k:1"><td>2</td><td>SolidWorks Premium</td><td>Dassault Systèmes</td><td>3D</td></tr>
+              <tr style="--k:2"><td>3</td><td>Inventor Fusion</td><td>Autodesk</td><td>3D</td></tr>
+              <tr style="--k:3"><td>4</td><td>AutoCAD e AutoCAD Mechanical</td><td>Autodesk</td><td>2D</td></tr>
+              <tr style="--k:4"><td>5</td><td>Professional CADAM (workstation AIX IBM RISC)</td><td>IBM</td><td>2D</td></tr>
+              <tr style="--k:5"><td>6</td><td>CADAM Drafting</td><td>Dassault Systèmes</td><td>2D</td></tr>
+              <tr style="--k:6"><td>7</td><td>Helix Drafting 2000 e MicroCADAM</td><td>CADAM</td><td>2D</td></tr>
+              <tr style="--k:7"><td>8</td><td>Cimatron It</td><td>Microsystem</td><td>2D</td></tr>
+              <tr style="--k:8"><td>9</td><td>ME10 (workstation UNIX)</td><td>HP</td><td>2D</td></tr>
+              <tr style="--k:9"><td>10</td><td>GBG Draft Maker</td><td>Cad.Lab</td><td>2D</td></tr>
             </tbody>
           </table>
         </div>
@@ -448,12 +559,12 @@
       <div class="contenitore">
         <div class="chi-griglia">
           <div class="chi-testo">
-            <h2 id="chi-titolo">Tre progettisti e un tecnigrafo, dal 1988.</h2>
-            <p>Lo Studio Pigreco nasce nel 1988 a Granarolo dell'Emilia, dalla società di tre progettisti meccanici. Nel 2000 ci trasferiamo a San Pietro in Casale, in una sede costruita apposta: 500 m² divisi a metà tra studio di progettazione e officina di costruzione e assemblaggio.</p>
-            <p>Nel 2010 partecipiamo alla fondazione del Consorzio Mecasistem, quattro imprese della meccanica di precisione. Molti clienti ci scelgono come collaboratori da lunga data: entriamo nella loro realtà e affrontiamo ogni problema con un metodo di analisi collaudato.</p>
+            <h2 id="chi-titolo" data-parole>Tre progettisti e un tecnigrafo, dal 1988.</h2>
+            <p data-rivela>Lo Studio Pigreco nasce nel 1988 a Granarolo dell'Emilia, dalla società di tre progettisti meccanici. Nel 2000 ci trasferiamo a San Pietro in Casale, in una sede costruita apposta: 500 m² divisi a metà tra studio di progettazione e officina di costruzione e assemblaggio.</p>
+            <p data-rivela>Nel 2010 partecipiamo alla fondazione del Consorzio Mecasistem, quattro imprese della meccanica di precisione. Molti clienti ci scelgono come collaboratori da lunga data: entriamo nella loro realtà e affrontiamo ogni problema con un metodo di analisi collaudato.</p>
           </div>
-          <figure class="chi-foto chi-foto--grande">
-            <img src="assets/img/sede.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="La sede di Studio Pigreco in via Rodolfo Morandi a San Pietro in Casale">
+          <figure class="chi-foto chi-foto--grande" data-rivela>
+            <div class="scopri"><img src="assets/img/sede.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="La sede di Studio Pigreco in via Rodolfo Morandi a San Pietro in Casale"></div>
             <figcaption>La sede di San Pietro in Casale</figcaption>
           </figure>
         </div>
@@ -464,17 +575,17 @@
             <li style="--pos:0"><span class="lt-anno">1988</span><span class="lt-cosa">Nasce lo studio a Granarolo dell'Emilia</span></li>
             <li style="--pos:.3158"><span class="lt-anno">2000</span><span class="lt-cosa">Nuova sede a San Pietro in Casale</span></li>
             <li style="--pos:.5789"><span class="lt-anno">2010</span><span class="lt-cosa">Fondazione del Consorzio Mecasistem</span></li>
-            <li style="--pos:1" class="lt-oggi"><span class="lt-anno" id="anno-oggi">Oggi</span><span class="lt-cosa"><span id="anni-attivita">38</span> anni di progetti</span></li>
+            <li style="--pos:1" class="lt-oggi"><span class="lt-anno">Oggi</span><span class="lt-cosa"><span id="anni-attivita">38</span> anni di progetti</span></li>
           </ol>
         </div>
 
         <div class="chi-foto-due">
-          <figure class="chi-foto">
-            <img src="assets/img/ufficio-tecnico.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="L'ufficio tecnico con le postazioni CAD">
+          <figure class="chi-foto" data-rivela>
+            <div class="scopri"><img src="assets/img/ufficio-tecnico.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="L'ufficio tecnico con le postazioni CAD"></div>
             <figcaption>Ufficio tecnico</figcaption>
           </figure>
-          <figure class="chi-foto">
-            <img src="assets/img/officina-banchi.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="I banchi di lavoro dell'officina di aggiustaggio e montaggio">
+          <figure class="chi-foto" data-rivela style="--k:1">
+            <div class="scopri"><img src="assets/img/officina-banchi.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="I banchi di lavoro dell'officina di aggiustaggio e montaggio"></div>
             <figcaption>Aggiustaggio e montaggio</figcaption>
           </figure>
         </div>
@@ -484,8 +595,8 @@
     <section class="sez sez--contatti" id="preventivo" aria-labelledby="preventivo-titolo">
       <div class="contenitore contatti-griglia">
         <div class="contatti-form">
-          <h2 id="preventivo-titolo">Parlaci del tuo progetto.</h2>
-          <p class="contatti-intro">Piccolo o grande che sia, anche solo per capire se si può fare: rispondiamo con una valutazione tecnica, senza impegno.</p>
+          <h2 id="preventivo-titolo" data-parole>Parlaci del tuo progetto.</h2>
+          <p class="contatti-intro" data-rivela>Piccolo o grande che sia, anche solo per capire se si può fare: rispondiamo con una valutazione tecnica, senza impegno.</p>
 
           <form class="modulo" id="modulo" novalidate>
             <div class="campo">
@@ -526,12 +637,15 @@
               <label for="f-privacy">Ho letto l'<a href="https://www.studiopigreco.it/wp-content/uploads/2019/01/Informativa_Pigreco_rev.09_18.pdf" target="_blank" rel="noopener">informativa sulla privacy</a></label>
             </div>
             <p class="modulo-errore" id="modulo-errore" role="alert"></p>
-            <button class="btn btn--cta btn--grande" type="submit">Invia la richiesta di preventivo</button>
+            <div class="modulo-invio">
+              <button class="btn btn--cta btn--grande" type="submit">Invia la richiesta di preventivo</button>
+              <span class="timbro" id="timbro" aria-hidden="true">Richiesta<br>pronta</span>
+            </div>
             <p class="modulo-nota" id="modulo-nota" aria-live="polite">Si apre il tuo programma di posta con la richiesta già scritta, indirizzata all'ufficio tecnico.</p>
           </form>
         </div>
 
-        <aside class="contatti-dati" aria-label="Recapiti">
+        <aside class="contatti-dati" aria-label="Recapiti" data-rivela>
           <dl class="cartiglio cartiglio--contatti">
             <div class="cella cella--larga">
               <dt>Indirizzo</dt>
@@ -592,7 +706,7 @@
 
   <dialog class="lente" id="lente" aria-label="Foto del lavoro">
     <figure>
-      <img id="lente-img" src="" alt="">
+      <img id="lente-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
       <figcaption id="lente-didascalia"></figcaption>
     </figure>
     <button class="lente-btn lente-chiudi" type="button" aria-label="Chiudi">×</button>
