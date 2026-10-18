@@ -62,7 +62,6 @@
   let corrente = "#24453A";
   let giro = 0;
 
-  const attendi = (anim) => anim.finished.catch(() => {});
   const pausa = (ms) => new Promise((r) => setTimeout(r, ms));
 
   function impostaColore(colore) {
@@ -110,12 +109,13 @@
       const y1 = giu ? H - centro : -centro;
       const da = giu ? `inset(0px 0px ${H + rH - centro}px 0px)` : `inset(${H + centro}px 0px 0px 0px)`;
       const corsia = corsie[i];
-      const a1 = corsia.animate([{ clipPath: da }, { clipPath: "inset(0px 0px 0px 0px)" }], { duration: durata, easing, fill: "forwards" });
-      const a2 = rullo.animate(
+      corsia.animate([{ clipPath: da }, { clipPath: "inset(0px 0px 0px 0px)" }], { duration: durata, easing, fill: "forwards" });
+      rullo.animate(
         [{ transform: `translate(${x}px, ${y0}px)` }, { transform: `translate(${x}px, ${y1}px)` }],
         { duration: durata, easing, fill: "forwards" }
       );
-      await Promise.all([attendi(a1), attendi(a2)]);
+      // a tempo e non su anim.finished: con le animazioni messe in pausa e guidate a mano (registrazione video) non si risolverebbe
+      await pausa(durata);
     }
     if (mio !== giro) return;
 
