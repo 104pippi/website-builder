@@ -7,6 +7,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 |---|---|---|
 | [sito-alessandro-international](./sito-alessandro-international) | https://sito-alessandro-international.vercel.app | [video](./sito-alessandro-international/video) |
 | [sito-allegranzi](./sito-allegranzi) | https://sito-allegranzi.vercel.app | [video](./sito-allegranzi/video) |
+| [sito-aperuzza](./sito-aperuzza) | https://sito-aperuzza.vercel.app | [video](./sito-aperuzza/video) |
 | [sito-aquatek](./sito-aquatek) | https://sito-aquatek.vercel.app | [video](./sito-aquatek/video) |
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |
 | [sito-as-group](./sito-as-group) | https://sito-as-group.vercel.app | [video](./sito-as-group/video) |
