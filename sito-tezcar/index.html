@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tezcar V.I. | Officina per camion e veicoli industriali a Tezze di Vazzola</title>
+<meta name="description" content="Officina per camion e veicoli industriali a Tezze di Vazzola (TV) dal 1930: meccatronica, revisioni oltre 35 q.li, tachigrafi Smart2, officina mobile.">
+<link rel="canonical" href="https://sito-tezcar.vercel.app/">
+<meta name="theme-color" content="#1e2126">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Tezcar V.I. Srl">
+<meta property="og:title" content="Tezcar V.I. | L'officina dei camion a Tezze di Vazzola, dal 1930">
+<meta property="og:description" content="Meccatronica multimarca, revisioni oltre 35 quintali, tachigrafi analogici, digitali e Smart2. Officina mobile per i fermi su strada.">
+<meta property="og:url" content="https://sito-tezcar.vercel.app/">
+<meta property="og:image" content="https://sito-tezcar.vercel.app/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tezcar V.I. | L'officina dei camion a Tezze di Vazzola">
+<meta name="twitter:description" content="Meccatronica, revisioni oltre 35 q.li, tachigrafi Smart2 e officina mobile. Dal 1930.">
+<meta name="twitter:image" content="https://sito-tezcar.vercel.app/assets/img/og.jpg">
+
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-ruota.jpg" fetchpriority="high">
+<link rel="modulepreload" href="disco.js">
+<link rel="stylesheet" href="style.css">
+
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Tezcar V.I. Srl",
+  "description": "Officina per veicoli industriali e commerciali: meccatronica, revisioni oltre 35 quintali, tachigrafi, officina mobile e carrozzeria industriale.",
+  "url": "https://sito-tezcar.vercel.app/",
+  "image": "https://sito-tezcar.vercel.app/assets/img/og.jpg",
+  "logo": "https://sito-tezcar.vercel.app/assets/img/logo.png",
+  "telephone": "+39 0438 28721",
+  "email": "info@tezcar.it",
+  "foundingDate": "1930",
+  "vatID": "IT04034810269",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Venezia 37, Z.I. Tezze",
+    "postalCode": "31028",
+    "addressLocality": "Vazzola",
+    "addressRegion": "TV",
+    "addressCountry": "IT"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "13:30", "closes": "18:30"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ],
+  "areaServed": "Provincia di Treviso",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Tezcar+V.I.+Via+Venezia+37+Vazzola"
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#servizi">Vai ai contenuti</a>
+
+<header class="top" data-top>
+  <div class="top-in">
+    <a class="top-logo" href="#top" aria-label="Tezcar V.I. Srl, torna all'inizio">
+      <img class="logo-chiaro" src="assets/img/logo-bianco.png" alt="Tezcar V.I. Srl" width="599" height="80">
+      <img class="logo-scuro" src="assets/img/logo.png" alt="" width="599" height="80" aria-hidden="true">
+    </a>
+    <nav class="top-nav" aria-label="Sezioni">
+      <a href="#servizi">Servizi</a>
+      <a href="#revisioni">Revisioni</a>
+      <a href="#tachigrafi">Tachigrafi</a>
+      <a href="#storia">Storia</a>
+      <a href="#sedi">Sedi</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="btn btn-rosso top-cta" href="tel:+39043828721"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>0438 28721</a>
+    <button class="top-menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn>
+      <span class="sr">Apri il menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden data-menu>
+  <nav aria-label="Menu">
+    <a href="#servizi">Servizi</a>
+    <a href="#revisioni">Revisioni</a>
+    <a href="#tachigrafi">Tachigrafi</a>
+    <a href="#storia">Storia</a>
+    <a href="#mobile">Officina mobile</a>
+    <a href="#sedi">Sedi e orari</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <a class="btn btn-rosso btn-largo" href="tel:+39043828721">Chiama 0438 28721</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top" data-hero>
+  <div class="hero-media" data-hero-media>
+    <div class="hero-zoom" data-hero-zoom>
+    <img class="hero-img hero-img--base" src="assets/img/hero-ruota.jpg" alt="" width="1400" height="1045" aria-hidden="true" decoding="async">
+    <img class="hero-img hero-img--colore" src="assets/img/hero-ruota.jpg" alt="Ruota di un camion con la pinza rossa dell'allineamento montata sul cerchio, nell'officina Tezcar" width="1400" height="1045" fetchpriority="high">
+    <span class="hero-laser" aria-hidden="true"></span>
+    <span class="hero-mira" aria-hidden="true" data-mira><i></i><b>Allineamento assali</b></span>
+    </div>
+  </div>
+  <div class="hero-copy">
+    <h1 class="hero-titolo"><span class="parola"><span>L'officina</span></span> <span class="parola"><span>dei</span></span> <span class="parola"><span>camion</span></span> <span class="parola"><span>a</span></span> <span class="parola"><span>Tezze</span></span> <span class="parola"><span>di</span></span> <span class="parola"><span>Vazzola</span></span></h1>
+    <p class="hero-sub" data-entra>Meccatronica multimarca, revisioni oltre i 35&nbsp;quintali e tachigrafi certificati. Dal 1930. E se il mezzo si ferma per strada, arriva la nostra officina mobile.</p>
+    <div class="hero-cta" data-entra>
+      <a class="btn btn-rosso" href="tel:+39043828721"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Chiama l'officina</a>
+      <a class="btn btn-vuoto" href="#contatti" data-servizio="Revisione">Prenota la revisione</a>
+    </div>
+    <p class="hero-orari" data-entra><span class="pallino" data-stato-pallino></span><span data-stato="tezcar">Lun–ven 8–12 e 13:30–18:30, sabato 8–12</span></p>
+  </div>
+</section>
+
+<!-- FIDUCIA -->
+<section class="fiducia" aria-label="In breve">
+  <ul class="fiducia-lista">
+    <li><strong>1930</strong><span>l'anno in cui Francesco Bet apre l'officina</span></li>
+    <li><strong>4,5<small>/5</small></strong><span>su Google, da 17 recensioni</span></li>
+    <li><strong>&gt;35 q.li</strong><span>revisioni con autorizzazione MCTC</span></li>
+    <li><strong>ISO 9001</strong><span>certificazione DEKRA per i tachigrafi</span></li>
+  </ul>
+</section>
+
+<!-- SERVIZI -->
+<section class="servizi" id="servizi">
+  <div class="wrap">
+    <header class="intesta">
+      <h2>Dalla diagnosi alla revisione, sotto lo stesso capannone</h2>
+      <p>Camion, rimorchi e veicoli commerciali di tutte le marche. Diagnosi elettronica multimarca, attrezzature aggiornate e un team che si forma di continuo.</p>
+    </header>
+
+    <article class="reparto" id="meccatronica">
+      <figure class="reparto-foto" data-svela>
+        <img src="assets/img/meccatronica.jpg" alt="Tecnico Tezcar che misura la convergenza sulla ruota anteriore di un camion" width="1100" height="740" loading="lazy" decoding="async">
+      </figure>
+      <div class="reparto-testo">
+        <h3>Meccatronica</h3>
+        <p class="reparto-lead">Manutenzione e riparazione meccanica, con la diagnosi elettronica multimarca a guidare ogni intervento.</p>
+        <ul class="elenco">
+          <li>Motori</li>
+          <li>Cambi manuali e automatici</li>
+          <li>Differenziali, assali e mozzi</li>
+          <li>Elettropneumatica ed elettronica rimorchi</li>
+          <li>ABS ed EBS</li>
+          <li>Impianti idraulici e pneumatici</li>
+          <li>Elettrauto, ricariche clima e Webasto</li>
+          <li>Calibrazione ADAS, radar e telecamere</li>
+        </ul>
+        <a class="link-freccia" href="tel:+39043828721">Chiama per una diagnosi</a>
+      </div>
+    </article>
+
+    <article class="reparto reparto--largo" id="revisioni">
+      <figure class="reparto-foto reparto-foto--banda" data-svela>
+        <img src="assets/img/linea-revisioni.jpg" alt="Pensilina con la scritta Linea revisioni all'ingresso dell'officina" width="1600" height="474" loading="lazy" decoding="async">
+      </figure>
+      <div class="reparto-testo">
+        <h3>Revisioni oltre i 35&nbsp;quintali</h3>
+        <p class="reparto-lead">Revisioni periodiche ogni settimana, con autorizzazione MCTC. Controlli tecnici, verifica dei sistemi di sicurezza e tutta la parte documentale.</p>
+        <ol class="passi">
+          <li><h4>Prenotazione e pratiche</h4><p>Prenotiamo noi e prepariamo i documenti del mezzo.</p></li>
+          <li><h4>Controllo pre-revisione</h4><p>Verifichiamo il veicolo prima, così si arriva pronti.</p></li>
+          <li><h4>Revisione in sede</h4><p>Controlli tecnici e sistemi di sicurezza, nella nostra linea.</p></li>
+          <li><h4>Richiamo alla scadenza</h4><p>Vi avvisiamo noi quando tocca la prossima.</p></li>
+        </ol>
+        <a class="btn btn-rosso" href="#contatti" data-servizio="Revisione">Prenota la revisione</a>
+      </div>
+    </article>
+
+    <article class="reparto reparto--inverso" id="tachigrafi">
+      <figure class="reparto-foto" data-svela>
+        <img src="assets/img/tachigrafo-disco.jpg" alt="Disco di un tachigrafo analogico inserito nello strumento" width="900" height="831" loading="lazy" decoding="async">
+      </figure>
+      <div class="reparto-testo">
+        <h3>Tachigrafi analogici, digitali e Smart2</h3>
+        <p class="reparto-lead">Installazione, taratura, riparazione e sostituzione, eseguite da tecnici specializzati per tenere il mezzo fermo il meno possibile. Poi scarico dati del tachigrafo e della carta conducente, e corsi di formazione per i conducenti.</p>
+        <dl class="autorizzazioni">
+          <div><dt>Analogici</dt><dd>CCIAA Treviso n.&nbsp;1351483 del 12.07.2002</dd></div>
+          <div><dt>Digitali</dt><dd>Autorizzazione n.&nbsp;I3&nbsp;038&nbsp;0775 del 03.12.2008</dd></div>
+          <div><dt>Stoneridge</dt><dd>Autorizzazione per i tachigrafi digitali, 2016</dd></div>
+          <div><dt>Intelligenti</dt><dd>Estensione del 03.09.2019</dd></div>
+          <div><dt>Smart2</dt><dd>Abilitazione del 20.09.2023</dd></div>
+          <div><dt>Autorizzazione unica</dt><dd>Accorpamento n.&nbsp;94 del 07.02.2025</dd></div>
+          <div><dt>UNI EN ISO 9001:2015</dt><dd>Certificazione DEKRA per installazione, attivazione, calibrazione, controllo e riparazione dei tachigrafi</dd></div>
+        </dl>
+        <p class="certificato"><a href="assets/img/certificato-iso.jpg" target="_blank" rel="noopener">Guarda il certificato ISO 9001:2015</a></p>
+        <a class="btn btn-rosso" href="#contatti" data-servizio="Tachigrafo">Prenota un controllo tachigrafo</a>
+      </div>
+    </article>
+
+    <div class="anche">
+      <h3 class="anche-titolo">E poi</h3>
+      <div class="anche-griglia">
+        <a class="anche-voce" href="#mobile">
+          <h4>Officina mobile</h4>
+          <p>Riparazioni su strada e assistenza immediata, con il furgone attrezzato.</p>
+        </a>
+        <div class="anche-voce anche-voce--foto">
+          <img src="assets/img/raddrizzatura-telai.jpg" alt="Telaio di un camion sul banco di raddrizzatura" width="1100" height="756" loading="lazy" decoding="async">
+          <h4>Carrozzeria industriale</h4>
+          <p>Raddrizzatura telai, allineamento assali, saldature, cristalli e fanaleria.</p>
+        </div>
+        <div class="anche-voce">
+          <h4>Elettrauto, gomme e ADAS</h4>
+          <p>Interventi di elettrauto, servizio gommista e calibrazione dei sistemi di assistenza alla guida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIA: disco del tachigrafo in 3D -->
+<section class="storia" id="storia" data-scuro data-storia aria-labelledby="storia-titolo">
+  <div class="storia-palco" data-palco>
+    <img class="storia-memoria" data-memoria src="assets/img/storia-gruppo.jpg" alt="" width="1000" height="501" loading="lazy" decoding="async" aria-hidden="true">
+    <div class="storia-scena" data-scena aria-hidden="true"></div>
+    <div class="storia-testi">
+      <h2 id="storia-titolo">Dal 1930, un giro di disco alla volta</h2>
+      <div class="storia-anno" aria-hidden="true"><span data-anno>1930</span></div>
+      <div class="storia-tappe" data-tappe-testo aria-live="off"></div>
+      <ol class="storia-tacche" aria-hidden="true" data-tacche></ol>
+    </div>
+  </div>
+  <ol class="storia-elenco" data-elenco>
+    <li data-da="1930" data-a="1930"><b>1930</b> Francesco Bet avvia la sua officina meccanica.</li>
+    <li data-da="1950" data-a="1950"><b>1950</b> Nasce la prima società, con sede a Ponte della Priula.</li>
+    <li data-da="1981" data-a="1981"><b>1981</b> Apre la seconda sede, a Tezze di Vazzola.</li>
+    <li data-da="1993" data-a="1993"><b>1993</b> Arriva la carrozzeria con forno industriale.</li>
+    <li data-da="1997" data-a="1998"><b>1997</b> Autorizzazione MCTC n.&nbsp;703 per le revisioni fino a 35&nbsp;q.li. Nel 1998 officina e carrozzeria si spostano nella nuova sede di via Venezia&nbsp;37.</li>
+    <li data-da="2002" data-a="2005"><b>2002</b> Autorizzazione per i tachigrafi analogici. Nel 2005 l'autorizzazione MCTC n.&nbsp;06 per le revisioni oltre i 35&nbsp;q.li.</li>
+    <li data-da="2008" data-a="2008"><b>2008</b> Tachigrafi digitali e certificazione ISO&nbsp;9001.</li>
+    <li data-da="2016" data-a="2026"><b>2016</b> Stoneridge, poi i tachigrafi intelligenti nel 2019, gli Smart2 nel 2023 e l'autorizzazione unica nel 2025.</li>
+  </ol>
+</section>
+
+<!-- OFFICINA MOBILE -->
+<section class="mobile" id="mobile">
+  <div class="mobile-strisce" aria-hidden="true"></div>
+  <div class="wrap mobile-in">
+    <div class="mobile-testo">
+      <h2>Fermi per strada? Veniamo noi.</h2>
+      <p>La nostra officina mobile è attrezzata per le riparazioni su strada e l'assistenza immediata. Telefonate, diteci dove siete e che mezzo è: partiamo da Tezze di Vazzola.</p>
+      <a class="btn btn-rosso btn-grande" href="tel:+39043828721"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Chiama 0438 28721</a>
+      <p class="nota">Negli orari di apertura risponde l'officina: lun–ven 8–12 e 13:30–18:30, sabato 8–12.</p>
+    </div>
+    <div class="mobile-foto">
+      <figure class="mobile-foto-a" data-svela><img src="assets/img/officina-mobile.jpg" alt="Furgone dell'officina mobile Tezcar con la scritta Veicoli industriali, assistenza e centro revisioni" width="1240" height="930" loading="lazy" decoding="async"></figure>
+      <figure class="mobile-foto-b" data-svela><img src="assets/img/officina-mobile-2.jpg" alt="Furgone piccolo di assistenza veicoli industriali Tezcar" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI -->
+<section class="recensioni" id="recensioni">
+  <div class="wrap">
+    <div class="voto">
+      <p class="voto-num">4,5</p>
+      <div>
+        <p class="stelle" aria-label="4,5 stelle su 5"><span style="--v:90%">★★★★★</span></p>
+        <p>Media su Google, da 17 recensioni</p>
+        <a class="link-freccia" href="https://www.google.com/maps/search/?api=1&amp;query=Officina+Tezcar+V.I.+Vazzola" target="_blank" rel="noopener">Leggi le recensioni su Google</a>
+      </div>
+    </div>
+    <div class="citazioni">
+      <figure class="cit cit--grande">
+        <blockquote><p>Nel giro di poche ore hanno sistemato il furgone sulla quale viaggiavamo, e con professionalità hanno sostituito i componenti guasti.</p></blockquote>
+        <figcaption>Linda Foradori <span>5 stelle, Google</span></figcaption>
+      </figure>
+      <figure class="cit">
+        <blockquote><p>Personale disponibile e affidabile, capo officina gentile e competente. Sempre pronti a soddisfare le necessità del cliente.</p></blockquote>
+        <figcaption>Ismaele Baldassar <span>5 stelle, Google</span></figcaption>
+      </figure>
+      <figure class="cit">
+        <blockquote><p>Esperienza e serietà</p></blockquote>
+        <figcaption>Sebastiano Giustino <span>5 stelle, Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SEDI -->
+<section class="sedi" id="sedi">
+  <div class="wrap">
+    <header class="intesta">
+      <h2>Due sedi, una storia sola</h2>
+      <p>I veicoli industriali a Tezze di Vazzola, auto e furgoni a Ponte della Priula, dove tutto è cominciato.</p>
+    </header>
+    <div class="sedi-griglia">
+      <article class="sede">
+        <figure data-svela><img src="assets/img/sede-tezcar.jpg" alt="Furgoni di assistenza Tezcar parcheggiati davanti alla sede di via Venezia" width="1240" height="930" loading="lazy" decoding="async"></figure>
+        <h3>Tezcar V.I. Srl</h3>
+        <p class="sede-cosa">Veicoli industriali e commerciali</p>
+        <p class="sede-stato"><span class="pallino" data-stato-pallino="tezcar"></span><span data-stato-sede="tezcar">Orari qui sotto</span></p>
+        <address>Via Venezia 37, Z.I. Tezze<br>31028 Vazzola (TV)</address>
+        <table class="orari">
+          <caption class="sr">Orari Tezcar</caption>
+          <tr><th scope="row">Lun–ven</th><td>8:00–12:00 e 13:30–18:30</td></tr>
+          <tr><th scope="row">Sabato</th><td>8:00–12:00</td></tr>
+          <tr><th scope="row">Domenica</th><td>Chiuso</td></tr>
+        </table>
+        <div class="sede-link">
+          <a href="tel:+39043828721">0438 28721</a>
+          <a href="mailto:info@tezcar.it">info@tezcar.it</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Venezia+37+31028+Vazzola+TV" target="_blank" rel="noopener">Indicazioni</a>
+        </div>
+      </article>
+      <article class="sede">
+        <figure data-svela><img src="assets/img/sede-bet.jpg" alt="Officina Bet di Ponte della Priula con una Fiat Topolino d'epoca sul ponte" width="1024" height="680" loading="lazy" decoding="async"></figure>
+        <h3>Autofficina Bet sas</h3>
+        <p class="sede-cosa">Auto e furgoni, revisioni fino a 35&nbsp;q.li</p>
+        <p class="sede-stato"><span class="pallino" data-stato-pallino="bet"></span><span data-stato-sede="bet">Orari qui sotto</span></p>
+        <address>Via IV Novembre 30<br>Ponte della Priula (TV)</address>
+        <table class="orari">
+          <caption class="sr">Orari Autofficina Bet</caption>
+          <tr><th scope="row">Lun–ven</th><td>8:00–12:00 e 13:30–18:00</td></tr>
+          <tr><th scope="row">Sabato</th><td>8:00–12:00</td></tr>
+          <tr><th scope="row">Domenica</th><td>Chiuso</td></tr>
+        </table>
+        <div class="sede-link">
+          <a href="tel:+39043827031">0438 27031</a>
+          <a href="mailto:info@autofficinabet.it">info@autofficinabet.it</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+IV+Novembre+30+Ponte+della+Priula+TV" target="_blank" rel="noopener">Indicazioni</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section class="contatti" id="contatti" data-scuro>
+  <div class="wrap contatti-in">
+    <div class="contatti-info">
+      <h2>Prenota la revisione o chiedi un intervento</h2>
+      <p>Il modo più veloce è una telefonata. Se preferite scrivere, compilate il modulo: si apre la vostra email con il messaggio già pronto per l'officina.</p>
+      <a class="tel-grande" href="tel:+39043828721">0438 28721</a>
+      <a class="mail" href="mailto:info@tezcar.it">info@tezcar.it</a>
+      <div class="mappa">
+        <iframe title="Mappa: Tezcar V.I., via Venezia 37, Vazzola" src="https://www.google.com/maps?q=Via+Venezia+37,+31028+Vazzola+TV&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a class="link-freccia" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Venezia+37+31028+Vazzola+TV" target="_blank" rel="noopener">Indicazioni per via Venezia 37</a>
+    </div>
+    <form class="modulo" data-modulo novalidate>
+      <div class="campo">
+        <label for="f-servizio">Di cosa avete bisogno</label>
+        <select id="f-servizio" name="servizio" data-campo-servizio>
+          <option>Revisione</option>
+          <option>Tachigrafo</option>
+          <option>Diagnosi o riparazione</option>
+          <option>Officina mobile</option>
+          <option>Carrozzeria industriale</option>
+          <option>Altro</option>
+        </select>
+      </div>
+      <div class="campo-doppio">
+        <div class="campo">
+          <label for="f-nome">Nome e cognome</label>
+          <input id="f-nome" name="nome" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="f-azienda">Azienda <span>(facoltativo)</span></label>
+          <input id="f-azienda" name="azienda" autocomplete="organization">
+        </div>
+      </div>
+      <div class="campo-doppio">
+        <div class="campo">
+          <label for="f-tel">Telefono</label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="campo">
+          <label for="f-mezzo">Mezzo o targa</label>
+          <input id="f-mezzo" name="mezzo" placeholder="Es. trattore stradale, AB123CD">
+        </div>
+      </div>
+      <div class="campo">
+        <label for="f-msg">Messaggio</label>
+        <textarea id="f-msg" name="messaggio" rows="4" placeholder="Scadenza della revisione, il problema, quando potete portare il mezzo"></textarea>
+      </div>
+      <p class="modulo-errore" data-errore role="alert" hidden></p>
+      <button class="btn btn-rosso btn-largo" type="submit">Prepara l'email per l'officina</button>
+      <p class="nota">Si apre la vostra app di posta con il messaggio per info@tezcar.it: lo inviate voi.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="piede" data-scuro>
+  <div class="wrap piede-in">
+    <img src="assets/img/logo-bianco.png" alt="Tezcar V.I. Srl" width="599" height="80" loading="lazy" class="piede-logo">
+    <div class="piede-col">
+      <p><strong>TEZCAR V.I. SRL</strong><br>Via Venezia 37, Z.I. Tezze<br>31028 Vazzola (TV)</p>
+      <p>P.IVA 04034810269<br>REA TV-317602<br>Capitale sociale 95.000&nbsp;€</p>
+    </div>
+    <div class="piede-col">
+      <p><a href="tel:+39043828721">0438 28721</a><br><a href="mailto:info@tezcar.it">info@tezcar.it</a></p>
+      <p><a href="https://www.iubenda.com/privacy-policy/12241201" target="_blank" rel="noopener">Privacy policy</a><br><a href="https://www.iubenda.com/privacy-policy/12241201/cookie-policy" target="_blank" rel="noopener">Cookie policy</a></p>
+    </div>
+  </div>
+  <div class="wrap piede-fondo">
+    <p>© <span data-anno-corrente>2026</span> Tezcar V.I. Srl</p>
+    <p class="crediti">Sito realizzato da MORAmedia</p>
+  </div>
+</footer>
+
+<nav class="barra" aria-label="Contatto rapido" data-barra>
+  <a class="barra-chiama" href="tel:+39043828721"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Chiama</a>
+  <a class="barra-prenota" href="#contatti" data-servizio="Revisione">Prenota</a>
+</nav>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

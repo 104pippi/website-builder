@@ -57,6 +57,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-studio-pigreco](./sito-studio-pigreco) | https://sito-studio-pigreco.vercel.app | [video](./sito-studio-pigreco/video) |
 | [sito-tech-mec](./sito-tech-mec) | https://sito-tech-mec.vercel.app | [video](./sito-tech-mec/video) |
 | [sito-tecnomeccanica](./sito-tecnomeccanica) | https://sito-tecnomeccanica.vercel.app | [video](./sito-tecnomeccanica/video) |
+| [sito-tezcar](./sito-tezcar) | https://sito-tezcar.vercel.app | [video](./sito-tezcar/video) |
 | [sito-tlm-evolution](./sito-tlm-evolution) | https://sito-tlm-evolution.vercel.app | [video](./sito-tlm-evolution/video) |
 | [sito-trevihouse](./sito-trevihouse) | https://sito-trevihouse.vercel.app | [video](./sito-trevihouse/video) |
 | [sito-trevisostampa](./sito-trevisostampa) | https://sito-trevisostampa.vercel.app | [video](./sito-trevisostampa/video) |
