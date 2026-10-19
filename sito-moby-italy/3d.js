@@ -440,13 +440,22 @@ export function avvia() {
   };
   document.addEventListener('visibilitychange', () => { visibile = !document.hidden; });
 
-  if (fermo) {
-    f.partito = true;
-    if (scegli()) disegna(0, 0);
-    addEventListener('scroll', () => { if (scegli()) disegna(0, 0); }, { passive: true });
-  } else {
-    requestAnimationFrame(ciclo);
-  }
+  // si compilano gli shader prima del primo fotogramma, così la caduta non scatta
+  const compila = renderer.compileAsync ? renderer.compileAsync(scena, camera).catch(() => {}) : Promise.resolve();
+  compila.then(() => {
+    if (fermo) {
+      f.partito = true;
+      if (scegli()) disegna(0, 0);
+      addEventListener('scroll', () => { if (scegli()) disegna(0, 0); }, { passive: true });
+    } else {
+      requestAnimationFrame(ciclo);
+    }
+    // parte: prima la pagina, poi il gioco che cade
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add('si-3d');
+      setTimeout(() => { f.partito = true; }, 250);
+    });
+  });
 
   // ---------- interazioni ----------
   let yPrec = scrollY;
@@ -465,10 +474,4 @@ export function avvia() {
       puntY = (e.clientY / innerHeight - 0.5) * 2;
     }, { passive: true });
   }
-
-  // parte: prima la pagina, poi il gioco che cade
-  requestAnimationFrame(() => {
-    document.documentElement.classList.add('si-3d');
-    setTimeout(() => { f.partito = true; }, 250);
-  });
 }

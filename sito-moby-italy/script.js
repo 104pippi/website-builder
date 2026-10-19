@@ -249,7 +249,8 @@
       scelti.forEach((s) => righe.push(`- ${s.q} × ${s.nome} (${s.codice})`));
     }
     if (d.messaggio) righe.push('', 'Messaggio:', d.messaggio);
-    const oggetto = scelti.length ? `Richiesta preventivo: ${scelti.reduce((n, s) => n + s.q, 0)} giochi` : 'Richiesta preventivo dal sito';
+    const pezzi = scelti.reduce((n, s) => n + s.q, 0);
+    const oggetto = scelti.length ? `Richiesta preventivo: ${pezzi} ${pezzi === 1 ? 'gioco' : 'giochi'}` : 'Richiesta preventivo dal sito';
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(righe.join('\n'))}`;
     let ok = $('.modulo__ok', modulo);
     if (!ok) {

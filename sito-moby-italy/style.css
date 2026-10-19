@@ -41,6 +41,7 @@ h3 { font-size: 1.3rem; font-stretch: 106%; line-height: 1.1; }
 p { margin: 0; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--giallo); outline-offset: 3px; border-radius: 6px; }
+[hidden] { display: none !important; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .contenitore { width: min(1200px, 100% - 2 * var(--gutter)); margin-inline: auto; }
 .salta { position: fixed; left: 12px; top: -60px; z-index: 100; background: var(--giallo); color: var(--inchiostro); padding: 10px 14px; border-radius: 10px; font-weight: 700; }
@@ -375,7 +376,7 @@ button { font: inherit; color: inherit; }
 /* ---------- per chi ---------- */
 .perchi { padding: 80px 0; background: var(--bianco); }
 .perchi h2 { max-width: 16ch; margin-bottom: 30px; }
-.perchi__griglia { display: grid; gap: 14px; }
+.perchi__griglia { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
 .scheda {
   display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
   background: var(--cielo); border-radius: var(--r); padding: 24px 20px;
@@ -414,7 +415,7 @@ button { font: inherit; color: inherit; }
 /* ---------- preventivo ---------- */
 .preventivo { background: var(--blu); color: rgba(255,255,255,.86); padding: 76px 0 84px; }
 .preventivo h2 { color: var(--bianco); }
-.preventivo__griglia { display: grid; gap: 30px; }
+.preventivo__griglia { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
 .preventivo__intro { display: grid; gap: 16px; align-content: start; }
 .preventivo__tel {
   display: inline-flex; align-items: center; gap: 12px; justify-self: start;
@@ -425,6 +426,7 @@ button { font: inherit; color: inherit; }
 .preventivo__tel svg { width: .8em; height: .8em; }
 .preventivo__nota { font-size: .92rem; color: rgba(255,255,255,.7); }
 .modulo {
+  grid-template-columns: minmax(0, 1fr);
   background: var(--bianco); color: var(--testo);
   border-radius: 24px; padding: 20px;
   box-shadow: 0 8px 0 var(--blu-notte);
@@ -448,8 +450,8 @@ button { font: inherit; color: inherit; }
 }
 .quantita output { min-width: 26px; text-align: center; font-weight: 800; color: var(--inchiostro); }
 .scelti .togli { background: transparent; color: var(--tenue); font-size: 1.4rem; }
-.campi { display: grid; gap: 12px; }
-.campo { display: grid; gap: 5px; }
+.campi { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.campo { display: grid; gap: 5px; min-width: 0; }
 .campo span { font-size: .82rem; font-weight: 700; color: var(--inchiostro); }
 .campo input, .campo textarea {
   width: 100%; min-height: 50px; padding: 12px 14px;
@@ -466,7 +468,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- contatti ---------- */
 .contatti { padding: 76px 0; background: var(--bianco); }
-.contatti__griglia { display: grid; gap: 28px; }
+.contatti__griglia { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
 .contatti address { font-style: normal; margin: 18px 0 14px; color: var(--inchiostro); font-size: 1.05rem; }
 .contatti__lista { list-style: none; margin: 0; padding: 0; }
 .contatti__lista a {
@@ -542,7 +544,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- schermi più larghi ---------- */
 @media (min-width: 560px) {
-  .campi { grid-template-columns: 1fr 1fr; }
+  .campi { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .campo--largo { grid-column: span 2; }
   .eroe__azioni .bottone--vuoto { display: inline-flex; }
 }
@@ -594,8 +596,8 @@ button { font: inherit; color: inherit; }
   .azienda__colonne { grid-template-columns: 1fr 1fr; gap: 28px; }
   .azienda__molle { grid-template-columns: 1fr; }
   .azienda__molle img { width: 100%; height: 220px; }
-  .preventivo__griglia { grid-template-columns: 5fr 7fr; gap: 56px; }
-  .contatti__griglia { grid-template-columns: 5fr 7fr; gap: 48px; align-items: stretch; }
+  .preventivo__griglia { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; }
+  .contatti__griglia { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: stretch; }
   .mappa, .mappa iframe { min-height: 420px; }
   .piede__griglia { grid-template-columns: auto 1fr auto; align-items: start; gap: 40px; }
 }
