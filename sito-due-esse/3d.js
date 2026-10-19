@@ -263,6 +263,8 @@ export function avvia({ scena, canvas, hero, fermo }) {
     raf = requestAnimationFrame(giro);
   };
   const fermaCiclo = () => { inCorsa = false; if (raf) cancelAnimationFrame(raf); raf = 0; };
+  // Video di presentazione: ridisegna all'istante esatto di ogni fotogramma catturato
+  window.__fotogramma = () => { if (inCorsa) { posa((performance.now() - t0) / 1000); disegna(); } };
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([v]) => { visibile = v.isIntersecting; visibile ? avviaCiclo() : fermaCiclo(); }).observe(scena);
