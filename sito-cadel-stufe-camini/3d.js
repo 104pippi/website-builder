@@ -41,28 +41,6 @@ function texFuoco() {
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
 
-function texCoppi() {
-  const c = document.createElement('canvas'); c.width = 512; c.height = 512;
-  const g = c.getContext('2d'); const rnd = casuale(3);
-  g.fillStyle = '#8f4127'; g.fillRect(0, 0, 512, 512);
-  for (let y = -20; y < 512; y += 44) {
-    for (let x = (y / 44) % 2 ? -18 : 0; x < 512; x += 36) {
-      const tono = 150 + rnd() * 40;
-      const gr = g.createLinearGradient(x, 0, x + 36, 0);
-      gr.addColorStop(0, `rgb(${tono * .62 | 0},${tono * .26 | 0},${tono * .16 | 0})`);
-      gr.addColorStop(.45, `rgb(${tono + 28 | 0},${tono * .5 | 0},${tono * .3 | 0})`);
-      gr.addColorStop(1, `rgb(${tono * .55 | 0},${tono * .22 | 0},${tono * .14 | 0})`);
-      g.fillStyle = gr; g.beginPath(); g.roundRect(x + 1, y, 34, 50, [14, 14, 4, 4]); g.fill();
-    }
-    g.fillStyle = 'rgba(30,10,5,.35)'; g.fillRect(0, y + 44, 512, 3);
-  }
-  g.globalCompositeOperation = 'destination-in';
-  const m = g.createRadialGradient(256, 256, 60, 256, 256, 256);
-  m.addColorStop(0, 'rgba(0,0,0,1)'); m.addColorStop(.7, 'rgba(0,0,0,.85)'); m.addColorStop(1, 'rgba(0,0,0,0)');
-  g.fillStyle = m; g.fillRect(0, 0, 512, 512);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
-}
-
 function texTarga() {
   const c = document.createElement('canvas'); c.width = 512; c.height = 256;
   const g = c.getContext('2d');
@@ -131,13 +109,31 @@ export function avvia(contenitore, leggiStadio) {
   const bagliore = new THREE.Mesh(new THREE.CircleGeometry(1.8, 48), new THREE.MeshBasicMaterial({ map: texMorbida('rgba(255,120,40,A)'), transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false }));
   bagliore.rotation.x = -Math.PI / 2; bagliore.position.set(FX, 0.004, FZ + 0.9); scena.add(bagliore);
 
-  // tetto: una porzione di coppi intorno al comignolo
+  // tetto: una porzione di falda in sezione, con i coppi veri e il foro per il faldale
   const coppi = new THREE.Group();
-  const xc = FX + 0.1;
-  coppi.position.set(xc, tetto(xc) + 0.01, FZ);
+  const xc = FX + 0.1, cx = (FX - xc) / Math.cos(PENDENZA);   // asse del comignolo lungo la falda
+  coppi.position.set(xc, tetto(xc), FZ);
   coppi.rotation.z = -PENDENZA;
-  const falda = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 2.8), new THREE.MeshStandardMaterial({ map: texCoppi(), transparent: true, roughness: .75, metalness: 0, side: THREE.DoubleSide, depthWrite: false }));
-  falda.rotation.x = -Math.PI / 2; coppi.add(falda); scena.add(coppi);
+  const geoFalda = new THREE.BoxGeometry(2.08, .07, 1.84);
+  const falda = new THREE.Mesh(geoFalda, new THREE.MeshStandardMaterial({ color: 0x4a2418, roughness: .9, metalness: 0 }));
+  falda.position.set(.08, -.047, 0); coppi.add(falda);
+  const bordo = new THREE.LineSegments(new THREE.EdgesGeometry(geoFalda), casa.material);
+  bordo.position.copy(falda.position); coppi.add(bordo);
+  const geoCoppo = new THREE.CylinderGeometry(.08, .088, .48, 14, 1, true, 0, Math.PI).rotateZ(Math.PI / 2);
+  const posti = [];
+  for (let i = 0; i < 5; i++) for (let j = 0; j < 10; j++) {
+    const x = -.72 + i * .4, z = -.81 + j * .18;
+    if (Math.hypot(Math.max(0, Math.abs(x - cx) - .24), Math.max(0, Math.abs(z) - .085)) < .4) continue;
+    posti.push([x, z]);
+  }
+  const fila = new THREE.InstancedMesh(geoCoppo, new THREE.MeshStandardMaterial({ roughness: .68, metalness: 0, side: THREE.DoubleSide }), posti.length);
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), .07), uno = new THREE.Vector3(1, 1, 1);
+  const tinta = new THREE.Color(), rndCoppi = casuale(3);
+  posti.forEach(([x, z], k) => {
+    fila.setMatrixAt(k, m4.compose(new THREE.Vector3(x, -.012, z), q, uno));
+    fila.setColorAt(k, tinta.setHSL(.035 + rndCoppi() * .025, .62, .3 + rndCoppi() * .08, THREE.SRGBColorSpace));
+  });
+  coppi.add(fila); scena.add(coppi);
 
   // ---- materiali ----
   const ghisa = new THREE.MeshStandardMaterial({ color: 0x2c3135, roughness: .42, metalness: .6 });
