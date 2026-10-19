@@ -165,10 +165,13 @@ h4 { font-size: 1.06rem; font-weight: 720; font-stretch: 106%; line-height: 1.25
 .pallino.aperto { background: #3ccf6e; box-shadow: 0 0 0 4px rgba(60, 207, 110, .18); }
 .pallino.chiuso { background: #e0a32e; }
 
-/* stato iniziale dell'intro (lo porta a fine il JS) */
+/* stato iniziale dell'intro (lo porta a fine il JS; se il JS non parte, dopo 4 s si vede tutto lo stesso) */
 .js .hero { --scan: 0; --laser: 0; --mira: 0; --zoom: 1.1; }
-.js .parola > span { transform: translateY(108%); }
-.js [data-entra] { opacity: 0; transform: translateY(14px); }
+.js .parola > span { transform: translateY(108%); animation: rete-sicura 0s 4s forwards; }
+.js [data-entra] { opacity: 0; transform: translateY(14px); animation: rete-sicura 0s 4s forwards; }
+.js .hero-img--colore { animation: rete-sicura-foto 0s 4s forwards; }
+@keyframes rete-sicura { to { opacity: 1; transform: none; } }
+@keyframes rete-sicura-foto { to { clip-path: none; } }
 
 /* FIDUCIA */
 .fiducia { background: var(--carta); border-bottom: 1px solid var(--carta-2); }
