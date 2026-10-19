@@ -133,6 +133,14 @@ function suScroll() {
   });
 }
 addEventListener('scroll', suScroll, { passive: true });
+
+// aggancio per il video di presentazione: lo chiama il registratore prima di ogni fotogramma, così stato dello
+// scroll e scene 3D sono quelli dell'istante esatto (il suo orologio finto chiama rAF ogni 16 ms, non 16,67)
+window.__fotogramma = () => {
+  aggiornaAnatomia();
+  aggiornaFilo();
+  (window.__scene3d || []).forEach(f => f());
+};
 addEventListener('resize', () => { cursore(); suScroll(); });
 suScroll();
 

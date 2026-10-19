@@ -246,6 +246,7 @@ export function avviaHero({ hero, vano, canvas }) {
   }
 
   misura();
+  (window.__scene3d ||= []).push(() => { if (inVista && !ridotto) disegna(performance.now()); });
   new ResizeObserver(() => { misura(); if (ridotto) disegna(performance.now()); }).observe(hero);
   new IntersectionObserver(([v]) => { inVista = v.isIntersecting; aggiorna(); }).observe(hero);
   document.addEventListener('visibilitychange', aggiorna);
@@ -403,6 +404,7 @@ export function avviaAnatomia({ palco, canvas, stato }) {
   }
 
   misura();
+  (window.__scene3d ||= []).push(() => { if (inVista) disegna(performance.now()); });
   new ResizeObserver(misura).observe(palco);
   new IntersectionObserver(([v]) => { inVista = v.isIntersecting; aggiorna(); }).observe(palco);
   document.addEventListener('visibilitychange', aggiorna);
