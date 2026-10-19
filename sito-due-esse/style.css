@@ -498,7 +498,7 @@ h3 { font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-stretch: 86%; font-weight: 7
   .servizi__cornice {
     display: block; position: sticky; top: calc(var(--testata) + 28px);
     align-self: start;
-    aspect-ratio: 4 / 5; max-height: calc(100svh - var(--testata) - 56px);
+    aspect-ratio: 1 / 1.08; max-height: calc(100svh - var(--testata) - 80px);
     overflow: hidden; border-radius: 2px; background-color: var(--zinco-2);
   }
   .servizi__cornice img {
@@ -511,6 +511,7 @@ h3 { font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-stretch: 86%; font-weight: 7
   .servizi__lista { gap: 0; }
   .servizio { padding: 13vh 0; border-top: 1px solid var(--linea); }
   .servizio:first-child { padding-top: 4vh; border-top: 0; }
+  .servizio:last-child { padding-bottom: 24vh; }
   .servizio h3 { color: var(--spento); transition: color .5s; }
   .servizio.attivo h3 { color: var(--grafite); }
 

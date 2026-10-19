@@ -46,12 +46,8 @@
     servizi.forEach((s, k) => s.classList.toggle('attivo', k === i));
     foto.forEach((f, k) => f.classList.toggle('attiva', k === i));
   };
-  if ('IntersectionObserver' in window) {
-    const ioS = new IntersectionObserver((voci) => {
-      voci.forEach((v) => { if (v.isIntersecting) attiva(Number(v.target.dataset.servizio)); });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    servizi.forEach((s) => ioS.observe(s));
-  }
+  const largo = matchMedia('(min-width: 1024px)');
+  let attivo = 0;
 
   // Metodo: ogni passo si accende quando arriva a tre quarti dello schermo
   const passi = document.querySelectorAll('[data-passo]');
@@ -72,6 +68,12 @@
     inCoda = false;
     const y = scrollY, h = innerHeight;
     testata.classList.toggle('scorsa', y > 12 || !menu.hidden);
+    if (largo.matches) {
+      // la voce che ha passato la metà dello schermo sceglie la foto
+      let k = 0;
+      servizi.forEach((s, i) => { if (s.getBoundingClientRect().top < h * 0.5) k = i; });
+      if (k !== attivo) { attivo = k; attiva(k); }
+    }
     if (!fermo) {
       for (const img of parallasse) {
         const r = img.parentElement.getBoundingClientRect();
