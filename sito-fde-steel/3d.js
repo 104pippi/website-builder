@@ -69,7 +69,7 @@ export function avvia(contenitore, { ridotto = false } = {}) {
   const brunito = new THREE.Color('#B07C26');
 
   dati.paths.forEach(percorso => {
-    SVGLoader.createShapes(percorso).forEach(forma => {
+    percorso.toShapes().forEach(forma => {
       const geo = new THREE.ExtrudeGeometry(forma, {
         depth: 2.6, bevelEnabled: true, bevelThickness: 0.5, bevelSize: 0.3,
         bevelSegments: 4, curveSegments: mobile ? 18 : 28
