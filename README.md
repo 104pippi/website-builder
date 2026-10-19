@@ -14,6 +14,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |
 | [sito-as-group](./sito-as-group) | https://sito-as-group.vercel.app | [video](./sito-as-group/video) |
 | [sito-bertoncello-gomme](./sito-bertoncello-gomme) | https://sito-bertoncello-gomme.vercel.app | [video](./sito-bertoncello-gomme/video) |
+| [sito-burtet-paolo](./sito-burtet-paolo) | https://sito-burtet-paolo.vercel.app | [video](./sito-burtet-paolo/video) |
 | [sito-cadel-stufe-camini](./sito-cadel-stufe-camini) | https://sito-cadel-stufe-camini.vercel.app | [video](./sito-cadel-stufe-camini/video) |
 | [sito-camtex](./sito-camtex) | https://sito-camtex.vercel.app | [video](./sito-camtex/video) |
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
