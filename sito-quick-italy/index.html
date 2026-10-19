@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quick S.p.A. | Stabilizzatori, salpa ancora ed eliche di manovra a Ravenna</title>
+  <meta name="description" content="Quick progetta e costruisce in Italia stabilizzatori Quick Gyro, salpa ancora, eliche di manovra e luci per barche e superyacht. Dal 1982.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://sito-quick-italy.vercel.app/">
+  <meta name="theme-color" content="#04131F">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Quick S.p.A.">
+  <meta property="og:title" content="Quick S.p.A. | Il mare calmo si costruisce a Ravenna">
+  <meta property="og:description" content="Stabilizzatori Quick Gyro, salpa ancora, eliche di manovra e luci nautiche progettati e costruiti in Italia dal 1982.">
+  <meta property="og:image" content="https://sito-quick-italy.vercel.app/assets/img/og-quick.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://sito-quick-italy.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-tramonto-m.webp" type="image/webp" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-tramonto.webp" type="image/webp" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Quick S.p.A.",
+    "description": "Progettazione e produzione di equipaggiamenti nautici: stabilizzatori giroscopici Quick Gyro, salpa ancora, ancore, eliche di manovra, luci, linea energia e scalda acqua.",
+    "url": "https://sito-quick-italy.vercel.app/",
+    "image": "https://sito-quick-italy.vercel.app/assets/img/og-quick.jpg",
+    "logo": "https://sito-quick-italy.vercel.app/apple-touch-icon.png",
+    "telephone": "+390544415061",
+    "faxNumber": "+390544415047",
+    "email": "quick@quickitaly.com",
+    "vatID": "IT01216790392",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Piangipane 120/A",
+      "postalCode": "48124",
+      "addressLocality": "Piangipane",
+      "addressRegion": "RA",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://www.instagram.com/quickgroup_official/",
+      "https://www.facebook.com/quickgroupofficial/",
+      "https://www.linkedin.com/company/quick-srl",
+      "https://www.youtube.com/quickitaly",
+      "https://vimeo.com/quickitaly"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo-quick" viewBox="0 0 374.2 51">
+      <path fill="#de191a" fill-rule="evenodd" d="M13,24.4h12.7c7.5,0,11.1,4.6,13.3,6.8.7-1.7,1.1-3.5,1.1-5.4,0-7.5-6.1-13.6-13.6-13.6-7,0-12.8,5.2-13.6,12.1h0Z"/>
+      <path fill="#de191a" d="M25,32.8h-10.2c3.8,6.5,12.2,8.6,18.7,4.7,0,0,.1,0,.2-.1h0c-3.1-3.2-4.7-4.6-8.6-4.6Z"/>
+      <path fill="#de191a" fill-rule="evenodd" d="M0,0v26c.2,5.3,3.3,10.1,8,12.5C1.1,28.3,3.7,14.4,13.9,7.5,24.1.5,38,3.1,44.9,13.3c5,7.2,5.2,16.7.6,24.2h0c1.4,1.4,3.2,2.2,5.1,2.2h2.2V0H0Z"/>
+      <rect fill="#009247" y="46.3" width="17.6" height="4.7"/>
+      <rect fill="#de191a" x="35.3" y="46.3" width="17.6" height="4.7"/>
+      <rect fill="#ffffff" x="17.6" y="46.3" width="17.6" height="4.7"/>
+      <g fill="currentColor">
+        <path d="M367.2,0c3.9,0,7.1,3.2,7.1,7.1s-3.2,7.1-7.1,7.1c-3.9,0-7.1-3.2-7.1-7.1h0C360.1,3.2,363.2,0,367.2,0ZM367.2,12.6c3,0,5.5-2.5,5.5-5.5,0-3-2.5-5.5-5.5-5.5-3,0-5.5,2.5-5.5,5.5s2.5,5.5,5.5,5.5c0,0,0,0,0,0ZM366.8,7.7h-1v3.3h-1.6V3.1h3c2,0,3.1.6,3.1,2.4.1,1.1-.7,2.1-1.8,2.2,0,0-.2,0-.3,0l2.1,3.4h-1.6l-1.9-3.3ZM367.2,6.6c1,0,1.6-.3,1.6-1.1s-.6-1-1.3-1h-1.6v2.1h1.4Z"/>
+        <path d="M92.4,44c-17.2,0-23.7-10.2-23.7-21.9S75.2,0,92.4,0h21.8C131.3,0,138,10.5,138,22.1s-2.9,14.6-9.5,18.5l9.8,10.4h-9.1l-7.5-7.9c-2.5.6-5,.9-7.5.9h-21.8ZM115.4,26.7l6.5,7c3.8-2.3,6-6.3,6-11.7,0-8.9-5.7-13.9-15.6-13.9h-18.1c-10,0-15.5,5.1-15.5,13.9s5.6,13.9,15.5,13.9h15.5c1.6,0,3.2-.1,4.8-.4l-8.3-8.9h9.1Z"/>
+        <path d="M167.1,44c-17.2,0-23.7-9.3-23.7-21.6V.6h10.1v21.8c0,9.5,5.6,13.6,15.5,13.6h14.8c9.8,0,15.6-4.1,15.6-13.6V.6h10.1v21.8c0,12.2-6.7,21.6-23.8,21.6h-18.5Z"/>
+        <path d="M217,.6h10.1v42.8h-10.1V.6Z"/>
+        <path d="M258.8,8.1c-10,0-15.5,5.1-15.5,14s5.6,13.8,15.5,13.8h15.6c7,0,11.9-2.3,14.2-7.2h10.6c-2.2,8.5-9.2,15.3-22.9,15.3h-19.3c-17.2,0-23.7-10.2-23.7-21.8S239.7,0,256.9,0h19.3C289.6,0,296.6,6.5,299,14.8h-10.7c-2.4-4.5-7.3-6.7-13.9-6.7h-15.6Z"/>
+        <path d="M358.1.6l-33.1,19.4,36,23.3h-16.9l-29.1-19v19h-9.8V.6h9.8v15.6l26.5-15.6h16.6Z"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <a class="salta" href="#contenuto">Vai al contenuto</a>
+
+  <header class="testata" data-testata>
+    <div class="testata__riga">
+      <a class="testata__logo" href="#top" aria-label="Quick S.p.A., torna all'inizio">
+        <svg viewBox="0 0 374.2 51" role="img" aria-hidden="true"><use href="#logo-quick"/></svg>
+      </a>
+      <nav class="testata__nav" aria-label="Sezioni">
+        <a href="#rollio">Quick Gyro</a>
+        <a href="#prodotti">Prodotti</a>
+        <a href="#superyacht">Superyacht</a>
+        <a href="#azienda">Azienda</a>
+        <a href="#fiere">Fiere</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <div class="testata__azioni">
+        <a class="testata__tel" href="tel:+390544415061">+39 0544 415 061</a>
+        <a class="btn btn--cta testata__cta" href="#quotazione">Richiedi una quotazione</a>
+        <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu-mobile" data-apri-menu>
+          <span class="sr">Apri il menu</span>
+          <span class="hamburger" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-mobile" id="menu-mobile" hidden data-menu>
+    <nav aria-label="Menu">
+      <a href="#rollio">Quick Gyro</a>
+      <a href="#prodotti">Prodotti</a>
+      <a href="#superyacht">Superyacht</a>
+      <a href="#azienda">Azienda</a>
+      <a href="#fiere">Fiere</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="menu-mobile__piede">
+      <a class="btn btn--cta" href="#quotazione">Richiedi una quotazione</a>
+      <a class="btn btn--vuoto" href="tel:+390544415061">Chiama +39 0544 415 061</a>
+    </div>
+  </div>
+
+  <main id="contenuto">
+
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-titolo">
+      <div class="hero__media" data-hero-media>
+        <picture>
+          <source media="(max-width: 700px)" srcset="assets/img/hero-tramonto-m.webp" type="image/webp">
+          <source media="(max-width: 700px)" srcset="assets/img/hero-tramonto-m.jpg">
+          <source srcset="assets/img/hero-tramonto.webp" type="image/webp">
+          <img src="assets/img/hero-tramonto.jpg" width="1920" height="1271" fetchpriority="high" decoding="async"
+               alt="Superyacht ormeggiato al tramonto, sul mare piatto come uno specchio" data-hero-img>
+        </picture>
+      </div>
+      <div class="hero__velo" aria-hidden="true"></div>
+
+      <div class="hero__testo">
+        <h1 class="hero__titolo" id="hero-titolo">
+          <span class="riga"><span>Il mare calmo</span></span>
+          <span class="riga"><span>si costruisce</span></span>
+          <span class="riga"><span>a Ravenna.</span></span>
+        </h1>
+        <div class="hero__basso">
+          <div class="clino hero__clino" aria-hidden="true" data-clino-hero>
+            <svg class="clino__quadrante" viewBox="0 0 120 70">
+              <path class="clino__arco" d="M20.4 45.6 A56 56 0 0 0 99.6 45.6"/>
+              <g class="clino__tacche"></g>
+              <g class="clino__ago" data-ago><line x1="60" y1="6" x2="60" y2="58"/><circle cx="60" cy="6" r="3"/><circle cx="60" cy="56" r="2.6"/></g>
+            </svg>
+            <p class="clino__dati"><span>Rollio</span> <strong data-clino-valore>4,5°</strong></p>
+          </div>
+          <p class="hero__lead">Stabilizzatori giroscopici, salpa ancora, eliche di manovra e luci progettati e costruiti in Italia, per barche da 7 metri fino ai superyacht. Dal 1982.</p>
+          <div class="hero__azioni">
+            <a class="btn btn--cta btn--grande" href="#quotazione">Richiedi una quotazione</a>
+            <a class="btn btn--vuoto btn--grande" href="tel:+390544415061">Chiama l'ufficio commerciale</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="hero__giu" href="#fiducia" aria-label="Scorri ai numeri di Quick"><span></span></a>
+    </section>
+
+    <!-- FIDUCIA -->
+    <section class="fiducia" id="fiducia" aria-label="Quick in numeri">
+      <ul class="fiducia__lista">
+        <li><strong>1982</strong><span>l'anno in cui comincia la storia di Quick</span></li>
+        <li><strong>450+</strong><span>collaboratori nel gruppo, oltre 200 nella sede italiana</span></li>
+        <li><strong>20.000 m²</strong><span>coperti nella sede di Piangipane, su oltre 30.000</span></li>
+        <li><strong>ISO</strong><span>certificazioni 9001, 14001 e 45001</span></li>
+        <li><strong>Compasso d'Oro</strong><span>Menzione d'Onore ADI per i salpa ancora Prince</span></li>
+      </ul>
+    </section>
+
+    <!-- ROLLIO 3D -->
+    <section class="rollio" id="rollio" aria-labelledby="rollio-titolo" data-rollio>
+      <div class="rollio__palco">
+        <div class="rollio__scena" data-rollio-scena>
+          <picture class="rollio__fallback">
+            <source srcset="assets/img/gyro-ancora.webp" type="image/webp">
+            <img src="assets/img/gyro-ancora.jpg" width="1600" height="1200" loading="lazy" decoding="async"
+                 alt="Barca a motore all'ancora su mare aperto">
+          </picture>
+          <canvas class="rollio__canvas" data-rollio-canvas aria-hidden="true"></canvas>
+        </div>
+        <div class="rollio__velo" aria-hidden="true"></div>
+
+        <div class="rollio__testa">
+          <h2 class="rollio__titolo" id="rollio-titolo">Quick Gyro</h2>
+          <p class="rollio__nota">Stabilizzatori giroscopici MC². Scorri: la simulazione mostra che cosa succede a bordo.</p>
+        </div>
+
+        <div class="rollio__strumenti" aria-hidden="true">
+          <div class="clino clino--grande" data-clino-rollio>
+            <svg class="clino__quadrante" viewBox="0 0 120 70">
+              <path class="clino__arco" d="M20.4 45.6 A56 56 0 0 0 99.6 45.6"/>
+              <g class="clino__tacche"></g>
+              <g class="clino__ago" data-ago><line x1="60" y1="6" x2="60" y2="58"/><circle cx="60" cy="6" r="3"/><circle cx="60" cy="56" r="2.6"/></g>
+            </svg>
+          </div>
+          <dl class="strumenti__dati">
+            <div><dt>Rollio</dt><dd data-hud-rollio>14,0°</dd></div>
+            <div><dt>Riduzione</dt><dd data-hud-riduzione>0%</dd></div>
+            <div class="strumenti__volano"><dt>Volano</dt><dd><span class="barra"><i data-hud-volano></i></span><em data-hud-volano-testo>fermo</em></dd></div>
+          </dl>
+        </div>
+
+        <ol class="rollio__passi" data-passi>
+          <li class="passo attivo" data-passo="0">
+            <h3>Onda al traverso.</h3>
+            <p>Senza stabilizzatore la barca rolla. In navigazione si sente, all'ancora ancora di più: basta il mare che arriva di lato.</p>
+          </li>
+          <li class="passo" data-passo="1">
+            <h3>Dentro, un volano.</h3>
+            <p>Quick Gyro fa girare un volano su asse orizzontale: meno stress meccanici, meno attriti, meno calore. È raffreddato ad aria, quindi niente nuove prese a mare né pompe.</p>
+          </li>
+          <li class="passo" data-passo="2">
+            <h3>Il rollio si spegne.</h3>
+            <p>A ogni onda il volano reagisce e contrasta l'oscillazione: fino al 95% di rollio in meno, in navigazione e all'ancora.</p>
+          </li>
+          <li class="passo" data-passo="3">
+            <h3>Da X2 a X75.</h3>
+            <p>Tredici taglie, fino alle imbarcazioni da 250 tonnellate. Compatto, facile da installare, la manutenzione si fa a bordo.</p>
+            <a class="btn btn--cta" href="#quotazione" data-scegli="Quick Gyro">Richiedi la quotazione per la tua barca</a>
+          </li>
+        </ol>
+        <div class="rollio__avanzamento" aria-hidden="true"><i data-rollio-barra></i></div>
+      </div>
+    </section>
+
+    <!-- GAMMA GYRO -->
+    <section class="gamma" id="gamma" aria-labelledby="gamma-titolo">
+      <div class="contenitore gamma__griglia">
+        <div class="gamma__intro">
+          <h2 id="gamma-titolo">Tredici taglie, una per la tua barca.</h2>
+          <p>La coppia anti-rollio cresce con la taglia: dall'X2, il più piccolo della gamma, all'X75 per le imbarcazioni fino a 250 tonnellate. Dicci lunghezza e dislocamento della tua barca e ti proponiamo quello giusto.</p>
+          <figure class="gamma__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/gyro-x13.webp" type="image/webp">
+              <img src="assets/img/gyro-x13.jpg" width="1400" height="791" loading="lazy" decoding="async"
+                   alt="Stabilizzatore Quick Gyro X13 installato in sala macchine, con il bollino della garanzia di quattro anni">
+            </picture>
+            <figcaption>
+              <strong>Garanzia fino a quattro anni.</strong>
+              L'estensione per Quick Gyro presentata a boot Düsseldorf 2026.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="coppie" data-coppie>
+          <p class="coppie__legenda" id="coppie-legenda">Coppia anti-rollio in N·m, alimentazione AC o DC</p>
+          <ul class="coppie__lista" aria-describedby="coppie-legenda">
+            <li style="--v:2000"><b>X2</b><span class="alim">DC</span><span class="barra"><i></i></span><span class="num">2.000</span></li>
+            <li style="--v:3900"><b>X3</b><span class="alim">DC</span><span class="barra"><i></i></span><span class="num">3.900</span></li>
+            <li style="--v:5600"><b>X5</b><span class="alim">AC DC</span><span class="barra"><i></i></span><span class="num">5.600</span></li>
+            <li style="--v:7000"><b>X7</b><span class="alim">AC DC</span><span class="barra"><i></i></span><span class="num">7.000</span></li>
+            <li style="--v:10500"><b>X10</b><span class="alim">AC DC</span><span class="barra"><i></i></span><span class="num">10.500</span></li>
+            <li style="--v:13000"><b>X13</b><span class="alim">AC DC</span><span class="barra"><i></i></span><span class="num">13.000</span></li>
+            <li style="--v:16500"><b>X16</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">16.500</span></li>
+            <li style="--v:18700"><b>X19</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">18.700</span></li>
+            <li style="--v:25500"><b>X25</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">25.500</span></li>
+            <li style="--v:30500"><b>X30</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">30.500</span></li>
+            <li style="--v:40500"><b>X40</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">40.500</span></li>
+            <li style="--v:56000"><b>X56</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">56.000</span></li>
+            <li style="--v:75000"><b>X75</b><span class="alim">AC</span><span class="barra"><i></i></span><span class="num">75.000</span></li>
+          </ul>
+          <div class="coppie__piede">
+            <a class="btn btn--cta" href="#quotazione" data-scegli="Quick Gyro">Richiedi una quotazione Gyro</a>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/stabilizzatori-mc2/mc2-quick-gyro-serie-x-ac-dc/" target="_blank" rel="noopener">Schede tecniche complete</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODOTTI -->
+    <section class="prodotti" id="prodotti" aria-labelledby="prodotti-titolo">
+      <div class="contenitore prodotti__testa">
+        <h2 id="prodotti-titolo">Da prua a poppa.</h2>
+        <p>Sei famiglie di prodotti, progettate e prodotte negli stabilimenti Quick in Italia. Ognuna ha il suo posto a bordo.</p>
+      </div>
+
+      <div class="pianta" data-pianta>
+        <div class="contenitore pianta__riga">
+          <svg class="pianta__barca" viewBox="0 0 600 100" aria-hidden="true">
+            <path class="scafo" d="M18 24 L350 16 C462 16 540 30 592 50 C540 70 462 84 350 84 L18 76 Z"/>
+            <path class="coperta" d="M30 31 L350 25 C445 25 505 36 548 50 C505 64 445 75 350 75 L30 69 Z"/>
+            <rect class="tuga" x="170" y="34" width="230" height="32" rx="12"/>
+            <line class="asse" x1="30" y1="50" x2="575" y2="50"/>
+            <g class="punto" data-zona="ancoraggio" transform="translate(560 50)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="manovra" transform="translate(505 50)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="manovra" transform="translate(44 50)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="stabilizzazione" transform="translate(240 50)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="stabilizzazione" transform="translate(22 34)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="luci" transform="translate(320 41)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="energia" transform="translate(130 60)"><circle class="alone" r="15"/><circle r="6"/></g>
+            <g class="punto" data-zona="integrati" transform="translate(388 50)"><circle class="alone" r="15"/><circle r="6"/></g>
+          </svg>
+          <p class="pianta__dove" aria-live="polite" data-pianta-dove>A prua: salpa ancora e ancore</p>
+        </div>
+      </div>
+
+      <div class="contenitore linee">
+        <article class="linea" data-zona="ancoraggio" data-dove="A prua: salpa ancora e ancore">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/salpa-xr7.webp" type="image/webp">
+              <img src="assets/img/salpa-xr7.jpg" width="1400" height="791" loading="lazy" decoding="async"
+                   alt="Due salpa ancora Quick in acciaio inox montati sul ponte in teak">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Ancoraggio</h3>
+            <p>Salpa ancora ad asse verticale e orizzontale, on-deck e solo cima, verricelli da tonneggio e multiuso. Contacatena, pulsantiere e radiocomandi per comandarli da dove vuoi, e le ancore Olympic.</p>
+            <ul class="linea__voci"><li>Salpa ancora</li><li>Verricelli</li><li>Ancore Olympic</li><li>Radiocomandi</li></ul>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/salpa-ancora-e-verricelli/" target="_blank" rel="noopener">Catalogo salpa ancora</a>
+          </div>
+        </article>
+
+        <article class="linea" data-zona="manovra" data-dove="A prua e a poppa: eliche di manovra">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/manovra-tunnel.webp" type="image/webp">
+              <img src="assets/img/manovra-tunnel.jpg" width="1348" height="770" loading="lazy" decoding="async"
+                   alt="Elica di manovra Quick vista dentro il tunnel nello scafo">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Manovra</h3>
+            <p>Eliche di prua e di poppa DC, AC, DC-AC e idrauliche, anche retrattili, fino alla nuova gamma completa QSY presentata al Cannes Yachting Festival 2026. Con comandi remoti, radiocomandi e controllo proporzionale, l'ormeggio si fa con un dito.</p>
+            <ul class="linea__voci"><li>Eliche QSY</li><li>Retrattili</li><li>Hydro</li><li>Comandi proporzionali</li></ul>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/sistemi-di-manovra/" target="_blank" rel="noopener">Catalogo eliche di manovra</a>
+          </div>
+        </article>
+
+        <article class="linea" data-zona="stabilizzazione" data-dove="Sottocoperta e a poppa: stabilizzatori MC²">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/gyro-mc2-barca.webp" type="image/webp">
+              <img src="assets/img/gyro-mc2-barca.jpg" width="1260" height="1000" loading="lazy" decoding="async"
+                   alt="Barca con la livrea MC² Quick Gyro in navigazione controluce">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Stabilizzazione MC²</h3>
+            <p>Il marchio MC² nasce da Marecalmo. Oggi riunisce i giroscopici Quick Gyro, le pinne Viator e i trim tab Intercepta: tre modi per tenere la barca dritta, sottocoperta e a poppa.</p>
+            <ul class="linea__voci"><li>Quick Gyro</li><li>Pinne Viator</li><li>Trim tab Intercepta</li></ul>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/stabilizzatori-mc2/" target="_blank" rel="noopener">Catalogo stabilizzatori</a>
+          </div>
+        </article>
+
+        <article class="linea" data-zona="luci" data-dove="Negli interni e sott'acqua: luci">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/luci-gea.webp" type="image/webp">
+              <img src="assets/img/luci-gea.jpg" width="1600" height="687" loading="lazy" decoding="async"
+                   alt="Salone di uno yacht illuminato dalle luci della collezione Arcipelago Gea">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Quick Marine Lighting</h3>
+            <p>Luci da incasso, lineari, da lettura, di cortesia e subacquee, fino alle collezioni di design Arcipelago: Gea, Nausicaa, Penelope e Planeta. Alle spalle c'è Scotti, illuminotecnica nautica dal 1945.</p>
+            <ul class="linea__voci"><li>Collezioni Arcipelago</li><li>Downlight Zenith</li><li>Luci subacquee</li></ul>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/quick-marine-lighting/" target="_blank" rel="noopener">Catalogo luci</a>
+          </div>
+        </article>
+
+        <article class="linea linea--prodotto" data-zona="energia" data-dove="In sala macchine: energia e acqua calda">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/energia-sbc.webp" type="image/webp">
+              <img src="assets/img/energia-sbc.jpg" width="394" height="480" loading="lazy" decoding="async"
+                   alt="Carica batterie Quick SBC NRG+ in due taglie">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Energia e acqua calda</h3>
+            <p>Carica batterie SBC NRG+, inverter a onda sinusoidale, staccabatterie, separatori di carica e riduttori di tensione. E gli scalda acqua Nautic Boiler, prodotti nel gruppo dal 1998.</p>
+            <ul class="linea__voci"><li>Carica batterie</li><li>Inverter</li><li>Scalda acqua</li></ul>
+            <a class="link" href="https://www.quickitaly.com/it/prodotti/linea-energia/" target="_blank" rel="noopener">Catalogo linea energia</a>
+          </div>
+        </article>
+
+        <article class="linea" data-zona="integrati" data-dove="In plancia: sistemi integrati">
+          <figure class="linea__foto" data-rivela>
+            <picture>
+              <source srcset="assets/img/ferretti-670.webp" type="image/webp">
+              <img src="assets/img/ferretti-670.jpg" width="1200" height="800" loading="lazy" decoding="async"
+                   alt="Ferretti Yachts 670 in navigazione al tramonto">
+            </picture>
+          </figure>
+          <div class="linea__testo">
+            <h3>Sistemi integrati</h3>
+            <p>QNN porta eliche, salpa ancora, Gyro, carica batterie e luci sui chart plotter di ultima generazione, via HTML5. Il sistema PCS li collega su rete CAN bus, con monitoraggio, protezione e diagnostica.</p>
+            <p class="linea__caso"><strong>Su Ferretti Yachts 670</strong> eliche DC-AC con sistema PCS e tre postazioni di comando: cockpit, flying bridge e pilot bridge.</p>
+            <a class="link" href="https://www.quickitaly.com/it/sistemi-integrati/" target="_blank" rel="noopener">Come funzionano i sistemi integrati</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRINCE / DESIGN -->
+    <section class="design" id="design" aria-labelledby="design-titolo">
+      <div class="contenitore design__griglia">
+        <figure class="design__foto" data-rivela>
+          <picture>
+            <source srcset="assets/img/prince.webp" type="image/webp">
+            <img src="assets/img/prince.jpg" width="1110" height="630" loading="lazy" decoding="async"
+                 alt="Salpa ancora Quick della serie Prince sul ponte, accanto a una cima">
+          </picture>
+        </figure>
+        <div class="design__testo">
+          <h2 id="design-titolo">Bravi e… belli.</h2>
+          <p>La serie Prince è stata la prima linea di salpa ancora a ricevere la Menzione d'Onore al Compasso d'Oro ADI, dopo il premio di categoria ai Nautical Design Awards.</p>
+          <p>Acciaio inox AISI 316, alluminio anodizzato e fibra, lavorati con imbutitura e costampaggio plastica-metallo: meno passaggi nella filiera, meno scarti, e un salpa ancora che impreziosisce il gavone.</p>
+          <p class="design__premio">Quick ha ricevuto di nuovo la Menzione d'Onore alla XXVIII edizione del Compasso d'Oro.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPERYACHT -->
+    <section class="superyacht" id="superyacht" aria-labelledby="superyacht-titolo">
+      <div class="superyacht__media" data-parallasse>
+        <picture>
+          <source srcset="assets/img/superyacht-notte.webp" type="image/webp">
+          <img src="assets/img/superyacht-notte.jpg" width="1920" height="1080" loading="lazy" decoding="async"
+               alt="Superyacht ormeggiato di notte con le luci subacquee accese">
+        </picture>
+      </div>
+      <div class="contenitore superyacht__testo">
+        <h2 id="superyacht-titolo">Oltre i 90 piedi.</h2>
+        <p>Per yacht e superyacht Quick produce e personalizza componenti su misura, con la cura dei dettagli che chiedono armatori e comandanti. Lavoriamo con i più grandi cantieri e con i progettisti più affermati del mondo.</p>
+      </div>
+      <div class="contenitore cantieri">
+        <h3 class="cantieri__titolo">Ci hanno scelto</h3>
+        <ul class="cantieri__lista">
+          <li>Azimut</li><li>Benetti</li><li>Ferretti</li><li>Riva</li><li>Pershing</li><li>Custom Line</li><li>CRN</li>
+          <li>Sunseeker</li><li>Princess</li><li>Wally</li><li>Mangusta</li><li>Itama</li><li>Mochi Craft</li>
+          <li>Beneteau</li><li>Jeanneau</li><li>Lagoon</li><li>Fountaine Pajot</li><li>Hanse</li><li>Bavaria</li>
+          <li>Grand Soleil</li><li>Sessa</li><li>Fiart</li><li>Absolute</li><li>Pardo</li><li>Invictus</li>
+          <li>Wajer</li><li>Frauscher</li><li>Sunreef</li><li>Numarine</li><li>Gulf Craft</li><li>Ocean Alexander</li>
+          <li>Sea Ray</li><li>Tecnomar</li><li>Wauquiez</li><li>Amel</li><li>Solaris</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AZIENDA -->
+    <section class="azienda" id="azienda" aria-labelledby="azienda-titolo">
+      <div class="contenitore azienda__testa">
+        <h2 id="azienda-titolo">Da Piangipane, in tutto il mondo.</h2>
+        <p>Nella campagna ravennate, su oltre 30.000 m² di cui 20.000 coperti, Quick tiene insieme direzione, produzione e laboratori di ricerca e sviluppo. Accanto c'è CATT, la fabbrica metalmeccanica del gruppo: CAD-CAM, centri CNC di ultima generazione, torni e strumenti di precisione. Per questo un prodotto Quick si può anche fare su misura.</p>
+      </div>
+
+      <div class="contenitore azienda__foto">
+        <figure class="azienda__sede" data-rivela>
+          <picture>
+            <source srcset="assets/img/sede-ravenna.webp" type="image/webp">
+            <img src="assets/img/sede-ravenna.jpg" width="1260" height="1000" loading="lazy" decoding="async"
+                 alt="La sede Quick di Piangipane vista dall'alto, tra i campi della campagna ravennate">
+          </picture>
+          <figcaption>La sede di Piangipane, ampliata nel 2016.</figcaption>
+        </figure>
+        <figure class="azienda__fusione" data-rivela>
+          <picture>
+            <source srcset="assets/img/produzione.webp" type="image/webp">
+            <img src="assets/img/produzione.jpg" width="1110" height="630" loading="lazy" decoding="async"
+                 alt="Dettaglio di un componente in metallo con il logo Quick in rilievo">
+          </picture>
+          <figcaption>Progettato, prodotto e ingegnerizzato in Italia.</figcaption>
+        </figure>
+      </div>
+
+      <div class="contenitore storia">
+        <h3 class="storia__titolo">Come siamo arrivati qui</h3>
+        <ol class="storia__lista" data-storia>
+          <li><span class="anno">1982</span><p>Michele Marzucco e Alfonso Peduto iniziano nel cantiere Comar e fondano PM Marina.</p></li>
+          <li><span class="anno">1992</span><p>PM Marina acquisisce Quick.</p></li>
+          <li><span class="anno">1998</span><p>Entra Nautic Boiler, branch italiano di Atwood.</p></li>
+          <li><span class="anno">2003</span><p>Arriva CATT: lavorazioni meccaniche e stampi per materie plastiche.</p></li>
+          <li><span class="anno">2006</span><p>Nasce Quick USA, distribuzione e assistenza per le Americhe.</p></li>
+          <li><span class="anno">2007</span><p>Acquisizione di Sigmar Marine, specializzata in scalda acqua.</p></li>
+          <li><span class="anno">2016</span><p>Arriva il marchio MC² Marecalmo: la produzione dei Gyro passa negli stabilimenti Quick.</p></li>
+          <li><span class="anno">2018</span><p>Nasce Quick UK. Chiara e Carlo Marzucco entrano in azienda.</p></li>
+          <li><span class="anno">2022</span><p>Fondo Italiano d'Investimento e Armònia SGR acquisiscono il 70% per accelerare la crescita.</p></li>
+          <li><span class="anno">2023</span><p>Entrano nel gruppo Sanguineti, Xenta e Nemo.</p></li>
+        </ol>
+      </div>
+
+      <div class="contenitore gruppo">
+        <h3 class="gruppo__titolo">Il gruppo</h3>
+        <ul class="gruppo__lista">
+          <li><a href="https://www.quickusa.com" target="_blank" rel="noopener">Quick USA</a></li>
+          <li><a href="https://www.quick-uk.com" target="_blank" rel="noopener">Quick UK</a></li>
+          <li><a href="http://www.catt-srl.it" target="_blank" rel="noopener">C.A.T.T.</a></li>
+          <li><a href="https://sanguineti.com" target="_blank" rel="noopener">Sanguineti</a></li>
+          <li><a href="https://www.xentas.com" target="_blank" rel="noopener">Xenta</a></li>
+          <li><a href="https://www.nemoindustrie.com" target="_blank" rel="noopener">Nemo</a></li>
+          <li><a href="https://www.quickitaly.com/sigmar" target="_blank" rel="noopener">Sigmar</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FIERE -->
+    <section class="fiere" id="fiere" aria-labelledby="fiere-titolo">
+      <div class="contenitore fiere__testa">
+        <h2 id="fiere-titolo">Vieni a vederli dal vivo.</h2>
+        <p>I prossimi saloni in cui trovi i prodotti Quick, con il gruppo o con i nostri rivenditori.</p>
+      </div>
+      <ol class="contenitore tabellone">
+        <li>
+          <time datetime="2026-10-21"><b>21–25</b><span>ott 2026</span></time>
+          <div><h3>Biograd Boat Show</h3><p>Biograd na Moru, Croazia. Con EYS.</p></div>
+        </li>
+        <li>
+          <time datetime="2026-10-28"><b>28.10–1.11</b><span>2026</span></time>
+          <div><h3>Fort Lauderdale International Boat Show</h3><p>Florida, Stati Uniti. Con Quick USA.</p></div>
+        </li>
+        <li>
+          <time datetime="2026-11-04"><b>4–7</b><span>nov 2026</span></time>
+          <div><h3>Qatar Boat Show</h3><p>Doha, Qatar. Con Jinan (Brook Qatar).</p></div>
+        </li>
+        <li>
+          <time datetime="2026-11-08"><b>8–16</b><span>nov 2026</span></time>
+          <div><h3>Salone Nautico Navigare</h3><p>Napoli, Italia. Con un rivenditore Quick.</p></div>
+        </li>
+        <li class="tabellone__evidenza">
+          <time datetime="2026-11-17"><b>17–19</b><span>nov 2026</span></time>
+          <div><h3>METS Amsterdam</h3><p>Paesi Bassi. Quick Group, Hall 01 stand 153 e 251, Hall 07 stand 120.</p></div>
+        </li>
+        <li>
+          <time datetime="2026-12-02"><b>2–6</b><span>dic 2026</span></time>
+          <div><h3>Athens International Boat Show</h3><p>Atene, Grecia. Con Motorcraft e Deligianis (MC²).</p></div>
+        </li>
+      </ol>
+      <p class="contenitore fiere__piede"><a class="link link--chiaro" href="https://www.quickitaly.com/it/rivenditori/italia/" target="_blank" rel="noopener">Trova il rivenditore più vicino</a></p>
+    </section>
+
+    <!-- QUOTAZIONE E CONTATTI -->
+    <section class="contatti" id="contatti" aria-labelledby="quotazione-titolo">
+      <div class="contatti__banda" aria-hidden="true">
+        <picture>
+          <source srcset="assets/img/infinito.webp" type="image/webp">
+          <img src="assets/img/infinito.jpg" width="1110" height="510" loading="lazy" decoding="async" alt="">
+        </picture>
+      </div>
+      <div class="contenitore contatti__griglia" id="quotazione">
+        <div class="contatti__info">
+          <h2 id="quotazione-titolo">Richiedi una quotazione.</h2>
+          <p class="contatti__lead">Raccontaci la tua barca e che cosa ti serve. Ti risponde l'ufficio giusto: commerciale Italia, commerciale estero o tecnico.</p>
+
+          <ul class="recapiti">
+            <li><span>Telefono</span><a href="tel:+390544415061">+39 0544 415 061</a></li>
+            <li><span>Email</span><a href="mailto:quick@quickitaly.com">quick@quickitaly.com</a></li>
+            <li><span>Sede</span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Quick%20S.p.A.%2C%20Via%20Piangipane%20120%2FA%2C%2048124%20Piangipane%20RA" target="_blank" rel="noopener">Via Piangipane 120/A, 48124 Piangipane (RA)</a></li>
+            <li><span>Orari uffici</span><em>[DA CONFERMARE]</em></li>
+          </ul>
+
+          <div class="mappa">
+            <iframe title="Mappa della sede Quick a Piangipane" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Via%20Piangipane%20120%2FA%2C%2048124%20Piangipane%20RA&amp;output=embed"></iframe>
+          </div>
+
+          <div class="sedi">
+            <div>
+              <h3>Quick USA</h3>
+              <p>3406 SW 26th Terrace, Suite C1<br>Fort Lauderdale, FL 33312</p>
+              <p><a href="tel:+14106365991">+1 410 6365 991</a><br><a href="mailto:customerservice@quickusa.com">customerservice@quickusa.com</a></p>
+            </div>
+            <div>
+              <h3>Quick UK</h3>
+              <p>6, 7, 8 Glenmore Business Park, Lime Kiln Lane<br>Holbury, Southampton SO45 2AR</p>
+              <p><a href="tel:+442380879013">+44 02380 879013</a><br><a href="https://www.quick-uk.com" target="_blank" rel="noopener">quick-uk.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="modulo" data-modulo novalidate>
+          <fieldset class="modulo__chi">
+            <legend>Sei</legend>
+            <label><input type="radio" name="chi" value="Armatore" checked><span>Armatore</span></label>
+            <label><input type="radio" name="chi" value="Cantiere"><span>Cantiere</span></label>
+            <label><input type="radio" name="chi" value="Rivenditore"><span>Rivenditore</span></label>
+            <label><input type="radio" name="chi" value="Comandante o tecnico"><span>Comandante o tecnico</span></label>
+          </fieldset>
+
+          <label class="campo campo--pieno">
+            <span>Ti interessa</span>
+            <select name="prodotto" data-prodotto>
+              <option>Quick Gyro</option>
+              <option>Salpa ancora e ancore</option>
+              <option>Eliche di manovra</option>
+              <option>Pinne Viator e trim tab Intercepta</option>
+              <option>Luci Quick Marine Lighting</option>
+              <option>Energia e scalda acqua</option>
+              <option>Sistemi integrati QNN e PCS</option>
+              <option>Assistenza tecnica</option>
+              <option>Altro</option>
+            </select>
+          </label>
+
+          <label class="campo"><span>Nome e cognome</span><input name="nome" autocomplete="name" required></label>
+          <label class="campo"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label class="campo"><span>Telefono</span><input name="telefono" type="tel" autocomplete="tel"></label>
+          <label class="campo"><span>Paese</span><input name="paese" autocomplete="country-name" value="Italia"></label>
+
+          <label class="campo campo--pieno"><span>Barca: cantiere e modello</span><input name="barca" placeholder="Es. Azimut 68"></label>
+          <label class="campo"><span>Lunghezza (m)</span><input name="lunghezza" inputmode="decimal"></label>
+          <label class="campo"><span>Dislocamento (t)</span><input name="dislocamento" inputmode="decimal"></label>
+
+          <label class="campo campo--pieno"><span>Messaggio</span><textarea name="messaggio" rows="4" placeholder="Che cosa vorresti installare, e dove navighi?"></textarea></label>
+
+          <label class="modulo__privacy"><input type="checkbox" name="privacy" required><span>Ho letto l'<a href="#privacy">informativa privacy</a>.</span></label>
+
+          <p class="modulo__errore" role="alert" data-errore hidden></p>
+          <button class="btn btn--cta btn--grande" type="submit">Invia la richiesta</button>
+          <p class="modulo__nota">Si apre la tua app di posta con il messaggio già scritto per quick@quickitaly.com: ti basta premere invia.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore piede__griglia">
+      <div class="piede__marchio">
+        <svg viewBox="0 0 374.2 51" role="img" aria-label="Quick"><use href="#logo-quick"/></svg>
+        <p>Quick S.p.A.<br>Via Piangipane 120/A, 48124 Piangipane (RA), Italia</p>
+        <p>Tel. <a href="tel:+390544415061">+39 0544 415 061</a><br>Fax +39 0544 415 047<br><a href="mailto:quick@quickitaly.com">quick@quickitaly.com</a></p>
+      </div>
+      <div>
+        <h3>Prodotti</h3>
+        <ul>
+          <li><a href="#rollio">Quick Gyro</a></li>
+          <li><a href="#prodotti">Salpa ancora e ancore</a></li>
+          <li><a href="#prodotti">Eliche di manovra</a></li>
+          <li><a href="#prodotti">Quick Marine Lighting</a></li>
+          <li><a href="https://www.quickitaly.com/it/cataloghi/" target="_blank" rel="noopener">Cataloghi</a></li>
+          <li><a href="https://www.quickitaly.com/it/manuali/" target="_blank" rel="noopener">Manuali</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certificazioni</h3>
+        <ul>
+          <li><a href="https://www.quickitaly.com/it/iso-9001/" target="_blank" rel="noopener">ISO 9001:2015</a></li>
+          <li><a href="https://www.quickitaly.com/it/iso-14001/" target="_blank" rel="noopener">ISO 14001:2015</a></li>
+          <li><a href="https://www.quickitaly.com/it/iso-45001/" target="_blank" rel="noopener">ISO 45001:2023</a></li>
+        </ul>
+        <h3>Seguici</h3>
+        <ul class="piede__social">
+          <li><a href="https://www.instagram.com/quickgroup_official/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/quickgroupofficial/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.linkedin.com/company/quick-srl" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/quickitaly" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://vimeo.com/quickitaly" target="_blank" rel="noopener">Vimeo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Azienda</h3>
+        <ul>
+          <li><a href="#azienda">Chi siamo</a></li>
+          <li><a href="#fiere">Fiere</a></li>
+          <li><a href="https://www.quickitaly.com/it/rivenditori/italia/" target="_blank" rel="noopener">Rivenditori</a></li>
+          <li><a href="https://www.quickitaly.com/it/carriere/" target="_blank" rel="noopener">Lavora con noi</a></li>
+          <li><a href="https://www.quickitaly.com/it/whistleblowing/" target="_blank" rel="noopener">Whistleblowing</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="contenitore privacy" id="privacy">
+      <summary>Informativa privacy</summary>
+      <p>Questa pagina non raccoglie dati e non usa cookie di profilazione. Il modulo di richiesta non invia nulla da solo: apre la tua app di posta con il messaggio pronto, e sei tu a spedirlo a Quick S.p.A., che tratta i dati secondo la propria <a href="https://www.iubenda.com/privacy-policy/29445688" target="_blank" rel="noopener">privacy policy</a>. La mappa è fornita da Google Maps.</p>
+    </details>
+
+    <div class="contenitore piede__legale">
+      <p>© <span data-anno>2026</span> Quick S.p.A. P.IVA IT01216790392, C.F. 02181450400, R.E.A. RA 128813. Società soggetta a direzione e coordinamento di Quick Holding S.p.A.</p>
+      <p class="piede__credito">Sito realizzato da Alessio Mora. Demo non ufficiale: non è il sito ufficiale di Quick S.p.A.</p>
+    </div>
+  </footer>
+
+  <nav class="barra-cta" aria-label="Contatto rapido" data-barra>
+    <a class="barra-cta__tel" href="tel:+390544415061">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Chiama
+    </a>
+    <a class="barra-cta__quota" href="#quotazione">Richiedi una quotazione</a>
+  </nav>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
