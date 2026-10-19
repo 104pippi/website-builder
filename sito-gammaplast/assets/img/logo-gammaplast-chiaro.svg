@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 1065 585" role="img" aria-label="Gamma Plast S.r.l.">
   <path d="M68,148 C95,205 150,290 160,420 C170,560 140,592 116,592 C88,592 72,555 76,450 C82,330 150,140 205,35" fill="none" stroke="#5FD07E" stroke-width="10" stroke-linecap="round"/>
-  <g fill="none" stroke="#EEF1EF" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="4">
+  <g fill="none" stroke="#EEF1EF" stroke-width="21" stroke-linejoin="miter" stroke-miterlimit="4">
     <path d="M375,243 H300 Q282,243 282,261 V291 Q282,309 300,309 H357 Q375,309 375,291 V278 H332"/>
     <path d="M414,318 L469,240 L524,318 M458,300 H510"/>
     <path d="M574,318 V243 L632,298 L690,243 V318"/>
     <path d="M754,318 V243 L812,298 L870,243 V318"/>
     <path d="M934,318 L1012,240 L1090,318 M984,300 H1072"/>
   </g>
-  <g fill="none" stroke="#EEF1EF" stroke-width="13">
+  <g fill="none" stroke="#EEF1EF" stroke-width="16">
     <path d="M250,590 V388 H1048 A46,46 0 0 1 1048,480 H250"/>
     <path d="M705,511 H1092 M792,511 V590"/>
   </g>
-  <g fill="none" stroke="#EEF1EF" stroke-width="15" stroke-linejoin="miter">
+  <g fill="none" stroke="#EEF1EF" stroke-width="19" stroke-linejoin="miter">
     <path d="M312,516 V582 H398"/>
     <path d="M428,590 L485,518 L542,590 M472,572 H528"/>
     <path d="M676,520 H596 Q582,520 582,534 V540 Q582,554 596,554 H662 Q676,554 676,568 V570 Q676,584 662,584 H578"/>
