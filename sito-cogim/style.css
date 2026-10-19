@@ -321,35 +321,41 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .capriata__canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .6s; }
 .capriata.is-pronta .capriata__canvas { opacity: 1; }
-.capriata__ripiego { display: none; position: absolute; inset: 0; }
-.capriata__ripiego img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
-.capriata--ripiego .capriata__ripiego { display: block; }
+/* finché il 3D non è pronto (o se manca il WebGL) si vede il tetto vero, in trasparenza */
+.capriata__ripiego { position: absolute; inset: 0; opacity: .32; transition: opacity .8s; }
+.capriata__ripiego img { width: 100%; height: 100%; object-fit: cover; }
+.capriata.is-pronta .capriata__ripiego { opacity: 0; }
+.capriata--ripiego .capriata__ripiego { opacity: .55; }
 .capriata__testi {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 60px var(--gutter) calc(24px + env(safe-area-inset-bottom));
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 60px var(--gutter) calc(90px + env(safe-area-inset-bottom));
   background: linear-gradient(180deg, rgba(35,39,42,0), rgba(35,39,42,.92) 38%);
 }
 .capriata__titolo { font-family: var(--f-titoli); font-stretch: 120%; font-weight: 780; font-size: 1.4rem; line-height: 1.1; }
 .capriata__passi { position: relative; margin-top: 14px; min-height: 7.6em; counter-reset: passo; }
 .capriata__passi li {
   counter-increment: passo; position: absolute; inset: 0 0 auto 0;
-  display: grid; grid-template-columns: 30px 1fr; gap: 0 6px;
+  padding-left: 32px;
   font-size: 1rem; line-height: 1.5; color: #D6D1C7;
   opacity: 0; transform: translateY(10px); transition: opacity .35s, transform .45s var(--ease);
 }
-.capriata__passi li::before { content: counter(passo); font-family: var(--f-titoli); font-stretch: 120%; font-weight: 800; color: var(--rovere-chiaro); }
+.capriata__passi li::before { content: counter(passo); position: absolute; left: 0; top: 0; font-family: var(--f-titoli); font-stretch: 120%; font-weight: 800; color: var(--rovere-chiaro); }
 .capriata__passi li b { font-family: var(--f-titoli); font-stretch: 110%; font-weight: 700; color: #fff; }
 .capriata__passi li.is-on { opacity: 1; transform: none; }
 .capriata__barra { margin-top: 16px; height: 2px; background: rgba(255,255,255,.14); }
 .capriata__barra span { display: block; height: 100%; background: var(--rovere-chiaro); transform-origin: 0 50%; transform: scaleX(0); }
 @media (min-width: 900px) {
-  .capriata__testi { left: var(--gutter); right: auto; top: 50%; bottom: auto; transform: translateY(-50%); width: min(400px, 36vw); padding: 0; background: none; }
+  .capriata__testi {
+    left: var(--gutter); right: auto; top: 50%; bottom: auto; transform: translateY(-50%); width: min(420px, 36vw);
+    padding: 26px 26px 24px; border-radius: var(--r);
+    background: rgba(35,39,42,.74); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
   .capriata__titolo { font-size: 1.9rem; }
   .capriata__passi { min-height: 0; margin-top: 24px; display: grid; gap: 14px; }
   .capriata__passi li { position: relative; inset: auto; opacity: .3; transform: none; }
   .capriata__passi li.is-on { opacity: 1; }
   .capriata__barra { margin-top: 26px; }
 }
-@media (min-width: 1300px) { .capriata__testi { left: calc((100vw - var(--max)) / 2); } }
+@media (min-width: 1300px) { .capriata__testi { left: calc((100vw - var(--max)) / 2 - 26px); } }
 
 .materiali { display: grid; gap: 40px; padding-top: 56px; padding-bottom: 96px; }
 .materiale picture { overflow: hidden; border-radius: var(--r); }

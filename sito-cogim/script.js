@@ -120,15 +120,15 @@ if (!ridotto && contenutoHero) {
 
 /* ---------- PRIMA E DOPO ---------- */
 const OPERE = [
+  { id: 'farmacia-vazzola', nome: 'Farmacia di Vazzola', cat: 'Restauro', luogo: 'Vazzola',
+    storia: "La storica farmacia del paese, rifatta dalle fondazioni al tetto passando per un solaio completamente nuovo. Il tetto è tornato su con le stesse travi e tavole di prima: recuperate, lavorate e trattate a mano da noi.",
+    cantiere: 'le vecchie travi recuperate, pronte per essere lavorate a mano.' },
   { id: 'rustico-cappella-maggiore', nome: 'Rustico a Cappella Maggiore', cat: 'Restauro', luogo: 'Colline sopra Vittorio Veneto',
     storia: "Era un rudere: muri in sassi pericolanti e una casa che si sbriciolava. Abbiamo legato i muri con tiranti in ferro, svuotato l'interno e rifatto le fondazioni su micropali, che reggono anche la nuova taverna davanti alla villa. Moderna dentro, con la pietra a vista fuori.",
     cantiere: 'la perforatrice per i micropali dentro la casa svuotata.' },
   { id: 'rustico-colli-conegliano', nome: 'Rustico sui colli di Conegliano', cat: 'Restauro', luogo: 'Colli di Conegliano',
     storia: "Una casa colonica in collina, consumata dal tempo e disabitata da anni. È stato uno dei primi cantieri di bioedilizia nel Coneglianese: materiali conformi alle norme della bioedilizia, che rispettano la natura e lasciano parlare l'architettura originale.",
     cantiere: "un arco in mattoni rifatto sulla centina di legno." },
-  { id: 'farmacia-vazzola', nome: 'Farmacia di Vazzola', cat: 'Restauro', luogo: 'Vazzola',
-    storia: "La storica farmacia del paese, rifatta dalle fondazioni al tetto passando per un solaio completamente nuovo. Il tetto è tornato su con le stesse travi e tavole di prima: recuperate, lavorate e trattate a mano da noi.",
-    cantiere: 'le vecchie travi recuperate, pronte per essere lavorate a mano.' },
   { id: 'palazzo-calissoni', nome: 'Palazzo Calissoni', cat: 'Restauro', luogo: 'Centro storico di Conegliano',
     storia: "Un palazzo del Seicento nel cuore antico di Conegliano. L'abbiamo svuotato, abbiamo rinforzato i muri perimetrali in sassi e ricostruito solai e tetto con lo stesso legname recuperato. Fuori, la scelta dell'intonaco ha fatto la differenza.",
     cantiere: 'i nuovi solai in legno dentro il palazzo svuotato.' },
@@ -326,6 +326,18 @@ if ('IntersectionObserver' in window) {
       .catch(() => capriata.classList.add('capriata--ripiego'));
   }, { rootMargin: '600px 0px' });
   io.observe(capriata);
+}
+
+/* Collegamento diretto a una sezione: ?vai=opere (con &p=0.5 dentro le sezioni lunghe) */
+const vai = new URLSearchParams(location.search);
+if (vai.get('vai')) {
+  addEventListener('load', () => {
+    const el = document.getElementById(vai.get('vai')) || $(`[data-${vai.get('vai')}]`);
+    if (!el) return;
+    const p = clamp(parseFloat(vai.get('p') || '0') || 0, 0, 1);
+    const top = el.getBoundingClientRect().top + scrollY + (el.offsetHeight - innerHeight) * p;
+    scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+  });
 }
 
 /* ---------- Modulo: compone l'email per info@impresacogim.it ---------- */

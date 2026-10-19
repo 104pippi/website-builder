@@ -230,7 +230,7 @@ export async function creaCapriata({ canvas, sezione, progresso, ridotto }) {
     new THREE.TextureLoader().loadAsync('assets/tex/trave.jpg'),
   ]);
   mappa.colorSpace = THREE.SRGBColorSpace;
-  mappa.wrapS = mappa.wrapT = THREE.RepeatWrapping;
+  mappa.wrapS = mappa.wrapT = THREE.MirroredRepeatWrapping;   // niente giunture visibili tra una ripetizione e l'altra
   mappa.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
 
   const scene = new THREE.Scene();
@@ -245,7 +245,7 @@ export async function creaCapriata({ canvas, sezione, progresso, ridotto }) {
   scene.add(contro);
 
   const legni = [0xffffff, 0xf1e2cf, 0xe4cfb6].map((c) => new THREE.MeshStandardMaterial({ map: mappa, color: c, roughness: 0.82, metalness: 0 }));
-  const ferro = new THREE.MeshStandardMaterial({ color: 0x2c2b2a, roughness: 0.42, metalness: 0.85 });
+  const ferro = new THREE.MeshStandardMaterial({ color: 0x6b655d, roughness: 0.48, metalness: 0.7 });
   const linea = new THREE.LineBasicMaterial({ color: 0xd29a62, transparent: true, opacity: 0.38 });
 
   const pezzi = [];
@@ -284,9 +284,9 @@ export async function creaCapriata({ canvas, sezione, progresso, ridotto }) {
     for (const z of [0.16, -0.16]) {
       aggiungi(new THREE.BoxGeometry(0.04, 0.7, 0.02), ferro, v(-0.17, 0.4, z), 0, { p: v(0, 0, 0), r: 0 }, 0.64 + off, 0.7 + off, padre, true);
       aggiungi(new THREE.BoxGeometry(0.04, 0.7, 0.02), ferro, v(0.17, 0.4, z), 0, { p: v(0, 0, 0), r: 0 }, 0.645 + off, 0.705 + off, padre, true);
-      aggiungi(new THREE.BoxGeometry(0.62, 0.62, 0.02), ferro, v(0, colmoY - 0.12, z), Math.PI / 4, { p: v(0, 0, 0), r: 0 }, 0.65 + off, 0.71 + off, padre, true);
-      aggiungi(new THREE.BoxGeometry(0.62, 0.26, 0.02), ferro, v(-piedeX + 0.4, 0.5, z), ang, { p: v(0, 0, 0), r: 0 }, 0.655 + off, 0.715 + off, padre, true);
-      aggiungi(new THREE.BoxGeometry(0.62, 0.26, 0.02), ferro, v(piedeX - 0.4, 0.5, z), -ang, { p: v(0, 0, 0), r: 0 }, 0.66 + off, 0.72 + off, padre, true);
+      aggiungi(new THREE.BoxGeometry(0.4, 0.4, 0.015), ferro, v(0, colmoY - 0.18, z), Math.PI / 4, { p: v(0, 0, 0), r: 0 }, 0.65 + off, 0.71 + off, padre, true);
+      aggiungi(new THREE.BoxGeometry(0.5, 0.16, 0.015), ferro, v(-piedeX + 0.45, 0.52, z), ang, { p: v(0, 0, 0), r: 0 }, 0.655 + off, 0.715 + off, padre, true);
+      aggiungi(new THREE.BoxGeometry(0.5, 0.16, 0.015), ferro, v(piedeX - 0.45, 0.52, z), -ang, { p: v(0, 0, 0), r: 0 }, 0.66 + off, 0.72 + off, padre, true);
     }
     aggiungi(new THREE.BoxGeometry(0.4, 0.04, 0.34), ferro, v(0, -0.02, 0), 0, { p: v(0, 0, 0), r: 0 }, 0.64 + off, 0.7 + off, padre, true);
   }
@@ -340,9 +340,10 @@ export async function creaCapriata({ canvas, sezione, progresso, ridotto }) {
     camera.fov = desktop ? 30 : 44;
     camera.aspect = w / h;
     const mezzaL = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect;
-    raggio = clamp(4.9 / mezzaL, 9, desktop ? 15 : 17.5);
+    // la capriata (8,7 m) deve stare tutta nell'inquadratura, con margine
+    raggio = desktop ? clamp(8.2 / mezzaL, 12, 22) : clamp(5.4 / mezzaL, 12, 21);
     // su desktop la capriata sta a destra (a sinistra ci sono i testi), sul telefono in alto
-    if (desktop) camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
+    if (desktop) camera.setViewOffset(w, h, -w * 0.15, 0, w, h);
     else camera.setViewOffset(w, h, 0, h * 0.13, w, h);
     camera.updateProjectionMatrix();
   };
