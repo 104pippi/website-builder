@@ -105,7 +105,7 @@
     const calma = morbido(0.42, 0.66, p);
     return {
       p,
-      xray: morbido(0.18, 0.3, p) * (1 - morbido(0.68, 0.8, p)),
+      apertura: morbido(0.18, 0.3, p) * (1 - morbido(0.68, 0.8, p)),
       volano: morbido(0.3, 0.5, p),
       calma,
       ampiezza: AMPIEZZA + (AMPIEZZA * 0.05 - AMPIEZZA) * calma,

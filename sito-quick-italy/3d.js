@@ -1,428 +1,414 @@
-// Scena "Rollio": una barca al traverso dell'onda, il volano del Quick Gyro che prende giri,
-// il rollio che si spegne. Guidata dal tempo (performance.now) e dallo scroll della sezione.
+// Scena "Quick Gyro": un X13 sulla lamiera della sala macchine, che rolla con la barca. Scorrendo il carter
+// si apre, il volano prende giri, la culla precessa e il rollio si spegne, poi il carter si richiude.
+// Guidata dal tempo (performance.now) e dallo scroll della sezione.
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
-const COLORI = {
-  zenit: 0x03101a,
-  orizzonte: 0x15405b,
-  profondo: 0x061a28,
-  cresta: 0x1f5878,
-  ciano: 0x74e4de,
-  scafo: 0xf3f5f6,
-  teak: 0x9c7a55,
-  vetro: 0x0a1722,
-};
+const morb = (t) => t * t * (3 - 2 * t);
+const limita = (v, a, b) => Math.min(b, Math.max(a, v));
+const rad = THREE.MathUtils.degToRad;
 
-// Onde: direzione (x, z), ampiezza, lunghezza d'onda, velocità di fase. Viaggiano lungo x: arrivano di lato.
-const ONDE = [
-  [1.0, 0.16, 0.36, 10.0, 2.6],
-  [0.88, -0.48, 0.15, 5.6, 2.1],
-  [0.5, 0.86, 0.08, 3.2, 1.7],
-].map(([dx, dz, a, l, c]) => {
-  const n = Math.hypot(dx, dz);
-  const k = (2 * Math.PI) / l;
-  return { dx: dx / n, dz: dz / n, a, k, w: k * c };
-});
-const quota = (x, z, t) => ONDE.reduce((h, o) => h + o.a * Math.sin(o.k * (o.dx * x + o.dz * z) - o.w * t), 0);
-
-const L = 12;     // lunghezza
-const B = 3.9;    // baglio
-const F = 1.25;   // bordo libero
-const D = 0.75;   // pescaggio
-const semiBaglio = (s) => Math.max(0.015, (B / 2) * (1 - Math.pow(Math.max(0, (s - 0.42) / 0.58), 2.1)));
-
-// Sezione trasversale dello scafo alla stazione s (0 poppa, 1 prua): 9 punti da murata a murata.
-function sezione(s) {
-  const hb = semiBaglio(s);
-  const coperta = F + 0.42 * s * s;
-  const salita = Math.pow(Math.max(0, (s - 0.55) / 0.45), 1.6);
-  const chiglia = -D * (1 - salita) + salita * F * 0.6;
-  const spigolo = chiglia * 0.22 + 0.06;
-  const meta = [
-    [hb, coperta],
-    [hb * 0.995, coperta * 0.55 + spigolo * 0.45],
-    [hb * 0.965, spigolo],
-    [hb * 0.6, (spigolo + chiglia) / 2 - 0.06],
-    [0, chiglia],
-  ];
-  const punti = meta.slice();
-  for (let j = 3; j >= 0; j--) punti.push([-meta[j][0], meta[j][1]]);
-  return { punti, coperta, hb };
+function tela(w, h, disegna, srgb = true) {
+  const c = document.createElement('canvas');
+  c.width = w;
+  c.height = h;
+  disegna(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c);
+  if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  return t;
 }
 
-function geometriaScafo(N = 44) {
-  const pos = [];
-  const idx = [];
-  const anello = 9;
-  for (let i = 0; i <= N; i++) {
-    const s = i / N;
-    const z = -L / 2 + s * L;
-    sezione(s).punti.forEach(([x, y]) => pos.push(x, y, z));
-  }
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < anello - 1; j++) {
-      const a = i * anello + j;
-      const b = (i + 1) * anello + j;
-      idx.push(a, b, a + 1, b, b + 1, a + 1);
+// Lamiera mandorlata, come il pavimento della sala macchine nella foto dell'X13: rilievi a ±45°, 2×2 per piastrella
+function normaliMandorlata(n = 256) {
+  const h = new Float32Array(n * n);
+  const cella = n / 2;
+  for (let y = 0; y < n; y++) {
+    for (let x = 0; x < n; x++) {
+      const ci = Math.floor(x / cella);
+      const cj = Math.floor(y / cella);
+      let alto = 0;
+      for (let oj = -1; oj <= 1; oj++) {
+        for (let oi = -1; oi <= 1; oi++) {
+          const i = ci + oi;
+          const j = cj + oj;
+          const s = (i + j) & 1 ? 1 : -1;
+          const dx = (x + 0.5 - (i + 0.5) * cella) / cella;
+          const dy = (y + 0.5 - (j + 0.5) * cella) / cella;
+          const u = (dx + s * dy) * Math.SQRT1_2;
+          const v = (dy - s * dx) * Math.SQRT1_2;
+          const d = (u / 0.4) ** 2 + (v / 0.09) ** 2;
+          if (d < 1) alto = Math.max(alto, Math.sqrt(1 - d));
+        }
+      }
+      h[y * n + x] = alto;
     }
   }
-  const g = new THREE.BufferGeometry();
-  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-  g.setIndex(idx);
-  g.computeVertexNormals();
-  return g;
-}
-
-function geometriaCoperta(N = 44) {
-  const pos = [];
-  const idx = [];
-  for (let i = 0; i <= N; i++) {
-    const s = i / N;
-    const { hb, coperta } = sezione(s);
-    const z = -L / 2 + s * L;
-    pos.push(-hb * 0.985, coperta - 0.01, z, hb * 0.985, coperta - 0.01, z);
-  }
-  for (let i = 0; i < N; i++) {
-    const a = i * 2;
-    idx.push(a, a + 2, a + 1, a + 1, a + 2, a + 3);
-  }
-  const g = new THREE.BufferGeometry();
-  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-  g.setIndex(idx);
-  g.computeVertexNormals();
-  return g;
-}
-
-function geometriaSpecchio() {
-  const { punti } = sezione(0);
-  const forma = new THREE.Shape(punti.map(([x, y]) => new THREE.Vector2(x, y)));
-  const g = new THREE.ShapeGeometry(forma);
-  g.translate(0, 0, -L / 2);
-  return g;
-}
-
-function estrudi(profilo, profondita, smusso) {
-  const forma = new THREE.Shape(profilo.map(([z, y]) => new THREE.Vector2(z, y)));
-  const g = new THREE.ExtrudeGeometry(forma, {
-    depth: profondita,
-    bevelEnabled: !!smusso,
-    bevelThickness: smusso || 0,
-    bevelSize: smusso || 0,
-    bevelSegments: 3,
-    curveSegments: 6,
-  });
-  g.rotateY(-Math.PI / 2);          // il profilo (z, y) diventa la fiancata, l'estrusione va lungo il baglio
-  g.translate(profondita / 2, 0, 0);
-  return g;
-}
-
-function costole() {
-  const gruppo = [];
-  for (let s = 0.06; s < 0.97; s += 0.1) {
-    const { punti } = sezione(s);
-    const z = -L / 2 + s * L;
-    const v = punti.map(([x, y]) => new THREE.Vector3(x * 1.002, y, z));
-    gruppo.push(new THREE.BufferGeometry().setFromPoints(v.concat([v[0]])));
-  }
-  return gruppo;
+  const t = tela(n, n, (ctx) => {
+    const img = ctx.createImageData(n, n);
+    for (let y = 0; y < n; y++) {
+      for (let x = 0; x < n; x++) {
+        const hx = h[y * n + ((x + 1) % n)] - h[y * n + ((x - 1 + n) % n)];
+        const hy = h[((y + 1) % n) * n + x] - h[((y - 1 + n) % n) * n + x];
+        const nx = -hx * 3.2;
+        const ny = hy * 3.2;
+        const l = Math.hypot(nx, ny, 1);
+        const o = (y * n + x) * 4;
+        img.data[o] = (nx / l * 0.5 + 0.5) * 255;
+        img.data[o + 1] = (ny / l * 0.5 + 0.5) * 255;
+        img.data[o + 2] = (1 / l * 0.5 + 0.5) * 255;
+        img.data[o + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }, false);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
 }
 
 export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progresso, ridotto, suFrame }) {
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   } catch (e) {
     return false;
   }
   if (!renderer.getContext()) return false;
+  try { await document.fonts.load('800 80px Archivo'); } catch (e) { /* resta il font di sistema */ }
 
   const telefono = matchMedia('(max-width: 900px), (pointer: coarse)').matches;
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, telefono ? 1.5 : 2));
+  renderer.setClearColor(0x000000, 0);
   renderer.toneMapping = THREE.NeutralToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.0;
 
   const scena = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scena.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scena.environmentIntensity = 0.85;
+  scena.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture;
+  scena.environmentIntensity = 0.8;
   pmrem.dispose();
 
-  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 400);
+  const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 60);
 
-  /* ---------- cielo ---------- */
-  const cielo = new THREE.Mesh(
-    new THREE.SphereGeometry(220, 32, 16),
-    new THREE.ShaderMaterial({
-      side: THREE.BackSide,
-      depthWrite: false,
-      toneMapped: false,
-      uniforms: {
-        uZenit: { value: new THREE.Color(COLORI.zenit) },
-        uOrizzonte: { value: new THREE.Color(COLORI.orizzonte) },
-      },
-      vertexShader: /* glsl */ `
-        varying vec3 vDir;
-        void main() {
-          vDir = normalize(position);
-          vec4 p = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          gl_Position = p.xyww;
-        }`,
-      fragmentShader: /* glsl */ `
-        uniform vec3 uZenit; uniform vec3 uOrizzonte;
-        varying vec3 vDir;
-        void main() {
-          float h = vDir.y;
-          vec3 c = mix(uOrizzonte, uZenit, smoothstep(0.0, 0.42, h));
-          c = mix(c, uOrizzonte * 0.55, 1.0 - smoothstep(-0.4, -0.1, h));
-          c += uOrizzonte * 0.35 * exp(-abs(h) * 28.0);
-          gl_FragColor = vec4(c, 1.0);
-          #include <colorspace_fragment>
-        }`,
+  const luceChiave = new THREE.DirectionalLight(0xffffff, 1.7);
+  luceChiave.position.set(-2.5, 4, 3);
+  scena.add(luceChiave);
+  const luceTaglio = new THREE.DirectionalLight(0x9fdcff, 1.3);
+  luceTaglio.position.set(2.2, 2.4, -3.5);
+  scena.add(luceTaglio);
+  scena.add(new THREE.HemisphereLight(0x6f93ad, 0x05121c, 0.35));
+
+  /* ---------- la barca: un pezzo di sala macchine che rolla attorno a un asse sotto il pavimento ---------- */
+  const PERNO = 0.8;
+  const bordo = new THREE.Group();
+  bordo.position.y = -PERNO;
+  scena.add(bordo);
+  const piano = new THREE.Group();
+  piano.position.y = PERNO;
+  bordo.add(piano);
+
+  const normali = normaliMandorlata();
+  normali.repeat.set(70, 70);
+  const pavimento = new THREE.Mesh(
+    new THREE.PlaneGeometry(7, 7),
+    new THREE.MeshStandardMaterial({
+      color: 0x9aa3a9, metalness: 0.9, roughness: 0.42,
+      normalMap: normali, normalScale: new THREE.Vector2(0.9, 0.9),
+      transparent: true,
+      alphaMap: tela(256, 256, (ctx, n) => {
+        const g = ctx.createRadialGradient(n / 2, n / 2, 0, n / 2, n / 2, n / 2);
+        g.addColorStop(0, '#fff');
+        g.addColorStop(0.22, '#fff');
+        g.addColorStop(0.62, '#333');
+        g.addColorStop(1, '#000');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, n, n);
+      }, false),
     }),
   );
-  cielo.renderOrder = -1;
-  scena.add(cielo);
+  pavimento.rotation.x = -Math.PI / 2;
+  piano.add(pavimento);
 
-  /* ---------- mare a isolinee ---------- */
-  const geoMare = new THREE.PlaneGeometry(150, 150, telefono ? 150 : 200, telefono ? 150 : 200);
-  geoMare.rotateX(-Math.PI / 2);
-  const uMare = {
-    uT: { value: 0 },
-    uCam: { value: new THREE.Vector3() },
-    uBarcaInv: { value: new THREE.Matrix4() },
-    uOnde: { value: ONDE.map((o) => new THREE.Vector4(o.dx, o.dz, o.a, o.k)) },
-    uW: { value: ONDE.map((o) => o.w) },
-    uProfondo: { value: new THREE.Color(COLORI.profondo) },
-    uCresta: { value: new THREE.Color(COLORI.cresta) },
-    uFondo: { value: new THREE.Color(COLORI.orizzonte) },
-    uLinea: { value: new THREE.Color(COLORI.ciano) },
-  };
-  const mare = new THREE.Mesh(
-    geoMare,
-    new THREE.ShaderMaterial({
-      uniforms: uMare,
-      toneMapped: false,
-      vertexShader: /* glsl */ `
-        uniform float uT;
-        uniform vec4 uOnde[3];
-        uniform float uW[3];
-        varying float vH;
-        varying vec3 vPos;
-        varying vec3 vN;
-        void main() {
-          vec3 p = position;
-          float h = 0.0;
-          vec2 g = vec2(0.0);
-          for (int i = 0; i < 3; i++) {
-            vec2 d = uOnde[i].xy;
-            float f = uOnde[i].w * dot(d, p.xz) - uW[i] * uT;
-            h += uOnde[i].z * sin(f);
-            g += uOnde[i].z * uOnde[i].w * cos(f) * d;
+  const ombra = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.9, 1.9),
+    new THREE.MeshBasicMaterial({
+      transparent: true, depthWrite: false, toneMapped: false,
+      map: tela(128, 128, (ctx, n) => {
+        const img = ctx.createImageData(n, n);
+        for (let y = 0; y < n; y++) {
+          for (let x = 0; x < n; x++) {
+            const qx = Math.abs(((x + 0.5) / n - 0.5) * 1.9) - 0.47;
+            const qz = Math.abs(((y + 0.5) / n - 0.5) * 1.9) - 0.47;
+            const d = Math.hypot(Math.max(qx, 0), Math.max(qz, 0)) + Math.min(Math.max(qx, qz), 0) - 0.05;
+            img.data[(y * n + x) * 4 + 3] = 255 * 0.8 * Math.pow(1 - limita((d + 0.05) / 0.42, 0, 1), 2.4);
           }
-          p.y += h;
-          vH = h;
-          vN = normalize(vec3(-g.x, 1.0, -g.y));
-          vec4 wp = modelMatrix * vec4(p, 1.0);
-          vPos = wp.xyz;
-          gl_Position = projectionMatrix * viewMatrix * wp;
-        }`,
-      fragmentShader: /* glsl */ `
-        uniform vec3 uCam; uniform mat4 uBarcaInv;
-        uniform vec3 uProfondo; uniform vec3 uCresta; uniform vec3 uFondo; uniform vec3 uLinea;
-        varying float vH; varying vec3 vPos; varying vec3 vN;
-        float semiBaglio(float s) {
-          float k = max(0.0, (s - 0.42) / 0.58);
-          return max(0.015, 1.95 * (1.0 - pow(k, 2.1)));
         }
-        void main() {
-          // dentro l'impronta dello scafo il mare non si disegna: con lo scafo trasparente non sembra allagato
-          vec3 l = (uBarcaInv * vec4(vPos, 1.0)).xyz;
-          float s = (l.z + 6.0) / 12.0;
-          if (s > 0.0 && s < 1.0 && abs(l.x) < semiBaglio(s) * 0.96) discard;
-
-          vec3 v = normalize(uCam - vPos);
-          vec3 n = normalize(vN);
-          float fres = pow(1.0 - max(dot(n, v), 0.0), 3.0);
-          vec3 c = mix(uProfondo, uCresta, smoothstep(-0.35, 0.45, vH) * 0.6);
-          c = mix(c, uFondo * 1.3, fres * 0.7);
-
-          float dist = length(vPos.xz - uCam.xz);
-          float q = vH * 7.0;
-          float w = fwidth(q);
-          float fq = fract(q);
-          float linea = 1.0 - smoothstep(0.0, w * 1.3, min(fq, 1.0 - fq));
-          c += uLinea * linea * 0.42 * (1.0 - smoothstep(14.0, 55.0, dist));
-
-          vec2 gq = vPos.xz / 4.0;
-          vec2 gw = fwidth(gq);
-          vec2 gf = abs(fract(gq - 0.5) - 0.5) / gw;
-          float griglia = 1.0 - min(min(gf.x, gf.y), 1.0);
-          c += uLinea * griglia * 0.07 * (1.0 - smoothstep(10.0, 40.0, dist));
-
-          c = mix(c, uFondo, smoothstep(26.0, 68.0, dist));
-          gl_FragColor = vec4(c, 1.0);
-          #include <colorspace_fragment>
-        }`,
+        ctx.putImageData(img, 0, 0);
+      }),
     }),
   );
-  scena.add(mare);
+  ombra.rotation.x = -Math.PI / 2;
+  ombra.position.y = 0.003;
+  piano.add(ombra);
 
-  /* ---------- barca ---------- */
-  const barca = new THREE.Group();
-  scena.add(barca);
-  const materialiXray = [];
-  const conXray = (m) => { m.transparent = true; materialiXray.push(m); return m; };
-
-  const matScafo = conXray(new THREE.MeshStandardMaterial({ color: COLORI.scafo, roughness: 0.22, metalness: 0.0, side: THREE.DoubleSide }));
-  matScafo.onBeforeCompile = (sh) => {
-    sh.vertexShader = sh.vertexShader
-      .replace('#include <common>', '#include <common>\nvarying float vYl;')
-      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvYl = position.y;');
-    sh.fragmentShader = sh.fragmentShader
-      .replace('#include <common>', '#include <common>\nvarying float vYl;')
-      .replace('#include <color_fragment>', '#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.006, 0.022, 0.04), step(vYl, 0.2));');
-  };
-  const geoScafo = geometriaScafo();
-  barca.add(new THREE.Mesh(geoScafo, matScafo));
-  barca.add(new THREE.Mesh(geometriaSpecchio(), matScafo));
-
-  const matTeak = conXray(new THREE.MeshStandardMaterial({ color: COLORI.teak, roughness: 0.75, side: THREE.DoubleSide }));
-  barca.add(new THREE.Mesh(geometriaCoperta(), matTeak));
-  const plancetta = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.08, 0.75), matTeak);
-  plancetta.position.set(0, 0.3, -L / 2 - 0.36);
-  barca.add(plancetta);
-
-  const matTuga = conXray(new THREE.MeshStandardMaterial({ color: COLORI.scafo, roughness: 0.18 }));
-  const matVetro = conXray(new THREE.MeshStandardMaterial({ color: COLORI.vetro, roughness: 0.05, metalness: 0.6 }));
-  const W = 3.0;
-  const yTuga = F + 0.06;
-  const geoTuga = estrudi([[-3.2, 0], [-3.2, 1.05], [-2.9, 1.15], [1.6, 1.15], [3.6, 0.15], [3.6, 0]], W, 0.06);
-  const tuga = new THREE.Mesh(geoTuga, matTuga);
-  tuga.position.y = yTuga;
-  barca.add(tuga);
-  const vetri = new THREE.Mesh(estrudi([[-3.0, 0.5], [-3.0, 0.86], [1.7, 0.86], [2.6, 0.5]], W + 0.16), matVetro);
-  vetri.position.y = yTuga;
-  barca.add(vetri);
-  const portaPoppa = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.82, 0.04), matVetro);
-  portaPoppa.position.set(0, yTuga + 0.6, -3.29);
-  barca.add(portaPoppa);
-  const hardtop = new THREE.Mesh(new RoundedBoxGeometry(3.3, 0.08, 5.4, 2, 0.035), matTuga);
-  hardtop.position.set(0, yTuga + 1.27, -1.95);
-  barca.add(hardtop);
-  [-1.45, 1.45].forEach((x) => {
-    const montante = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1.25, 8), matTuga);
-    montante.position.set(x, yTuga + 0.62, -4.4);
-    barca.add(montante);
-  });
-
-  /* linee da progetto: spigoli e costole, visibili solo in trasparenza */
-  const matLinee = new THREE.LineBasicMaterial({ color: COLORI.ciano, transparent: true, opacity: 0, depthWrite: false });
-  const linee = new THREE.Group();
-  linee.add(new THREE.LineSegments(new THREE.EdgesGeometry(geoScafo, 16), matLinee));
-  const spigoliTuga = new THREE.LineSegments(new THREE.EdgesGeometry(geoTuga, 30), matLinee);
-  spigoliTuga.position.y = yTuga;
-  linee.add(spigoliTuga);
-  costole().forEach((g) => linee.add(new THREE.Line(g, matLinee)));
-  barca.add(linee);
-
-  /* ---------- Quick Gyro ---------- */
+  /* ---------- Quick Gyro X13: proporzioni dalla foto del prodotto installato ---------- */
   const gyro = new THREE.Group();
-  gyro.position.set(0, -0.05, -0.8);
-  barca.add(gyro);
-  const matBianco = new THREE.MeshStandardMaterial({ color: 0xf6f7f8, roughness: 0.3, transparent: true });
-  const matScuro = new THREE.MeshStandardMaterial({ color: 0x1a2630, roughness: 0.5, metalness: 0.3 });
-  const matAcciaio = new THREE.MeshStandardMaterial({ color: 0xc8d0d6, roughness: 0.28, metalness: 1.0 });
-  const basamento = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.07, 1.15), matScuro);
-  basamento.position.y = -0.55;
-  gyro.add(basamento);
-  const carter = new THREE.Mesh(new RoundedBoxGeometry(1.0, 0.92, 1.0, 4, 0.08), matBianco);
-  gyro.add(carter);
-  const matSpigoliGyro = new THREE.LineBasicMaterial({ color: COLORI.ciano, transparent: true, opacity: 0 });
-  gyro.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.0, 0.92, 1.0)), matSpigoliGyro));
+  piano.add(gyro);
+  const scatola = (w, h, d, r, mat) => new THREE.Mesh(new RoundedBoxGeometry(w, h, d, 3, r), mat);
 
-  const culla = new THREE.Group();         // precessione: ruota attorno all'asse verticale
-  gyro.add(culla);
-  [-0.17, 0.17].forEach((x) => {
-    const staffa = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.7, 0.18), matScuro);
-    staffa.position.x = x * 1.45;
-    culla.add(staffa);
+  const matBiancoLucido = new THREE.MeshPhysicalMaterial({ color: 0xf3f4f5, roughness: 0.3, clearcoat: 0.7, clearcoatRoughness: 0.18 });
+  const matPannello = new THREE.MeshStandardMaterial({ color: 0xe8ebed, roughness: 0.42 });
+  const matNero = new THREE.MeshStandardMaterial({ color: 0x15181b, roughness: 0.36, metalness: 0.1 });
+  const matGrafite = new THREE.MeshStandardMaterial({ color: 0x4c5257, roughness: 0.36, metalness: 0.7 });
+  const matAcciaio = new THREE.MeshStandardMaterial({ color: 0xaeb5ba, roughness: 0.3, metalness: 1.0 });
+  const matGomma = new THREE.MeshStandardMaterial({ color: 0x0d0f11, roughness: 0.8 });
+  const matScuro = new THREE.MeshStandardMaterial({ color: 0x23292e, roughness: 0.45, metalness: 0.6 });
+
+  // basamento: guide, supporti antivibranti, zoccolo, fascia in acciaio
+  [-0.36, 0.36].forEach((x) => {
+    const guida = scatola(0.09, 0.04, 1.12, 0.008, matScuro);
+    guida.position.set(x, 0.02, 0);
+    gyro.add(guida);
+    [-0.42, 0.42].forEach((z) => {
+      const supporto = new THREE.Mesh(new THREE.CylinderGeometry(0.042, 0.046, 0.04, 24), matGomma);
+      supporto.position.set(x, 0.06, z);
+      gyro.add(supporto);
+    });
   });
-  const volano = new THREE.Group();         // il volano gira su asse orizzontale (trasversale)
+  const zoccolo = scatola(1.0, 0.05, 1.0, 0.01, matGrafite);
+  zoccolo.position.y = 0.105;
+  gyro.add(zoccolo);
+  const fasciaBassa = scatola(1.02, 0.03, 1.02, 0.008, matAcciaio);
+  fasciaBassa.position.y = 0.145;
+  gyro.add(fasciaBassa);
+  const fondo = new THREE.Mesh(new THREE.BoxGeometry(0.86, 0.02, 0.86), matScuro);
+  fondo.position.y = 0.17;
+  gyro.add(fondo);
+
+  // telaio: quattro montanti neri e una cornice in alto (aperta: da sopra si vede dentro)
+  [[-1, -1], [-1, 1], [1, -1], [1, 1]].forEach(([sx, sz]) => {
+    const montante = scatola(0.13, 0.66, 0.13, 0.03, matNero);
+    montante.position.set(sx * 0.445, 0.49, sz * 0.445);
+    gyro.add(montante);
+  });
+  [[1.0, 0.06, 0, 0.47], [1.0, 0.06, 0, -0.47], [0.06, 0.88, 0.47, 0], [0.06, 0.88, -0.47, 0]].forEach(([w, d, x, z]) => {
+    const lato = new THREE.Mesh(new THREE.BoxGeometry(w, 0.025, d), matGrafite);
+    lato.position.set(x, 0.8325, z);
+    gyro.add(lato);
+  });
+
+  // pannelli: si allontanano lungo la loro normale quando il carter si apre
+  const etichetta = new THREE.Mesh(
+    new THREE.PlaneGeometry(0.3, 0.09),
+    new THREE.MeshStandardMaterial({
+      transparent: true, roughness: 0.5,
+      map: tela(600, 180, (ctx, w, h) => {
+        ctx.fillStyle = '#3b4146';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'alphabetic';
+        ctx.font = '600 44px Archivo, "Helvetica Neue", Arial, sans-serif';
+        ctx.fillText('QUICK GYRO', w - 8, 56);
+        ctx.font = '800 118px Archivo, "Helvetica Neue", Arial, sans-serif';
+        ctx.fillText('X13', w - 4, h - 12);
+      }),
+    }),
+  );
+  const pannelli = [];
+  const viti = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.009, 0.009, 0.006, 12), matScuro, 16);
+  let nVite = 0;
+  const mVite = new THREE.Matrix4();
+  [[0, 1], [0, -1], [1, 0], [-1, 0]].forEach(([nx, nz], i) => {
+    const g = new THREE.Group();
+    const lastra = scatola(0.76, 0.62, 0.024, 0.008, matPannello);
+    g.add(lastra);
+    g.userData.n = new THREE.Vector3(nx, 0, nz);
+    g.userData.base = new THREE.Vector3(nx * 0.488, 0.49, nz * 0.488);
+    g.position.copy(g.userData.base);
+    g.lookAt(g.position.clone().add(g.userData.n));    // la faccia +z del gruppo guarda fuori
+    gyro.add(g);
+    pannelli.push(g);
+    [[-1, -1], [-1, 1], [1, -1], [1, 1]].forEach(([a, b]) => {
+      mVite.makeRotationX(Math.PI / 2).setPosition(a * 0.34, b * 0.27, 0.013);
+      g.updateMatrix();
+      viti.setMatrixAt(nVite++, new THREE.Matrix4().multiplyMatrices(g.matrix, mVite));
+    });
+    if (i === 0) {
+      etichetta.position.set(0.17, -0.2, 0.0135);
+      g.add(etichetta);
+    }
+  });
+  gyro.add(viti);
+
+  const cappello = scatola(1.04, 0.155, 1.04, 0.055, matBiancoLucido);
+  const yCappello = 0.9225;
+  cappello.position.y = yCappello;
+  gyro.add(cappello);
+
+  /* ---------- dentro: la culla che precessa e il volano su asse orizzontale ---------- */
+  const culla = new THREE.Group();          // precessione: ruota attorno all'asse verticale
+  culla.position.y = 0.21;
+  gyro.add(culla);
+  const piatto = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 0.03, 64), matGrafite);
+  piatto.position.y = -0.015;
+  culla.add(piatto);
+  const matFusione = new THREE.MeshStandardMaterial({ color: 0xa9b1b7, roughness: 0.5, metalness: 0.85 });
+  const Y_ASSE = 0.29;
+  [-0.2, 0.2].forEach((x) => {
+    const spalla = scatola(0.08, 0.3, 0.2, 0.012, matFusione);
+    spalla.position.set(x, 0.15, 0);
+    culla.add(spalla);
+    const cuscinetto = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.1, 40), matFusione);
+    cuscinetto.rotation.z = Math.PI / 2;
+    cuscinetto.position.set(x, Y_ASSE, 0);
+    culla.add(cuscinetto);
+  });
+  const motore = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.085, 0.11, 40), matScuro);
+  motore.rotation.z = Math.PI / 2;
+  motore.position.set(0.315, Y_ASSE, 0);
+  culla.add(motore);
+
+  const volano = new THREE.Group();         // gira attorno all'asse trasversale (x)
+  volano.position.y = Y_ASSE;
   culla.add(volano);
-  const disco = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.2, 56), matAcciaio);
-  disco.rotation.z = Math.PI / 2;
-  volano.add(disco);
-  const matSegni = new THREE.MeshBasicMaterial({ color: 0x0b1a26, transparent: true });
-  for (let k = 0; k < 3; k++) {
-    const segno = new THREE.Mesh(new THREE.BoxGeometry(0.212, 0.05, 0.3), matSegni);
-    segno.rotation.x = (k * Math.PI) / 3;
-    volano.add(segno);
-  }
-  const matScia = new THREE.MeshBasicMaterial({ color: COLORI.ciano, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending });
-  const anello = new THREE.Mesh(new THREE.TorusGeometry(0.345, 0.02, 8, 72), matScia);
-  anello.rotation.y = Math.PI / 2;
-  [-0.1, 0.1].forEach((x) => { const a = anello.clone(); a.position.x = x; volano.add(a); });
-  const luceGyro = new THREE.PointLight(COLORI.ciano, 0, 3.2, 1.6);
-  gyro.add(luceGyro);
+  const matFianco = new THREE.MeshStandardMaterial({ color: 0xbcc3c8, roughness: 0.24, metalness: 1.0 });
+  const matFaccia = new THREE.MeshStandardMaterial({
+    roughness: 0.28, metalness: 1.0,
+    map: tela(512, 512, (ctx, n) => {
+      const c = n / 2;
+      ctx.fillStyle = '#c4cacf';
+      ctx.fillRect(0, 0, n, n);
+      for (let r = 4; r < c; r += 1.6) {            // segni di tornitura
+        const v = 176 + Math.round(Math.sin(r * 0.37) * 14 + Math.sin(r * 2.3) * 8);
+        ctx.strokeStyle = `rgb(${v},${v + 5},${v + 9})`;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(c, c, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      [[0.34, 7, '#7d858b'], [0.82, 5, '#8a9298'], [0.97, 6, '#9aa2a8']].forEach(([f, lw, col]) => {
+        ctx.strokeStyle = col;
+        ctx.lineWidth = lw;
+        ctx.beginPath();
+        ctx.arc(c, c, f * c, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+    }),
+  });
+  const geoDisco = new THREE.CylinderGeometry(0.27, 0.27, 0.16, 96);
+  geoDisco.rotateZ(Math.PI / 2);
+  volano.add(new THREE.Mesh(geoDisco, [matFianco, matFaccia, matFaccia]));
+  const geoAlbero = new THREE.CylinderGeometry(0.032, 0.032, 0.52, 24);
+  geoAlbero.rotateZ(Math.PI / 2);
+  volano.add(new THREE.Mesh(geoAlbero, matAcciaio));
 
-  const luceSole = new THREE.DirectionalLight(0xdfeaf2, 1.4);
-  luceSole.position.set(-6, 10, -8);
-  scena.add(luceSole);
-  scena.add(new THREE.HemisphereLight(0x5b88a8, 0x04131f, 0.6));
+  // fori, dado e segno di equilibratura: si vedono da fermo e spariscono nel mosso quando gira forte
+  const matFori = new THREE.MeshStandardMaterial({
+    transparent: true, depthWrite: false, roughness: 0.4, metalness: 0.6,
+    polygonOffset: true, polygonOffsetFactor: -2,
+    map: tela(512, 512, (ctx, n) => {
+      const c = n / 2;
+      for (let k = 0; k < 6; k++) {
+        const a = (k * Math.PI) / 3;
+        const x = c + Math.cos(a) * 0.56 * c;
+        const y = c + Math.sin(a) * 0.56 * c;
+        const g = ctx.createRadialGradient(x, y, 0, x, y, 0.075 * c);
+        g.addColorStop(0, '#0b0e10');
+        g.addColorStop(0.72, '#1c2125');
+        g.addColorStop(1, '#646c72');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(x, y, 0.075 * c, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.fillStyle = '#3a4146';
+      ctx.beginPath();
+      for (let k = 0; k < 6; k++) {
+        const a = (k * Math.PI) / 3 + Math.PI / 6;
+        ctx.lineTo(c + Math.cos(a) * 0.17 * c, c + Math.sin(a) * 0.17 * c);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = '#8c949a';
+      ctx.beginPath();
+      ctx.arc(c, c, 0.07 * c, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#b3261e';
+      ctx.fillRect(c + 0.86 * c - 5, c - 20, 10, 40);
+    }),
+  });
+  const matMosso = new THREE.MeshStandardMaterial({
+    color: 0x2b3236, transparent: true, opacity: 0, depthWrite: false, roughness: 0.5, metalness: 0.6,
+    polygonOffset: true, polygonOffsetFactor: -1,
+  });
+  [1, -1].forEach((s) => {
+    const fori = new THREE.Mesh(new THREE.CircleGeometry(0.265, 64), matFori);
+    fori.rotation.y = (s * Math.PI) / 2;
+    fori.position.x = s * 0.0805;
+    volano.add(fori);
+    const mosso = new THREE.Mesh(new THREE.RingGeometry(0.13, 0.168, 64), matMosso);
+    mosso.rotation.y = (s * Math.PI) / 2;
+    mosso.position.x = s * 0.0806;
+    volano.add(mosso);
+  });
 
-  /* ---------- camera lungo lo scroll ---------- */
+  /* ---------- camera lungo lo scroll: angoli attorno al Gyro, distanza in multipli di "inquadra tutto" ---------- */
   const CHIAVI = [
-    { p: 0.0, pos: [8.0, 4.6, -13.5], mira: [0, 1.0, 0.5] },
-    { p: 0.2, pos: [6.6, 4.1, -11.2], mira: [0, 0.9, 0.2] },
-    { p: 0.36, pos: [3.9, 3.7, -6.4], mira: [0, 0.35, -0.6] },
-    { p: 0.6, pos: [-4.2, 3.4, -6.9], mira: [0, 0.4, -0.5] },
-    { p: 0.82, pos: [-9.0, 4.3, -13.0], mira: [0, 1.0, 0.8] },
-    { p: 1.0, pos: [-11.0, 5.0, -15.5], mira: [0, 1.1, 1.2] },
+    { p: 0.0, az: -38, el: 14, d: 1.6, mira: [0, 0.5, 0] },
+    { p: 0.18, az: -30, el: 17, d: 1.45, mira: [0, 0.5, 0] },
+    { p: 0.34, az: -60, el: 26, d: 1.25, mira: [0, 0.52, 0] },
+    { p: 0.5, az: -74, el: 27, d: 1.02, mira: [0, 0.5, 0] },
+    { p: 0.64, az: -22, el: 38, d: 1.2, mira: [0, 0.48, 0] },
+    { p: 0.82, az: 26, el: 20, d: 1.45, mira: [0, 0.5, 0] },
+    { p: 1.0, az: 36, el: 13, d: 1.6, mira: [0, 0.5, 0] },
   ];
-  const vPos = new THREE.Vector3();
   const vMira = new THREE.Vector3();
   const a3 = new THREE.Vector3();
   const b3 = new THREE.Vector3();
-  const morb = (t) => t * t * (3 - 2 * t);
-  let moltiplica = 1;
-  let versoPrua = 0;   // in verticale la mira scivola verso prua: la barca resta al centro dello schermo
+  let distanza = 3;
   const posaCamera = (p, t) => {
     let i = 0;
     while (i < CHIAVI.length - 2 && p > CHIAVI[i + 1].p) i++;
     const A = CHIAVI[i];
-    const Bk = CHIAVI[i + 1];
-    const u = morb(Math.min(1, Math.max(0, (p - A.p) / (Bk.p - A.p))));
-    vMira.copy(a3.fromArray(A.mira)).lerp(b3.fromArray(Bk.mira), u);
-    vPos.copy(a3.fromArray(A.pos)).lerp(b3.fromArray(Bk.pos), u);
-    vMira.z += versoPrua;
-    vPos.z += versoPrua;
-    vPos.sub(vMira).multiplyScalar(moltiplica).add(vMira);
-    vPos.y += Math.sin(t * 0.5) * 0.12;
-    vPos.x += Math.sin(t * 0.31) * 0.15;
-    camera.position.copy(vPos);
+    const B = CHIAVI[i + 1];
+    const u = morb(limita((p - A.p) / (B.p - A.p), 0, 1));
+    const az = rad(A.az + (B.az - A.az) * u + Math.sin(t * 0.23) * 2.5);
+    const el = rad(A.el + (B.el - A.el) * u + Math.sin(t * 0.31) * 1.2);
+    const r = (A.d + (B.d - A.d) * u) * distanza;
+    vMira.copy(a3.fromArray(A.mira)).lerp(b3.fromArray(B.mira), u);
+    camera.position.set(
+      vMira.x + r * Math.sin(az) * Math.cos(el),
+      vMira.y + r * Math.sin(el),
+      vMira.z + r * Math.cos(az) * Math.cos(el),
+    );
     camera.lookAt(vMira);
   };
 
+  const RAGGIO = 0.95;     // il Gyro con il carter aperto
   const ridimensiona = () => {
     const w = canvas.clientWidth || canvas.parentElement.clientWidth;
     const h = canvas.clientHeight || canvas.parentElement.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     const asp = w / h;
-    camera.aspect = asp;
-    // su schermo largo la barca sta a destra: a sinistra in basso ci sono i testi dei passi
+    camera.fov = asp < 1 ? 36 : 30;
+    const tv = Math.tan(rad(camera.fov) / 2);
+    let semi;
     if (asp >= 1) {
-      const largo = w * 1.18;
+      // su schermo largo il Gyro sta a destra: a sinistra ci sono titolo e passi
+      const largo = w * 1.26;
       camera.aspect = largo / h;
       camera.setViewOffset(largo, h, 0, 0, w, h);
+      semi = Math.min(Math.atan(tv), Math.atan(tv * (0.74 * w) / h));
     } else {
-      camera.clearViewOffset();
+      // su telefono il Gyro sta sotto il titolo e gli indicatori, sopra i passi: il carter aperto deve restare libero
+      const alto = h * 1.1;
+      camera.aspect = w / alto;
+      camera.setViewOffset(w, alto, 0, 0, w, h);
+      semi = Math.atan((tv * w) / alto);
     }
-    camera.fov = asp < 1 ? 44 : 34;
-    moltiplica = asp < 1 ? 1 + Math.min(1.4, (1 - asp) * 2.5) : 1.3;
-    versoPrua = asp < 1 ? 1.4 : 0;
+    // su telefono il carter aperto non deve salire fin sotto il titolo: si allontana un po' la camera
+    distanza = (asp < 1 ? RAGGIO * 1.2 : RAGGIO) / Math.sin(semi);
     camera.updateProjectionMatrix();
   };
   ridimensiona();
@@ -431,45 +417,37 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
   /* ---------- un fotogramma ---------- */
   const OMEGA = (2 * Math.PI) / 3.4;
   let ampiezza = statoRollio(progresso()).ampiezza;
-  let volanoGiri = 0;
+  let giri = 0;
+  let apertura = 0;
   let angoloVolano = 0;
   let pS = progresso();
   const fotogramma = (t, dt) => {
-    const pVero = progresso();
-    pS += (pVero - pS) * Math.min(1, dt * 5);
+    pS += (progresso() - pS) * Math.min(1, dt * 5);
     const st = statoRollio(pS);
     ampiezza += (st.ampiezza - ampiezza) * Math.min(1, dt * 2.5);
-    volanoGiri += (st.volano - volanoGiri) * Math.min(1, dt * 3);
+    giri += (st.volano - giri) * Math.min(1, dt * 3);
+    apertura += (st.apertura - apertura) * Math.min(1, dt * 6);
 
     const rollio = ampiezza * (0.82 * Math.sin(OMEGA * t) + 0.18 * Math.sin(1.63 * OMEGA * t + 1.1));
-    barca.rotation.z = THREE.MathUtils.degToRad(rollio);
-    barca.rotation.x = THREE.MathUtils.degToRad(0.9 * Math.sin(OMEGA * 0.7 * t + 0.6));
-    barca.position.y = quota(0, 0, t) * 0.75 - 0.05;
-    barca.updateMatrixWorld();
+    bordo.rotation.z = rad(rollio);
+    bordo.rotation.x = rad(0.6 * Math.sin(OMEGA * 0.7 * t + 0.6));
+    bordo.position.y = -PERNO + 0.025 * Math.sin(OMEGA * 0.9 * t + 0.3);
 
-    // trasparenza da progetto
-    const x = st.xray;
-    materialiXray.forEach((m) => {
-      m.opacity = 1 - 0.86 * x;
-      m.depthWrite = x < 0.4;
-    });
-    matLinee.opacity = x * 0.75;
-    matBianco.opacity = 1 - 0.8 * x;
-    matBianco.depthWrite = x < 0.4;
-    matSpigoliGyro.opacity = x * 0.9;
+    // il carter si apre come in una vista esplosa
+    const a = morb(limita(apertura, 0, 1));
+    cappello.position.y = yCappello + 0.62 * a;
+    pannelli.forEach((g) => g.position.copy(g.userData.base).addScaledVector(g.userData.n, 0.55 * a));
+    viti.visible = a < 0.02;
 
-    // il volano prende giri e la culla precessa contro l'onda
-    angoloVolano += dt * (1.5 + 30 * volanoGiri) * volanoGiri;
+    // il volano prende giri, la culla precessa contro l'onda
+    angoloVolano += dt * 42 * giri * giri;
     volano.rotation.x = angoloVolano;
-    matSegni.opacity = 1 - morb(Math.min(1, Math.max(0, (volanoGiri - 0.45) / 0.45)));
-    matScia.opacity = volanoGiri * 0.9;
-    luceGyro.intensity = volanoGiri * 2.2 * (0.4 + 0.6 * x);
-    culla.rotation.y = 0.55 * volanoGiri * st.calma * Math.cos(OMEGA * t);
+    const mosso = morb(limita((giri - 0.22) / 0.3, 0, 1));
+    matFori.opacity = 1 - mosso;
+    matMosso.opacity = 0.55 * mosso;
+    culla.rotation.y = 0.5 * giri * st.calma * Math.cos(OMEGA * t);
 
     posaCamera(pS, t);
-    uMare.uT.value = t;
-    uMare.uCam.value.copy(camera.position);
-    uMare.uBarcaInv.value.copy(barca.matrixWorld).invert();
     renderer.render(scena, camera);
     suFrame(rollio);
   };
@@ -511,7 +489,7 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
 
   if (ridotto) {
     // movimento ridotto: la scena si ridisegna solo quando si scorre, il tempo resta fermo
-    const fermo = () => fotogramma(1.2, 1);
+    const fermo = () => { apertura = statoRollio(progresso()).apertura; fotogramma(1.2, 1); };
     fermo();
     window.addEventListener('scroll', () => requestAnimationFrame(fermo), { passive: true });
   } else {
