@@ -42,6 +42,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 img, video, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
 a { color: inherit; }
 h1, h2, h3, p, figure, ul, ol, dl, dd { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
@@ -183,15 +184,16 @@ h3 { font-weight: 500; font-size: 1.2rem; line-height: 1.25; }
 }
 
 @keyframes avvicina { from { transform: scale(1.2); } to { transform: scale(1); } }
-@keyframes apri-sx { from { transform: rotateY(0); } to { transform: rotateY(104deg); } }
-@keyframes apri-dx { from { transform: rotateY(0); } to { transform: rotateY(-104deg); } }
+@keyframes apri-sx { from { transform: rotateY(0); } to { transform: rotateY(118deg); } }
+@keyframes apri-dx { from { transform: rotateY(0); } to { transform: rotateY(-118deg); } }
 @keyframes buio { 0% { opacity: 0; } 70% { opacity: .55; } 100% { opacity: .7; } }
 @keyframes lucido { from { background-position: 130% 0; } to { background-position: -40% 0; } }
 @keyframes fessura {
   0% { transform: scaleY(0); opacity: 0; }
   25% { transform: scaleY(1); opacity: 1; }
-  45% { transform: scaleY(1) scaleX(1); opacity: 1; }
-  100% { transform: scaleY(1) scaleX(60); opacity: 0; }
+  45% { transform: scaleY(1) scaleX(1); opacity: .9; }
+  70% { opacity: .35; }
+  100% { transform: scaleY(1) scaleX(14); opacity: 0; }
 }
 
 .hero__testo {
@@ -234,6 +236,11 @@ h3 { font-weight: 500; font-size: 1.2rem; line-height: 1.25; }
 }
 @media (min-width: 980px) {
   .hero__testo { padding-inline: 40px; padding-bottom: 72px; }
+  .hero__velo-testo {
+    background:
+      linear-gradient(90deg, rgba(20, 23, 26, .88) 0%, rgba(20, 23, 26, .62) 34%, rgba(20, 23, 26, 0) 66%),
+      linear-gradient(0deg, rgba(20, 23, 26, .6) 0%, rgba(20, 23, 26, 0) 40%);
+  }
   .hero__titolo { max-width: 14ch; }
   .cancello { perspective: 1600px; }
   .cancello__anta { border-width: 14px; }
