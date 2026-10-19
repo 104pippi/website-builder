@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <polygon points="4.5,32 17.5,22 30.5,32 17.5,42" fill="#C8141C"/>
+  <polygon points="19,20.8 32,10.8 45,20.8 32,30.8" fill="#1C1D1F"/>
+  <polygon points="33.5,32 46.5,22 59.5,32 46.5,42" fill="#1C1D1F"/>
+  <polygon points="19,43.2 32,33.2 45,43.2 32,53.2" fill="#1C1D1F"/>
+  <style>@media (prefers-color-scheme: dark){polygon[fill="#1C1D1F"]{fill:#ECE7DD}}</style>
+</svg>
