@@ -49,6 +49,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-si-viaggiare](./sito-si-viaggiare) | https://sito-si-viaggiare.vercel.app | [video](./sito-si-viaggiare/video) |
 | [sito-sipam-energy](./sito-sipam-energy) | https://sito-sipam-energy.vercel.app | [video](./sito-sipam-energy/video) |
 | [sito-sorrisi-del-futuro](./sito-sorrisi-del-futuro) | https://sito-sorrisi-del-futuro.vercel.app | [video](./sito-sorrisi-del-futuro/video) |
+| [sito-studio-michelet](./sito-studio-michelet) | https://sito-studio-michelet.vercel.app | [video](./sito-studio-michelet/video) |
 | [sito-studio-pigreco](./sito-studio-pigreco) | https://sito-studio-pigreco.vercel.app | [video](./sito-studio-pigreco/video) |
 | [sito-tech-mec](./sito-tech-mec) | https://sito-tech-mec.vercel.app | [video](./sito-tech-mec/video) |
 | [sito-tecnomeccanica](./sito-tecnomeccanica) | https://sito-tecnomeccanica.vercel.app | [video](./sito-tecnomeccanica/video) |

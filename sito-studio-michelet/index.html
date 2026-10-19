@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Studio Michelet | Laboratorio di analisi enologiche e consulenza a Conegliano</title>
+  <meta name="description" content="Laboratorio accreditato ACCREDIA e consulenza enologica a Conegliano dal 1972. Analisi di vino, mosto, uva, tappi, birra e distillati, ritiro campioni in tutta Italia.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://sito-studio-michelet.vercel.app/">
+  <meta name="theme-color" content="#1F1027">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Studio Michelet: il laboratorio che legge il tuo vino">
+  <meta property="og:description" content="Analisi accreditate ACCREDIA e consulenza enologica a Conegliano dal 1972. Ritiro campioni in tutta Italia.">
+  <meta property="og:image" content="https://sito-studio-michelet.vercel.app/assets/img/og.jpg">
+  <meta property="og:url" content="https://sito-studio-michelet.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,600..900&family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/vendemmia-m.webp" media="(max-width: 760px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/vendemmia.webp" media="(min-width: 761px)" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js"}}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Studio Michelet",
+    "legalName": "Laboratorio di Enologia Enzo Michelet s.r.l.",
+    "description": "Laboratorio di analisi enologiche accreditato ACCREDIA e consulenza enologica e vitivinicola.",
+    "url": "https://sito-studio-michelet.vercel.app/",
+    "image": "https://sito-studio-michelet.vercel.app/assets/img/og.jpg",
+    "logo": "https://sito-studio-michelet.vercel.app/assets/img/marchio.svg",
+    "telephone": "+390438415202",
+    "email": "info@studiomichelet.com",
+    "foundingDate": "1972",
+    "vatID": "IT03520480264",
+    "areaServed": "IT",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Vital 96",
+      "postalCode": "31015",
+      "addressLocality": "Conegliano",
+      "addressRegion": "TV",
+      "addressCountry": "IT"
+    },
+    "sameAs": [
+      "https://www.facebook.com/StudioMichelet/",
+      "https://www.instagram.com/studio.michelet/",
+      "https://it.linkedin.com/company/studiomichelet"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <script>
+    /* Intro: il marchio Michelet diventa la finestra sulla foto. Inline per partire prima del primo frame. */
+    (function () {
+      var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.documentElement.classList.add('js', ridotto ? 'senza-intro' : 'con-intro');
+      if (ridotto) return;
+      var D = 'M77.25 0.25C77.25 2.25 81 30 83.5 45.5C91 95.5 101.5 142.75 113.75 180.75C122 206.5 132 233.25 156.25 293.25C195.25 389.5 208.5 440.25 212.5 509L212.5 512L242.25 512L272 512L272 510.25C272.25 509.5 272.5 506 272.75 503C276.5 447.25 287.75 398.5 311.75 335.25C316.5 322.5 316.75 322.5 320.75 333C343.75 393.25 355 438.5 359.5 488.75C360.25 495.75 361.25 509 361.25 510.5L361.25 512L385.25 512L409 512L409 509.5C403.5 429 391.5 381 351.5 281C341 255.25 341.75 259.5 346 248.5C371 185.75 383.5 143.5 393.75 88.75C394 87.25 394.5 84.5 395 82.5C399.25 60 403 34.25 406.25 8.5C406.75 4.5 407.25 1 407.25 0.75L407.25 0L383.25 0L359.25 0L359.25 0.75C359.25 2.75 355.75 27.75 353.25 43.25C345.25 94.25 334.25 141.75 321.75 177.75C316.75 192.5 316.5 192.5 311.5 177.75C297.5 136.25 287.25 91.25 278.25 32.75C277.25 25.75 274.75 8 274.25 2.5L274 0L250 0L226.25 0L226.25 1C226.25 2 227 7.75 227.75 14.75C228 16.5 228.5 19.25 228.75 21.5C236.5 79.5 247.75 132.75 261.25 176.5C267 195.25 276.25 221 287.25 248.75C290.25 256.25 290.25 256.5 290.25 258.25L290.25 260.25L283.5 277.25C264.25 325.25 254.25 352.5 245.5 383C243.5 390 243.25 390.5 242 390.25C241 390 240.75 389 238.5 381.75C229 348.75 220.75 326 194.75 261.25C158.75 172.75 147.25 134.25 135.25 66.75C131.5 46.25 125.25 4.25 125.25 0.5C125.25 0 122.5 0 101.25 0C81.5 0 77.25 0 77.25 0.25Z';
+      var cv = document.createElement('canvas');
+      cv.className = 'intro';
+      cv.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(cv);
+      var ctx = cv.getContext('2d');
+      var nastri = new Path2D(D);
+      var CX = 316, CY = 258;              /* incrocio dei due nastri, in coordinate 0..512 */
+      var t0 = performance.now();
+      function ease(t) { return t < 0 ? 0 : t > 1 ? 1 : t; }
+      function outCubic(t) { t = ease(t); return 1 - Math.pow(1 - t, 3); }
+      function inCubic(t) { t = ease(t); return t * t * t; }
+      function frame() {
+        var t = (performance.now() - t0) / 1000;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var w = window.innerWidth, h = window.innerHeight;
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+        var lato = Math.min(w * 0.62, h * 0.42, 340);   /* lato del quadrato del marchio */
+        var nascita = outCubic(t / 0.6);                 /* i nastri si aprono */
+        var tuffo = inCubic((t - 0.95) / 0.85);          /* la camera entra nell'incrocio */
+        var s = (lato / 512) * (0.9 + 0.1 * nascita + 0.05 * outCubic((t - 0.55) / 0.4)) * (1 + tuffo * 70);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 1 - ease((t - 1.55) / 0.25);
+        ctx.fillStyle = '#643784';
+        ctx.fillRect(0, 0, cv.width, cv.height);
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.globalAlpha = nascita;
+        ctx.setTransform(s * dpr, 0, 0, s * dpr, (w / 2 - CX * s) * dpr, (h / 2 - CY * s) * dpr);
+        ctx.fill(nastri);
+        if (t > 1.05 && !document.documentElement.classList.contains('intro-fatta')) {
+          document.documentElement.classList.add('intro-fatta');
+        }
+        if (t < 1.85) { requestAnimationFrame(frame); } else { cv.remove(); }
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="marchio" viewBox="0 0 512 512">
+      <rect width="512" height="512" fill="#643784"/>
+      <path fill="#fff" d="M77.25 0.25C77.25 2.25 81 30 83.5 45.5C91 95.5 101.5 142.75 113.75 180.75C122 206.5 132 233.25 156.25 293.25C195.25 389.5 208.5 440.25 212.5 509L212.5 512L242.25 512L272 512L272 510.25C272.25 509.5 272.5 506 272.75 503C276.5 447.25 287.75 398.5 311.75 335.25C316.5 322.5 316.75 322.5 320.75 333C343.75 393.25 355 438.5 359.5 488.75C360.25 495.75 361.25 509 361.25 510.5L361.25 512L385.25 512L409 512L409 509.5C403.5 429 391.5 381 351.5 281C341 255.25 341.75 259.5 346 248.5C371 185.75 383.5 143.5 393.75 88.75C394 87.25 394.5 84.5 395 82.5C399.25 60 403 34.25 406.25 8.5C406.75 4.5 407.25 1 407.25 0.75L407.25 0L383.25 0L359.25 0L359.25 0.75C359.25 2.75 355.75 27.75 353.25 43.25C345.25 94.25 334.25 141.75 321.75 177.75C316.75 192.5 316.5 192.5 311.5 177.75C297.5 136.25 287.25 91.25 278.25 32.75C277.25 25.75 274.75 8 274.25 2.5L274 0L250 0L226.25 0L226.25 1C226.25 2 227 7.75 227.75 14.75C228 16.5 228.5 19.25 228.75 21.5C236.5 79.5 247.75 132.75 261.25 176.5C267 195.25 276.25 221 287.25 248.75C290.25 256.25 290.25 256.5 290.25 258.25L290.25 260.25L283.5 277.25C264.25 325.25 254.25 352.5 245.5 383C243.5 390 243.25 390.5 242 390.25C241 390 240.75 389 238.5 381.75C229 348.75 220.75 326 194.75 261.25C158.75 172.75 147.25 134.25 135.25 66.75C131.5 46.25 125.25 4.25 125.25 0.5C125.25 0 122.5 0 101.25 0C81.5 0 77.25 0 77.25 0.25Z"/>
+    </symbol>
+    <symbol id="spunta" viewBox="0 0 70 70"><path fill="currentColor" d="M23.04 50.51 9.29 36.93.72 45.5l22.34 21.43L69.28 15.5l-8.65-8.57z"/></symbol>
+    <symbol id="ico-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="ico-provetta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 2h6M10 2v6.5L4.6 18.3A2.5 2.5 0 0 0 6.8 22h10.4a2.5 2.5 0 0 0 2.2-3.7L14 8.5V2M7 15h10"/></symbol>
+  </svg>
+
+  <a class="salta" href="#contenuto">Vai al contenuto</a>
+
+  <header class="testata" data-testata>
+    <div class="testata__in">
+      <a class="logo" href="#top" aria-label="Studio Michelet, torna all'inizio">
+        <svg class="logo__marchio" width="40" height="40" aria-hidden="true"><use href="#marchio"/></svg>
+        <span class="logo__testo"><span class="logo__nome">Studio Michelet</span><span class="logo__sotto">Laboratorio di Enologia</span></span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Sezioni" data-menu>
+        <a href="#laboratorio">Laboratorio</a>
+        <a href="#parametri">Parametri</a>
+        <a href="#certificazioni">Certificazioni</a>
+        <a href="#consulenza">Consulenza</a>
+        <a href="#storia">Storia</a>
+        <a href="#contatti">Contatti</a>
+        <a class="menu__tel" href="tel:+390438415202">0438 415202</a>
+      </nav>
+      <a class="btn btn--cta testata__cta" href="#richiesta" data-matrice="">Richiedi un'analisi</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger>
+        <span class="burger__linee" aria-hidden="true"></span><span class="burger__testo">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-titolo">
+      <picture class="hero__foto">
+        <source media="(max-width: 760px)" srcset="assets/img/vendemmia-m.webp" type="image/webp">
+        <source media="(max-width: 760px)" srcset="assets/img/vendemmia-m.jpg">
+        <source srcset="assets/img/vendemmia.webp" type="image/webp">
+        <img src="assets/img/vendemmia.jpg" width="1920" height="1080" fetchpriority="high" alt="Mani che sorreggono un grappolo di uva nera durante la vendemmia">
+      </picture>
+      <div class="hero__velo" aria-hidden="true"></div>
+      <div class="hero__testo">
+        <h1 class="hero__titolo" id="hero-titolo">
+          <span class="riga"><span>Il laboratorio</span></span>
+          <span class="riga"><span>che legge</span></span>
+          <span class="riga"><span>il tuo vino.</span></span>
+        </h1>
+        <p class="hero__sotto">Analisi accreditate ACCREDIA e consulenza enologica a Conegliano, dal 1972. Ritiriamo i campioni in tutta Italia.</p>
+        <div class="hero__azioni">
+          <a class="btn btn--cta btn--grande" href="#richiesta" data-matrice="">Richiedi un'analisi</a>
+          <a class="btn btn--vetro btn--grande" href="tel:+390438415202"><svg width="18" height="18" aria-hidden="true"><use href="#ico-tel"/></svg>0438 415202</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIDUCIA -->
+    <section class="fiducia" aria-label="Perché fidarsi">
+      <ul class="fiducia__lista">
+        <li><strong>Dal 1972</strong><span>accanto alla Scuola Enologica di Conegliano</span></li>
+        <li><strong>ACCREDIA n. 1521</strong><span>norma UNI CEI EN ISO/IEC 17025:2018</span></li>
+        <li><strong>ISO 9001</strong><span>sistema qualità certificato CSQA-IQNET</span></li>
+        <li><strong>Tutta Italia</strong><span>ritiro dei campioni in 20 regioni</span></li>
+      </ul>
+    </section>
+
+    <!-- 3D: DALLA VIGNA AL DATO -->
+    <section class="dati" id="dati" aria-labelledby="dati-titolo" data-dati>
+      <div class="dati__palco">
+        <canvas class="dati__canvas" data-dati-canvas aria-hidden="true"></canvas>
+        <div class="dati__fallback" aria-hidden="true"></div>
+        <div class="dati__testi">
+          <div class="dati__passo" data-passo="0">
+            <h2 class="dati__titolo" id="dati-titolo">Dalla vigna al dato.</h2>
+            <p>Ogni filare diventa un campione, ogni campione un tracciato da leggere. Sulle colline di Conegliano lo facciamo dal 1972.</p>
+          </div>
+          <div class="dati__passo" data-passo="1">
+            <p class="dati__numero" data-conta="20000">20.000</p>
+            <p>campioni analizzati ogni anno, con la logistica per ritirarli in tutta Italia.</p>
+          </div>
+          <div class="dati__passo" data-passo="2">
+            <p class="dati__numero" data-conta="1500">1.500</p>
+            <p>parametri determinati ogni giorno, con report chiari e tracciabili.</p>
+          </div>
+          <div class="dati__passo" data-passo="3">
+            <p class="dati__numero" data-conta="250">250</p>
+            <p>realtà vinicole seguite con costanza, dal piccolo viticoltore alla cantina blasonata, in 20 regioni.</p>
+          </div>
+        </div>
+        <div class="dati__barra" aria-hidden="true"><span data-dati-barra></span></div>
+      </div>
+    </section>
+
+    <!-- LABORATORIO: MATRICI -->
+    <section class="sezione laboratorio" id="laboratorio" aria-labelledby="lab-titolo">
+      <div class="contenitore">
+        <div class="intesta" data-rivela>
+          <h2 id="lab-titolo">Che cosa analizziamo</h2>
+          <p>Il laboratorio è nato a supporto della produzione: dati affidabili su cui basare le scelte in vigneto, in cantina e quando il vino va sul mercato. Scegli la matrice.</p>
+        </div>
+
+        <div class="matrici" data-matrici>
+          <div class="matrici__schede" role="tablist" aria-label="Matrici di analisi">
+            <button role="tab" id="tab-vino" aria-controls="pan-vino" aria-selected="true" tabindex="0">Vino</button>
+            <button role="tab" id="tab-uva" aria-controls="pan-uva" aria-selected="false" tabindex="-1">Uva</button>
+            <button role="tab" id="tab-foglie" aria-controls="pan-foglie" aria-selected="false" tabindex="-1">Foglie</button>
+            <button role="tab" id="tab-tappo" aria-controls="pan-tappo" aria-selected="false" tabindex="-1">Tappo</button>
+            <button role="tab" id="tab-birra" aria-controls="pan-birra" aria-selected="false" tabindex="-1">Birra</button>
+            <button role="tab" id="tab-distillati" aria-controls="pan-distillati" aria-selected="false" tabindex="-1">Distillati</button>
+          </div>
+
+          <div class="matrici__pannelli">
+            <article class="pannello" role="tabpanel" id="pan-vino" aria-labelledby="tab-vino">
+              <picture class="pannello__foto"><source srcset="assets/img/vino.webp" type="image/webp"><img src="assets/img/vino.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Provetta di vino rosso inserita in un analizzatore del laboratorio"></picture>
+              <div class="pannello__testo">
+                <h3>Un sistema di controllo costruito sui tuoi vini</h3>
+                <p>Un bravo winemaker sa che non tutti i numeri sono uguali. Dai parametri di base come titolo alcolometrico, zuccheri ed estratto fino ai residui di fitofarmaci, scegliamo con te che cosa misurare e con quale precisione.</p>
+                <p class="pannello__nota">Molti metodi valgono anche per cocktail e bevande aromatizzate a base di vino, a bassa gradazione o senza alcol.</p>
+                <ul class="pannello__chip"><li>Analisi di base</li><li>Colore e polifenoli</li><li>Microbiologia</li><li>Metalli</li><li>Allergeni</li><li>Fitofarmaci</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="vino">Richiedi un'analisi del vino</a>
+              </div>
+            </article>
+            <article class="pannello" role="tabpanel" id="pan-uva" aria-labelledby="tab-uva" hidden>
+              <picture class="pannello__foto"><source srcset="assets/img/uva.webp" type="image/webp"><img src="assets/img/uva.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Una mano sui grappoli di uva nera appena raccolti"></picture>
+              <div class="pannello__testo">
+                <h3>Il momento giusto per vendemmiare</h3>
+                <p>Analisi complete della maturazione per scegliere l'epoca di raccolta e impostare in anticipo la vinificazione più adatta all'annata.</p>
+                <p class="pannello__nota">Prima della raccolta cerchiamo i residui di fitofarmaci, per la conformità ai disciplinari SQNPI e Biologico.</p>
+                <ul class="pannello__chip"><li>Maturità tecnologica</li><li>Maturità fenolica</li><li>Residui di fitofarmaci</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="uva">Richiedi un'analisi delle uve</a>
+              </div>
+            </article>
+            <article class="pannello" role="tabpanel" id="pan-foglie" aria-labelledby="tab-foglie" hidden>
+              <picture class="pannello__foto"><source srcset="assets/img/foglie.webp" type="image/webp"><img src="assets/img/foglie.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Foglie di vite in primo piano con un filare sullo sfondo"></picture>
+              <div class="pannello__testo">
+                <h3>Diagnostica fogliare e residui</h3>
+                <p>Macroelementi come azoto, fosforo, potassio, calcio, ferro e magnesio, e microelementi come boro, zinco, rame e manganese: per scoprire in tempo carenze o eccessi che pesano sulla salute della pianta e sulla qualità delle uve.</p>
+                <p class="pannello__nota">Verifichiamo anche l'assenza di sostanze attive non ammesse dai disciplinari regionali o non registrate per la coltura.</p>
+                <ul class="pannello__chip"><li>Macroelementi</li><li>Microelementi</li><li>Residui di fitofarmaci</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="foglie">Richiedi un'analisi fogliare</a>
+              </div>
+            </article>
+            <article class="pannello" role="tabpanel" id="pan-tappo" aria-labelledby="tab-tappo" hidden>
+              <picture class="pannello__foto"><source srcset="assets/img/tappo.webp" type="image/webp"><img src="assets/img/tappo.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Due tappi di sughero naturale su fondo bianco"></picture>
+              <div class="pannello__testo">
+                <h3>La chiusura giusta per anni di bottiglia</h3>
+                <p>Dal vino di pronta beva a quello che affina oltre dieci anni, il tappo influenza il profilo del vino. Test fisici e meccanici, valutazioni chimico-sensoriali e analisi chimico-strumentali per chiusure senza difetti e contaminanti.</p>
+                <ul class="pannello__chip"><li>Test fisici e meccanici</li><li>Valutazione chimico-sensoriale</li><li>Analisi strumentali</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="tappo">Richiedi un controllo dei tappi</a>
+              </div>
+            </article>
+            <article class="pannello" role="tabpanel" id="pan-birra" aria-labelledby="tab-birra" hidden>
+              <picture class="pannello__foto"><source srcset="assets/img/birra.webp" type="image/webp"><img src="assets/img/birra.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Bicchiere di birra ambrata con le bollicine in controluce"></picture>
+              <div class="pannello__testo">
+                <h3>Analisi chimiche e microbiologiche della birra</h3>
+                <p>Titolo alcolometrico, estratto e grado saccarometrico come punto di partenza; acidità volatile, acido lattico e azoto prontamente assimilabile per seguire la fermentazione. Poi glutine, ocratossina A, allergeni, metalli pesanti, anidride carbonica, sovrapressione e torbidità.</p>
+                <p class="pannello__nota">In microbiologia: conta e vitalità dei lieviti, ricerca di batteri lattici e Brettanomyces.</p>
+                <ul class="pannello__chip"><li>Fermentazione</li><li>Glutine</li><li>Lieviti e batteri</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="birra">Richiedi un'analisi della birra</a>
+              </div>
+            </article>
+            <article class="pannello" role="tabpanel" id="pan-distillati" aria-labelledby="tab-distillati" hidden>
+              <picture class="pannello__foto"><source srcset="assets/img/distillati.webp" type="image/webp"><img src="assets/img/distillati.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Distillato dorato in un'ampolla di vetro da laboratorio"></picture>
+              <div class="pannello__testo">
+                <h3>Grappe, liquori, amari e vermouth</h3>
+                <p>Titolo alcolometrico, zuccheri residui, alcol metilico, anidride solforosa, sostanze volatili e alcoli superiori: per rispettare la legge e per mettere a punto il processo produttivo.</p>
+                <ul class="pannello__chip"><li>Conformità di legge</li><li>Metanolo</li><li>Alcoli superiori</li></ul>
+                <a class="link-freccia" href="#richiesta" data-matrice="distillati">Richiedi un'analisi dei distillati</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRE LIVELLI -->
+    <section class="sezione livelli" aria-labelledby="livelli-titolo">
+      <div class="contenitore">
+        <div class="intesta" data-rivela>
+          <h2 id="livelli-titolo">Tre modi di guardare lo stesso vino</h2>
+          <p>Ogni fase del processo produttivo passa sotto tre lenti diverse. Insieme danno un quadro che nessuna, da sola, può dare.</p>
+        </div>
+        <div class="livelli__griglia">
+          <article class="livello" data-rivela>
+            <picture><source srcset="assets/img/chimica.webp" type="image/webp"><img src="assets/img/chimica.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Campioni in un autocampionatore con tecnico in guanti blu"></picture>
+            <h3>Analisi chimica</h3>
+            <p>Dati affidabili su uve, mosti e vini per decidere in vigna e in cantina, verificare la conformità alle norme e capire in tempo la causa di un'alterazione.</p>
+          </article>
+          <article class="livello" data-rivela>
+            <picture><source srcset="assets/img/microbiologia.webp" type="image/webp"><img src="assets/img/microbiologia.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Analista al microscopio nel reparto di microbiologia"></picture>
+            <h3>Analisi microbiologica</h3>
+            <p>Lieviti e batteri fanno il vino, nel bene e nel male. Li contiamo e li seguiamo per guidare le fermentazioni e intervenire prima che nasca un difetto.</p>
+          </article>
+          <article class="livello" data-rivela>
+            <picture><source srcset="assets/img/sensoriale.webp" type="image/webp"><img src="assets/img/sensoriale.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Due enologi degustano vino bianco al tavolo del laboratorio"></picture>
+            <h3>Analisi sensoriale</h3>
+            <p>Nessuno strumento sostituisce i sensi. Un panel di giudici addestrati, protocolli rigorosi e metodi statistici per valutazioni affidabili e ripetibili.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARAMETRI -->
+    <section class="sezione parametri" id="parametri" aria-labelledby="param-titolo">
+      <div class="contenitore parametri__in">
+        <div class="parametri__testa" data-rivela>
+          <h2 id="param-titolo">Cerca un parametro</h2>
+          <p>Sul vino determiniamo <strong>oltre 100</strong> parametri, con metodi interni e ufficiali. Scrivi quello che ti serve: se non lo trovi, costruiamo un protocollo su misura.</p>
+          <picture class="parametri__foto"><source srcset="assets/img/cilindri.webp" type="image/webp"><img src="assets/img/cilindri.jpg" width="400" height="450" loading="lazy" decoding="async" alt="Cilindri graduati in vetro allineati sul bancone"></picture>
+        </div>
+        <div class="cerca" data-cerca>
+          <label class="cerca__etichetta" for="cerca-input">Parametro o sostanza</label>
+          <div class="cerca__campo">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="cerca-input" type="search" autocomplete="off" placeholder="Per esempio: solforosa, rame, Brettanomyces" data-cerca-input>
+          </div>
+          <div class="cerca__filtri" role="group" aria-label="Filtra per gruppo" data-cerca-filtri></div>
+          <p class="cerca__esito" aria-live="polite" data-cerca-esito></p>
+          <div class="cerca__risultati" data-cerca-risultati></div>
+          <details class="strumenti">
+            <summary>Gli strumenti del laboratorio</summary>
+            <ul class="strumenti__lista">
+              <li>Cromatografia liquida ad alta prestazione con spettrometria di massa e massa/massa ad alta risoluzione (UHPLC-MS/MS Orbitrap)</li>
+              <li>Cromatografia liquida con rivelatore UV-Visibile (UHPLC-UV-Vis)</li>
+              <li>Cromatografia liquida con Diode array detector (UHPLC-DAD)</li>
+              <li>Cromatografia liquida con fluorimetro (UHPLC-FLD)</li>
+              <li>Gas-cromatografia con spettrometria di massa e massa/massa (GC-MS/MS)</li>
+              <li>Gas-cromatografia in spazio di testa con spettrometria di massa (HS-GC-MS/MS)</li>
+              <li>Gas-cromatografia con microestrazione in fase solida (SPME-GC-MS/MS)</li>
+              <li>Gas-cromatografia con Flame Ionization Detector (GC-FID)</li>
+              <li>Spettroscopia di emissione ottica al plasma (ICP-OES)</li>
+              <li>Spettrometria di assorbimento atomico (AAS)</li>
+              <li>Densimetria digitale</li>
+              <li>Analizzatori enzimatici da 400 e da 200 test l'ora</li>
+              <li>Spettrofotometria UV-VIS</li>
+              <li>Titolazione automatica multiparametro</li>
+              <li>Analizzatore di gas disciolti</li>
+              <li>Analizzatore multiparametro a flusso segmentato</li>
+              <li>Immunoenzimatico E.L.I.S.A.</li>
+              <li>Unità di analisi microbiologica e microscopia diagnostica</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICAZIONI -->
+    <section class="sezione certificazioni" id="certificazioni" aria-labelledby="cert-titolo">
+      <div class="contenitore cert__in">
+        <div class="cert__testo" data-rivela>
+          <h2 id="cert-titolo">Rapporti di prova che valgono anche all'estero</h2>
+          <p>La qualità del dato è la nostra firma. Il laboratorio è autorizzato a livello governativo a rilasciare Rapporti di Prova con validità ufficiale, anche per l'esportazione.</p>
+          <ul class="cert__lista">
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Accreditamento ACCREDIA n. 1521</strong> secondo la norma UNI CEI EN ISO/IEC 17025:2018</span></li>
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Certificazione CSQA-IQNET</strong> UNI EN ISO 9001, con gestionale informatizzato e piena tracciabilità</span></li>
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Certificati per l'export</strong> e analisi multiresiduali di pesticidi</span></li>
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Idoneità DOC, DOCG e IGT</strong> per il commercio sotto le denominazioni</span></li>
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Laboratorio autorizzato per il biologico</strong> e analisi di conformità SQNPI</span></li>
+            <li><svg aria-hidden="true"><use href="#spunta"/></svg><span><strong>Registro della Regione Veneto</strong> per l'autocontrollo alimentare, piani H.A.C.C.P. e imbottigliamenti conto terzi</span></li>
+          </ul>
+          <div class="cert__link">
+            <a class="link-freccia" href="https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&amp;area=310&amp;numeroaccr=00352&amp;classification=A&amp;isRestricted=false&amp;dipartimento=L" target="_blank" rel="noopener">Elenco delle prove accreditate</a>
+            <a class="link-freccia" href="https://www.studiomichelet.com/sites/default/files/docs/M01008_politica_qualita.pdf" target="_blank" rel="noopener">Politica della qualità (PDF)</a>
+          </div>
+        </div>
+        <figure class="cert__foto" data-rivela>
+          <picture><source srcset="assets/img/certificato.webp" type="image/webp"><img src="assets/img/certificato.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Firma di un rapporto di prova con la penna stilografica"></picture>
+          <figcaption>Ogni rapporto porta con sé la responsabilità di chi lo firma.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONSULENZA -->
+    <section class="sezione consulenza" id="consulenza" aria-labelledby="cons-titolo">
+      <div class="consulenza__banner">
+        <picture><source media="(min-width: 900px)" srcset="assets/img/consulenza-vigna.webp" type="image/webp"><source media="(min-width: 900px)" srcset="assets/img/consulenza-vigna.jpg"><source srcset="assets/img/cantina-degustazione.webp" type="image/webp"><img src="assets/img/cantina-degustazione.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Il lavoro della consulenza, dal grappolo in vigna al vino nel bicchiere"></picture>
+      </div>
+      <div class="contenitore">
+        <div class="intesta intesta--larga" data-rivela>
+          <h2 id="cons-titolo">Consulenza enologica, dalla vendemmia alla bottiglia</h2>
+          <p>Oltre cinquant'anni sul campo ci permettono di seguire ogni fase: le prime scelte sull'uva, i recipienti per l'affinamento, gli assemblaggi, i tempi giusti per ogni intervento. Ascoltiamo idee e aspettative, leggiamo le competenze e le risorse dell'azienda, fissiamo insieme traguardi commerciali sostenibili.</p>
+        </div>
+        <div class="servizi">
+          <article class="servizio" data-rivela>
+            <picture><source srcset="assets/img/progetti.webp" type="image/webp"><img src="assets/img/progetti.jpg" width="400" height="450" loading="lazy" decoding="async" alt="Vigneto in collina con il bosco sullo sfondo"></picture>
+            <div>
+              <h3>Progetti vitivinicoli</h3>
+              <p>Dall'analisi del territorio (microclima, suolo, varietà, sistemi d'impianto) ai vini prototipo che orientano le scelte agronomiche, in squadra con agronomi e professionisti specializzati.</p>
+            </div>
+          </article>
+          <article class="servizio" data-rivela>
+            <picture><source srcset="assets/img/cantine.webp" type="image/webp"><img src="assets/img/cantine.jpg" width="400" height="450" loading="lazy" decoding="async" alt="Vasche di fermentazione in acciaio inox in una cantina moderna"></picture>
+            <div>
+              <h3>Progettazione cantine</h3>
+              <p>Spazi, impianti e logistica calibrati sui vini che vuoi produrre, comprese le zone di affinamento e di spumantizzazione, Charmat e Metodo Classico.</p>
+            </div>
+          </article>
+          <article class="servizio" data-rivela>
+            <picture><source srcset="assets/img/microvinificazione.webp" type="image/webp"><img src="assets/img/microvinificazione.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Piccoli fermentatori in acciaio del laboratorio di microvinificazione"></picture>
+            <div>
+              <h3>Microvinificazione</h3>
+              <p>Vinificazioni sperimentali per confrontare varietà, cloni, annate e tecniche, e test di fermentazione con lieviti selezionati prima della scala industriale.</p>
+            </div>
+          </article>
+        </div>
+        <div class="specialita" data-rivela>
+          <p class="specialita__titolo">Seguiamo ogni tipologia di vinificazione</p>
+          <ul>
+            <li>Vini fermi</li>
+            <li>Spumanti Metodo Charmat</li>
+            <li>Spumanti Metodo Classico</li>
+            <li>Vini affinati in anfora</li>
+            <li>Vini senza solfiti aggiunti</li>
+            <li>Vini da varietà resistenti</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME SI INVIA UN CAMPIONE -->
+    <section class="sezione percorso" aria-labelledby="perc-titolo">
+      <div class="contenitore">
+        <div class="intesta" data-rivela>
+          <h2 id="perc-titolo">Come funziona una richiesta</h2>
+          <p>Dalla richiesta al rapporto di prova, in quattro passi. Senza spostarti dalla cantina.</p>
+        </div>
+        <ol class="percorso__passi">
+          <li data-rivela>
+            <span class="percorso__n" aria-hidden="true">1</span>
+            <h3>Ci scrivi che cosa ti serve</h3>
+            <p>Indichi il prodotto e l'obiettivo. I nostri tecnici ti aiutano a scegliere i parametri giusti per la fase produttiva.</p>
+          </li>
+          <li data-rivela>
+            <span class="percorso__n" aria-hidden="true">2</span>
+            <h3>Ritiriamo il campione</h3>
+            <p>Il servizio di ritiro arriva in tutta Italia: oggi raccogliamo campioni da 20 regioni.</p>
+          </li>
+          <li data-rivela>
+            <span class="percorso__n" aria-hidden="true">3</span>
+            <h3>Lo analizziamo</h3>
+            <p>Metodi interni e ufficiali, strumentazione di ultima generazione e tracciabilità di ogni prova.</p>
+          </li>
+          <li data-rivela>
+            <span class="percorso__n" aria-hidden="true">4</span>
+            <h3>Ricevi il rapporto di prova</h3>
+            <p>Un report chiaro e tracciabile, con validità ufficiale anche per l'esportazione, e qualcuno che te lo sa spiegare.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CASI STUDIO -->
+    <section class="sezione casi" id="casi" aria-labelledby="casi-titolo">
+      <div class="contenitore">
+        <div class="intesta" data-rivela>
+          <h2 id="casi-titolo">Tre storie dal campo</h2>
+          <p>Interventi reali, costruiti su esigenze specifiche.</p>
+        </div>
+        <div class="casi__griglia">
+          <article class="caso" data-rivela>
+            <picture><source srcset="assets/img/caso-controllo.webp" type="image/webp"><img src="assets/img/caso-controllo.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Analista che versa un campione nella provetta in laboratorio"></picture>
+            <h3>Un piano di controllo per tutta la produzione</h3>
+            <dl>
+              <dt>Prima</dt><dd>Controlli con lacune nei punti nevralgici del processo e parametri non adatti alla produzione.</dd>
+              <dt>Metodo</dt><dd>Un sistema calibrato su specificità tecniche, richieste commerciali ed efficienza economica.</dd>
+              <dt>Risultato</dt><dd>Qualità confermata e mantenuta nel tempo, con un piano che funziona anche come strumento di certificazione.</dd>
+            </dl>
+          </article>
+          <article class="caso" data-rivela>
+            <picture><source srcset="assets/img/caso-montagna.webp" type="image/webp"><img src="assets/img/caso-montagna.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Vigneto giovane con un lago e le montagne sullo sfondo"></picture>
+            <h3>Una nuova azienda in montagna</h3>
+            <dl>
+              <dt>Prima</dt><dd>Terreni montani acquistati, ma nessuna esperienza sulle varietà resistenti e nessuna cantina.</dd>
+              <dt>Metodo</dt><dd>Studio pedoclimatico e fenologico, protocolli di microvinificazione per misurare le potenzialità del terroir.</dd>
+              <dt>Risultato</dt><dd>Tutte le autorizzazioni ottenute e un rosso da monovitigno resistente prodotto in autonomia.</dd>
+            </dl>
+          </article>
+          <article class="caso" data-rivela>
+            <picture><source srcset="assets/img/caso-bianchi.webp" type="image/webp"><img src="assets/img/caso-bianchi.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Calice di vino bianco con le bollicine in controluce"></picture>
+            <h3>L'identità ritrovata dei bianchi friulani</h3>
+            <dl>
+              <dt>Prima</dt><dd>Vini tecnicamente corretti ma senza personalità, frutto di una vinificazione troppo standardizzata.</dd>
+              <dt>Metodo</dt><dd>Le tecniche con cui negli anni '80 avevamo reso celebri quelle uve, adattate alle tecnologie di oggi.</dd>
+              <dt>Risultato</dt><dd>Bianchi che oggi sono tra i più apprezzati e riconosciuti del panorama italiano.</dd>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORIA -->
+    <section class="sezione storia" id="storia" aria-labelledby="storia-titolo">
+      <figure class="storia__team">
+        <picture><source srcset="assets/img/team.webp" type="image/webp"><img src="assets/img/team.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="La squadra di Studio Michelet in posa tra le botti di una cantina storica"></picture>
+      </figure>
+      <div class="contenitore storia__in">
+        <div class="intesta" data-rivela>
+          <h2 id="storia-titolo">Enologi e analisti dal 1972</h2>
+          <p>Siamo cresciuti accanto alla Scuola Enologica di Conegliano. Oltre cinquant'anni di dati reali, letti uno per uno, sono diventati un metodo: dare voce al carattere di ogni singolo vino.</p>
+        </div>
+        <ol class="linea">
+          <li data-rivela><span class="linea__anno">1972</span><p>Nasce Studio Michelet. L'enologo Enzo Michelet si è formato alla Scuola Enologica di Conegliano, accanto al professor Carlo Miconi.</p></li>
+          <li data-rivela><span class="linea__anno">Anni '80</span><p>Con l'Istituto Sperimentale per la Viticoltura di Conegliano e Veneto Agricoltura riportiamo in vita vitigni dimenticati.</p></li>
+          <li data-rivela><span class="linea__anno">1985</span><p>Le prime pubblicazioni su L'Enotecnico, a partire dalle tabelle dell'anidride solforosa molecolare.</p></li>
+          <li data-rivela><span class="linea__anno">2004</span><p>Le ricerche sui lieviti e sulla neve carbonica escono anche all'estero, in Australia e in Francia.</p></li>
+          <li data-rivela><span class="linea__anno">Oggi</span><p>Un laboratorio accreditato, un panel sensoriale, due progetti di ricerca l'anno e 250 realtà vinicole seguite.</p></li>
+        </ol>
+
+        <div class="libri" data-rivela>
+          <h3 class="libri__titolo">I libri di Enzo Michelet</h3>
+          <ul class="libri__lista">
+            <li><a href="https://www.kellermanneditore.it/en/categories/enzo-michelet/products/wildbacher" target="_blank" rel="noopener"><img src="assets/img/libro-wildbacher.jpg" width="294" height="411" loading="lazy" decoding="async" alt="Copertina del libro Wildbacher"><span><strong>Wildbacher</strong> con Sergio Tazzer, Kellermann, 2023</span></a></li>
+            <li><a href="https://www.kellermanneditore.it/it/categories/enzo-michelet/products/carnet-di-degustazione" target="_blank" rel="noopener"><img src="assets/img/libro-carnet.jpg" width="308" height="433" loading="lazy" decoding="async" alt="Copertina del libro Carnet di degustazione"><span><strong>Carnet di degustazione</strong> con Angelo Costacurta, Kellermann, 2023</span></a></li>
+            <li><a href="https://www.kellermanneditore.it/it/categories/fuori-collana/products/bosch-ra-dai-vini-selvatici-al-nobile-torchiato-del-cansiglio" target="_blank" rel="noopener"><img src="assets/img/libro-boschera.jpg" width="320" height="449" loading="lazy" decoding="async" alt="Copertina del libro Boschèra"><span><strong>Boschèra</strong> con Angelo Costacurta, Kellermann, 2021</span></a></li>
+            <li><a href="https://www.debastiani.it/catalogo/i-vini-rabosi/" target="_blank" rel="noopener"><img src="assets/img/libro-rabosi.jpg" width="400" height="583" loading="lazy" decoding="async" alt="Copertina del libro I vini Rabosi"><span><strong>I vini Rabosi</strong> con Severina Cancellier e Giampiero Rorato, De Bastiani, 2008</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section class="sezione contatti" id="contatti" aria-labelledby="cont-titolo">
+      <div class="contenitore contatti__in">
+        <div class="contatti__info" data-rivela>
+          <h2 id="cont-titolo">Parliamo del tuo prossimo campione</h2>
+          <p>Scrivici che cosa devi analizzare o il progetto che hai in mente: ti rispondiamo per inquadrare l'esigenza e scegliere i parametri giusti.</p>
+          <dl class="recapiti">
+            <div><dt>Telefono</dt><dd><a href="tel:+390438415202">+39 0438 415202</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:info@studiomichelet.com">info@studiomichelet.com</a></dd></div>
+            <div><dt>Indirizzo</dt><dd>Via Vital 96, 31015 Conegliano (TV)<br><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Vital%2096%2C%2031015%20Conegliano%20TV" target="_blank" rel="noopener">Indicazioni stradali</a></dd></div>
+            <div><dt>Orari</dt><dd>[DA CONFERMARE]</dd></div>
+            <div><dt>Telegram</dt><dd><a href="https://t.me/+M1WcWQhrDdxkNTA0" target="_blank" rel="noopener">Scrivici su Telegram</a></dd></div>
+          </dl>
+          <div class="mappa">
+            <iframe title="Mappa: Studio Michelet, Via Vital 96, Conegliano" src="https://www.google.com/maps?q=Via%20Vital%2096%2C%2031015%20Conegliano%20TV&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <form class="modulo" id="richiesta" data-modulo novalidate>
+          <h3 class="modulo__titolo">Richiedi un'analisi</h3>
+          <fieldset class="modulo__tipo">
+            <legend>Di che cosa hai bisogno?</legend>
+            <label><input type="radio" name="tipo" value="analisi" checked><span>Un'analisi</span></label>
+            <label><input type="radio" name="tipo" value="consulenza"><span>Una consulenza</span></label>
+          </fieldset>
+          <div class="campo">
+            <label for="f-nome">Nome e cognome</label>
+            <input id="f-nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="f-azienda">Azienda</label>
+            <input id="f-azienda" name="azienda" autocomplete="organization">
+          </div>
+          <div class="campo-doppio">
+            <div class="campo">
+              <label for="f-tel">Telefono</label>
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="campo">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="campo" data-solo-analisi>
+            <label for="f-matrice">Che cosa vuoi analizzare</label>
+            <select id="f-matrice" name="matrice">
+              <option value="vino">Vino</option>
+              <option value="mosto">Mosto</option>
+              <option value="uva">Uva</option>
+              <option value="foglie">Foglie</option>
+              <option value="tappo">Tappo</option>
+              <option value="birra">Birra</option>
+              <option value="distillati">Distillati</option>
+              <option value="prodotti enologici">Prodotti enologici</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-msg">Messaggio</label>
+            <textarea id="f-msg" name="messaggio" rows="4" placeholder="Per esempio: 6 campioni di Prosecco prima dell'imbottigliamento, servono solforosa e stabilità tartarica."></textarea>
+          </div>
+          <label class="consenso"><input type="checkbox" name="privacy" required><span>Ho letto l'<a href="#privacy">informativa sulla privacy</a> e acconsento al trattamento dei dati.</span></label>
+          <p class="modulo__errore" role="alert" data-modulo-errore hidden></p>
+          <button class="btn btn--cta btn--grande btn--pieno" type="submit">Invia la richiesta</button>
+          <p class="modulo__nota">Si apre la tua app di posta con la richiesta già scritta, pronta da inviare a info@studiomichelet.com.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore piede__in">
+      <div class="piede__marca">
+        <svg width="48" height="48" aria-hidden="true"><use href="#marchio"/></svg>
+        <p><strong>Laboratorio di Enologia Enzo Michelet s.r.l.</strong><br>Via Vital 96, 31015 Conegliano (TV)<br>C.F. e P.IVA 03520480264, REA TV-278349<br>Capitale sociale 10.000 € i.v.</p>
+      </div>
+      <ul class="piede__link">
+        <li><a href="tel:+390438415202">+39 0438 415202</a></li>
+        <li><a href="mailto:info@studiomichelet.com">info@studiomichelet.com</a></li>
+        <li><a href="https://www.facebook.com/StudioMichelet/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/studio.michelet/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://it.linkedin.com/company/studiomichelet" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <details class="privacy" id="privacy">
+        <summary>Informativa sulla privacy</summary>
+        <p>I dati che scrivi nel modulo non vengono salvati da questo sito: compongono un'email che invii tu, dalla tua casella, a info@studiomichelet.com. Il titolare del trattamento è Laboratorio di Enologia Enzo Michelet s.r.l., che usa i dati solo per rispondere alla richiesta. Puoi chiederne in ogni momento la modifica o la cancellazione scrivendo allo stesso indirizzo. La mappa è fornita da Google Maps e può impostare cookie propri.</p>
+      </details>
+      <div class="piede__fondo">
+        <p>© <span data-anno>2026</span> Studio Michelet</p>
+        <p>Sito realizzato da Alessio Mora</p>
+        <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di Studio Michelet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="barra-cta" aria-label="Contatti rapidi">
+    <a class="barra-cta__tel" href="tel:+390438415202"><svg width="20" height="20" aria-hidden="true"><use href="#ico-tel"/></svg>Chiama</a>
+    <a class="barra-cta__main" href="#richiesta" data-matrice=""><svg width="20" height="20" aria-hidden="true"><use href="#ico-provetta"/></svg>Richiedi un'analisi</a>
+  </nav>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
