@@ -41,6 +41,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-lelettrica](./sito-lelettrica) | https://sito-lelettrica.vercel.app | [video](./sito-lelettrica/video) |
 | [sito-metallica](./sito-metallica) | https://sito-metallica.vercel.app | [video](./sito-metallica/video) |
 | [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
+| [sito-moby-italy](./sito-moby-italy) | https://sito-moby-italy.vercel.app | [video](./sito-moby-italy/video) |
 | [sito-modi](./sito-modi) | https://sito-modi.vercel.app | [video](./sito-modi/video) |
 | [sito-multistudio](./sito-multistudio) | https://sito-multistudio.vercel.app | [video](./sito-multistudio/video) |
 | [sito-paint-service](./sito-paint-service) | https://sito-paint-service.vercel.app | [video](./sito-paint-service/video) |
