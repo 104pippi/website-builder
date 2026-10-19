@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>document.documentElement.classList.add("js")</script>
+  <title>FDE STEEL | Cancelli, ringhiere e scale in ferro a Paese (TV)</title>
+  <meta name="description" content="Cancelli, recinzioni, poggioli, scale e tettoie in ferro su misura, classici o moderni. Officina a Paese (Treviso) dal 1976. Chiedi un preventivo.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://sito-fde-steel.vercel.app/">
+  <meta name="theme-color" content="#262B2F">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="FDE STEEL | Ferro su misura a Paese (TV), dal 1976">
+  <meta property="og:description" content="Cancelli, recinzioni, poggioli, scale e tettoie in ferro, classici o moderni. Disegnati e costruiti in officina.">
+  <meta property="og:image" content="https://sito-fde-steel.vercel.app/assets/img/og-fde-steel.jpg">
+  <meta property="og:url" content="https://sito-fde-steel.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300..600&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-tettoia-m.webp" media="(max-width: 720px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-tettoia.webp" media="(min-width: 721px)" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "FDE STEEL",
+    "legalName": "FDESTEEL S.r.l.",
+    "description": "Cancelli, recinzioni, poggioli, inferriate, corrimano, scale e tettoie in ferro su misura, classici e moderni. Dal 1976.",
+    "url": "https://sito-fde-steel.vercel.app/",
+    "image": "https://sito-fde-steel.vercel.app/assets/img/og-fde-steel.jpg",
+    "logo": "https://sito-fde-steel.vercel.app/assets/img/logo-fde-steel.png",
+    "telephone": "+393756864091",
+    "email": "info@fdesteel.com",
+    "vatID": "IT05042490267",
+    "foundingDate": "1976",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Cal dei Molini 1B",
+      "addressLocality": "Paese",
+      "postalCode": "31038",
+      "addressRegion": "TV",
+      "addressCountry": "IT"
+    },
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "18:00"}
+    ],
+    "areaServed": ["Italia", "Estero"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Il segno FDE: otto barre piegate e quattro rombi. Usato dal cancello dell'hero, dal footer e dal fallback 3D. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="oro-segno" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F9C35D"/>
+        <stop offset="1" stop-color="#B07A12"/>
+      </linearGradient>
+    </defs>
+    <symbol id="segno-fde" viewBox="2.9 1.2 30.7 31.5">
+      <path d="M29.6,1.2c0.7,4-1.5,8.3-4.4,11.3c0.9,0.8,1.5,1.6,2.2,2.3c4.1-2.9,6.2-8.5,5.7-13.6H29.6z"/>
+      <path d="M7.1,1.2H3.6C3.1,6.2,5.3,11.9,9.3,14.8c0.7-0.7,1.3-1.5,2.2-2.3C8.6,9.5,6.4,5.2,7.1,1.2z"/>
+      <path d="M11.3,21.4c-0.9-0.8-1.5-1.6-2.2-2.3C5,22,2.9,27.6,3.4,32.7h3.5C6.1,28.7,8.4,24.4,11.3,21.4z"/>
+      <path d="M27.4,19.1c-0.7,0.7-1.3,1.5-2.2,2.3c2.9,3,5.2,7.3,4.4,11.3h3.5C33.6,27.6,31.4,22,27.4,19.1z"/>
+      <path d="M13.9,24c-2.4,2.3-4,4.5-3.8,8.7h3.1c0.1-3.6,1.2-4.4,3-6.4C15.5,25.6,14.6,24.7,13.9,24z"/>
+      <path d="M20.4,26.3c1.8,2,2.9,2.8,3,6.4h3.1c0.2-4.2-1.4-6.4-3.8-8.7C22,24.7,21.1,25.6,20.4,26.3z"/>
+      <path d="M20.4,7.6c0.7,0.8,1.6,1.6,2.3,2.3c2.4-2.3,4-4.5,3.8-8.7l-3.1,0C23.3,4.8,22.2,5.6,20.4,7.6z"/>
+      <path d="M16.2,7.6c-1.8-2-2.9-2.8-3-6.4l-3.1,0c-0.2,4.2,1.4,6.4,3.8,8.7C14.6,9.2,15.5,8.3,16.2,7.6z"/>
+      <polygon points="16.2,21.7 18.4,24 20.7,21.7 18.4,19.4"/>
+      <polygon points="11.6,17.1 13.9,19.4 16.1,17.1 13.9,14.8"/>
+      <polygon points="20.7,17.1 22.9,19.4 25.1,17.1 22.9,14.8"/>
+      <polygon points="20.7,12.5 18.4,10.1 16.2,12.5 18.4,14.8"/>
+    </symbol>
+  </svg>
+
+  <a class="salta" href="#lavori">Vai ai contenuti</a>
+
+  <header class="testata" id="testata">
+    <a class="testata__logo" href="#top" aria-label="FDE STEEL, torna all'inizio">
+      <img src="assets/img/logo-fde-steel-bianco.png" alt="FDE STEEL, ferro d'élite" width="747" height="182">
+    </a>
+    <nav class="testata__nav" aria-label="Menu principale">
+      <a href="#lavori">Lavori</a>
+      <a href="#su-progetto">Scale e tettoie</a>
+      <a href="#officina">Officina</a>
+      <a href="#imprese">Imprese ed enti</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="btn btn--oro testata__cta" href="#preventivo">Chiedi un preventivo</a>
+    <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu-mobile">
+      <span class="testata__menu-righe" aria-hidden="true"></span>
+      <span class="testata__menu-testo">Menu</span>
+    </button>
+  </header>
+
+  <div class="menu-mobile" id="menu-mobile" hidden>
+    <nav aria-label="Menu mobile">
+      <a href="#lavori">Lavori</a>
+      <a href="#su-progetto">Scale e tettoie</a>
+      <a href="#officina">Officina</a>
+      <a href="#imprese">Imprese ed enti</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="btn btn--oro btn--largo" href="#preventivo">Chiedi un preventivo</a>
+    <a class="menu-mobile__tel" href="tel:+393756864091">375 686 4091</a>
+  </div>
+
+  <main>
+    <!-- HERO: il cancello tagliato al laser col segno FDE si apre sulla tettoia ad archi -->
+    <section class="hero" id="top" aria-labelledby="hero-titolo">
+      <div class="hero__scena">
+        <picture class="hero__foto">
+          <source media="(max-width: 720px)" srcset="assets/img/hero-tettoia-m.webp" width="1000" height="1667">
+          <img src="assets/img/hero-tettoia.webp" width="1920" height="1440" alt="Tettoia in acciaio con travi ad arco, ricciolo e sfera dorata, copertura in vetro" fetchpriority="high">
+        </picture>
+        <div class="hero__velo" aria-hidden="true"></div>
+
+        <div class="cancello" aria-hidden="true">
+          <div class="cancello__anta cancello__anta--sx">
+            <svg class="cancello__lamiera" width="100%" height="100%">
+              <defs>
+                <pattern id="motivo-sx" width="60" height="58" patternUnits="userSpaceOnUse">
+                  <use href="#segno-fde" x="12" y="12" width="36" height="34" fill="#000"/>
+                </pattern>
+                <mask id="taglio-sx"><rect width="100%" height="100%" fill="#fff"/><rect width="100%" height="100%" fill="url(#motivo-sx)"/></mask>
+                <linearGradient id="lucido-sx" x1="0" y1="0" x2="1" y2="0.35">
+                  <stop offset="0" stop-color="#2E3438"/>
+                  <stop offset="0.55" stop-color="#3F464B"/>
+                  <stop offset="1" stop-color="#30363A"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#lucido-sx)" mask="url(#taglio-sx)"/>
+            </svg>
+          </div>
+          <div class="cancello__anta cancello__anta--dx">
+            <svg class="cancello__lamiera" width="100%" height="100%">
+              <defs>
+                <pattern id="motivo-dx" width="60" height="58" patternUnits="userSpaceOnUse">
+                  <use href="#segno-fde" x="12" y="12" width="36" height="34" fill="#000"/>
+                </pattern>
+                <mask id="taglio-dx"><rect width="100%" height="100%" fill="#fff"/><rect width="100%" height="100%" fill="url(#motivo-dx)"/></mask>
+                <linearGradient id="lucido-dx" x1="1" y1="0" x2="0" y2="0.35">
+                  <stop offset="0" stop-color="#2E3438"/>
+                  <stop offset="0.55" stop-color="#3F464B"/>
+                  <stop offset="1" stop-color="#30363A"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#lucido-dx)" mask="url(#taglio-dx)"/>
+            </svg>
+          </div>
+          <span class="cancello__luce"></span>
+        </div>
+        <div class="hero__velo-testo" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__testo">
+        <p class="hero__firma"><span>Officina a Paese, Treviso, dal 1976</span></p>
+        <h1 class="hero__titolo" id="hero-titolo">
+          <span class="riga"><span>Cancelli, ringhiere</span></span>
+          <span class="riga"><span>e scale in ferro,</span></span>
+          <span class="riga"><span>fatti su misura.</span></span>
+        </h1>
+        <p class="hero__sotto">Classici, con ricci e foglie forgiate, o moderni, tagliati al laser. Li progettiamo, li disegniamo e li costruiamo nella nostra officina.</p>
+        <div class="hero__azioni">
+          <a class="btn btn--oro" href="#preventivo">Chiedi un preventivo</a>
+          <a class="btn btn--vetro" href="tel:+393756864091">Chiama 375 686 4091</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIDUCIA -->
+    <section class="fiducia" aria-label="Perché sceglierci">
+      <ul class="fiducia__lista">
+        <li><strong>1976</strong><span>Cinquant'anni di officina nel 2026</span></li>
+        <li><strong>Su misura</strong><span>Ogni pezzo disegnato per la tua casa</span></li>
+        <li><strong>Zincatura a caldo</strong><span>o cataforesi, poi verniciatura che dura</span></li>
+        <li><strong>Italia ed estero</strong><span>Per privati, imprese ed enti pubblici</span></li>
+      </ul>
+    </section>
+
+    <!-- CATALOGO CLASSICO / MODERNO -->
+    <section class="catalogo" id="lavori" aria-labelledby="catalogo-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione">
+          <h2 id="catalogo-titolo" data-rivela>Dal cancello al corrimano, classico o moderno.</h2>
+          <p data-rivela>Tutte le foto qui sotto sono lavori nostri. Cambia stile e ogni pezzo si gira per mostrarti l'altra faccia del ferro.</p>
+        </div>
+
+        <div class="stile" role="group" aria-label="Stile dei lavori">
+          <button type="button" class="stile__btn" data-stile="classico" aria-pressed="true">Classico</button>
+          <button type="button" class="stile__btn" data-stile="moderno" aria-pressed="false">Moderno</button>
+          <span class="stile__cursore" aria-hidden="true"></span>
+        </div>
+
+        <ul class="griglia" data-stile="classico">
+          <li class="scheda" style="--i:0">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/ante-classico.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Cancello ad ante classico con aste, punte e ricci tra pilastri a fasce davanti a una villa veneta">
+                <figcaption><strong>Cancelli ad ante</strong><span>Aste, punte e ricci per ville e corti</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/ante-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Cancello ad ante moderno in lamiera con fiori tagliati al laser">
+                <figcaption><strong>Cancelli ad ante</strong><span>Lamiera con decori tagliati al laser</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Cancello">Preventivo per un cancello</a>
+          </li>
+          <li class="scheda" style="--i:1">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/scorrevole-classico.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Cancello scorrevole classico ad arco con lance">
+                <figcaption><strong>Cancelli scorrevoli</strong><span>Archi e lance, su binario</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/scorrevole-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Cancello scorrevole moderno in corten con archi in acciaio">
+                <figcaption><strong>Cancelli scorrevoli</strong><span>Corten e acciaio, disegno su misura</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Cancello">Preventivo per uno scorrevole</a>
+          </li>
+          <li class="scheda" style="--i:2">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/pedonale-classico.webp" width="750" height="1000" loading="lazy" decoding="async" alt="Cancello pedonale classico con ricci e punte tra pilastri in mattone">
+                <figcaption><strong>Cancelli pedonali</strong><span>Riccioli e lance tra i pilastri</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/pedonale-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Cancello pedonale moderno a pannelli geometrici in acciaio e corten">
+                <figcaption><strong>Cancelli pedonali</strong><span>Pannelli geometrici in acciaio e corten</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Cancello">Preventivo per un pedonale</a>
+          </li>
+          <li class="scheda" style="--i:3">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/recinzione-classico.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Recinzione classica ad aste verticali su muretto, con giardino fiorito">
+                <figcaption><strong>Recinzioni</strong><span>Aste verticali su muretto</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/recinzione-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Recinzione moderna a barre orizzontali antracite su basamento">
+                <figcaption><strong>Recinzioni</strong><span>Barre orizzontali, linee pulite</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Recinzione">Preventivo per una recinzione</a>
+          </li>
+          <li class="scheda" style="--i:4">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/poggiolo-classico.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Poggiolo classico con tralci e foglie in ferro battuto">
+                <figcaption><strong>Poggioli</strong><span>Tralci e foglie in ferro battuto</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/poggiolo-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Poggiolo moderno curvo a fasce di lamiera grigia">
+                <figcaption><strong>Poggioli</strong><span>Fasce curve in lamiera</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Poggiolo o ringhiera">Preventivo per un poggiolo</a>
+          </li>
+          <li class="scheda" style="--i:5">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/inferriata-classico.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Inferriata classica a volute su finestra ovale in parete gialla">
+                <figcaption><strong>Inferriate</strong><span>Volute sagomate sulla finestra</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/inferriata-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Inferriata moderna bianca a disegno geometrico curvo">
+                <figcaption><strong>Inferriate</strong><span>Disegni geometrici, anche chiari</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Inferriata">Preventivo per un'inferriata</a>
+          </li>
+          <li class="scheda" style="--i:6">
+            <div class="scheda__giro">
+              <figure class="scheda__faccia scheda__faccia--classico">
+                <img src="assets/img/corrimano-classico.webp" width="1000" height="751" loading="lazy" decoding="async" alt="Corrimano classico verde con ricciolo e foglie forgiate">
+                <figcaption><strong>Corrimano</strong><span>Riccioli e foglie forgiate</span></figcaption>
+              </figure>
+              <figure class="scheda__faccia scheda__faccia--moderno">
+                <img src="assets/img/corrimano-moderno.webp" width="1000" height="750" loading="lazy" decoding="async" alt="Scala a chiocciola con corrimano in acciaio e gradini in vetro">
+                <figcaption><strong>Corrimano</strong><span>Acciaio e vetro sulla chiocciola</span></figcaption>
+              </figure>
+            </div>
+            <a class="scheda__link" href="#preventivo" data-tipo="Corrimano">Preventivo per un corrimano</a>
+          </li>
+          <li class="scheda scheda--idea" style="--i:7">
+            <svg class="scheda__segno" aria-hidden="true"><use href="#segno-fde"/></svg>
+            <p class="scheda__idea-titolo">Hai un disegno tuo?</p>
+            <p class="scheda__idea-testo">Mandaci uno schizzo o una foto di riferimento: lo trasformiamo in ferro.</p>
+            <a class="btn btn--oro" href="#preventivo" data-tipo="Altro">Chiedi un preventivo</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SU PROGETTO: scale e tettoie su una parete curva -->
+    <section class="progetto" id="su-progetto" aria-labelledby="progetto-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione testa-sezione--chiara">
+          <h2 id="progetto-titolo" data-rivela>Scale e tettoie, su progetto.</h2>
+          <p data-rivela>Qui il disegno conta quanto il ferro: scale sospese, a chiocciola o con parapetti tagliati al laser, tettoie e pergole in acciaio e vetro. Quando servono i calcoli strutturali, li fa un ingegnere.</p>
+        </div>
+      </div>
+
+      <div class="corridoio" data-corridoio>
+        <div class="corridoio__palco">
+          <ul class="corridoio__fila">
+            <li class="capitolo"><h3>Scale</h3><p>Sospese, a chiocciola, con parapetti tagliati al laser.</p></li>
+            <li class="quadro"><img src="assets/img/scala-laser.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scala con parapetto in ferro tagliato al laser a mosaico e gradini in legno"><span>Parapetto a mosaico tagliato al laser</span></li>
+            <li class="quadro quadro--alto"><img src="assets/img/scala-laser-2.webp" width="1050" height="1400" loading="lazy" decoding="async" alt="Scala su due piani con parapetto tagliato al laser"><span>Lo stesso disegno su due piani</span></li>
+            <li class="quadro"><img src="assets/img/scala-chiocciola.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scala a chiocciola bianca vista dall'alto con ringhiera curva e gradini in legno"><span>Chiocciola con ringhiera curva</span></li>
+            <li class="quadro"><img src="assets/img/scala-vetro.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scala con gradini in vetro su struttura in acciaio bianco davanti a un muro in mattoni"><span>Gradini in vetro su acciaio</span></li>
+            <li class="quadro"><img src="assets/img/scala-legno.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scala a giorno con struttura in ferro, gradini in legno e ringhiera a barre"><span>Struttura a giorno e gradini in legno</span></li>
+            <li class="capitolo"><h3>Tettoie e pergole</h3><p>Acciaio e vetro sopra ingressi, giardini e posti auto.</p></li>
+            <li class="quadro"><img src="assets/img/pergola-archi.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Pergola in acciaio con travi ad arco sul giardino di una casa rossa"><span>Pergola con travi ad arco</span></li>
+            <li class="quadro"><img src="assets/img/pergola-vetro.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Pergola in acciaio antracite con copertura in vetro davanti a una casa con scuri rossi"><span>Acciaio antracite e vetro</span></li>
+            <li class="quadro"><img src="assets/img/tettoia-pietra.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Tettoia in vetro e acciaio su una casa in pietra"><span>Vetro su una casa in pietra</span></li>
+            <li class="quadro quadro--alto"><img src="assets/img/pergola-colonne.webp" width="1050" height="1400" loading="lazy" decoding="async" alt="Pergola con colonne decorate su vialetto in porfido"><span>Colonne decorate sul vialetto</span></li>
+            <li class="quadro"><img src="assets/img/pensilina-ricci.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Pensilina con struttura a ricci in ferro sopra una porta"><span>Pensilina con ricci in ferro</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIRMA 3D: il segno FDE che si monta -->
+    <section class="firma" id="officina" aria-labelledby="firma-titolo">
+      <div class="contenitore firma__griglia">
+        <div class="firma__scena" id="scena3d" aria-hidden="true">
+          <svg class="firma__statico" viewBox="2.9 1.2 30.7 31.5"><use href="#segno-fde" fill="url(#oro-segno)"/></svg>
+        </div>
+        <div class="firma__testo">
+          <p class="firma__motto">ferro d'élite</p>
+          <h2 id="firma-titolo" data-rivela>Quando il ferro diventa arte.</h2>
+          <p data-rivela>Portiamo avanti la tradizione artigiana: dare forma al ferro fino a farne un'opera, senza mai dimenticare che deve funzionare. All'arte aggiungiamo la tecnologia, così ogni pezzo è bello da vedere ma soprattutto resistente e durevole.</p>
+          <p class="firma__nota" data-rivela>Il nostro segno è fatto come un'inferriata: otto barre piegate e quattro rombi, intrecciati.</p>
+        </div>
+      </div>
+
+      <div class="contenitore dettagli">
+        <figure class="dettagli__foto dettagli__foto--leone">
+          <img src="assets/img/leone.webp" width="1244" height="829" loading="lazy" decoding="async" alt="Testa di leone in rilievo su un cancello con volute in ferro">
+        </figure>
+        <figure class="dettagli__foto dettagli__foto--fiore">
+          <img src="assets/img/fiore-oro.webp" width="819" height="663" loading="lazy" decoding="async" alt="Rosone con foglie dorate al centro di volute in ferro battuto">
+        </figure>
+        <p class="dettagli__testo">Teste di leone, rosoni, foglie dorate: i dettagli che trasformano un cancello in un ingresso.</p>
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section class="metodo" aria-labelledby="metodo-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione">
+          <h2 id="metodo-titolo" data-rivela>Dalla tua idea al ferro montato.</h2>
+          <p data-rivela>Cinque passaggi, sempre con le stesse persone dall'inizio alla fine.</p>
+        </div>
+        <ol class="passi">
+          <li class="passo">
+            <span class="passo__n" aria-hidden="true">1</span>
+            <div class="passo__corpo">
+              <h3>Ci racconti cosa ti serve</h3>
+              <p>Una foto del posto e due misure indicative bastano per cominciare. Su WhatsApp o al telefono.</p>
+            </div>
+          </li>
+          <li class="passo passo--media">
+            <span class="passo__n" aria-hidden="true">2</span>
+            <div class="passo__corpo">
+              <h3>Progetto e disegno</h3>
+              <p>Disegniamo il pezzo sulla tua casa, classico, moderno o partendo da un'idea tua. Per strutture e tettoie i calcoli li fa un ingegnere.</p>
+            </div>
+            <figure class="passo__media">
+              <img src="assets/img/disegno-cancello.webp" width="1280" height="533" loading="lazy" decoding="async" alt="Disegno di progetto di un cancello classico con volute, rosoni dorati e testa di leone">
+            </figure>
+          </li>
+          <li class="passo passo--media">
+            <span class="passo__n" aria-hidden="true">3</span>
+            <div class="passo__corpo">
+              <h3>Lavorazione in officina</h3>
+              <p>Taglio, piegatura, forgiatura e saldatura, con attrezzature moderne e personale specializzato.</p>
+            </div>
+            <figure class="passo__media passo__media--video">
+              <video data-video-pigro muted loop playsinline preload="none" poster="assets/img/forgia-poster.webp" width="720" height="540" aria-label="Il ferro rovente viene piegato a ricciolo e battuto sull'incudine">
+                <source data-src="assets/video/forgia.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </li>
+          <li class="passo">
+            <span class="passo__n" aria-hidden="true">4</span>
+            <div class="passo__corpo">
+              <h3>Protezione per l'esterno</h3>
+              <p>Zincatura a caldo o cataforesi contro gli agenti atmosferici, poi una verniciatura resistente nel tempo, dalla qualità garantita.</p>
+            </div>
+          </li>
+          <li class="passo">
+            <span class="passo__n" aria-hidden="true">5</span>
+            <div class="passo__corpo">
+              <h3>Montaggio e automazione</h3>
+              <p>Installiamo il lavoro e, per i cancelli, anche l'automazione: motore e comandi.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- IMPRESE ED ENTI -->
+    <section class="imprese" id="imprese" aria-labelledby="imprese-titolo">
+      <div class="contenitore imprese__griglia">
+        <div class="imprese__testo">
+          <h2 id="imprese-titolo" data-rivela>Per imprese ed enti pubblici, su progetto.</h2>
+          <p data-rivela>Pensiline, coperture per parcheggi, pergolati per cortili e spazi comuni. Lavoriamo in Italia e all'estero, con partner affidabili e materiali di qualità certa.</p>
+          <a class="btn btn--linea" href="#preventivo" data-tipo="Lavoro per impresa o ente">Chiedi un preventivo per un'impresa</a>
+        </div>
+        <div class="imprese__foto">
+          <figure class="imprese__f imprese__f--a"><img src="assets/img/ente-cortile.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Pergolato bianco in acciaio sopra un cortile con prato e camminamenti"></figure>
+          <figure class="imprese__f imprese__f--b"><img src="assets/img/parcheggio.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Copertura in acciaio per posti auto con telo bianco"></figure>
+          <figure class="imprese__f imprese__f--c"><img src="assets/img/pensilina-banca.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Pensilina curva in acciaio e vetro sopra l'ingresso di una filiale"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVENTIVO + CONTATTI -->
+    <section class="preventivo" id="preventivo" aria-labelledby="preventivo-titolo">
+      <div class="contenitore preventivo__griglia">
+        <div class="preventivo__intro">
+          <h2 id="preventivo-titolo" data-rivela>Chiedi un preventivo.</h2>
+          <p data-rivela>Compila quattro righe: si apre WhatsApp con il messaggio già scritto. Nella chat puoi allegare le foto del posto, così il prezzo è più preciso.</p>
+        </div>
+
+        <form class="modulo" id="modulo" novalidate>
+          <fieldset class="modulo__gruppo">
+            <legend>Cosa ti serve?</legend>
+            <div class="chip-lista">
+              <label class="chip"><input type="radio" name="tipo" value="Cancello" checked><span>Cancello</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Recinzione"><span>Recinzione</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Poggiolo o ringhiera"><span>Poggiolo o ringhiera</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Scala"><span>Scala</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Tettoia o pergola"><span>Tettoia o pergola</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Inferriata"><span>Inferriata</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Corrimano"><span>Corrimano</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Lavoro per impresa o ente"><span>Impresa o ente</span></label>
+              <label class="chip"><input type="radio" name="tipo" value="Altro"><span>Altro</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="modulo__gruppo">
+            <legend>Che stile hai in mente?</legend>
+            <div class="chip-lista">
+              <label class="chip"><input type="radio" name="stile" value="Classico"><span>Classico</span></label>
+              <label class="chip"><input type="radio" name="stile" value="Moderno"><span>Moderno</span></label>
+              <label class="chip"><input type="radio" name="stile" value="Da decidere insieme" checked><span>Da decidere</span></label>
+            </div>
+          </fieldset>
+          <div class="modulo__riga">
+            <label class="campo">
+              <span>Nome</span>
+              <input type="text" name="nome" autocomplete="name" required>
+            </label>
+            <label class="campo">
+              <span>Comune del lavoro</span>
+              <input type="text" name="comune" autocomplete="address-level2" placeholder="Es. Paese, Treviso, Montebelluna">
+            </label>
+          </div>
+          <label class="campo">
+            <span>Misure o dettagli (facoltativo)</span>
+            <textarea name="note" rows="3" placeholder="Es. cancello scorrevole di circa 4 metri, con motore"></textarea>
+          </label>
+          <p class="modulo__errore" id="modulo-errore" role="alert" hidden>Scrivi il tuo nome, così sappiamo chi ci contatta.</p>
+          <button class="btn btn--oro btn--largo" type="submit">Invia la richiesta su WhatsApp</button>
+          <p class="modulo__alt">Preferisci l'email? <a id="modulo-email" href="mailto:info@fdesteel.com?subject=Richiesta%20preventivo">Scrivi a info@fdesteel.com</a></p>
+        </form>
+
+        <aside class="contatti" id="contatti" aria-label="Contatti">
+          <a class="contatti__tel" href="tel:+393756864091"><small>Telefono e WhatsApp</small>375 686 4091</a>
+          <dl class="contatti__dati">
+            <div><dt>Email</dt><dd><a href="mailto:info@fdesteel.com">info@fdesteel.com</a></dd></div>
+            <div><dt>Officina</dt><dd>Via Cal dei Molini 1B<br>31038 Paese (TV)</dd></div>
+            <div><dt>Orari</dt><dd>Lunedì–venerdì<br>8.00–12.00 e 14.00–18.00<br>Sabato e domenica chiuso</dd></div>
+          </dl>
+          <div class="contatti__mappa">
+            <iframe title="Mappa dell'officina FDE STEEL a Paese" src="https://www.google.com/maps?q=Via%20Cal%20dei%20Molini%201B%2C%2031038%20Paese%20TV&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <a class="btn btn--linea btn--largo" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Cal%20dei%20Molini%201B%2C%2031038%20Paese%20TV" target="_blank" rel="noopener">Indicazioni stradali</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore piede__griglia">
+      <div class="piede__marca">
+        <img src="assets/img/logo-fde-steel-bianco.png" alt="FDE STEEL, ferro d'élite" width="747" height="182" loading="lazy">
+        <p>Cancelli, ringhiere, scale e tettoie in ferro su misura, dal 1976.</p>
+      </div>
+      <div class="piede__dati">
+        <p><strong>FDESTEEL S.r.l.</strong><br>Sede legale: Via Roma 81, 31038 Paese (TV)<br>Officina: Via Cal dei Molini 1B, 31038 Paese (TV)<br>P.IVA 05042490267</p>
+        <p><a href="tel:+393756864091">+39 375 686 4091</a><br><a href="mailto:info@fdesteel.com">info@fdesteel.com</a></p>
+      </div>
+      <div class="piede__fine">
+        <p>© <span data-anno>2026</span> FDESTEEL S.r.l.</p>
+        <p><a href="privacy.html">Informativa sulla privacy</a></p>
+        <p>Sito realizzato da Alessio Mora</p>
+        <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di FDE STEEL.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="barra-cta" id="barra-cta">
+    <a class="barra-cta__btn" href="tel:+393756864091">Chiama</a>
+    <a class="barra-cta__btn barra-cta__btn--oro" href="https://wa.me/393756864091?text=Buongiorno%2C%20vorrei%20un%20preventivo%20per%20un%20lavoro%20in%20ferro." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
