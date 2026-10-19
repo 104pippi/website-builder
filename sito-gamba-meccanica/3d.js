@@ -349,6 +349,8 @@ export function avvia(contenitore, stato) {
 
   /* inquadratura: verticale sul telefono, orizzontale su schermi larghi */
   let verticale = true, distanza = 16, larg = 1, alt = 1;
+  const titoloScena = contenitore.querySelector(".tornio__testa");
+  const fasiScena = contenitore.querySelector(".tornio__fasi");
   function impagina() {
     larg = contenitore.clientWidth || window.innerWidth;
     alt = contenitore.clientHeight || window.innerHeight;
@@ -357,13 +359,23 @@ export function avvia(contenitore, stato) {
     verticale = camera.aspect < 0.95;
     const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     if (verticale) {
+      // il pezzo (5,3 unità con il mandrino) sta nella fascia libera tra il titolo e la fase in basso
+      let alto = 0, basso = alt, quota = 0.6 * alt;
+      if (titoloScena && fasiScena) {
+        const r0 = contenitore.getBoundingClientRect();
+        alto = titoloScena.getBoundingClientRect().bottom - r0.top + 16;
+        basso = fasiScena.getBoundingClientRect().top - r0.top - 6;
+        if (basso - alto > alt * 0.4) quota = Math.min(quota, basso - alto);
+        else { alto = 0; basso = alt; }
+      }
       mondo.rotation.set(0, 0, 0);
-      mondo.position.set(0, -1.45, 0);
-      distanza = Math.max(5.3 / 0.6 / 2 / t, 3.2 / camera.aspect / 2 / t);
+      distanza = Math.max(alt * 5.3 / quota / 2 / t, 3.2 / camera.aspect / 2 / t);
+      const k = alt / (2 * distanza * t);
+      mondo.position.set(0, -1.45 - ((alto + basso) / 2 - alt / 2) / k, 0);
     } else {
       mondo.rotation.set(0, 0, Math.PI / 2);
       const largo = larg >= 1024;
-      mondo.position.set(largo ? 2.55 : 1.6, -0.62, 0);
+      mondo.position.set(largo ? 2.9 : 1.6, -0.62, 0);
       distanza = Math.max(5.6 / (largo ? 0.56 : 0.72) / camera.aspect / 2 / t, 4.2 / 2 / t);
     }
     camera.updateProjectionMatrix();
@@ -386,8 +398,8 @@ export function avvia(contenitore, stato) {
   let px = 0, py = 0;
   const posUt = new THREE.Vector3(R0 + 2.5, L + 0.1, 0);
   const posFr = new THREE.Vector3(3.5, 2.5, 0);
-  const posMo = new THREE.Vector3(4.5, L + 0.4, 0);
-  const posTa = new THREE.Vector3(3.5, 3.4, 0);
+  const posMo = new THREE.Vector3(4.9, L + 0.4, 0);
+  const posTa = new THREE.Vector3(4.3, 3.4, 0);
   let tPrima = performance.now();
   let primo = true;
 

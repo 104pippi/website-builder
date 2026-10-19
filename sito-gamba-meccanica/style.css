@@ -163,10 +163,11 @@ h3 { font-stretch: 106%; font-weight: 700; font-size: 1.25rem; line-height: 1.2;
   opacity: 0; animation: appare .8s ease 1.9s forwards;
 }
 .hero__testo { padding: 18px 0 30px; position: relative; z-index: 2; }
-.hero__titolo { font-size: clamp(2.4rem, 8vw, 5rem); font-stretch: 108%; }
+.hero__titolo { font-size: clamp(2.3rem, 9.2vw, 5rem); font-stretch: 108%; }
 .riga { display: block; overflow: hidden; padding-bottom: .07em; margin-bottom: -.07em; }
 .riga > span { display: block; transform: translateY(108%); animation: sali 1s var(--ease) .15s forwards; }
-.riga + .riga > span { animation-delay: .27s; }
+.riga:nth-child(2) > span { animation-delay: .25s; }
+.riga:nth-child(3) > span { animation-delay: .35s; }
 .hero__lead { margin-top: 16px; color: #c3cad0; max-width: 46ch; opacity: 0; animation: appare .8s ease .55s forwards; }
 .hero__azioni { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; opacity: 0; animation: appare .8s ease .7s forwards; }
 .hero__azioni .btn { flex: 1 1 auto; }
@@ -209,6 +210,7 @@ h3 { font-stretch: 106%; font-weight: 700; font-size: 1.25rem; line-height: 1.2;
 .tornio__testa h2 { font-size: clamp(2rem, 7vw, 3.6rem); }
 .tornio__testa p { margin-top: 10px; max-width: 36ch; color: var(--fumo); font-size: .9375rem; transition: opacity .5s; }
 .tornio__scena:not([data-fase="1"]) .tornio__testa p { opacity: 0; }
+@media (max-aspect-ratio: 19/20) and (max-height: 720px) { .tornio__testa p { display: none; } }
 
 .tornio__fasi {
   position: absolute; left: var(--gutter); right: var(--gutter);
