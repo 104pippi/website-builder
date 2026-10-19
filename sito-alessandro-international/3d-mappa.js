@@ -96,7 +96,7 @@ export async function avvia(canvas, dati, opz = {}) {
   }
 
   // camera: vista da sud, inclinata, con una lenta oscillazione
-  const fuoco = new THREE.Vector3(0, -0.05, 0), fuocoT = fuoco.clone();
+  const fuoco = new THREE.Vector3(0, -0.62, 0), fuocoT = fuoco.clone();
   let raggio = 8, raggioT = 8, raggioBase = 8;
   function adatta() {
     const r = canvas.parentElement.getBoundingClientRect();
@@ -105,7 +105,7 @@ export async function avvia(canvas, dati, opz = {}) {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    raggioBase = Math.max(3.55 / (2 * t), 3.7 / (2 * t * camera.aspect)) * 1.02;
+    raggioBase = Math.max(3.45 / (2 * t), 3.6 / (2 * t * camera.aspect));
     if (!cercato) { raggio = raggioT = raggioBase; }
     disegna(performance.now());
   }

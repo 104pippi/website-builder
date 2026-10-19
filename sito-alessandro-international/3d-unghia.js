@@ -3,27 +3,30 @@
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
-const LUNG = 1.6;          // lunghezza dell'unghia (asse y, cuticola in basso)
-const ANG = 2.4;           // angolo massimo della piega prima del tratto dritto
+const LUNG = 1.9;          // lunghezza dell'unghia (asse y, cuticola in basso)
+const LARG = 0.84;         // larghezza massima
+const ANG = 2.0;           // angolo della piega stretta, poi parte l'arrotolamento
+const R2 = 1.25;           // raggio largo dell'arrotolamento
 const DURATA = 1750;       // ms di una sfilata
 
 // mezza larghezza della forma a mandorla, v da 0 (cuticola) a 1 (punta)
 function semiLarghezza(v) {
-  if (v < 0.15) { const t = (0.15 - v) / 0.15; return 0.5 * Math.sqrt(Math.max(1 - t * t, 0)); }
-  if (v < 0.56) return 0.5 + 0.012 * (v - 0.15);
-  const t = (v - 0.56) / 0.44;
-  return 0.505 * Math.pow(Math.max(1 - Math.pow(t, 2.1), 0), 0.58);
+  // cuticola: arco largo e basso; corpo quasi dritto; punta a mandorla affusolata
+  if (v < 0.09) { const t = (0.09 - v) / 0.09; return 0.47 * Math.pow(Math.max(1 - t * t, 0), 0.5); }
+  if (v < 0.5) return 0.47 + 0.03 * (v - 0.09) / 0.41;
+  const t = (v - 0.5) / 0.5;
+  return 0.5 * Math.pow(Math.max(1 - Math.pow(t, 1.75), 0), 0.72);
 }
 
 function geometriaUnghia() {
-  const g = new THREE.PlaneGeometry(1, LUNG, 34, 92);
+  const g = new THREE.PlaneGeometry(1, LUNG, 34, 110);
   const p = g.attributes.position;
   for (let i = 0; i < p.count; i++) {
     const x = p.getX(i), y = p.getY(i);
     const v = (y + LUNG / 2) / LUNG;
-    const nx = x * 2 * semiLarghezza(v);
+    const nx = x * 2 * semiLarghezza(v) * LARG;
     // curva a C trasversale e leggero arco longitudinale
-    const z = -0.62 * nx * nx - 0.1 * (v - 0.45) * (v - 0.45);
+    const z = -0.78 * nx * nx - 0.12 * (v - 0.42) * (v - 0.42);
     p.setXYZ(i, nx, y, z);
   }
   g.computeVertexNormals();
@@ -87,13 +90,20 @@ function materialeLacca(offset) {
           float d = fr - p.y;
           vec3 n = normal;
           if ( d > 0.0 ) {
-            float th = min( d / uR, ${ANG.toFixed(3)} );
-            float y = fr - uR * sin( th );
-            float z = uR * ( 1.0 - cos( th ) );
-            float L = max( d - uR * ${ANG.toFixed(3)}, 0.0 );
-            y += L * ${(-Math.cos(ANG)).toFixed(4)};
-            z += L * ${Math.sin(ANG).toFixed(4)};
-            z += sin( uT * 2.6 + d * 5.0 ) * 0.02 * min( d, 1.0 );
+            // piega stretta vicino al fronte, poi la pellicola si arrotola su un raggio largo
+            float A = ${ANG.toFixed(3)};
+            float R2 = ${R2.toFixed(3)};
+            float th, y, z;
+            if ( d <= uR * A ) {
+              th = d / uR;
+              y = fr - uR * sin( th );
+              z = uR * ( 1.0 - cos( th ) );
+            } else {
+              th = A + ( d - uR * A ) / R2;
+              y = fr + ( R2 - uR ) * sin( A ) - R2 * sin( th );
+              z = uR + ( R2 - uR ) * cos( A ) - R2 * cos( th );
+            }
+            z += sin( uT * 2.6 + d * 5.0 ) * 0.018 * min( d, 1.0 );
             p = vec3( p.x * ( 1.0 - 0.05 * min( d, 1.0 ) ), y, p.z + z );
             n = vec3( normal.x, normal.y * cos( th ) + normal.z * sin( th ), -normal.y * sin( th ) + normal.z * cos( th ) );
           }
@@ -154,8 +164,9 @@ export async function avvia(canvas, opz = {}) {
   scena.add(gruppo);
 
   const base = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({
-    map: texturaUnghiaNaturale(), roughness: 0.42, clearcoat: 0.55, clearcoatRoughness: 0.25, side: THREE.DoubleSide,
+    map: texturaUnghiaNaturale(), roughness: 0.42, clearcoat: 0.55, clearcoatRoughness: 0.25, side: THREE.FrontSide,
   }));
+  base.scale.set(0.985, 0.992, 1);   // il bordo dell'unghia resta sotto lo smalto
   const sotto = new THREE.Mesh(geo, materialeLacca(0.006));
   const sopra = new THREE.Mesh(geo, materialeLacca(0.012));
   sotto.visible = false;
@@ -164,7 +175,7 @@ export async function avvia(canvas, opz = {}) {
   gruppo.add(base, sotto, sopra);
 
   const ombra = new THREE.Mesh(
-    new THREE.PlaneGeometry(1.7, 2.3),
+    new THREE.PlaneGeometry(1.5, 2.6),
     new THREE.MeshBasicMaterial({ map: texturaOmbra(), transparent: true, depthWrite: false })
   );
   ombra.position.z = -0.42;
@@ -180,9 +191,9 @@ export async function avvia(canvas, opz = {}) {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const dist = Math.max(2.6 / (2 * t), 2.3 / (2 * t * camera.aspect));
-    camera.position.set(0, 0.1, dist);
-    camera.lookAt(0, 0.18, 0);
+    const dist = Math.max(2.55 / (2 * t), 2.2 / (2 * t * camera.aspect));
+    camera.position.set(0, 0.05, dist);
+    camera.lookAt(0, 0.08, 0);
     camera.updateProjectionMatrix();
     disegna(performance.now());
   }
@@ -232,11 +243,11 @@ export async function avvia(canvas, opz = {}) {
     puntatore.x += (puntatore.tx - puntatore.x) * 0.06;
     puntatore.y += (puntatore.ty - puntatore.y) * 0.06;
     gruppo.rotation.set(
-      -0.78 + Math.sin(t * 0.5) * 0.045 + puntatore.y * 0.12,
-      Math.sin(t * 0.37) * 0.07 + puntatore.x * 0.28,
-      -0.46 + Math.sin(t * 0.6) * 0.06
+      -0.52 + Math.sin(t * 0.5) * 0.045 + puntatore.y * 0.12,
+      0.18 + Math.sin(t * 0.37) * 0.08 + puntatore.x * 0.28,
+      -0.62 + Math.sin(t * 0.6) * 0.06
     );
-    gruppo.position.y = -0.22 + Math.sin(t * 0.9) * 0.035;
+    gruppo.position.y = -0.12 + Math.sin(t * 0.9) * 0.035;
     renderer.render(scena, camera);
   }
 
