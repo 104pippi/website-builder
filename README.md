@@ -5,6 +5,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 
 | Cartella | Sito online | Video |
 |---|---|---|
+| [sito-al-noleggio](./sito-al-noleggio) | https://sito-al-noleggio.vercel.app | [video](./sito-al-noleggio/video) |
 | [sito-alessandro-international](./sito-alessandro-international) | https://sito-alessandro-international.vercel.app | [video](./sito-alessandro-international/video) |
 | [sito-allegranzi](./sito-allegranzi) | https://sito-allegranzi.vercel.app | [video](./sito-allegranzi/video) |
 | [sito-aperuzza](./sito-aperuzza) | https://sito-aperuzza.vercel.app | [video](./sito-aperuzza/video) |
