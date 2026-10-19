@@ -47,7 +47,8 @@
         io.unobserve(v.target);
         const el = v.target, fine = +el.dataset.fine, dur = 1300;
         let t0 = null;
-        const passo = (ora) => {
+        const passo = () => {
+          const ora = performance.now();
           if (t0 === null) t0 = ora;
           const k = clamp((ora - t0) / dur);
           el.textContent = Math.round(fine * (1 - Math.pow(1 - k, 3)));

@@ -63,7 +63,7 @@ function texOmbra() {
   return new THREE.CanvasTexture(c);
 }
 
-export function avvia(canvas, opzioni = {}) {
+export async function avvia(canvas, opzioni = {}) {
   const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobile = matchMedia('(max-width: 759px)').matches;
   const puntatoreFine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -240,9 +240,10 @@ export function avvia(canvas, opzioni = {}) {
   }
 
   // la piega parte quando le ganasce dell'intro si sono aperte
-  const ritardo = Math.max(0, 1.3 - performance.now() / 1000);
+  let ritardo = 0;
   let t0 = null, ultimo = 0, attivo = true, visibile = true, inCorsa = false;
-  function fotogramma(ora) {
+  function fotogramma() {
+    const ora = performance.now();
     inCorsa = false;
     if (t0 === null) t0 = ora;
     const t = Math.max(0, (ora - t0) / 1000 - ritardo);
@@ -267,6 +268,7 @@ export function avvia(canvas, opzioni = {}) {
   function riparti() {
     if (ridotto) { posa(10); renderer.render(scene, camera); return; }
     if (inCorsa) return;
+    if (t0 === null) ritardo = Math.max(0, 1.3 - performance.now() / 1000);
     ultimo = performance.now();
     inCorsa = true;
     requestAnimationFrame(fotogramma);
@@ -285,6 +287,8 @@ export function avvia(canvas, opzioni = {}) {
   });
   addEventListener('resize', () => { if (ridotto) { posa(10); renderer.render(scene, camera); } });
 
+  posa(0);
+  try { await renderer.compileAsync(scene, camera); } catch (e) { /* si compila al primo fotogramma */ }
   if (ridotto) { posa(10); renderer.render(scene, camera); }
   else riparti();
   canvas.classList.add('pronto');

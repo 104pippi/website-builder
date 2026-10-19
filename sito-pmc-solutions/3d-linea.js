@@ -94,7 +94,7 @@ function geoCuscino(W, L, T, nu = 40, nv = 18) {
   return g;
 }
 
-export function avvia(canvas) {
+export async function avvia(canvas) {
   const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobile = matchMedia('(max-width: 759px)').matches;
   const corsa = canvas.closest('[data-linea]');
@@ -568,7 +568,8 @@ export function avvia(canvas) {
     }
     renderer.render(scene, camera);
   }
-  function fotogramma(ora) {
+  function fotogramma() {
+    const ora = performance.now();
     inCorsa = false;
     if (t0 === null) { t0 = ora; ultimo = ora; }
     const dt = Math.min(0.05, Math.max(0, (ora - ultimo) / 1000));
@@ -599,6 +600,7 @@ export function avvia(canvas) {
   });
 
   macchina(0.6, 0);
+  try { await renderer.compileAsync(scene, camera); } catch (e) { /* si compila al primo fotogramma */ }
   disegna(0, 0);
   corsa.closest('.linea').classList.add('pronta');
   return { renderer };
