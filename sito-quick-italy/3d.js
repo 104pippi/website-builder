@@ -387,6 +387,7 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
   const b3 = new THREE.Vector3();
   const morb = (t) => t * t * (3 - 2 * t);
   let moltiplica = 1;
+  let versoPrua = 0;   // in verticale la mira scivola verso prua: la barca resta al centro dello schermo
   const posaCamera = (p, t) => {
     let i = 0;
     while (i < CHIAVI.length - 2 && p > CHIAVI[i + 1].p) i++;
@@ -395,6 +396,8 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
     const u = morb(Math.min(1, Math.max(0, (p - A.p) / (Bk.p - A.p))));
     vMira.copy(a3.fromArray(A.mira)).lerp(b3.fromArray(Bk.mira), u);
     vPos.copy(a3.fromArray(A.pos)).lerp(b3.fromArray(Bk.pos), u);
+    vMira.z += versoPrua;
+    vPos.z += versoPrua;
     vPos.sub(vMira).multiplyScalar(moltiplica).add(vMira);
     vPos.y += Math.sin(t * 0.5) * 0.12;
     vPos.x += Math.sin(t * 0.31) * 0.15;
@@ -409,8 +412,17 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
     renderer.setSize(w, h, false);
     const asp = w / h;
     camera.aspect = asp;
+    // su schermo largo la barca sta a destra: a sinistra in basso ci sono i testi dei passi
+    if (asp >= 1) {
+      const largo = w * 1.18;
+      camera.aspect = largo / h;
+      camera.setViewOffset(largo, h, 0, 0, w, h);
+    } else {
+      camera.clearViewOffset();
+    }
     camera.fov = asp < 1 ? 44 : 34;
-    moltiplica = asp < 1 ? 1 + Math.min(0.85, (1 - asp) * 1.55) : 1;
+    moltiplica = asp < 1 ? 1 + Math.min(1.4, (1 - asp) * 2.5) : 1.3;
+    versoPrua = asp < 1 ? 1.4 : 0;
     camera.updateProjectionMatrix();
   };
   ridimensiona();
@@ -465,6 +477,7 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
   /* ---------- ciclo: solo quando la sezione è in vista e la scheda è visibile ---------- */
   let inVista = true;
   let attivo = false;
+  let perso = false;
   let t = 0;
   let precedente = 0;
   const ciclo = () => {
@@ -477,7 +490,7 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
     requestAnimationFrame(ciclo);
   };
   const aggiornaCiclo = () => {
-    const deve = inVista && !document.hidden && !ridotto;
+    const deve = !perso && inVista && !document.hidden && !ridotto;
     if (deve && !attivo) {
       attivo = true;
       precedente = performance.now();
@@ -488,6 +501,13 @@ export async function avvia({ canvas, sezione: sezioneDom, statoRollio, progress
   };
   new IntersectionObserver((v) => { inVista = v[0].isIntersecting; aggiornaCiclo(); }).observe(sezioneDom);
   document.addEventListener('visibilitychange', aggiornaCiclo);
+  // se il browser toglie il contesto WebGL torna la foto, mai un riquadro vuoto
+  canvas.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    attivo = false;
+    perso = true;
+    sezioneDom.classList.remove('pronta');
+  });
 
   if (ridotto) {
     // movimento ridotto: la scena si ridisegna solo quando si scorre, il tempo resta fermo

@@ -78,7 +78,7 @@
       const t = (ora - inizio) / 1000;
       const smorza = Math.exp(-t / 0.78);
       rollioHero = 4.5 * smorza * Math.cos((2 * Math.PI * t) / 1.3);
-      scalaHero = 1.06 + 0.12 * Math.exp(-t / 0.95);
+      scalaHero = 1.06 + 0.15 * Math.exp(-t / 0.95);
       if (t >= DURATA) { rollioHero = 0; scalaHero = 1.06; }
       ago(clinoHero, rollioHero);
       valoreHero.textContent = gradi(rollioHero);
