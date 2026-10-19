@@ -51,12 +51,13 @@
       if (riduci) {
         hero.classList.add('hero--colorata');
       } else {
+        var lenta = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ''));
         setTimeout(function () {
           if (!window.PS.heroPartito && !hero.classList.contains('hero--colorata')) {
             window.PS.heroSaltato = true;
             hero.classList.add('hero--pennellata');
           }
-        }, 2800);
+        }, lenta ? 0 : Math.max(600, 4500 - performance.now()));
       }
     }
 
@@ -144,8 +145,8 @@
     });
   });
 
-  /* il 3D arriva dopo il caricamento: prima la pagina, poi il resto */
-  window.addEventListener('load', function () {
+  /* il 3D arriva dopo l'HTML: foto e titolo sono già lì, three.js si è precaricato in parallelo */
+  document.addEventListener('DOMContentLoaded', function () {
     var ok = false;
     try {
       var c = document.createElement('canvas');
