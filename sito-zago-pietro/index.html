@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zago Pietro srl | Alberini per micromotori e spine di precisione a Farra di Soligo</title>
+  <meta name="description" content="Alberi per micromotori, spine e perni rettificati da Ø 1,5 a 8 mm in acciaio al carbonio e inox. ISO 9001 dal 2002. Farra di Soligo (TV), dal 1979.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://sito-zago-pietro.vercel.app/">
+  <meta name="theme-color" content="#E4E8EB">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Zago Pietro srl">
+  <meta property="og:title" content="Zago Pietro srl | Alberini per micromotori e spine di precisione">
+  <meta property="og:description" content="Tornitura e rettifica di alberi e spine da Ø 1,5 a 8 mm, circa 500.000 pezzi al giorno. ISO 9001 dal 2002, Farra di Soligo (TV).">
+  <meta property="og:url" content="https://sito-zago-pietro.vercel.app/">
+  <meta property="og:image" content="https://sito-zago-pietro.vercel.app/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hubot+Sans:wdth,wght@75..125,500..900&family=Mona+Sans:wdth,wght@75..125,400..700&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-taglio.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://sito-zago-pietro.vercel.app/#azienda",
+    "name": "Zago Pietro srl",
+    "legalName": "ZAGO PIETRO S.r.l.",
+    "description": "Produzione di alberi per micromotori, spine e perni rettificati da Ø 1,5 a 8 mm in acciaio al carbonio e inox, anche in conto lavoro.",
+    "url": "https://sito-zago-pietro.vercel.app/",
+    "image": "https://sito-zago-pietro.vercel.app/assets/img/og.jpg",
+    "logo": "https://sito-zago-pietro.vercel.app/apple-touch-icon.png",
+    "telephone": "+390438900087",
+    "faxNumber": "+390438801457",
+    "email": "info@zagopietro.com",
+    "vatID": "IT03471380265",
+    "foundingDate": "1979",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Cal della Madonna, 62",
+      "postalCode": "31010",
+      "addressLocality": "Farra di Soligo",
+      "addressRegion": "TV",
+      "addressCountry": "IT"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "UNI EN ISO 9001:2015",
+      "recognizedBy": { "@type": "Organization", "name": "Kiwa Cermet Italia" }
+    }
+  }
+  </script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="logo-zp" viewBox="0 0 2544 752"><g transform="translate(0.000000,752.000000) scale(0.100000,-0.100000)" fill="currentColor"><path d="M415 7428 c-41 -93 -85 -167 -136 -226 -16 -18 -34 -52 -40 -76 -7 -29 -32 -69 -74 -119 -44 -53 -69 -94 -82 -133 -12 -39 -28 -65 -50 -83 -33 -26 -33 -26 -33 -283 0 -142 1 -259 3 -260 1 -2 20766 -18 21845 -17 74 0 90 -3 145 -32 57 -30 73 -33 207 -42 137 -9 149 -11 209 -43 35 -19 71 -34 80 -34 8 0 41 -16 73 -35 48 -30 129 -54 180 -55 3 0 43 -30 88 -66 46 -37 105 -75 133 -86 28 -11 79 -45 116 -77 36 -32 86 -71 111 -86 25 -16 61 -46 81 -67 19 -22 60 -56 90 -77 39 -27 61 -52 81 -92 16 -29 45 -70 67 -89 74 -67 188 -234 252 -370 17 -35 55 -102 85 -148 50 -74 57 -92 68 -165 8 -53 24 -104 44 -143 17 -34 34 -86 38 -115 4 -30 15 -75 25 -101 45 -117 50 -167 51 -509 0 -347 3 -321 -53 -504 -10 -33 -21 -78 -25 -100 -4 -22 -20 -66 -35 -97 -16 -31 -34 -90 -40 -130 -9 -56 -23 -93 -62 -163 -70 -125 -93 -173 -112 -227 -16 -46 -78 -129 -188 -253 -29 -33 -88 -102 -131 -152 -42 -51 -98 -109 -124 -130 -26 -21 -88 -74 -138 -118 -159 -140 -267 -218 -336 -240 -35 -12 -97 -44 -138 -72 -110 -74 -131 -82 -224 -92 -64 -6 -96 -15 -131 -36 -28 -16 -78 -32 -124 -40 -43 -8 -101 -23 -130 -35 -91 -35 -222 -51 -341 -40 -147 13 -6673 13 -6721 0 -72 -20 -74 -26 -77 -271 -4 -256 4 -314 52 -384 19 -27 38 -63 42 -78 4 -16 22 -49 41 -74 19 -25 40 -60 45 -77 12 -35 85 -141 117 -170 12 -11 29 -44 37 -74 19 -65 85 -135 142 -153 24 -7 134 -9 318 -7 317 3 305 0 346 83 12 22 47 75 79 118 41 54 64 97 78 145 22 72 63 144 116 203 19 21 40 61 49 91 35 121 86 140 363 136 211 -3 211 -3 254 -33 50 -35 161 -195 184 -266 9 -27 42 -78 76 -119 36 -42 68 -93 78 -121 30 -88 136 -211 196 -228 50 -14 517 -15 564 -1 58 16 165 142 196 230 8 23 30 67 48 98 89 150 116 200 122 230 10 48 123 175 175 196 49 19 415 24 469 5 22 -8 44 -30 75 -79 24 -37 49 -70 54 -74 6 -3 16 -23 23 -44 12 -40 83 -145 118 -176 12 -11 28 -43 37 -72 8 -30 32 -74 53 -100 21 -25 55 -74 75 -109 70 -118 40 -110 402 -110 l315 0 53 55 c39 41 58 70 70 110 9 30 41 93 71 140 30 47 64 105 75 130 34 74 52 105 121 202 103 145 73 132 344 136 303 4 290 8 360 -109 95 -159 119 -202 146 -259 17 -36 54 -97 84 -135 29 -39 63 -95 74 -126 54 -143 212 -188 395 -112 42 17 98 29 185 38 92 9 141 19 181 37 30 14 79 31 108 38 82 19 93 33 102 126 5 60 13 91 33 125 18 30 33 82 46 151 11 58 29 128 41 154 13 29 25 87 31 144 12 113 29 146 92 180 25 14 57 36 70 49 14 12 46 29 73 37 27 8 66 28 87 45 88 71 163 95 221 69 28 -12 70 -26 92 -32 23 -5 64 -24 93 -42 41 -27 65 -34 122 -39 54 -5 81 -13 117 -35 26 -16 65 -35 87 -42 22 -7 69 -28 104 -46 124 -66 147 -56 341 142 173 178 230 244 260 304 13 25 47 73 76 108 67 79 67 83 -5 223 -32 63 -62 130 -66 149 -7 39 -84 202 -126 268 -15 24 -31 62 -34 85 -4 23 -22 70 -41 104 -45 81 -45 121 0 187 24 35 38 71 45 115 18 110 94 201 168 201 18 0 150 64 235 114 28 16 75 31 115 38 46 7 86 21 123 43 30 19 73 38 95 44 49 13 167 107 192 154 21 38 32 636 15 804 -16 156 -76 234 -191 247 -41 5 -73 16 -110 40 -29 19 -69 37 -89 41 -20 4 -62 22 -92 40 -39 23 -72 35 -112 38 -42 4 -74 15 -115 40 -32 20 -73 38 -92 42 -73 15 -133 103 -150 219 -7 45 -19 83 -37 109 -43 65 -43 104 0 180 20 36 36 74 36 84 0 37 21 93 46 123 15 17 32 51 40 77 8 25 25 61 39 78 13 18 29 54 36 81 7 27 24 67 39 89 15 22 31 51 35 65 4 14 18 45 31 69 35 63 31 82 -29 148 -30 32 -68 87 -85 123 -25 53 -64 99 -213 253 -232 240 -243 246 -347 183 -44 -26 -73 -35 -125 -40 -69 -7 -93 -17 -298 -122 -136 -70 -390 -70 -448 0 -20 24 -192 113 -232 120 -67 12 -71 20 -84 162 -11 112 -17 138 -44 192 -26 52 -34 82 -41 163 -6 79 -14 108 -35 144 -14 25 -31 73 -37 108 -23 135 -111 187 -318 187 -91 1 -126 5 -170 21 -30 12 -87 24 -127 28 -40 3 -78 12 -85 19 -16 16 -188 17 -188 0 0 -6 -18 -34 -39 -62 -22 -28 -43 -64 -47 -79 -3 -16 -33 -64 -65 -107 -63 -85 -83 -120 -93 -163 -20 -83 -170 -282 -224 -297 -68 -19 -491 -13 -532 8 -57 28 -176 171 -194 232 -9 29 -27 67 -41 85 -13 18 -34 58 -45 88 -11 30 -29 62 -40 72 -11 10 -27 38 -36 64 -10 25 -28 61 -41 79 -13 17 -29 46 -35 62 -15 45 -723 48 -734 3 -9 -37 -81 -169 -116 -213 -15 -20 -35 -56 -43 -80 -8 -25 -42 -78 -75 -118 -33 -41 -68 -96 -77 -124 -50 -141 -114 -168 -398 -168 -293 0 -339 21 -401 182 -14 37 -30 70 -34 73 -18 11 -119 192 -129 232 -7 25 -36 72 -75 120 -35 43 -67 88 -70 101 -7 22 -7 22 -353 20 l-346 -3 -13 -45 c-7 -25 -33 -69 -57 -98 -25 -30 -49 -70 -55 -91 -7 -20 -37 -70 -68 -111 -31 -41 -67 -100 -80 -130 -14 -30 -36 -66 -48 -80 -13 -14 -35 -48 -49 -76 -44 -86 -54 -89 -369 -89 -304 0 -311 2 -335 83 -6 23 -28 69 -47 102 -20 33 -52 87 -71 119 -20 33 -42 78 -50 100 -7 22 -43 83 -78 135 -46 68 -67 108 -71 141 l-7 45 -360 0 c-359 0 -359 0 -369 -26 -6 -14 -21 -40 -34 -57 -13 -18 -33 -54 -45 -81 -11 -26 -44 -77 -72 -113 -28 -35 -63 -92 -78 -126 -16 -34 -39 -75 -53 -92 -13 -16 -48 -69 -76 -116 -32 -53 -62 -91 -79 -100 -31 -15 -420 -26 -502 -14 -85 13 -211 162 -251 297 -15 49 -38 90 -81 148 -33 43 -67 101 -76 127 -9 26 -27 64 -40 83 -12 19 -23 43 -23 52 0 17 -23 18 -369 18 l-368 0 -7 -49 c-5 -38 -20 -68 -70 -137 -35 -49 -73 -111 -85 -139 -12 -27 -32 -61 -45 -75 -13 -14 -51 -76 -86 -138 -108 -194 -112 -196 -452 -190 -278 4 -299 17 -378 226 -22 57 -84 155 -119 186 -12 11 -28 42 -36 71 -8 28 -35 77 -60 110 -25 33 -50 77 -57 98 -11 37 -11 37 -355 37 -343 0 -343 0 -354 -27 -5 -15 -34 -57 -64 -94 -30 -37 -63 -89 -73 -116 -10 -26 -41 -79 -70 -118 -28 -38 -67 -101 -86 -140 -126 -246 -97 -229 -394 -233 -324 -5 -368 7 -406 114 -19 56 -92 183 -122 214 -13 14 -31 48 -40 75 -9 28 -28 65 -42 84 -36 48 -112 200 -112 222 0 28 -728 30 -736 2 -3 -10 -14 -34 -25 -53 -11 -19 -31 -60 -45 -90 -14 -30 -36 -66 -49 -80 -21 -22 -60 -88 -187 -315 -92 -165 -117 -175 -413 -174 -285 0 -272 -4 -355 130 -36 58 -75 118 -86 132 -12 15 -26 46 -33 70 -6 25 -29 66 -51 93 -41 49 -150 259 -150 288 0 14 -36 16 -374 16 l-374 0 -7 -47 c-8 -58 -12 -65 -76 -150 -28 -36 -66 -96 -83 -132 -44 -89 -108 -201 -138 -242 -13 -19 -33 -53 -42 -76 -33 -74 -49 -78 -356 -78 -311 0 -317 2 -345 84 -9 27 -29 66 -45 86 -16 20 -34 53 -41 73 -7 20 -41 77 -76 126 -35 49 -70 111 -77 136 -8 26 -28 74 -44 106 -17 32 -34 71 -38 87 -6 27 -6 27 -365 27 -359 0 -359 0 -370 -27 -6 -16 -21 -39 -34 -53 -21 -22 -56 -81 -187 -315 -22 -38 -48 -79 -58 -90 -11 -11 -26 -38 -35 -60 -68 -166 -96 -179 -381 -183 -317 -4 -369 15 -408 150 -16 54 -32 79 -107 169 -21 25 -43 68 -53 100 -8 31 -25 67 -36 81 -11 14 -29 47 -40 73 -11 27 -34 63 -50 82 -17 18 -30 43 -30 53 0 20 -9 20 -364 20 -364 0 -364 0 -371 -32 -4 -18 -19 -53 -34 -78 -15 -25 -31 -54 -35 -65 -9 -25 -78 -143 -122 -211 -19 -28 -41 -73 -49 -100 -11 -38 -33 -69 -102 -141 -106 -111 -87 -106 -398 -101 -255 4 -261 5 -299 91 -13 29 -46 85 -75 125 -28 40 -59 92 -68 115 -16 40 -45 90 -128 218 -38 60 -55 107 -55 151 0 28 0 28 -367 28 l-368 0 -40 -92z"/>       </g><g transform="translate(0.000000,752.000000) scale(0.100000,-0.100000)" fill="#de1a1e"><path d="M4895 4934 c-38 -15 -107 -34 -152 -44 -85 -19 -207 -78 -267 -130 -17 -15 -49 -37 -72 -48 -45 -23 -177 -157 -226 -231 -17 -25 -43 -59 -59 -76 -15 -16 -35 -50 -45 -75 -10 -25 -30 -64 -45 -88 -15 -24 -31 -62 -34 -84 -4 -22 -21 -70 -39 -107 -48 -102 -48 -450 0 -551 17 -36 35 -81 39 -100 6 -33 70 -185 99 -239 50 -90 298 -328 396 -379 30 -16 92 -49 137 -74 113 -63 131 -68 273 -78 69 -5 149 -14 179 -20 42 -10 70 -10 125 0 39 6 128 15 197 20 137 10 145 12 279 90 47 27 106 61 132 74 131 71 259 187 314 284 15 26 42 70 60 97 108 163 137 240 142 386 5 150 -5 191 -54 209 -38 15 -1302 13 -1344 -1 -45 -16 -60 -58 -60 -168 0 -178 -20 -171 474 -171 412 0 436 -3 436 -47 0 -55 -125 -207 -208 -254 -31 -18 -69 -41 -83 -51 -14 -11 -57 -27 -95 -37 -38 -10 -96 -30 -129 -45 -78 -33 -141 -33 -247 0 -45 14 -106 33 -136 40 -50 13 -118 49 -215 112 -112 74 -249 266 -262 366 -4 28 -17 92 -31 142 -30 114 -30 136 0 238 13 44 28 111 34 148 8 56 18 77 57 130 25 35 66 92 89 128 30 44 58 73 87 89 24 14 57 35 73 48 35 29 169 97 211 107 17 4 113 8 214 7 238 0 356 -51 526 -228 76 -80 89 -83 305 -83 243 0 255 9 204 143 -39 102 -212 281 -354 365 -52 31 -113 70 -135 87 -59 45 -58 45 -133 54 -39 5 -101 22 -139 37 -105 44 -412 48 -518 8z"/> <path d="M7550 4935 c-41 -14 -115 -34 -163 -45 -49 -11 -101 -29 -116 -40 -16 -11 -50 -29 -76 -40 -115 -49 -352 -293 -441 -454 -27 -50 -63 -110 -78 -133 -29 -43 -29 -42 -57 -298 -34 -301 18 -578 137 -740 12 -16 31 -52 43 -79 31 -72 228 -265 312 -306 34 -16 69 -36 78 -43 72 -62 227 -119 346 -128 66 -5 152 -14 190 -20 58 -10 83 -9 149 5 43 9 110 16 150 17 107 0 162 13 209 46 23 16 58 35 77 43 114 44 345 229 416 335 18 28 58 85 89 129 30 43 59 97 65 120 9 40 35 118 66 200 32 84 15 517 -23 601 -17 39 -35 92 -38 119 -6 35 -22 70 -59 125 -29 42 -68 103 -88 136 -44 73 -187 214 -248 245 -25 13 -78 46 -119 74 -102 71 -108 74 -184 86 -37 6 -98 22 -135 37 -103 41 -391 45 -502 8z m356 -384 c110 -9 121 -14 321 -133 113 -67 140 -103 267 -353 62 -122 77 -404 28 -510 -13 -27 -32 -74 -43 -103 -45 -129 -313 -380 -434 -408 -16 -3 -61 -20 -100 -37 -93 -41 -215 -45 -283 -9 -24 13 -76 31 -117 41 -45 12 -87 30 -105 45 -17 14 -51 34 -76 45 -116 52 -300 318 -319 462 -3 24 -10 76 -16 114 -13 89 11 291 41 345 11 19 36 68 55 109 48 100 235 289 312 315 27 9 66 28 88 43 34 23 54 29 130 34 135 9 142 9 251 0z"/> <path d="M19233 4950 c-22 -5 -63 -18 -90 -29 -26 -12 -83 -27 -126 -36 -68 -12 -92 -23 -175 -78 -54 -36 -113 -73 -132 -82 -54 -28 -208 -183 -237 -240 -14 -27 -52 -88 -84 -135 -51 -74 -61 -97 -78 -175 -11 -49 -30 -117 -42 -150 -38 -101 -40 -348 -4 -481 15 -54 36 -132 47 -172 43 -167 178 -348 388 -523 53 -44 96 -71 206 -129 28 -15 65 -37 82 -49 21 -15 56 -25 109 -31 43 -5 123 -15 178 -22 297 -36 576 16 740 137 17 13 52 32 78 43 80 35 276 235 339 347 28 49 62 105 75 123 37 50 51 90 62 187 5 50 16 109 25 131 29 84 32 300 4 374 -15 38 -27 98 -31 142 -3 45 -13 92 -23 110 -10 18 -31 60 -48 93 -77 151 -248 352 -356 420 -25 15 -61 41 -80 57 -19 15 -38 28 -42 28 -4 0 -29 13 -55 29 -27 16 -82 39 -123 50 -41 11 -115 31 -165 45 -95 26 -343 35 -442 16z m432 -417 c17 -9 60 -31 97 -49 93 -46 277 -229 319 -317 16 -34 39 -76 50 -93 76 -121 66 -523 -17 -631 -14 -18 -32 -54 -41 -79 -21 -61 -166 -215 -226 -239 -23 -9 -57 -28 -75 -41 -53 -41 -277 -114 -348 -114 -68 0 -256 67 -365 130 -140 82 -290 259 -344 408 -7 20 -23 60 -36 87 -36 80 -35 288 3 365 14 30 31 75 38 100 28 106 158 275 270 352 135 93 214 130 295 139 111 12 344 1 380 -18z"/> <path d="M12513 4916 c-41 -35 -50 -2205 -10 -2251 30 -36 340 -40 387 -6 52 37 50 -6 50 1121 0 1180 5 1105 -70 1142 -61 31 -320 26 -357 -6z"/> <path d="M204 4878 c-34 -16 -44 -52 -44 -163 0 -184 -20 -175 409 -175 315 0 339 -1 354 -18 25 -27 21 -80 -8 -117 -13 -18 -32 -52 -42 -76 -9 -24 -38 -75 -63 -114 -26 -38 -73 -122 -104 -185 -31 -63 -70 -133 -86 -155 -17 -22 -43 -67 -58 -100 -16 -33 -51 -94 -79 -135 -27 -41 -75 -127 -106 -190 -30 -63 -73 -139 -95 -167 -22 -29 -43 -67 -47 -83 -4 -17 -23 -52 -42 -77 -107 -140 -133 -422 -43 -468 50 -26 1319 -22 1351 4 23 18 24 25 27 173 5 224 51 202 -431 208 -486 6 -463 -3 -380 156 25 49 60 116 76 149 17 33 40 74 53 90 12 17 32 56 44 87 12 32 25 60 30 63 18 11 102 139 117 179 9 23 29 60 45 83 15 23 32 53 38 68 6 15 23 45 38 68 16 23 40 67 54 98 14 31 51 90 81 130 30 41 58 85 62 99 4 14 23 54 42 89 116 210 117 462 2 485 -55 11 -1172 6 -1195 -6z"/> <path d="M2640 4883 c-46 -15 -61 -30 -80 -81 -11 -29 -31 -68 -45 -86 -13 -18 -31 -63 -40 -100 -9 -37 -29 -91 -45 -120 -17 -29 -30 -60 -30 -69 0 -9 -17 -49 -38 -89 -21 -40 -44 -95 -51 -123 -11 -47 -60 -158 -117 -266 -13 -25 -31 -77 -40 -115 -9 -40 -42 -122 -80 -194 -35 -69 -69 -150 -75 -180 -6 -30 -23 -76 -39 -101 -15 -26 -33 -64 -40 -85 -7 -22 -25 -61 -40 -89 -16 -27 -36 -79 -45 -115 -9 -35 -28 -83 -41 -105 -13 -23 -30 -63 -38 -89 -8 -27 -27 -66 -42 -88 -36 -51 -38 -103 -5 -129 21 -17 42 -19 206 -19 211 0 223 5 249 88 13 45 50 129 121 277 18 39 36 86 39 105 18 106 36 110 443 110 387 0 380 1 445 -85 41 -54 53 -84 63 -157 3 -26 18 -64 32 -85 14 -21 38 -69 54 -107 54 -133 79 -146 286 -146 218 0 245 26 173 166 -17 32 -39 90 -50 128 -11 38 -31 86 -45 107 -15 20 -34 63 -44 95 -10 33 -28 75 -39 94 -12 19 -28 63 -36 98 -8 34 -28 83 -45 109 -17 26 -36 65 -42 87 -6 23 -22 60 -36 83 -14 24 -31 71 -39 105 -8 35 -26 80 -40 102 -14 21 -35 64 -45 94 -11 31 -28 71 -39 89 -11 18 -27 61 -36 95 -8 35 -29 87 -45 118 -54 102 -107 225 -114 260 -7 34 -34 96 -133 299 -57 117 -66 121 -224 120 -62 0 -120 -3 -128 -6z m145 -669 c20 -20 78 -135 95 -189 7 -22 23 -61 37 -88 13 -26 32 -92 43 -147 11 -55 23 -106 26 -114 21 -54 -344 -89 -415 -40 -35 25 -25 114 24 207 20 39 42 101 50 141 12 65 67 197 95 231 16 19 25 19 45 -1z"/> <path d="M10764 4879 c-44 -22 -44 -11 -44 -1124 0 -1270 -27 -1118 200 -1116 235 3 222 -25 220 464 -1 194 1 360 5 370 15 37 45 41 290 47 233 5 241 6 290 31 28 15 75 34 104 44 80 26 233 174 257 249 9 28 28 71 42 95 32 56 45 205 33 378 -17 229 -142 411 -355 518 l-99 50 -461 2 c-307 1 -468 -1 -482 -8z m721 -384 c204 -52 272 -128 264 -301 -6 -121 -108 -240 -226 -264 -102 -22 -327 -9 -357 19 -42 39 -41 502 1 552 33 39 149 37 318 -6z"/> <path d="M13475 4881 c-65 -27 -60 61 -60 -1111 0 -1139 -2 -1094 52 -1119 16 -8 190 -11 568 -11 665 0 598 -22 603 197 5 218 45 197 -393 203 -450 6 -407 -24 -403 282 4 295 -31 268 352 268 419 0 406 -6 406 175 0 192 6 189 -382 195 -340 5 -348 7 -367 61 -15 43 -15 415 0 458 21 59 34 61 388 61 410 0 401 -4 401 174 0 115 -9 142 -55 161 -39 17 -1071 21 -1110 6z"/> <path d="M14933 4875 c-45 -19 -53 -42 -53 -155 0 -165 17 -180 211 -180 65 0 129 -5 142 -11 53 -24 52 3 57 -951 6 -1064 -26 -933 230 -933 256 0 224 -131 230 933 5 954 4 927 57 951 13 6 77 11 142 11 194 0 211 15 211 180 0 115 -8 136 -55 156 -50 20 -1124 20 -1172 -1z"/> <path d="M16548 4874 c-61 -26 -59 25 -56 -1127 3 -1250 -23 -1107 203 -1107 216 0 199 -34 205 402 5 359 7 378 40 378 36 0 52 -14 96 -79 24 -36 62 -88 84 -116 22 -27 51 -72 65 -100 13 -27 49 -79 79 -115 31 -36 70 -93 86 -128 21 -43 57 -90 118 -152 l87 -90 197 0 c269 0 283 16 157 171 -20 24 -44 58 -53 76 -9 17 -45 65 -80 105 -35 40 -75 96 -89 123 -14 28 -57 91 -97 140 -139 172 -149 227 -48 260 149 49 311 187 375 319 20 39 46 92 59 117 22 41 25 63 30 195 9 226 0 274 -79 392 -35 53 -72 112 -83 130 -21 37 -108 104 -224 173 -74 44 -74 44 -555 46 -413 2 -485 0 -517 -13z m757 -375 c337 -104 385 -451 88 -626 -70 -41 -424 -44 -467 -4 -34 32 -41 536 -8 601 40 82 180 92 387 29z"/></g><text x="8" y="690" font-family="Mona Sans, Arial, sans-serif" font-size="78" font-weight="600" letter-spacing="10" fill="currentColor">S.R.L.</text></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.8 1.8 0 0 1-1.9 1.8C10.8 20.3 3.7 13.2 3.2 5.4A1.8 1.8 0 0 1 5 3.5Z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 2.8h8l4.2 4.2v14.2H6zM14 2.8V7h4.2M9 12.5h6M9 16h6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 5.5h17v13h-17zM3.5 6l8.5 7 8.5-7"/></symbol>
+  </svg>
+
+  <a class="salta" href="#contenuto">Vai al contenuto</a>
+
+  <header class="testata" id="testata">
+    <a class="logo" href="#top" aria-label="Zago Pietro srl, torna all'inizio"><svg><use href="#logo-zp"/></svg></a>
+    <nav class="menu" aria-label="Menu principale">
+      <a href="#prodotti">Prodotti</a>
+      <a href="#processo">Lavorazioni</a>
+      <a href="#stabilimento">Stabilimento</a>
+      <a href="#qualita">Qualità</a>
+      <a href="#storia">Storia</a>
+      <a href="#dove">Dove siamo</a>
+    </nav>
+    <a class="testata-tel" href="tel:+390438900087"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>0438 900 087</span></a>
+    <a class="btn btn-cta testata-cta" href="#preventivo">Richiedi un preventivo</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-mobile"><span class="burger-righe" aria-hidden="true"></span><span class="burger-testo">Menu</span></button>
+  </header>
+
+  <div class="menu-mobile" id="menu-mobile" hidden>
+    <nav aria-label="Menu mobile">
+      <a href="#prodotti">Prodotti</a>
+      <a href="#processo">Lavorazioni</a>
+      <a href="#stabilimento">Stabilimento</a>
+      <a href="#qualita">Qualità</a>
+      <a href="#storia">Storia</a>
+      <a href="#dove">Dove siamo</a>
+    </nav>
+    <a class="btn btn-cta btn-grande" href="#preventivo">Richiedi un preventivo</a>
+    <a class="menu-mobile-tel" href="tel:+390438900087">Chiama lo 0438 900 087</a>
+  </div>
+
+  <main id="top">
+    <section class="hero" id="hero" aria-labelledby="hero-titolo">
+      <div class="hero-foto">
+        <picture>
+          <source type="image/webp" srcset="assets/img/hero-taglio.webp">
+          <img src="assets/img/hero-taglio.jpg" width="1200" height="857" fetchpriority="high" decoding="async"
+               alt="Utensile al lavoro su un tornio automatico, con l'olio da taglio che scorre sul pezzo">
+        </picture>
+        <p class="hero-foto-dida">Tornitura in olio, reparto di Farra di Soligo</p>
+      </div>
+
+      <canvas class="hero-3d" aria-hidden="true"></canvas>
+      <div class="quota" aria-hidden="true">
+        <svg class="quota-linea" viewBox="0 0 120 70" preserveAspectRatio="none"><path d="M118 2 L60 68 H0"/><circle cx="118" cy="2" r="2.6"/></svg>
+        <p class="quota-testo"><strong>Ø 1,5 – 8 mm</strong><span>acciaio al carbonio e inox</span></p>
+      </div>
+
+      <div class="hero-testo" id="contenuto">
+        <h1 id="hero-titolo" class="hero-titolo" aria-label="Alberini per micromotori e spine di precisione, dal 1979."><span class="p"><span style="--i:0">Alberini</span></span> <span class="p"><span style="--i:1">per</span></span> <span class="p"><span style="--i:2">micromotori</span></span> <span class="p"><span style="--i:3">e</span></span> <span class="p"><span style="--i:4">spine</span></span> <span class="p"><span style="--i:5">di</span></span> <span class="p"><span style="--i:6">precisione,</span></span> <span class="p"><span style="--i:7">dal&nbsp;1979.</span></span></h1>
+        <p class="hero-sotto">Torniamo e rettifichiamo alberi e spine da Ø 1,5 a 8 mm in acciaio al carbonio e inox, su vostro disegno o in conto lavoro. Circa 500.000 pezzi al giorno, a Farra di Soligo (TV).</p>
+        <div class="hero-azioni">
+          <a class="btn btn-cta btn-grande" href="#preventivo">Richiedi un preventivo</a>
+          <a class="btn btn-linea btn-grande" href="tel:+390438900087"><svg aria-hidden="true"><use href="#i-tel"/></svg>0438 900 087</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="fiducia" aria-label="Zago Pietro in quattro numeri">
+      <ul class="fiducia-lista">
+        <li><strong>1979</strong><span>l'anno in cui nasce l'azienda, a Farra di Soligo</span></li>
+        <li><strong>ISO 9001</strong><span>certificati dal 2002, oggi con Kiwa Cermet Italia</span></li>
+        <li><strong><span data-conta="500000">500.000</span></strong><span>pezzi al giorno, su tirature medio-alte</span></li>
+        <li><strong>Ø 1,5–8&nbsp;mm</strong><span>alberi e spine in acciaio al carbonio e inox</span></li>
+      </ul>
+    </section>
+
+    <section class="prodotti" id="prodotti" aria-labelledby="prodotti-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione">
+          <h2 id="prodotti-titolo">Cosa produciamo</h2>
+          <p>Lavorazioni di precisione per l'elettronica, l'automotive e tutti i settori che montano un micromotore o una micropompa. Pezzi piccoli, in grandi quantità, tutti uguali.</p>
+        </div>
+
+        <article class="prodotto">
+          <figure class="prodotto-foto cornice">
+            <picture>
+              <source type="image/webp" srcset="assets/img/alberi-centesimo.webp">
+              <img src="assets/img/alberi-centesimo.jpg" width="1200" height="675" loading="lazy" decoding="async"
+                   alt="Alberi per micromotori torniti, con zigrinature e filetti, accanto a una moneta da un centesimo">
+            </picture>
+            <span class="scala" style="--x:47%;--y:44%"><span class="scala-anello"></span><span class="scala-testo">1 centesimo, Ø 16,25 mm: la scala dei pezzi</span></span>
+          </figure>
+          <div class="prodotto-testo">
+            <h3>Alberi per micromotori e micropompe</h3>
+            <p>Il cuore del nostro lavoro dal 1981. Alberi torniti e rettificati su specifica del cliente, con gole, filetti, zigrinature e spianature come quelli in foto.</p>
+            <ul class="spec">
+              <li><span>Diametri</span><strong>da 1,5 a 8 mm</strong></li>
+              <li><span>Materiali</span><strong>acciaio al carbonio e inox</strong></li>
+              <li><span>Partenza</span><strong>materia prima in rotoli</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prodotto prodotto-inverso">
+          <figure class="prodotto-foto cornice">
+            <picture>
+              <source type="image/webp" srcset="assets/img/spine-centesimo.webp">
+              <img src="assets/img/spine-centesimo.jpg" width="1200" height="675" loading="lazy" decoding="async"
+                   alt="Spine e perni rettificati di diverse misure accanto a una moneta da un centesimo">
+            </picture>
+            <span class="scala" style="--x:53%;--y:49%"><span class="scala-anello"></span><span class="scala-testo">Spine e perni accanto a 1 centesimo</span></span>
+          </figure>
+          <div class="prodotto-testo">
+            <h3>Spine e perni rettificati</h3>
+            <p>Spine lavorate e perni rettificati, prodotti da noi partendo dal rotolo oppure lavorati in conto terzi sul vostro materiale.</p>
+            <ul class="spec">
+              <li><span>Lavorazioni</span><strong>tornitura, tranciatura, rettifica senza centri</strong></li>
+              <li><span>Finitura</span><strong>vibrofinitura e lavaggio a ultrasuoni</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prodotto">
+          <figure class="prodotto-foto cornice">
+            <picture>
+              <source type="image/webp" srcset="assets/img/alberi-spianati.webp">
+              <img src="assets/img/alberi-spianati.jpg" width="1200" height="675" loading="lazy" decoding="async"
+                   alt="Minuterie metalliche di precisione: alberini spianati, bussole e spine">
+            </picture>
+          </figure>
+          <div class="prodotto-testo">
+            <h3>Minuterie metalliche di precisione</h3>
+            <p>Bussole, perni e particolari torniti su disegno con i torni a fantina mobile CNC del nostro reparto, controllati in sala metrologica prima del confezionamento.</p>
+            <ul class="spec">
+              <li><span>Tirature</span><strong>medio-alte, fino a circa 500.000 pezzi al giorno</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="modi">
+          <div class="modo">
+            <h3>Produzione completa</h3>
+            <p>Acquistiamo noi la materia prima e vi consegniamo il pezzo finito, confezionato e controllato. Un magazzino di 1.200 m² ci permette di partire subito.</p>
+          </div>
+          <div class="modo">
+            <h3>Conto lavoro</h3>
+            <p>Lavoriamo spine e perni sul vostro materiale, con le nostre macchine e i nostri controlli. Anche solo una fase: tornitura, rettifica o finitura.</p>
+          </div>
+        </div>
+
+        <div class="galleria" aria-label="Altri pezzi prodotti">
+          <figure><picture><source type="image/webp" srcset="assets/img/alberi-filettati.webp"><img src="assets/img/alberi-filettati.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Alberi filettati e con esagono per micromotori"></picture><figcaption>Alberi filettati</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="assets/img/alberi-rotori.webp"><img src="assets/img/alberi-rotori.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Alberi rettificati con rotori e boccole montate"></picture><figcaption>Alberi con boccole</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="assets/img/alberi-gruppo.webp"><img src="assets/img/alberi-gruppo.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Serie di alberini sottili con spianature e gole"></picture><figcaption>Alberini con spianature</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="processo dentata" id="processo" aria-labelledby="processo-titolo">
+      <div class="processo-intro contenitore">
+        <h2 id="processo-titolo">Dal rotolo al pezzo finito</h2>
+        <p>Ogni alberino parte da un filo d'acciaio in rotolo e passa da sei fasi, tutte nel nostro stabilimento. Scorrete e guardatelo prendere forma.</p>
+      </div>
+      <div class="processo-pista">
+        <div class="processo-palco">
+          <canvas class="processo-3d" aria-hidden="true"></canvas>
+          <div class="processo-etichette" aria-hidden="true">
+            <span class="etichetta" data-x="-3.9" data-r="0.37"><b>Proiettore ottico</b>profilo del filetto</span>
+            <span class="etichetta" data-x="-1.2" data-r="0.42"><b>Rotondimetro</b>rotondità</span>
+            <span class="etichetta" data-x="0.4" data-r="0.42"><b>Rugosimetro</b>rugosità</span>
+            <span class="etichetta" data-x="1.3" data-r="0.5"><b>Durometro</b>durezza</span>
+            <span class="etichetta" data-x="3.8" data-r="0.3"><b>Macchina di misura 3D</b>quote e spianature</span>
+          </div>
+          <ol class="fasi">
+            <li class="fase attiva">
+              <h3><span class="fase-n">1/6</span>Il rotolo</h3>
+              <div class="fase-corpo"><div><img src="assets/img/magazzino-rotoli.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Rotoli di filo d'acciaio nel magazzino materie prime"><p>Si parte dal filo d'acciaio in rotoli, al carbonio o inox. 1.200 m² di magazzino tengono pronta la materia prima per le vostre commesse.</p></div></div>
+            </li>
+            <li class="fase">
+              <h3><span class="fase-n">2/6</span>La tornitura</h3>
+              <div class="fase-corpo"><div><img src="assets/img/tornitura-emulsione.jpg" width="966" height="724" loading="lazy" decoding="async" alt="Pezzo in tornitura con il refrigerante che scorre sull'utensile"><p>Torni a fantina mobile CNC e macchine automatiche progettate e costruite da noi danno forma al pezzo: gole, filetti, zigrinature, spianature.</p></div></div>
+            </li>
+            <li class="fase">
+              <h3><span class="fase-n">3/6</span>La rettifica</h3>
+              <div class="fase-corpo"><div><img src="assets/img/reparto.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Reparto produttivo con le macchine automatiche"><p>Le rettifiche senza centri portano diametro e superficie alla finitura richiesta, pezzo dopo pezzo, identici.</p></div></div>
+            </li>
+            <li class="fase">
+              <h3><span class="fase-n">4/6</span>La finitura</h3>
+              <div class="fase-corpo"><div><img src="assets/img/capannone.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Vista dall'alto del capannone con le linee di produzione"><p>Buratti e vibratori per la vibrofinitura, poi il lavaggio a ultrasuoni: il pezzo esce pulito e senza bave.</p></div></div>
+            </li>
+            <li class="fase">
+              <h3><span class="fase-n">5/6</span>Il controllo</h3>
+              <div class="fase-corpo"><div><img src="assets/img/sala-metrologica.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Operatore al lavoro nella sala metrologica"><p>Due sale metrologiche climatizzate misurano rotondità, rugosità, durezza e profilo, con strumenti tarati ogni sei mesi.</p></div></div>
+            </li>
+            <li class="fase">
+              <h3><span class="fase-n">6/6</span>Il lotto</h3>
+              <div class="fase-corpo"><div><img src="assets/img/alberi-gruppo.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Lotto di alberini finiti"><p>Contati, confezionati e pronti a partire. Circa 500.000 pezzi al giorno, ognuno uguale al primo.</p></div></div>
+            </li>
+          </ol>
+          <div class="processo-barra" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stabilimento" id="stabilimento" aria-labelledby="stabilimento-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione">
+          <h2 id="stabilimento-titolo">Uno stabilimento fatto per le grandi tirature</h2>
+          <p>4.000 m² coperti a Farra di Soligo e un parco di 80 macchine, molte studiate e costruite in azienda per la lavorazione richiesta dal cliente.</p>
+        </div>
+
+        <div class="mosaico">
+          <figure class="m-grande cornice">
+            <picture><source type="image/webp" srcset="assets/img/capannone.webp"><img src="assets/img/capannone.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Il capannone di produzione con le file di macchine automatiche"></picture>
+            <figcaption>Il reparto produttivo</figcaption>
+          </figure>
+          <figure class="m-alta cornice">
+            <picture><source type="image/webp" srcset="assets/img/tornitura-verticale.webp"><img src="assets/img/tornitura-verticale.jpg" width="644" height="800" loading="lazy" decoding="async" alt="Primo piano di un pezzo in lavorazione con il refrigerante"></picture>
+            <figcaption>Tornitura con refrigerante</figcaption>
+          </figure>
+          <figure class="m-larga cornice">
+            <picture><source type="image/webp" srcset="assets/img/magazzino-rotoli.webp"><img src="assets/img/magazzino-rotoli.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Magazzino con i rotoli di filo d'acciaio imballati"></picture>
+            <figcaption>1.200 m² di magazzino materie prime</figcaption>
+          </figure>
+          <figure class="m-larga cornice">
+            <picture><source type="image/webp" srcset="assets/img/tornio-cnc.webp"><img src="assets/img/tornio-cnc.jpg" width="800" height="476" loading="lazy" decoding="async" alt="Tornio a fantina mobile CNC nel reparto"></picture>
+            <figcaption>Tornio a fantina mobile CNC</figcaption>
+          </figure>
+        </div>
+
+        <div class="numeri">
+          <dl>
+            <div><dt>Superficie coperta</dt><dd><span data-conta="4000">4.000</span> m²</dd></div>
+            <div><dt>Magazzino materie prime</dt><dd><span data-conta="1200">1.200</span> m²</dd></div>
+            <div><dt>Macchine in produzione</dt><dd><span data-conta="80">80</span></dd></div>
+            <div><dt>Sale metrologiche</dt><dd>2</dd></div>
+          </dl>
+          <div class="parco">
+            <h3>Il parco macchine</h3>
+            <ul>
+              <li>Torni a fantina mobile CNC di ultima generazione</li>
+              <li>Macchine automatiche e speciali costruite in azienda</li>
+              <li>Trance ad alta velocità</li>
+              <li>Rettifiche senza centri</li>
+              <li>Buratti e vibratori per la vibrofinitura</li>
+              <li>Impianti di lavaggio a ultrasuoni</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qualita" id="qualita" aria-labelledby="qualita-titolo">
+      <div class="contenitore">
+        <div class="testa-sezione">
+          <h2 id="qualita-titolo">La qualità si misura</h2>
+          <p>Certificati ISO 9001 dal 2002. Ogni fase di lavorazione e il confezionamento finale passano dal controllo, in sale climatizzate e con operatori formati.</p>
+        </div>
+
+        <div class="qualita-griglia">
+          <article class="certificato">
+            <div class="certificato-foglio">
+              <p class="certificato-ente">Kiwa Cermet Italia</p>
+              <h3>UNI EN ISO 9001:2015</h3>
+              <p class="certificato-campo">Produzione di alberi per micromotori e perni rettificati su specifica del cliente. Lavorazione conto terzi di spine e perni.</p>
+              <dl class="certificato-dati">
+                <div><dt>Certificato</dt><dd>n. 3010-A</dd></div>
+                <div><dt>Primo rilascio</dt><dd>27 giugno 2002</dd></div>
+                <div><dt>Valido fino al</dt><dd>26 giugno 2029</dd></div>
+              </dl>
+            </div>
+            <ul class="documenti">
+              <li><a href="https://www.zagopietro.com/upload/CERT_3010_ITA_20268714659_mod_30_06_2026.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg>Certificato ISO 9001 <small>PDF, 297 KB</small></a></li>
+              <li><a href="https://www.zagopietro.com/upload/Politica_per_la_qualit%C3%A0.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg>Politica per la qualità <small>PDF, 67 KB</small></a></li>
+              <li><a href="https://www.zagopietro.com/upload/SurveyCertificate_ZAGO_PIETRO_SRL_18_02_2026.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg>Valutazione ESG Synesgy 2026 <small>PDF, 454 KB</small></a></li>
+            </ul>
+          </article>
+
+          <div class="strumenti">
+            <figure class="cornice">
+              <picture><source type="image/webp" srcset="assets/img/sala-metrologica.webp"><img src="assets/img/sala-metrologica.jpg" width="750" height="600" loading="lazy" decoding="async" alt="Sala metrologica climatizzata con strumenti di misura e un operatore"></picture>
+            </figure>
+            <h3>Gli strumenti in sala metrologica</h3>
+            <ul class="strumenti-lista">
+              <li>Rotondimetri e rugosimetri digitali</li>
+              <li>Proiettori ottici</li>
+              <li>Durometri a bassi carichi</li>
+              <li>Macchine di misura 3D</li>
+              <li>Calibri, comparatori e micrometri digitali</li>
+            </ul>
+            <div class="strumenti-foto">
+              <figure class="cornice"><picture><source type="image/webp" srcset="assets/img/rotondimetro.webp"><img src="assets/img/rotondimetro.jpg" width="800" height="514" loading="lazy" decoding="async" alt="Rotondimetro digitale con il grafico della misura a monitor"></picture></figure>
+              <figure class="cornice"><picture><source type="image/webp" srcset="assets/img/profilo-misura.webp"><img src="assets/img/profilo-misura.jpg" width="800" height="528" loading="lazy" decoding="async" alt="Software di misura con il profilo quotato di un albero"></picture></figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="esg">
+          <h3>Sostenibilità</h3>
+          <p>A febbraio 2026 abbiamo rinnovato la valutazione ESG sulla piattaforma Synesgy di CRIF, valida fino a febbraio 2027: ambiente, persone e governance trasparente, misurati come la produzione.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="settori dentata" id="settori" aria-labelledby="settori-titolo">
+      <div class="contenitore">
+        <h2 id="settori-titolo">Dove finiscono i nostri pezzi</h2>
+        <ul class="settori-lista">
+          <li>Elettronica ed elettromeccanica</li>
+          <li>Automotive</li>
+          <li>Elettrodomestici</li>
+          <li>Serrature, arredamento e domotica</li>
+          <li>Modellismo</li>
+          <li>Alimentare</li>
+          <li>Riscaldamento, climatizzazione e ventilazione</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="storia" id="storia" aria-labelledby="storia-titolo">
+      <div class="contenitore storia-griglia">
+        <div class="storia-testa">
+          <h2 id="storia-titolo">Quasi cinquant'anni di macchine e di misure</h2>
+          <figure class="cornice">
+            <picture><source type="image/webp" srcset="assets/img/sede.webp"><img src="assets/img/sede.jpg" width="950" height="400" loading="lazy" decoding="async" alt="La sede di Zago Pietro in via Cal della Madonna a Farra di Soligo"></picture>
+            <figcaption>La sede di via Cal della Madonna</figcaption>
+          </figure>
+        </div>
+        <ol class="linea-tempo">
+          <li><span class="anno">1979</span><p>Nasce come costruttore di macchine speciali e prototipi per l'industria meccanica, alimentare, calzaturiera e del confezionamento.</p></li>
+          <li><span class="anno">1981</span><p>Si specializza in spine e alberi per micromotori elettrici, con macchine automatiche studiate e costruite in azienda.</p></li>
+          <li><span class="anno">2002</span><p>Arriva la prima certificazione ISO 9001, mai interrotta da allora.</p></li>
+          <li><span class="anno">Poi</span><p>Il reparto di tornitura CNC con torni a fantina mobile, il lavaggio a ultrasuoni e le sale metrologiche.</p></li>
+          <li><span class="anno">2026</span><p>Rinnovo della ISO 9001:2015 fino al 2029 e valutazione ESG Synesgy.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="preventivo dentata" id="preventivo" aria-labelledby="preventivo-titolo">
+      <div class="contenitore preventivo-griglia">
+        <div class="preventivo-testo">
+          <h2 id="preventivo-titolo">Richiedete un preventivo</h2>
+          <p>Diteci che pezzo vi serve, in che materiale e in che quantità. Se avete un disegno, allegatelo: è il modo più rapido per avere prezzo e tempi.</p>
+          <ul class="contatti-diretti">
+            <li><a href="tel:+390438900087"><svg aria-hidden="true"><use href="#i-tel"/></svg><span><small>Telefono</small>0438 900 087</span></a></li>
+            <li><a href="mailto:info@zagopietro.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><small>Email</small>info@zagopietro.com</span></a></li>
+          </ul>
+          <p class="fax">Fax 0438 801 457</p>
+        </div>
+
+        <form class="modulo" id="modulo" novalidate>
+          <div class="campo"><label for="f-nome">Nome e cognome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+          <div class="campo"><label for="f-azienda">Azienda</label><input id="f-azienda" name="azienda" autocomplete="organization"></div>
+          <div class="campo"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="campo"><label for="f-tel">Telefono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel"></div>
+          <div class="campo"><label for="f-tipo">Tipo di pezzo</label>
+            <select id="f-tipo" name="tipo">
+              <option>Albero per micromotore o micropompa</option>
+              <option>Spina o perno rettificato</option>
+              <option>Minuteria di precisione</option>
+              <option>Lavorazione in conto lavoro</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="campo"><label for="f-materiale">Materiale</label>
+            <select id="f-materiale" name="materiale">
+              <option>Acciaio al carbonio</option>
+              <option>Acciaio inox</option>
+              <option>Da definire</option>
+            </select>
+          </div>
+          <div class="campo"><label for="f-diametro">Diametro (mm)</label><input id="f-diametro" name="diametro" inputmode="decimal" placeholder="es. 3"></div>
+          <div class="campo"><label for="f-quantita">Quantità</label><input id="f-quantita" name="quantita" placeholder="pezzi per lotto o all'anno"></div>
+          <div class="campo campo-largo"><label for="f-messaggio">Dettagli</label><textarea id="f-messaggio" name="messaggio" rows="4" placeholder="Lunghezza, tolleranze, finitura, consegne…"></textarea></div>
+          <div class="campo-largo modulo-piede">
+            <button class="btn btn-cta btn-grande" type="submit">Apri l'email con la richiesta</button>
+            <p class="modulo-nota">Si apre il vostro programma di posta con la richiesta già scritta per info@zagopietro.com: allegate il disegno (PDF, DWG o STEP) e inviate.</p>
+            <p class="modulo-errore" role="alert" hidden>Scrivete nome ed email per preparare la richiesta.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="dove" id="dove" aria-labelledby="dove-titolo">
+      <div class="contenitore dove-griglia">
+        <div class="dove-testo">
+          <h2 id="dove-titolo">Dove siamo</h2>
+          <address>
+            <strong>Zago Pietro srl</strong><br>
+            Via Cal della Madonna, 62<br>
+            31010 Farra di Soligo (TV)
+          </address>
+          <p class="orari">Orari: [DA CONFERMARE]</p>
+          <a class="btn btn-linea" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Cal%20della%20Madonna%2062%2C%2031010%20Farra%20di%20Soligo%20TV" target="_blank" rel="noopener">Indicazioni stradali</a>
+          <dl class="arrivo">
+            <div><dt>In auto</dt><dd>A28 Venezia–Belluno, uscita Conegliano</dd></div>
+            <div><dt>In treno</dt><dd>Stazione di Conegliano oppure di Cornuda</dd></div>
+            <div><dt>In aereo</dt><dd>Venezia Marco Polo oppure Treviso</dd></div>
+          </dl>
+        </div>
+        <div class="mappa cornice">
+          <iframe title="Mappa: Zago Pietro srl, via Cal della Madonna 62, Farra di Soligo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Via%20Cal%20della%20Madonna%2062%2C%2031010%20Farra%20di%20Soligo%20TV&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede dentata">
+    <div class="contenitore piede-griglia">
+      <div class="piede-marchio">
+        <svg class="piede-logo" role="img" aria-label="Zago Pietro srl"><use href="#logo-zp"/></svg>
+        <p>Alberini per micromotori e tecnologie meccaniche. Precisione e qualità dal 1979.</p>
+      </div>
+      <div>
+        <p><strong>ZAGO PIETRO S.r.l.</strong><br>Via Cal della Madonna, 62<br>31010 Farra di Soligo (TV)<br>P.IVA 03471380265</p>
+      </div>
+      <div>
+        <p><a href="tel:+390438900087">T 0438 900 087</a><br>F 0438 801 457<br><a href="mailto:info@zagopietro.com">info@zagopietro.com</a></p>
+        <p><a href="privacy.html">Privacy e cookie</a></p>
+      </div>
+    </div>
+    <div class="contenitore piede-fondo">
+      <p>© <span id="anno">2026</span> Zago Pietro srl</p>
+      <p>Sito realizzato da Alessio Mora</p>
+      <p>Demo non ufficiale: non è il sito ufficiale di Zago Pietro srl</p>
+    </div>
+  </footer>
+
+  <nav class="barra-mobile" aria-label="Contatto rapido">
+    <a class="barra-tel" href="tel:+390438900087"><svg aria-hidden="true"><use href="#i-tel"/></svg>Chiama</a>
+    <a class="barra-cta" href="#preventivo">Richiedi un preventivo</a>
+  </nav>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

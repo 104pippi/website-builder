@@ -59,6 +59,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-unionpark](./sito-unionpark) | https://sito-unionpark.vercel.app | [video](./sito-unionpark/video) |
 | [sito-utensilea](./sito-utensilea) | https://sito-utensilea.vercel.app | [video](./sito-utensilea/video) |
 | [sito-wildkart](./sito-wildkart) | https://sito-wildkart.vercel.app | [video](./sito-wildkart/video) |
+| [sito-zago-pietro](./sito-zago-pietro) | https://sito-zago-pietro.vercel.app | [video](./sito-zago-pietro/video) |
 
 - Deploy su Vercel da CLI dalla cartella del sito (`vercel --prod`), progetto `sito-<slug>`: Vercel non è collegato a GitHub.
 - Video di presentazione in `sito-<slug>/video/`, fuori dal deploy grazie al `.vercelignore` della cartella.
