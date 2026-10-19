@@ -373,7 +373,7 @@ export function avviaAnatomia({ palco, canvas, stato }) {
       let vis = 1;
       if (nome === 'alu') { z -= (1 - aluK) * .55; vis = aluK; }
       // la parte di cui si parla resta piena, le altre si fanno da parte in trasparenza
-      const fuoco = stato.passo < 5 && e > .3 && nome !== attiva ? .14 : 1;
+      const fuoco = stato.passo < 5 && e > .3 && nome !== attiva ? .24 : 1;
       opac[nome] += (fuoco - opac[nome]) * segui;
       pt.g.position.z = z;
       pt.g.visible = vis > .01;

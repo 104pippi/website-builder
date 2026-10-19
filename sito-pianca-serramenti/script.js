@@ -47,10 +47,17 @@ $$('a', menuMobile).forEach(a => a.addEventListener('click', () => menu(false)))
 addEventListener('keydown', e => { if (e.key === 'Escape' && !menuMobile.hidden) { menu(false); menuBtn.focus(); } });
 
 /* ---------- reveal: titoli che scorrono e tapparelle che salgono ---------- */
-const rivela = new IntersectionObserver(voci => {
-  voci.forEach(v => { if (v.isIntersecting) { v.target.classList.add('in'); rivela.unobserve(v.target); } });
-}, { threshold: .2, rootMargin: '0px 0px -6% 0px' });
-$$('.titolo-sez, .foto').forEach(el => rivela.observe(el));
+function osservaUnaVolta(soglia, margine) {
+  const io = new IntersectionObserver(voci => {
+    voci.forEach(v => { if (v.isIntersecting) { v.target.classList.add('in'); io.unobserve(v.target); } });
+  }, { threshold: soglia, rootMargin: margine });
+  return io;
+}
+const rivelaTitoli = osservaUnaVolta(.2, '0px 0px -6% 0px');
+$$('.titolo-sez').forEach(el => rivelaTitoli.observe(el));
+// le tapparelle partono appena la foto si affaccia, così non resta mai un riquadro vuoto
+const rivelaFoto = osservaUnaVolta(.04, '0px');
+$$('.foto').forEach(el => rivelaFoto.observe(el));
 
 /* ---------- oggetti dei prodotti: fanno il loro movimento quando li vedi o li tocchi ---------- */
 const oggetti = $$('.oggetto');

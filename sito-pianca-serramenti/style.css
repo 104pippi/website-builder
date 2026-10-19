@@ -492,7 +492,7 @@ h1, h2, h3 { margin: 0; }
   display: block; position: absolute; inset: 0; pointer-events: none;
   background: repeating-linear-gradient(to bottom, #d8d0c3 0 10px, #c3b9aa 10px 11px, #e0d9cd 11px 12px);
   transform: translateY(0);
-  transition: transform 1.25s cubic-bezier(.7, 0, .2, 1);
+  transition: transform 1s cubic-bezier(.65, 0, .25, 1);
 }
 .js .foto.in .tapparella { transform: translateY(-101%); }
 @media (min-width: 700px) { .galleria { columns: 3; column-gap: 20px; } .foto { margin-bottom: 30px; } }
