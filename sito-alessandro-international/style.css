@@ -176,8 +176,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .hero__scena {
   position: relative; z-index: 1;
-  height: clamp(290px, 46svh, 520px);
-  perspective: 1100px; perspective-origin: 50% 38%;
+  height: clamp(280px, 44svh, 500px);
+  perspective: 1100px; perspective-origin: 50% 52%;
   display: flex; justify-content: center;
 }
 .paravento {
@@ -227,7 +227,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .hero__testo {
   position: relative; z-index: 2;
-  padding: 44px var(--gut) 0;
+  padding: clamp(52px, 8svh, 72px) var(--gut) 0;
   max-width: 640px;
   transform: translateY(calc(var(--p, 0) * -60px));
 }
