@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KVM Engineering | Progettazione meccanica e impianti a Vittorio Veneto</title>
+<meta name="description" content="Progettazione di macchine e impianti, analisi FEM, industrializzazione di prodotti in lamiera e impianti chiavi in mano. Vittorio Veneto (TV).">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-kvm-engineering.vercel.app/">
+<meta name="theme-color" content="#0E2030">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="KVM Engineering">
+<meta property="og:title" content="KVM Engineering | Dall'idea alla macchina che produce">
+<meta property="og:description" content="Progettazione di macchine e impianti, analisi FEM, industrializzazione prodotti e impianti chiavi in mano. Studio di ingegneria a Vittorio Veneto (TV).">
+<meta property="og:image" content="https://sito-kvm-engineering.vercel.app/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sito-kvm-engineering.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&family=Unbounded:wght@300..700&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" href="assets/img/logo-kvm-chiaro.svg" as="image" fetchpriority="high">
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+<script type="module" src="script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "KVM Engineering",
+  "legalName": "KVM Engineering Srl",
+  "description": "Ingegneria e progettazione di macchine e impianti, verifiche dimensionali e analisi FEM, industrializzazione prodotti, consulenza aziendale, fornitura di macchine e automazioni.",
+  "url": "https://sito-kvm-engineering.vercel.app/",
+  "image": "https://sito-kvm-engineering.vercel.app/assets/img/og.jpg",
+  "logo": "https://sito-kvm-engineering.vercel.app/assets/img/logo-kvm-scuro.svg",
+  "telephone": "+390438684697",
+  "email": "info@kvm-engineering.com",
+  "vatID": "IT04602500235",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Largo Cavallotti 5",
+    "postalCode": "31029",
+    "addressLocality": "Vittorio Veneto",
+    "addressRegion": "TV",
+    "addressCountry": "IT"
+  },
+  "sameAs": ["https://it.linkedin.com/company/kvmengineering"],
+  "knowsAbout": ["Progettazione meccanica", "Analisi FEM", "Industrializzazione prodotti", "Consulenza aziendale", "Macchine e automazioni"]
+}
+</script>
+</head>
+<body>
+
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata" id="testata">
+  <div class="testata-dentro">
+    <a class="testata-logo" href="#top" aria-label="KVM Engineering, torna all'inizio">
+      <img src="assets/img/logo-kvm-chiaro.svg" alt="KVM Engineering" width="154" height="56">
+    </a>
+    <nav class="testata-nav" aria-label="Sezioni">
+      <a href="#progetti">Progetti</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="testata-tel" href="tel:+390438684697">0438 684 697</a>
+    <a class="btn btn-giallo testata-cta" href="#contatti">Raccontaci il progetto</a>
+    <button class="testata-menu" type="button" aria-expanded="false" aria-controls="menu-mobile">
+      <span class="testata-menu-righe" aria-hidden="true"></span><span class="vh">Apri il menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden>
+  <nav aria-label="Menu">
+    <a href="#progetti">Progetti</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#chi-siamo">Chi siamo</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <a class="btn btn-giallo" href="#contatti">Raccontaci il progetto</a>
+  <a class="menu-mobile-tel" href="tel:+390438684697">Chiama 0438 684 697</a>
+</div>
+
+<main id="contenuto">
+
+<section class="hero" id="top">
+  <svg class="hero-fiore" id="hero-fiore" viewBox="-210 -140 420 190" aria-hidden="true"></svg>
+  <canvas class="hero-3d" id="linea-3d" aria-hidden="true"></canvas>
+  <div class="hero-velo" aria-hidden="true"></div>
+  <div class="wrap hero-testo">
+    <h1 class="hero-titolo">
+      <span class="riga"><span>Dall'idea</span></span>
+      <span class="riga"><span>alla macchina</span></span>
+      <span class="riga"><span>che produce.</span></span>
+    </h1>
+    <p class="hero-sotto">Progettiamo macchine e impianti, li verifichiamo con l'analisi FEM, industrializziamo prodotti in lamiera e consegniamo impianti chiavi in mano. Studio di ingegneria a Vittorio Veneto (TV).</p>
+    <div class="hero-azioni">
+      <a class="btn btn-giallo" href="#contatti">Raccontaci il progetto</a>
+      <a class="btn btn-vuoto" href="tel:+390438684697">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        0438 684 697
+      </a>
+    </div>
+  </div>
+  <p class="hero-didascalia">Ricostruzione 3D di una linea di profilatura: il nastro forato diventa un profilo a C, una stazione alla volta.</p>
+</section>
+
+<section class="fatti" aria-label="KVM Engineering in breve">
+  <ul class="wrap fatti-lista">
+    <li><strong>Dal 2019</strong> a Vittorio Veneto, in provincia di Treviso</li>
+    <li><strong>Tecnici e ingegneri</strong> in un unico team interdisciplinare</li>
+    <li><strong>Solo il progetto</strong> o l'impianto chiavi in mano</li>
+    <li><strong>Montaggio</strong> seguito presso il tuo stabilimento</li>
+  </ul>
+</section>
+
+<section class="progetti" id="progetti" aria-labelledby="progetti-titolo">
+  <div class="wrap sez-testa">
+    <h2 id="progetti-titolo">Prima sullo schermo, poi in officina.</h2>
+    <p>Ogni macchina nasce come modello 3D. Poi la seguiamo nella costruzione e nel montaggio, fino a quando lavora. Alcuni progetti dal nostro archivio.</p>
+  </div>
+
+  <div class="nastro" data-verso="-1">
+    <p class="wrap nastro-etichetta">Sullo schermo <span>modelli e rendering di progetto</span></p>
+    <ul class="nastro-lista">
+      <li><button class="foto" type="button" data-n="0"><picture><source srcset="assets/img/render-impianto-svolgitore.webp" type="image/webp"><img src="assets/img/render-impianto-svolgitore.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rendering di un impianto completo con svolgitore, linea e recinzioni di sicurezza gialle"></picture><span class="foto-did">Impianto completo con svolgitore e recinzioni</span></button></li>
+      <li><button class="foto" type="button" data-n="1"><picture><source srcset="assets/img/render-macchina-carenata.webp" type="image/webp"><img src="assets/img/render-macchina-carenata.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rendering di una macchina carenata con quadro di comando e operatore"></picture><span class="foto-did">Macchina carenata con quadro di comando</span></button></li>
+      <li><button class="foto" type="button" data-n="2"><picture><source srcset="assets/img/render-linea-cad.webp" type="image/webp"><img src="assets/img/render-linea-cad.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Modello 3D di una linea con gruppi di rulli e banco di uscita"></picture><span class="foto-did">Linea con gruppi di rulli e banco d'uscita</span></button></li>
+      <li><button class="foto" type="button" data-n="3"><picture><source srcset="assets/img/render-postazione-protezioni.webp" type="image/webp"><img src="assets/img/render-postazione-protezioni.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rendering di una postazione di lavoro con protezioni gialle, banco e scaffalatura"></picture><span class="foto-did">Postazione di lavoro con protezioni</span></button></li>
+      <li><button class="foto" type="button" data-n="4"><picture><source srcset="assets/img/render-tavola-guide.webp" type="image/webp"><img src="assets/img/render-tavola-guide.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rendering di una tavola mobile su guide lineari"></picture><span class="foto-did">Tavola mobile su guide lineari</span></button></li>
+    </ul>
+  </div>
+
+  <div class="nastro" data-verso="1">
+    <p class="wrap nastro-etichetta">In officina <span>macchine costruite e al lavoro</span></p>
+    <ul class="nastro-lista">
+      <li><button class="foto" type="button" data-n="5"><picture><source srcset="assets/img/officina-rulli-profilo.webp" type="image/webp"><img src="assets/img/officina-rulli-profilo.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Rulli di formatura che lavorano un profilo in lamiera forata"></picture><span class="foto-did">Rulli di formatura su un profilo forato</span></button></li>
+      <li><button class="foto" type="button" data-n="6"><picture><source srcset="assets/img/officina-profili-uscita.webp" type="image/webp"><img src="assets/img/officina-profili-uscita.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Profili in lamiera visti di testa, impilati all'uscita della linea"></picture><span class="foto-did">Profili finiti, visti di testa</span></button></li>
+      <li><button class="foto" type="button" data-n="7"><picture><source srcset="assets/img/officina-stampo-pressa.webp" type="image/webp"><img src="assets/img/officina-stampo-pressa.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Attrezzatura di formatura montata in pressa con un profilo in lamiera"></picture><span class="foto-did">Attrezzatura di formatura in pressa</span></button></li>
+      <li><button class="foto" type="button" data-n="8"><picture><source srcset="assets/img/officina-cella-protezioni.webp" type="image/webp"><img src="assets/img/officina-cella-protezioni.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Macchina installata dentro una recinzione di sicurezza"></picture><span class="foto-did">Macchina dentro la recinzione di sicurezza</span></button></li>
+      <li><button class="foto" type="button" data-n="9"><picture><source srcset="assets/img/officina-macchina-rossa.webp" type="image/webp"><img src="assets/img/officina-macchina-rossa.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Impianto rosso e giallo in officina"></picture><span class="foto-did">Impianto in officina</span></button></li>
+    </ul>
+  </div>
+</section>
+
+<section class="servizi" id="servizi" aria-labelledby="servizi-titolo">
+  <div class="wrap">
+    <div class="sez-testa">
+      <h2 id="servizi-titolo">Cinque stazioni. Entri da quella che ti serve.</h2>
+      <p>Come in una linea di profilatura, ogni passaggio dà forma al progetto. Puoi affidarci tutto il percorso o un passaggio solo, anche come ufficio tecnico conto terzi.</p>
+    </div>
+
+    <div class="servizi-corpo">
+      <figure class="fiore" aria-hidden="true">
+        <svg class="fiore-svg" id="fiore-svg" viewBox="-200 -100 400 128"></svg>
+        <figcaption>
+          <span class="fiore-stazione" id="fiore-stazione">Stazione 1 di 5</span>
+          <span class="fiore-angolo" id="fiore-angolo">Ali a 0°</span>
+        </figcaption>
+      </figure>
+
+      <ol class="stazioni">
+        <li class="stazione" data-stazione="1">
+          <span class="stazione-num" aria-hidden="true">1</span>
+          <div>
+            <h3>Consulenza aziendale</h3>
+            <p class="stazione-lead">Prima di investire, mettiamo in fila i numeri.</p>
+            <p>Organizzazione aziendale, calcolo dei costi di produzione, gestione dei magazzini e dei processi operativi. Ti affianchiamo anche nella scelta degli investimenti produttivi: macchinari, impianti e magazzini automatici.</p>
+          </div>
+        </li>
+        <li class="stazione" data-stazione="2">
+          <span class="stazione-num" aria-hidden="true">2</span>
+          <div>
+            <h3>Ingegneria e progettazione</h3>
+            <p class="stazione-lead">Macchine e impianti disegnati sulle tue esigenze reali.</p>
+            <p>Progettazione conto terzi completa e cucita sul tuo processo. L'obiettivo è un vantaggio che si misura: più produttività, costi più bassi, prodotti di qualità migliore.</p>
+          </div>
+        </li>
+        <li class="stazione" data-stazione="3">
+          <span class="stazione-num" aria-hidden="true">3</span>
+          <div>
+            <h3>Verifiche dimensionali, analisi FEM e simulazioni</h3>
+            <p class="stazione-lead">Prima di tagliare l'acciaio, lo mettiamo sotto sforzo al computer.</p>
+            <p>L'analisi FEM simula come si comporta una struttura complessa sotto qualsiasi sollecitazione. Serve a:</p>
+            <ul class="stazione-elenco">
+              <li>individuare le zone più sollecitate e i possibili punti di rottura</li>
+              <li>scegliere il materiale e gli spessori giusti</li>
+              <li>conoscere i valori massimi di sollecitazione e deformazione</li>
+              <li>valutare gli spostamenti causati dai carichi</li>
+            </ul>
+          </div>
+        </li>
+        <li class="stazione" data-stazione="4">
+          <span class="stazione-num" aria-hidden="true">4</span>
+          <div>
+            <h3>Industrializzazione prodotti</h3>
+            <p class="stazione-lead">Da un'idea a un prodotto che si costruisce al costo giusto.</p>
+            <p>Partiamo da un'idea o da una semplice esigenza e, dopo un'analisi attenta, troviamo le soluzioni tecniche, produttive e commerciali più adatte: il prodotto si realizza, o si trova sul mercato, al minor costo possibile e nel rispetto delle specifiche di qualità. Forniamo anche direttamente prodotti in lamiera e carpenteria.</p>
+          </div>
+        </li>
+        <li class="stazione" data-stazione="5">
+          <span class="stazione-num" aria-hidden="true">5</span>
+          <div>
+            <h3>Fornitura di macchine e automazioni</h3>
+            <p class="stazione-lead">Impianti chiavi in mano, montati nel tuo stabilimento.</p>
+            <p>Forniamo impianti completi chiavi in mano, oppure realizziamo solo il progetto. In tutti e due i casi seguiamo la costruzione e il montaggio presso di te.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="servizi-chiusa">
+      <p>Hai un progetto a metà strada, o solo un'idea?</p>
+      <a class="btn btn-giallo" href="#contatti">Raccontaci il progetto</a>
+    </div>
+  </div>
+</section>
+
+<section class="chi" id="chi-siamo" aria-labelledby="chi-titolo">
+  <div class="wrap chi-griglia">
+    <figure class="chi-foto">
+      <picture><source srcset="assets/img/officina-linea-rulli.webp" type="image/webp"><img src="assets/img/officina-linea-rulli.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Stazioni di rulli in fila lungo una linea di profilatura"></picture>
+      <figcaption>Stazioni di rulli lungo una linea di profilatura</figcaption>
+    </figure>
+    <div class="chi-testo">
+      <h2 id="chi-titolo" class="vh">Chi siamo</h2>
+      <blockquote class="chi-citazione">
+        <p>Il nostro viaggio inizia con la passione per la meccanica.</p>
+      </blockquote>
+      <p>KVM Engineering è un team interdisciplinare di tecnici e ingegneri di provata esperienza. Progettiamo e realizziamo sistemi industriali su misura, dalla consulenza all'impianto installato, con una rete di collaboratori che copre ogni disciplina.</p>
+      <p>Usiamo tecniche di prima scelta, rispettiamo i più rigorosi standard di sicurezza e lavoriamo per un risultato: impianti efficienti e sostenibili, che restano produttivi nel lungo termine.</p>
+      <a class="btn btn-giallo" href="#contatti">Raccontaci il progetto</a>
+    </div>
+  </div>
+</section>
+
+<section class="contatti" id="contatti" aria-labelledby="contatti-titolo">
+  <div class="wrap contatti-griglia">
+    <div class="contatti-info">
+      <h2 id="contatti-titolo">Raccontaci il progetto.</h2>
+      <p>Un'idea da sviluppare, un pezzo da industrializzare, una macchina da progettare o da verificare: scrivici cosa ti serve. Se hai disegni, foto o file CAD, potrai allegarli all'email.</p>
+      <a class="contatti-tel" href="tel:+390438684697">0438 684 697</a>
+      <dl class="contatti-dati">
+        <div><dt>Email</dt><dd><a href="mailto:info@kvm-engineering.com">info@kvm-engineering.com</a></dd></div>
+        <div><dt>PEC</dt><dd><a href="mailto:kvmengineering@legalmail.it">kvmengineering@legalmail.it</a></dd></div>
+        <div><dt>Sede</dt><dd>Largo Cavallotti 5<br>31029 Vittorio Veneto (TV)</dd></div>
+        <div><dt>Orari ufficio</dt><dd>[DA CONFERMARE]</dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://it.linkedin.com/company/kvmengineering" target="_blank" rel="noopener">KVM Engineering</a></dd></div>
+      </dl>
+    </div>
+
+    <form class="modulo" id="modulo" novalidate>
+      <div class="campo">
+        <label for="m-nome">Nome e cognome</label>
+        <input id="m-nome" name="nome" type="text" autocomplete="name" required>
+      </div>
+      <div class="campo">
+        <label for="m-azienda">Azienda <span>facoltativo</span></label>
+        <input id="m-azienda" name="azienda" type="text" autocomplete="organization">
+      </div>
+      <div class="campo-doppio">
+        <div class="campo">
+          <label for="m-email">Email</label>
+          <input id="m-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="m-tel">Telefono <span>facoltativo</span></label>
+          <input id="m-tel" name="telefono" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <fieldset class="campo scelte">
+        <legend>Di cosa hai bisogno</legend>
+        <label><input type="checkbox" name="servizio" value="Consulenza aziendale"><span>Consulenza</span></label>
+        <label><input type="checkbox" name="servizio" value="Progettazione"><span>Progettazione</span></label>
+        <label><input type="checkbox" name="servizio" value="Analisi FEM"><span>Analisi FEM</span></label>
+        <label><input type="checkbox" name="servizio" value="Industrializzazione prodotto"><span>Industrializzazione</span></label>
+        <label><input type="checkbox" name="servizio" value="Macchina o impianto chiavi in mano"><span>Impianto chiavi in mano</span></label>
+      </fieldset>
+      <div class="campo">
+        <label for="m-progetto">Il progetto in poche righe</label>
+        <textarea id="m-progetto" name="progetto" rows="5" required placeholder="Che cosa devi produrre, con quali volumi, a che punto sei."></textarea>
+      </div>
+      <p class="modulo-errore" id="modulo-errore" role="alert" hidden></p>
+      <button class="btn btn-giallo modulo-invia" type="submit">Prepara l'email</button>
+      <p class="modulo-nota">Si apre la tua posta con il messaggio già scritto per info@kvm-engineering.com: aggiungi gli allegati e premi Invia. Il sito non salva i tuoi dati. <a href="privacy.html">Privacy</a></p>
+      <p class="modulo-ok" id="modulo-ok" role="status" hidden>Email pronta nella tua posta. Se non si è aperta, scrivi a <a href="mailto:info@kvm-engineering.com">info@kvm-engineering.com</a> o chiama lo 0438 684 697.</p>
+    </form>
+  </div>
+
+  <div class="wrap mappa">
+    <iframe title="Mappa: KVM Engineering, Largo Cavallotti 5, Vittorio Veneto" src="https://www.google.com/maps?q=Largo+Cavallotti+5,+31029+Vittorio+Veneto+TV&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a class="btn btn-scuro mappa-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Largo+Cavallotti+5,+31029+Vittorio+Veneto+TV" target="_blank" rel="noopener">Indicazioni stradali</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede">
+  <div class="wrap piede-griglia">
+    <div class="piede-marchio">
+      <img src="assets/img/logo-kvm-chiaro.svg" alt="KVM Engineering" width="154" height="56" loading="lazy">
+      <p>Ingegneria e progettazione, industrializzazione prodotti, consulenza aziendale, fornitura di macchine e automazioni.</p>
+    </div>
+    <div>
+      <p>KVM Engineering Srl<br>Largo Cavallotti 5<br>31029 Vittorio Veneto (TV)</p>
+      <p>C.F. e P.IVA 04602500235<br>REA TV-417593<br>Capitale sociale € 30.000,00 i.v.</p>
+    </div>
+    <div>
+      <p>Tel <a href="tel:+390438684697">0438 684 697</a><br><a href="mailto:info@kvm-engineering.com">info@kvm-engineering.com</a><br>PEC <a href="mailto:kvmengineering@legalmail.it">kvmengineering@legalmail.it</a></p>
+      <p class="piede-link"><a href="https://it.linkedin.com/company/kvmengineering" target="_blank" rel="noopener">LinkedIn</a> <a href="privacy.html">Privacy</a></p>
+    </div>
+  </div>
+  <div class="wrap piede-fondo">
+    <p>© <span id="anno">2026</span> KVM Engineering Srl</p>
+    <p>Sito realizzato da Alessio Mora</p>
+    <p>Demo non ufficiale: non è il sito ufficiale di KVM Engineering.</p>
+  </div>
+</footer>
+
+<nav class="barra" id="barra" aria-label="Contatti rapidi">
+  <a class="barra-tel" href="tel:+390438684697">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Chiama
+  </a>
+  <a class="barra-cta" href="#contatti">Raccontaci il progetto</a>
+</nav>
+
+<dialog class="lente" id="lente" aria-label="Foto ingrandita">
+  <figure>
+    <img id="lente-img" src="assets/img/render-impianto-svolgitore.jpg" width="800" height="600" alt="">
+    <figcaption id="lente-did"></figcaption>
+  </figure>
+  <button class="lente-chiudi" type="button" data-lente="chiudi">Chiudi</button>
+  <button class="lente-freccia lente-prima" type="button" data-lente="-1" aria-label="Foto precedente"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lente-freccia lente-dopo" type="button" data-lente="1" aria-label="Foto successiva"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
+
+</body>
+</html>
