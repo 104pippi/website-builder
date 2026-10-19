@@ -400,6 +400,14 @@ export function avvia() {
     if (!raf) raf = requestAnimationFrame(ciclo);
   };
   const ferma = () => { attivo = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } };
+  // aggancio per il video di presentazione: stato e disegno all'istante esatto di ogni fotogramma
+  window.__fotogramma = () => {
+    if (!attivo) return;
+    const adesso = performance.now();
+    aggiorna(Math.min(0.05, (adesso - ultimo) / 1000), adesso);
+    ultimo = adesso;
+    renderer.render(scene, camera);
+  };
 
   let inVista = false;
   new IntersectionObserver(v => {
