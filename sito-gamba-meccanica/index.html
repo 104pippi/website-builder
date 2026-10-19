@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gamba | Lavorazioni meccaniche di precisione a Val Brembilla (BG)</title>
+  <meta name="description" content="Tornitura, fresatura, rettifica e lappatura di componenti complessi in acciai legati, inox e titanio. Tolleranze di pochi micron, dal 1935.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://sito-gamba-meccanica.vercel.app/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Gamba | Meccanica di precisione dal 1935">
+  <meta property="og:description" content="Componenti complessi su materiali difficili: tornitura, fresatura, rettifica e lappatura con tolleranze di pochi micron.">
+  <meta property="og:image" content="https://sito-gamba-meccanica.vercel.app/assets/img/og-gamba.jpg">
+  <meta property="og:url" content="https://sito-gamba-meccanica.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-pezzo.jpg" imagesrcset="assets/img/hero-pezzo-800.jpg 800w, assets/img/hero-pezzo.jpg 1400w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">{"imports":{
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gamba S.r.l.",
+    "alternateName": "Gamba Meccanica di precisione",
+    "description": "Lavorazioni meccaniche di precisione conto terzi: tornitura, fresatura, rettifica e lappatura, minuterie.",
+    "url": "https://sito-gamba-meccanica.vercel.app/",
+    "image": "https://sito-gamba-meccanica.vercel.app/assets/img/og-gamba.jpg",
+    "telephone": "+39024980441",
+    "email": "commerciale@gambamec.it",
+    "vatID": "IT00836030155",
+    "foundingDate": "1935",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Marconi 21",
+      "postalCode": "24012",
+      "addressLocality": "Val Brembilla",
+      "addressRegion": "BG",
+      "addressCountry": "IT"
+    },
+    "sameAs": ["https://www.linkedin.com/company/gambamec/", "https://www.facebook.com/gambameccanica"]
+  }
+  </script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="salta" href="#contenuto">Vai al contenuto</a>
+
+  <header class="testata" id="testata">
+    <div class="testata__riga contenitore">
+      <a class="testata__logo" href="#top" aria-label="Gamba, torna all'inizio">
+        <img src="assets/img/logo-gamba-chiaro.png" width="717" height="155" alt="Gamba Meccanica di precisione">
+      </a>
+      <nav class="nav" aria-label="Sezioni">
+        <a href="#processo">Processo</a>
+        <a href="#reparti">Reparti</a>
+        <a href="#pezzi">Pezzi</a>
+        <a href="#qualita">Qualità</a>
+        <a href="#clienti">Clienti</a>
+        <a href="#storia">Storia</a>
+      </nav>
+      <a class="testata__tel" href="tel:+39024980441">02 4980 441</a>
+      <a class="btn btn--rosso btn--piccolo testata__cta" href="#preventivo">Invia il disegno</a>
+      <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu-mobile">Menu</button>
+    </div>
+  </header>
+
+  <div class="menu-mobile" id="menu-mobile" hidden>
+    <nav aria-label="Menu">
+      <a href="#processo">Processo</a>
+      <a href="#reparti">Reparti</a>
+      <a href="#pezzi">Pezzi</a>
+      <a href="#qualita">Qualità</a>
+      <a href="#clienti">Clienti</a>
+      <a href="#storia">Storia</a>
+      <a href="#preventivo">Contatti</a>
+    </nav>
+    <div class="menu-mobile__azioni">
+      <a class="btn btn--rosso" href="#preventivo">Invia il disegno</a>
+      <a class="btn btn--linea" href="tel:+39024980441">Chiama 02 4980 441</a>
+    </div>
+  </div>
+
+  <main id="contenuto">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__griglia contenitore">
+        <figure class="hero__tavola">
+          <img class="hero__foto" src="assets/img/hero-pezzo.jpg" srcset="assets/img/hero-pezzo-800.jpg 800w, assets/img/hero-pezzo.jpg 1400w" sizes="(min-width: 1024px) 50vw, 100vw" width="1400" height="1400" alt="Pezzo in acciaio tornito e fresato, con denti frontali e scanalature, fotografato su fondo nero" fetchpriority="high">
+          <span class="hero__riflesso" aria-hidden="true"></span>
+          <svg class="quote" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g class="q-linee">
+              <path class="q-asse" d="M30 594 L990 312" pathLength="1"/>
+              <!-- rotondità -->
+              <path style="--d:.9s" d="M652 118 L604 160" pathLength="1"/>
+              <rect style="--d:1.05s" x="652" y="64" width="240" height="56" pathLength="1"/>
+              <path style="--d:1.15s" d="M712 64 V120" pathLength="1"/>
+              <circle style="--d:1.2s" cx="682" cy="92" r="14" pathLength="1"/>
+              <!-- cilindricità -->
+              <path style="--d:1.15s" d="M770 840 L796 676" pathLength="1"/>
+              <rect style="--d:1.3s" x="700" y="840" width="240" height="56" pathLength="1"/>
+              <path style="--d:1.4s" d="M760 840 V896" pathLength="1"/>
+              <circle style="--d:1.45s" cx="730" cy="868" r="12" pathLength="1"/>
+              <path style="--d:1.5s" d="M712 882 L732 852 M728 884 L748 854" pathLength="1"/>
+              <!-- rugosità -->
+              <path style="--d:1.35s" d="M64 288 L82 318 L118 246 H262" pathLength="1"/>
+              <path style="--d:1.5s" d="M82 318 L196 414" pathLength="1"/>
+            </g>
+            <g class="q-punti">
+              <circle cx="604" cy="160" r="6"/>
+              <circle cx="796" cy="676" r="6"/>
+              <circle cx="196" cy="414" r="6"/>
+            </g>
+            <g class="q-testi">
+              <text style="--d:1.35s" x="728" y="104">0,002</text>
+              <text style="--d:1.6s" x="776" y="880">0,003</text>
+              <text style="--d:1.7s" x="126" y="232">Ra 0,05</text>
+            </g>
+          </svg>
+          <figcaption class="hero__didascalia">Uscito dal tornio CMZ TTL66 a due mandrini.<span class="solo-desk"> Le quote sono le nostre tolleranze tipiche: rotondità 2&nbsp;µm, cilindricità 3&nbsp;µm, rugosità Ra&nbsp;0,05&nbsp;µm.</span></figcaption>
+        </figure>
+
+        <div class="hero__testo">
+          <h1 class="hero__titolo">
+            <span class="riga"><span>La nostra vocazione</span></span>
+            <span class="riga"><span>è la complessità.</span></span>
+          </h1>
+          <p class="hero__lead">Tornitura, fresatura, rettifica e lappatura su acciai legati, inox e titanio. Tolleranze di pochi micron, tutto fatto in casa a Val Brembilla (Bergamo), dal&nbsp;1935.</p>
+          <div class="hero__azioni">
+            <a class="btn btn--rosso" href="#preventivo">Invia il disegno</a>
+            <a class="btn btn--linea" href="tel:+39024980441"><span class="solo-desk">Chiama&nbsp;</span>02 4980 441</a>
+          </div>
+        </div>
+      </div>
+
+      <dl class="cartiglio contenitore" aria-label="Gamba in cifre">
+        <div><dt>Fondazione</dt><dd>1935</dd></div>
+        <div><dt>Qualità certificata</dt><dd>ISO 9001 <small>dal 1993</small></dd></div>
+        <div><dt>Macchine utensili</dt><dd>200</dd></div>
+        <div><dt>Stabilimento</dt><dd>11.000 m²</dd></div>
+        <div><dt>Persone</dt><dd>100</dd></div>
+      </dl>
+    </section>
+
+    <!-- PROCESSO 3D -->
+    <section class="tornio" id="processo" aria-labelledby="tornio-titolo">
+      <div class="tornio__pista">
+        <div class="tornio__scena" id="tornio-scena" data-fase="1">
+          <img class="tornio__poster" src="assets/img/pezzo-valvola.jpg" width="1000" height="705" alt="Valvola per oleodinamica in ETG 88 con corpo brunito forato e alette tornite" loading="lazy" decoding="async">
+          <div class="tornio__testa">
+            <h2 id="tornio-titolo">Dal grezzo al&nbsp;micron.</h2>
+            <p>Scorri: una barra d'acciaio diventa un pezzo finito, con le stesse fasi che segue ogni commessa nei nostri reparti.</p>
+          </div>
+          <ol class="tornio__fasi">
+            <li data-n="1"><span class="fase__n">1</span><div><h3>Tornitura</h3><p>35 torni CN, da Ø 2 a 280&nbsp;mm. L'utensile segue il profilo a disegno.</p></div></li>
+            <li data-n="2"><span class="fase__n">2</span><div><h3>Fresatura</h3><p>Fori, cave e superfici su 30 centri di lavoro, 6 dei quali a 5&nbsp;assi.</p></div></li>
+            <li data-n="3"><span class="fase__n">3</span><div><h3>Rettifica e lappatura</h3><p>Dopo tempra e brunitura, rotondità fino a 2&nbsp;µm e fori lappati fino a Ra&nbsp;0,05&nbsp;µm.</p></div></li>
+            <li data-n="4"><span class="fase__n">4</span><div><h3>Controllo</h3><p>Sala metrologica a temperatura controllata e, quando serve, controllo sul 100% dei pezzi.</p></div></li>
+          </ol>
+          <div class="tornio__avanzamento" aria-hidden="true"><span></span></div>
+          <p class="tornio__fine">Il pezzo vero: ETG 88, Ø 70 × 200 mm, fori rettificati in H4 con cilindricità 3&nbsp;µm.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPARTI -->
+    <section class="sezione carta" id="reparti" aria-labelledby="reparti-titolo">
+      <div class="contenitore">
+        <div class="intesta">
+          <h2 id="reparti-titolo">Quattro reparti, un solo stabilimento.</h2>
+          <p>Facciamo in casa tutte le lavorazioni meccaniche, così qualità e consegne restano sotto controllo. Fuori vanno solo i trattamenti termici e galvanici, da fornitori qualificati.</p>
+        </div>
+
+        <div class="schede" role="tablist" aria-label="Reparti">
+          <button role="tab" id="t-tornitura" aria-controls="p-tornitura" aria-selected="true">Tornitura</button>
+          <button role="tab" id="t-fresatura" aria-controls="p-fresatura" aria-selected="false" tabindex="-1">Fresatura</button>
+          <button role="tab" id="t-rettifica" aria-controls="p-rettifica" aria-selected="false" tabindex="-1">Rettifica e lappatura</button>
+          <button role="tab" id="t-minuterie" aria-controls="p-minuterie" aria-selected="false" tabindex="-1">Minuterie</button>
+        </div>
+
+        <article class="tavola" id="p-tornitura" role="tabpanel" aria-labelledby="t-tornitura">
+          <div class="tavola__foto"><img src="assets/img/reparto-tornitura.jpg" width="1000" height="688" alt="Operatore al pannello di un tornio CMZ" loading="lazy" decoding="async"></div>
+          <div class="tavola__corpo">
+            <h3>Tornitura</h3>
+            <p>Sui torni CN lavoriamo i particolari più grandi e soprattutto i più difficili, per complessità, durezza del materiale e precisione. Il ciclo si completa sui centri di lavoro, con trattamenti termici e rettifiche.</p>
+            <ul class="distinta">
+              <li><span>Torni da barra, passaggio fino a 65&nbsp;mm</span><b>14</b></li>
+              <li><span>Torni da ripresa a caricamento automatico, Ø max 150&nbsp;mm</span><b>7</b></li>
+              <li><span>Torni a caricamento manuale, Ø fino a 280&nbsp;mm</span><b>5</b></li>
+              <li><span>Torni per hard turning a caricamento automatico</span><b>3</b></li>
+              <li><span>Torni a fantina mobile CN, barra fino a 20&nbsp;mm</span><b>6</b></li>
+            </ul>
+            <dl class="tavola__cartiglio">
+              <div><dt>Diametri</dt><dd>da 2 a 280 mm</dd></div>
+              <div><dt>Marche</dt><dd>Biglia, CMZ, Doosan, Famar, Takamaz, Citizen, Gildemeister</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tavola" id="p-fresatura" role="tabpanel" aria-labelledby="t-fresatura" hidden>
+          <div class="tavola__foto"><img src="assets/img/reparto-fresatura.jpg" width="1000" height="667" alt="Portautensili e punte allineati nel reparto fresatura" loading="lazy" decoding="async"></div>
+          <div class="tavola__corpo">
+            <h3>Fresatura</h3>
+            <p>Un parco di centri di lavoro diversificato, per avere la soluzione giusta per ogni lavorazione e ogni volume. I disegni più complessi si fanno sui 5 assi; quando le tolleranze sono di pochi micron, il ciclo si chiude con la rettifica tangenziale.</p>
+            <ul class="distinta">
+              <li><span>Centri verticali ISO 40, fino a 20.000 giri/min e 25&nbsp;kW</span><b>15</b></li>
+              <li><span>Centri a 5 assi, tavola fino a 630&nbsp;mm</span><b>6</b></li>
+              <li><span>Centri con doppio pallet</span><b>4</b></li>
+              <li><span>Centri a 3 o 4 assi, tavola fino a 1000&nbsp;mm</span><b>5</b></li>
+            </ul>
+            <dl class="tavola__cartiglio">
+              <div><dt>Geometrie</dt><dd>piani, cave, tasche, superfici a 5 assi in un piazzamento</dd></div>
+              <div><dt>Marche</dt><dd>Doosan, Kitamura, Deckel Maho</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tavola" id="p-rettifica" role="tabpanel" aria-labelledby="t-rettifica" hidden>
+          <div class="tavola__foto"><img src="assets/img/reparto-rettifica.jpg" width="1000" height="667" alt="Attrezzista al lavoro su una rettificatrice" loading="lazy" decoding="async"></div>
+          <div class="tavola__corpo">
+            <h3>Rettifica e lappatura</h3>
+            <p>Quarant'anni di lavoro sui pezzi più complessi ci hanno dato le competenze tecniche e metrologiche per realizzare e controllare tolleranze di pochi millesimi e rugosità fino a Rt inferiori a 1&nbsp;µm.</p>
+            <ul class="distinta">
+              <li><span>Rettifiche CN per esterni o interni/esterni, max 130&nbsp;mm</span><b>4</b></li>
+              <li><span>Rettifiche idrauliche per esterni, con misuratore in process</span><b>2</b></li>
+              <li><span>Rettifica CN senza centri, max 80&nbsp;mm</span><b>1</b></li>
+              <li><span>Rettifiche idrauliche senza centri</span><b>4</b></li>
+              <li><span>Rettifica tangenziale CN, max 650&nbsp;mm</span><b>1</b></li>
+              <li><span>Lappatrice verticale CN, max 120&nbsp;mm</span><b>1</b></li>
+              <li><span>Lappatrice orizzontale, max 25&nbsp;mm</span><b>1</b></li>
+            </ul>
+            <dl class="tavola__cartiglio">
+              <div><dt>Finiture</dt><dd>rotondità 2 µm, lappatura fino a Ra 0,05 µm</dd></div>
+              <div><dt>Marche</dt><dd>Studer, Tacchella, Mar, Morara, Palmary, Delta</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tavola" id="p-minuterie" role="tabpanel" aria-labelledby="t-minuterie" hidden>
+          <div class="tavola__foto"><img src="assets/img/reparto-minuterie.jpg" width="800" height="533" alt="Vassoi pieni di minuterie tornite pronte per il controllo" loading="lazy" decoding="async"></div>
+          <div class="tavola__corpo">
+            <h3>Minuterie</h3>
+            <p>La fantina mobile a camme lavora materiali comuni in serie di migliaia di pezzi. Con l'attrezzeria interna il reparto tiene precisioni di pochi centesimi; molte macchine hanno apparecchi di ripresa come fresaviti, controforatori e pettinatori.</p>
+            <ul class="distinta">
+              <li><span>Torni a camme, Ø da 2 a 25&nbsp;mm</span><b>60</b></li>
+              <li><span>Transfer a caricamento automatico</span><b>15</b></li>
+              <li><span>Transfer a caricamento manuale</span><b>8</b></li>
+              <li><span>Rullatrici</span><b>3</b></li>
+              <li><span>Dentatrici</span><b>2</b></li>
+            </ul>
+            <dl class="tavola__cartiglio">
+              <div><dt>Serie</dt><dd>migliaia di pezzi</dd></div>
+              <div><dt>Lavaggio</dt><dd>impianto automatico, un programma per ogni cesta</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <aside class="attrezzeria">
+          <img src="assets/img/attrezzeria.jpg" width="1200" height="796" alt="Tecnico dell'attrezzeria interna al banco di presetting" loading="lazy" decoding="async">
+          <div>
+            <h3>L'attrezzeria che non dipende da nessuno</h3>
+            <p>Dieci tecnici con competenze meccaniche, elettriche ed elettroniche costruiscono utensili speciali e attrezzature, progettano le automazioni di produzione e controllo e curano la manutenzione dei macchinari. Quando un pezzo è difficile da prendere, l'attrezzatura giusta la facciamo noi.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PEZZI -->
+    <section class="sezione nero" id="pezzi" aria-labelledby="pezzi-titolo">
+      <div class="contenitore">
+        <div class="intesta intesta--larga">
+          <h2 id="pezzi-titolo">Pezzi usciti dai nostri reparti.</h2>
+          <dl class="specifiche">
+            <div><dt>Lotti</dt><dd>media e grande serie, su macchine mono o doppio mandrino</dd></div>
+            <div><dt>Materiali</dt><dd>tutti tranne la ghisa, soprattutto acciai legati</dd></div>
+            <div><dt>Dimensioni</dt><dd>da 2 a 500 mm</dd></div>
+          </dl>
+        </div>
+
+        <div class="filtri" role="tablist" aria-label="Settori">
+          <button role="tab" aria-selected="true" data-settore="oleo">Oleodinamica</button>
+          <button role="tab" aria-selected="false" tabindex="-1" data-settore="attr">Attrezzature CN</button>
+          <button role="tab" aria-selected="false" tabindex="-1" data-settore="macc">Macchinari</button>
+          <button role="tab" aria-selected="false" tabindex="-1" data-settore="med">Medicale e dentale</button>
+          <button role="tab" aria-selected="false" tabindex="-1" data-settore="altri">Altri settori</button>
+        </div>
+
+        <div class="vetrina" data-settore="oleo">
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-1.jpg" width="900" height="630" alt="Componente per oleodinamica in 100Cr6" loading="lazy" decoding="async"><figcaption><b>100Cr6 temprato a 56 HRC</b><span>Ø 50 mm</span><span>Rettifica con rotondità 2 µm</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-2.jpg" width="900" height="630" alt="Cassetti per valvole oleodinamiche in acciaio legato" loading="lazy" decoding="async"><figcaption><b>Acciai legati temprati e rettificati</b><span>Diametri fino a 70 mm</span><span>Controllo in macchina al 100%</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-3.jpg" width="900" height="644" alt="Corpo cilindrico con fori radiali in 18NiCrMo4" loading="lazy" decoding="async"><figcaption><b>18NiCrMo4</b><span>Ø 90 mm</span><span>Cementato, temprato e rettificato</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-4.jpg" width="900" height="644" alt="Tre perni torniti in ETG 100" loading="lazy" decoding="async"><figcaption><b>ETG 100</b><span>Ø 33 mm</span><span>Tornitura e rettifica</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-5.jpg" width="900" height="644" alt="Blocco in C45 con foro centrale" loading="lazy" decoding="async"><figcaption><b>C45</b><span>150 × 150 mm</span><span>Tornitura e fresatura 5 assi</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-oleo-6.jpg" width="900" height="634" alt="Pezzo in AVP con denti frontali" loading="lazy" decoding="async"><figcaption><b>AVP</b><span>Ø 60 mm</span><span>Tornitura, fresatura e rettifica</span></figcaption></figure>
+        </div>
+        <div class="vetrina" data-settore="attr" hidden>
+          <figure class="pezzo"><img src="assets/img/pezzo-attr-1.jpg" width="900" height="644" alt="Corpo brunito e flangia in 18NiCrMo4" loading="lazy" decoding="async"><figcaption><b>18NiCrMo4</b><span>Ø 90 mm</span><span>Cementato, temprato, brunito, rettificato</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-attr-2.jpg" width="900" height="644" alt="Gabbia a rullini in ottone" loading="lazy" decoding="async"><figcaption><b>Ottone</b><span>Diametri fino a 70 mm</span><span>Controllo in macchina al 100%</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-attr-3.jpg" width="900" height="630" alt="Slitta fresata in 40CrMnMo7" loading="lazy" decoding="async"><figcaption><b>40CrMnMo7</b><span>70 × 130 mm</span><span>Fresatura 5 assi</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-attr-4.jpg" width="900" height="644" alt="Gruppo in acciaio legato brunito con vite" loading="lazy" decoding="async"><figcaption><b>Acciai legati</b><span>Tempra e brunitura</span><span>Compreso il montaggio</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-attr-5.jpg" width="900" height="630" alt="Anello forato in AISI 440" loading="lazy" decoding="async"><figcaption><b>AISI 440</b><span>Ø 200 mm</span><span>Piani e nicchie rilavorati dopo la tempra</span></figcaption></figure>
+        </div>
+        <div class="vetrina" data-settore="macc" hidden>
+          <figure class="pezzo"><img src="assets/img/pezzo-macc-1.jpg" width="900" height="630" alt="Componente in AISI 630 con foro lappato" loading="lazy" decoding="async"><figcaption><b>AISI 630</b><span>Foro Ø 30 × 200 mm</span><span>Lappatura Ra 0,05</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-macc-2.jpg" width="900" height="644" alt="Blocco in Anticorodal fresato e satinato" loading="lazy" decoding="async"><figcaption><b>Anticorodal</b><span>Fresatura 5 assi</span><span>Satinatura e anodizzazione estetica</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-macc-3.jpg" width="900" height="630" alt="Pezzo tornito in acciaio alta velocità" loading="lazy" decoding="async"><figcaption><b>Acciaio alta velocità</b><span>Ø 44 mm</span><span>Tornitura CN</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-macc-4.jpg" width="900" height="644" alt="Albero scanalato in C45" loading="lazy" decoding="async"><figcaption><b>C45</b><span>Ø 180 mm</span><span>Lunghezza 400 mm</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-macc-5.jpg" width="900" height="630" alt="Anello zigrinato in Ergal" loading="lazy" decoding="async"><figcaption><b>Ergal</b><span>Ø 60 mm</span><span>Tornitura CN</span></figcaption></figure>
+        </div>
+        <p class="vetrina__nota" data-nota="med" hidden>Con l'accordo con CORCYM produciamo in esclusiva componenti in titanio per valvole cardiache.</p>
+        <div class="vetrina" data-settore="med" hidden>
+          <figure class="pezzo"><img src="assets/img/pezzo-med-1.jpg" width="900" height="644" alt="Anelli in titanio per il settore medicale" loading="lazy" decoding="async"><figcaption><b>Titanio</b><span>Settore medicale</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-med-2.jpg" width="900" height="644" alt="Minuterie in materiali vari per macchinari dentali" loading="lazy" decoding="async"><figcaption><b>Minuterie in materiali vari</b><span>Fantina mobile CN o a camme</span><span>Macchinari dentali</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-med-3.jpg" width="900" height="644" alt="Componenti in acciaio inossidabile per il dentale" loading="lazy" decoding="async"><figcaption><b>Acciai inossidabili</b><span>Settore dentale</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-med-4.jpg" width="900" height="644" alt="Particolari inox torniti per il dentale" loading="lazy" decoding="async"><figcaption><b>Acciai inossidabili</b><span>Tornitura e transfer</span><span>Settore dentale</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-med-5.jpg" width="900" height="630" alt="Manipolo con guscio anodizzato bianco" loading="lazy" decoding="async"><figcaption><b>Guscio in anticorodal anodizzato</b><span>Interno in acciai temprati e rettificati</span><span>Marcatura laser</span></figcaption></figure>
+        </div>
+        <div class="vetrina" data-settore="altri" hidden>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-1.jpg" width="900" height="630" alt="Fila di perni appuntiti in AISI 420" loading="lazy" decoding="async"><figcaption><b>AISI 420 temprato</b><span>Ø 6 mm</span><span>Settore alimentare</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-2.jpg" width="900" height="630" alt="Ogiva per elica in bronzo alluminio, intera e sezionata" loading="lazy" decoding="async"><figcaption><b>Bronzo alluminio</b><span>Ø 75 × 200 mm</span><span>Nautica da diporto</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-3.jpg" width="900" height="630" alt="Due barre in anticorodal fresate" loading="lazy" decoding="async"><figcaption><b>Anticorodal</b><span>Ø 35 × 200 mm</span><span>Tornitura e fresatura a 4 assi</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-4.jpg" width="900" height="644" alt="Albero con flangia in PR80" loading="lazy" decoding="async"><figcaption><b>PR80</b><span>Ø 65 mm</span><span>Lappatura fori</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-5.jpg" width="900" height="644" alt="Raccordo in AISI 316" loading="lazy" decoding="async"><figcaption><b>AISI 316</b><span>Tornitura CN</span><span>Settore alimentare</span></figcaption></figure>
+          <figure class="pezzo"><img src="assets/img/pezzo-altri-6.jpg" width="900" height="644" alt="Minuterie in ottone e acciaio per il meccano-tessile" loading="lazy" decoding="async"><figcaption><b>Minuterie in materiali vari</b><span>Fantina mobile CN o a camme</span><span>Meccano-tessile</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITÀ -->
+    <section class="sezione carta" id="qualita" aria-labelledby="qualita-titolo">
+      <div class="contenitore qualita">
+        <div class="intesta">
+          <h2 id="qualita-titolo">Qui la qualità si misura in millesimi.</h2>
+          <p>Un foro fuori tolleranza di 3&nbsp;µm può buttare un pezzo che ha attraversato ore di tornitura, fresatura, tempra e rettifica. Per questo il controllo non è un reparto a parte: accompagna ogni fase, dalla prima sgrossatura alla spedizione.</p>
+        </div>
+
+        <figure class="qualita__foto scansione">
+          <img src="assets/img/qualita-cmm.jpg" width="1400" height="904" alt="Tastatore di una macchina di misura a coordinate su una fila di pezzi" loading="lazy" decoding="async">
+          <figcaption class="timbro">
+            <b>ISO 9001:2015</b>
+            <span>Certificato Intertek n. 0614396-00, accreditamento Accredia. Sistema qualità certificato dal 1993, tra le prime aziende del settore in Italia.</span>
+          </figcaption>
+        </figure>
+
+        <div class="qualita__colonne">
+          <div>
+            <h3>La sala metrologica</h3>
+            <p class="piccolo">A temperatura controllata, perché a questo livello di precisione la dilatazione termica falserebbe le misure.</p>
+            <table class="bom">
+              <thead><tr><th scope="col">Pos.</th><th scope="col">Strumento</th><th scope="col">A cosa serve</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Macchine di misura a coordinate</td><td>Posizione dei fori, perpendicolarità, concentricità, profili</td></tr>
+                <tr><td>2</td><td>Macchine di misura ottiche</td><td>Minuterie e profili senza contatto</td></tr>
+                <tr><td>3</td><td>Rotondimetro motorizzato</td><td>Rotondità, cilindricità e run-out</td></tr>
+                <tr><td>4</td><td>Rugosimetro</td><td>Ra, Rz, Rt fino a Ra 0,05 µm</td></tr>
+                <tr><td>5</td><td>Strumenti manuali</td><td>oltre 500</td></tr>
+                <tr><td>6</td><td>Calibri filettati</td><td>oltre 1.000</td></tr>
+                <tr><td>7</td><td>Tamponi, calibri e dime</td><td>oltre 3.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="qualita__punti">
+            <img src="assets/img/qualita-ottica.jpg" width="1000" height="667" alt="Macchina di misura ottica Vicivision con un albero in controllo" loading="lazy" decoding="async">
+            <ul class="punti">
+              <li><b>9 persone nel servizio qualità.</b> Definiscono il piano di controllo di ogni commessa e certificano i lotti con report di misura.</li>
+              <li><b>Taratura interna a 0,1 µm.</b> Micrometri, calibri e tamponi si tarano in casa, senza attese per i laboratori esterni.</li>
+              <li><b>Misura durante la lavorazione.</b> Sulle rettifiche i misuratori in process fermano la passata alla quota; sui torni i tastatori verificano le quote critiche prima dello scarico.</li>
+              <li><b>Controllo al 100%</b> quando serve, come nel medicale, nell'alimentare e nelle applicazioni di sicurezza.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTI -->
+    <section class="sezione nero" id="clienti" aria-labelledby="clienti-titolo">
+      <div class="contenitore">
+        <div class="intesta">
+          <h2 id="clienti-titolo">Lo dicono i nostri clienti.</h2>
+          <p>Aziende che esportano in tutto il mondo ci affidano i componenti da cui dipende la qualità dei loro prodotti.</p>
+        </div>
+
+        <ul class="loghi" aria-label="Alcuni clienti">
+          <li><img src="assets/img/cliente-1.jpg" width="212" height="118" alt="Bucher Hydraulics" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-2.jpg" width="212" height="118" alt="D'Andrea" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-3.jpg" width="212" height="117" alt="OML Autoblok" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-4.jpg" width="212" height="118" alt="CMS" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-5.jpg" width="212" height="118" alt="Cressi" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-6.jpg" width="212" height="118" alt="Caffitaly" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-7.jpg" width="212" height="118" alt="Cefla" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-8.jpg" width="212" height="118" alt="Polini Motori" loading="lazy" decoding="async"></li>
+          <li><img src="assets/img/cliente-9.jpg" width="213" height="118" alt="Mesdan" loading="lazy" decoding="async"></li>
+        </ul>
+
+        <article class="caso caso--grande">
+          <img src="assets/img/caso-dandrea.jpg" width="1000" height="788" alt="La famiglia D'Andrea in visita allo stabilimento Gamba" loading="lazy" decoding="async">
+          <div class="caso__testo">
+            <blockquote>
+              <p>Produciamo internamente tutta la gamma. Ci sono poche eccezioni e Gamba è la principale azienda con cui collaboriamo: una partnership che si è rafforzata in oltre 30 anni, per la competenza, la serietà e l'affidabilità che Gamba ha sempre dimostrato.</p>
+            </blockquote>
+            <p class="caso__firma"><b>Marino D'Andrea</b>, vicepresidente D'Andrea S.p.A., accessori di alta precisione per macchine utensili</p>
+          </div>
+        </article>
+
+        <div class="casi">
+          <article class="caso">
+            <img src="assets/img/caso-oml.jpg" width="800" height="561" alt="Morsa autocentrante IMG di OML Autoblok" loading="lazy" decoding="async">
+            <blockquote><p>Avevamo bisogno di un partner adeguato per i componenti torniti e fresati della nuova morsa IMG. Abbiamo scelto Gamba, con cui collaboriamo da tanti anni.</p></blockquote>
+            <p class="caso__firma"><b>Lorenzo Bergantin</b>, direttore generale OML Autoblok</p>
+            <p class="caso__nota">Le slitte in 42CrMo4 si fanno in un'unica ripresa su un centro a 5 assi, senza rettificare i piani di scorrimento.</p>
+          </article>
+          <article class="caso">
+            <img src="assets/img/caso-hiride.jpg" width="900" height="891" alt="Forcella da bici gravel con sospensione frontale Hiride" loading="lazy" decoding="async">
+            <blockquote><p>La nuova sospensione frontale di Hiride è un grande successo nel mondo per bici gravel. La collaborazione con Gamba è stata determinante.</p></blockquote>
+            <p class="caso__firma"><b>Giulio Ferretti</b>, direttore generale Hiride</p>
+            <p class="caso__nota">Particolari torniti, fresati, rettificati e lappati, con tolleranze strette e basse rugosità.</p>
+          </article>
+          <article class="caso">
+            <img src="assets/img/caso-cms.jpg" width="800" height="533" alt="Lappatrice verticale CNC dedicata ai cilindri CMS" loading="lazy" decoding="async">
+            <blockquote><p>Abbiamo apprezzato che Gamba abbia acquistato una lappatrice dedicata ai nostri cilindri, per lappare il foro interno fino alla rugosità che ci serviva.</p></blockquote>
+            <p class="caso__firma"><b>Angelo Rota</b>, responsabile UT waterjet CMS</p>
+            <p class="caso__nota">Pompanti per il taglio a getto d'acqua, con pressioni oltre i 4000 bar.</p>
+          </article>
+          <article class="caso">
+            <img src="assets/img/caso-maxprop.jpg" width="966" height="621" alt="Elica a pale orientabili Max Prop" loading="lazy" decoding="async">
+            <blockquote><p>Negli anni abbiamo sviluppato un rapporto sempre più stretto con Gamba: sono veloci e amano la qualità come noi.</p></blockquote>
+            <p class="caso__firma"><b>Max Bianchi</b>, fondatore Max Prop</p>
+            <p class="caso__nota">Ogive in bronzo alluminio ricavate dal pieno per le eliche Boomerang.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONE -->
+    <section class="sezione carta" id="persone" aria-labelledby="persone-titolo">
+      <div class="contenitore persone">
+        <div class="persone__apertura">
+          <img src="assets/img/uomo-tornio.jpg" width="1200" height="1500" alt="Attrezzista Gamba al lavoro sulla torretta di un tornio CMZ" loading="lazy" decoding="async">
+          <div>
+            <h2 id="persone-titolo">«In Gamba non esistono pezzi facili.»</h2>
+            <p class="persone__firma">Raul, attrezzista: da più di 30 anni attrezza e gestisce gran parte del reparto rettifiche.</p>
+          </div>
+        </div>
+        <ul class="ritratti">
+          <li>
+            <img src="assets/img/persona-veronica.jpg" width="525" height="656" alt="Veronica, controllo qualità" loading="lazy" decoding="async">
+            <p>«Il controllo qualità di Gamba è un reparto eccellente e sono fiera di farne parte. Da noi dipende la reputazione dell'azienda.»</p>
+            <span><b>Veronica</b> Controllo qualità</span>
+          </li>
+          <li>
+            <img src="assets/img/persona-filippo.jpg" width="534" height="667" alt="Filippo, attrezzista dei centri di lavoro" loading="lazy" decoding="async">
+            <p>«Negli ultimi anni c'è stato un salto tecnologico importante con l'avvento dei 5 assi. Non si finisce mai di imparare.»</p>
+            <span><b>Filippo</b> Attrezzista centri di lavoro, da 25 anni in Gamba</span>
+          </li>
+          <li>
+            <img src="assets/img/persona-raul.jpg" width="526" height="658" alt="Raul, attrezzista del reparto rettifiche" loading="lazy" decoding="async">
+            <p>«È un lavoro delicato perché è l'ultima fase di lavorazione, e ogni errore ha conseguenze non di poco conto.»</p>
+            <span><b>Raul</b> Attrezzista rettifiche</span>
+          </li>
+          <li>
+            <img src="assets/img/persona-dean.jpg" width="535" height="669" alt="Dean, attrezzista junior" loading="lazy" decoding="async">
+            <p>«Qui si respira la vera meccanica di precisione, con macchine di ultima generazione e colleghi con tanta esperienza.»</p>
+            <span><b>Dean</b> Attrezzista junior</span>
+          </li>
+        </ul>
+        <div class="lavora">
+          <p><b>Cerchiamo attrezzisti junior</b> per la tornitura CN e per le rettifiche, nello stabilimento di Val Brembilla.</p>
+          <a class="btn btn--scuro" href="mailto:stabilimento@gambamec.it?subject=Candidatura%20attrezzista%20junior">Invia la candidatura</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORIA -->
+    <section class="sezione nero storia" id="storia" aria-labelledby="storia-titolo">
+      <div class="contenitore">
+        <div class="intesta">
+          <h2 id="storia-titolo">Novant'anni di meccanica.</h2>
+          <p>Abbiamo contribuito a fare della Valle Brembana un distretto della meccanica di precisione conosciuto nel mondo.</p>
+        </div>
+        <div class="storia__griglia">
+          <div class="storia__immagini" aria-hidden="true">
+            <img class="attiva" data-epoca="0" src="assets/img/storia-anni50.jpg" width="1000" height="563" alt="" loading="lazy" decoding="async">
+            <img data-epoca="1" src="assets/img/storia-anni60.jpg" width="1000" height="551" alt="" loading="lazy" decoding="async">
+            <img data-epoca="2" src="assets/img/stabilimento.jpg" width="1280" height="586" alt="" loading="lazy" decoding="async">
+          </div>
+          <ol class="linea-tempo">
+            <li data-epoca="0"><time>1935</time><p>Nasce a Milano la Società anonima fratelli Gamba. Negli anni dell'autarchia produce viterie unificate che prima arrivavano dall'estero.</p></li>
+            <li data-epoca="0"><time>Anni '40</time><p>La guerra converte la produzione. Dopo i bombardamenti su Milano l'attività si sposta a Brembilla.</p></li>
+            <li data-epoca="0"><time>Anni '50</time><p>Tra le primissime aziende italiane a lavorare conto terzi per le multinazionali. Dalla Svizzera arrivano i primi torni automatici; si produce per Remington, IBM, Bic e Philips.</p>
+              <img class="solo-mobile" src="assets/img/storia-anni50.jpg" width="1000" height="563" alt="Il reparto torni automatici negli anni Cinquanta" loading="lazy" decoding="async"></li>
+            <li data-epoca="1"><time>Anni '60</time><p>Con 250 persone Gamba diventa una grande azienda industriale e contribuisce in modo decisivo a creare il polo meccanico della Valle Brembana.</p>
+              <img class="solo-mobile" src="assets/img/storia-anni60.jpg" width="1000" height="551" alt="Operai al lavoro nel reparto negli anni Sessanta" loading="lazy" decoding="async"></li>
+            <li data-epoca="1"><time>Anni '70</time><p>Lavorazioni sempre più specializzate. Nasce Icovia, per la commercializzazione di viterie.</p></li>
+            <li data-epoca="1"><time>Anni '80</time><p>Arriva uno dei primissimi torni a controllo numerico e, con Iemca, si collauda il prototipo del primo caricatore italiano per tornio CN.</p></li>
+            <li data-epoca="2"><time>1993</time><p>Tra le prime aziende a certificare ISO 9000 il sistema qualità.</p></li>
+            <li data-epoca="2"><time>Anni 2000</time><p>Lo stabilimento arriva a 11.000 m²; alla tornitura si affiancano i reparti di fresatura, rettifica e lappatura.</p>
+              <img class="solo-mobile" src="assets/img/stabilimento.jpg" width="1280" height="586" alt="Lo stabilimento Gamba di Val Brembilla" loading="lazy" decoding="async"></li>
+            <li data-epoca="2"><time>Oggi</time><p>6 milioni di euro investiti in macchine negli ultimi cinque anni, oltre 12 milioni di fatturato insieme alla controllata Icovia e l'ingresso nel medicale con i componenti in titanio per CORCYM.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVENTIVO -->
+    <section class="sezione carta" id="preventivo" aria-labelledby="preventivo-titolo">
+      <div class="contenitore preventivo">
+        <div class="preventivo__intro">
+          <h2 id="preventivo-titolo">Mandaci il disegno.</h2>
+          <p>Ti rispondiamo con fattibilità, tempi e prezzo. Il nostro ufficio tecnico può proporti le soluzioni più adatte, attrezzature dedicate e utensili speciali per arrivare agli obiettivi di precisione, affidabilità e costo.</p>
+          <ul class="punti punti--compatti">
+            <li><b>Disegni riservati.</b> Li ridisegniamo internamente togliendo ogni riferimento al cliente.</li>
+            <li><b>Pezzo completo.</b> Possiamo consegnarlo con trattamenti termici, galvanici e montaggio, per semplificarti gestione e logistica.</li>
+          </ul>
+          <img class="preventivo__foto" src="assets/img/ufficio-tecnico.jpg" width="1000" height="667" alt="Ufficio tecnico Gamba che esamina un disegno insieme a un cliente" loading="lazy" decoding="async">
+        </div>
+
+        <form class="modulo" id="modulo" novalidate>
+          <h3>Richiesta di preventivo</h3>
+          <div class="campo">
+            <label for="f-nome">Nome e cognome</label>
+            <input id="f-nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="f-azienda">Azienda</label>
+            <input id="f-azienda" name="azienda" autocomplete="organization" required>
+          </div>
+          <div class="campo-doppio">
+            <div class="campo">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="campo">
+              <label for="f-tel">Telefono <span>facoltativo</span></label>
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="f-lav">Lavorazione</label>
+            <select id="f-lav" name="lavorazione">
+              <option>Ciclo completo</option>
+              <option>Tornitura</option>
+              <option>Fresatura</option>
+              <option>Rettifica e lappatura</option>
+              <option>Minuterie</option>
+            </select>
+          </div>
+          <div class="campo-doppio">
+            <div class="campo">
+              <label for="f-mat">Materiale <span>es. 42CrMo4, AISI 316</span></label>
+              <input id="f-mat" name="materiale">
+            </div>
+            <div class="campo">
+              <label for="f-qta">Pezzi per lotto <span>anche indicativo</span></label>
+              <input id="f-qta" name="quantita" inputmode="numeric">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="f-note">Note sul pezzo <span>facoltativo</span></label>
+            <textarea id="f-note" name="note" rows="3" aria-describedby="f-note-aiuto"></textarea>
+            <small class="aiuto" id="f-note-aiuto">Tolleranze critiche, trattamenti, tempi di consegna.</small>
+          </div>
+          <p class="modulo__errore" id="modulo-errore" role="alert" hidden></p>
+          <button class="btn btn--rosso btn--pieno" type="submit">Prepara l'email con il disegno</button>
+          <p class="modulo__nota" id="modulo-nota">Si apre la tua email già compilata per commerciale@gambamec.it: allega il disegno e premi invia.</p>
+        </form>
+
+        <div class="sedi">
+          <div class="sede">
+            <h3>Stabilimento</h3>
+            <p>Via Marconi 21<br>24012 Val Brembilla (Bergamo)</p>
+            <p><a href="tel:+39034598001">0345 98001</a><br><a href="mailto:stabilimento@gambamec.it">stabilimento@gambamec.it</a></p>
+            <a class="link-freccia" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Marconi%2021%2C%2024012%20Val%20Brembilla%20BG" target="_blank" rel="noopener">Indicazioni stradali</a>
+          </div>
+          <div class="sede">
+            <h3>Uffici commerciali e amministrativi</h3>
+            <p>Via Dezza 47<br>20144 Milano</p>
+            <p><a href="tel:+39024980441">02 4980 441</a><br><a href="mailto:commerciale@gambamec.it">commerciale@gambamec.it</a><br><a href="mailto:ammin@gambamec.it">ammin@gambamec.it</a></p>
+            <p class="piccolo">Orari degli uffici: [DA CONFERMARE]</p>
+          </div>
+          <div class="mappa">
+            <iframe title="Mappa dello stabilimento Gamba a Val Brembilla" src="https://www.google.com/maps?q=Via%20Marconi%2021%2C%2024012%20Val%20Brembilla%20BG&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore piede__griglia">
+      <div>
+        <img class="piede__logo" src="assets/img/logo-gamba-chiaro.png" width="717" height="155" alt="Gamba Meccanica di precisione" loading="lazy" decoding="async">
+        <p>Gamba S.r.l.<br>P.IVA 00836030155<br>Codice univoco WHP7LTE</p>
+      </div>
+      <div>
+        <p>Stabilimento: Via Marconi 21, 24012 Val Brembilla (BG)<br>Uffici: Via Dezza 47, 20144 Milano</p>
+        <p><a href="https://www.linkedin.com/company/gambamec/" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="https://www.facebook.com/gambameccanica" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+      <div>
+        <details class="privacy" id="privacy">
+          <summary>Privacy</summary>
+          <p>Questo sito non usa cookie di profilazione e non salva dati: il modulo di preventivo prepara soltanto un'email nel tuo programma di posta. I dati che invii vengono trattati da Gamba S.r.l. per rispondere alla richiesta.</p>
+        </details>
+        <p class="crediti">© <span id="anno">2026</span> Gamba S.r.l.<br>Sito realizzato da Alessio Mora<br>Demo non ufficiale: non è il sito ufficiale di Gamba S.r.l.</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="barra-mobile" aria-label="Contatti rapidi">
+    <a href="tel:+39024980441">Chiama</a>
+    <a class="barra-mobile__cta" href="#preventivo">Invia il disegno</a>
+  </nav>
+</body>
+</html>
