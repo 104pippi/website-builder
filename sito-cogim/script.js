@@ -196,21 +196,38 @@ function spazzata() {
   requestAnimationFrame(passo);
 }
 
-// Trascinamento (puntatore e tocco), con lo scroll verticale sempre libero
+// Trascinamento (puntatore e tocco), con lo scroll verticale sempre libero:
+// col dito la maniglia si muove solo quando il gesto è chiaramente orizzontale
 let trascina = false;
+let partenza = null;
 const daEvento = (e) => {
   const r = confronto.getBoundingClientRect();
   mettiPos(((e.clientX - r.left) / r.width) * 100);
 };
-confronto.addEventListener('pointerdown', (e) => {
+const iniziaTrascina = (e) => {
   animazione++;
   trascina = true;
   confronto.classList.add('is-trascina');
-  confronto.setPointerCapture(e.pointerId);
+  try { confronto.setPointerCapture(e.pointerId); } catch (err) { /* puntatore già rilasciato */ }
   daEvento(e);
+};
+confronto.addEventListener('pointerdown', (e) => {
+  if (e.pointerType === 'mouse' || e.target.closest('[data-maniglia]')) return iniziaTrascina(e);
+  partenza = { x: e.clientX, y: e.clientY };
 });
-confronto.addEventListener('pointermove', (e) => { if (trascina) daEvento(e); });
-const fine = () => { trascina = false; confronto.classList.remove('is-trascina'); };
+confronto.addEventListener('pointermove', (e) => {
+  if (trascina) return daEvento(e);
+  if (!partenza) return;
+  const dx = Math.abs(e.clientX - partenza.x);
+  const dy = Math.abs(e.clientY - partenza.y);
+  if (dx > 8 && dx > dy * 1.2) { partenza = null; iniziaTrascina(e); }
+  else if (dy > 10) partenza = null;
+});
+confronto.addEventListener('click', (e) => {
+  // un tocco singolo sposta la maniglia lì (solo col dito: col mouse c'è già il trascinamento)
+  if (!trascina && e.pointerType !== 'mouse' && !e.target.closest('[data-maniglia]')) { animazione++; daEvento(e); }
+});
+const fine = () => { trascina = false; partenza = null; confronto.classList.remove('is-trascina'); };
 confronto.addEventListener('pointerup', fine);
 confronto.addEventListener('pointercancel', fine);
 maniglia.addEventListener('keydown', (e) => {
