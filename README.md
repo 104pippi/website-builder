@@ -22,6 +22,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-cogim](./sito-cogim) | https://sito-cogim.vercel.app | [video](./sito-cogim/video) |
 | [sito-defam](./sito-defam) | https://sito-defam.vercel.app | [video](./sito-defam/video) |
 | [sito-doxon](./sito-doxon) | https://sito-doxon.vercel.app | [video](./sito-doxon/video) |
+| [sito-drigo-bergamin](./sito-drigo-bergamin) | https://sito-drigo-bergamin.vercel.app | [video](./sito-drigo-bergamin/video) |
 | [sito-dt-color](./sito-dt-color) | https://sito-dt-color.vercel.app | [video](./sito-dt-color/video) |
 | [sito-due-esse](./sito-due-esse) | https://sito-due-esse.vercel.app | [video](./sito-due-esse/video) |
 | [sito-duepigreco](./sito-duepigreco) | https://sito-duepigreco.vercel.app | [video](./sito-duepigreco/video) |
