@@ -60,7 +60,7 @@ const segnaHero = (p) => {
   }
 };
 const RESTAURO_MS = 2300;
-const PARTENZA_MS = 750;
+const PARTENZA_MS = 650;
 
 // Ripiego senza WebGL: l'intonaco passa in CSS da sinistra a destra (stessa durata)
 function avviaHeroCss() {
@@ -97,8 +97,13 @@ if (ridotto) {
       setTimeout(() => scena.restaura(RESTAURO_MS, segnaHero), attesa);
     }).catch(() => { /* resta il ripiego CSS */ });
   };
-  if (document.readyState === 'complete') caricaHero();
-  else addEventListener('load', caricaHero, { once: true });
+  // il 3D parte appena la foto "prima" (il primo colpo d'occhio) è a schermo, senza aspettare il resto della pagina
+  const imgPrima = $('.hero__img--prima');
+  if (imgPrima.complete && imgPrima.naturalWidth) caricaHero();
+  else {
+    imgPrima.addEventListener('load', caricaHero, { once: true });
+    imgPrima.addEventListener('error', avviaHeroCss, { once: true });
+  }
 }
 
 /* Parallasse leggera del testo dell'hero */
@@ -223,11 +228,18 @@ confronto.addEventListener('pointermove', (e) => {
   if (dx > 8 && dx > dy * 1.2) { partenza = null; iniziaTrascina(e); }
   else if (dy > 10) partenza = null;
 });
+let appenaTrascinato = false;
 confronto.addEventListener('click', (e) => {
-  // un tocco singolo sposta la maniglia lì (solo col dito: col mouse c'è già il trascinamento)
-  if (!trascina && e.pointerType !== 'mouse' && !e.target.closest('[data-maniglia]')) { animazione++; daEvento(e); }
+  // un tocco singolo sposta la maniglia lì; dopo un trascinamento il click finale si ignora
+  if (appenaTrascinato) { appenaTrascinato = false; return; }
+  if (!e.target.closest('[data-maniglia]')) { animazione++; daEvento(e); }
 });
-const fine = () => { trascina = false; partenza = null; confronto.classList.remove('is-trascina'); };
+const fine = () => {
+  if (trascina) appenaTrascinato = true;
+  trascina = false;
+  partenza = null;
+  confronto.classList.remove('is-trascina');
+};
 confronto.addEventListener('pointerup', fine);
 confronto.addEventListener('pointercancel', fine);
 maniglia.addEventListener('keydown', (e) => {
