@@ -42,6 +42,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
 | [sito-modi](./sito-modi) | https://sito-modi.vercel.app | [video](./sito-modi/video) |
 | [sito-multistudio](./sito-multistudio) | https://sito-multistudio.vercel.app | [video](./sito-multistudio/video) |
+| [sito-paolo-bellieni](./sito-paolo-bellieni) | https://sito-paolo-bellieni.vercel.app | [video](./sito-paolo-bellieni/video) |
 | [sito-pianca-serramenti](./sito-pianca-serramenti) | https://sito-pianca-serramenti.vercel.app | [video](./sito-pianca-serramenti/video) |
 | [sito-psm](./sito-psm) | https://sito-psm.vercel.app | [video](./sito-psm/video) |
 | [sito-quick-italy](./sito-quick-italy) | https://sito-quick-italy.vercel.app | [video](./sito-quick-italy/video) |
