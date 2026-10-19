@@ -346,97 +346,112 @@ button, input, textarea { font: inherit; color: inherit; }
 .intestazione__testo { margin-top: 16px; max-width: 54ch; color: #3A4152; font-size: 1.06rem; }
 .intestazione--riga { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 
-/* ---------- Cassettiera ---------- */
-.prodotti { background: var(--bianco); overflow-x: clip; }
-.cassettiera {
-  --P: 92px;
+/* ---------- Reparti: la cassettiera con i cassetti aperti ---------- */
+.prodotti { background: var(--bianco); }
+.reparti {
   position: relative;
   margin-top: 40px;
-  padding: 14px 12px 16px;
-  display: grid; gap: 12px;
-  background:
-    linear-gradient(180deg, #0B2475, #071A5C);
+  padding: 10px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+  background: linear-gradient(180deg, #0B2475, #071A5C);
   border-radius: 18px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), 0 40px 60px -40px rgba(8, 21, 74, .7);
-  perspective: 1000px;
-  perspective-origin: 50% var(--occhio, -240px);
 }
-.cassettiera__cima {
-  position: absolute; left: -6px; right: -6px; top: -10px; height: 18px;
+/* il piano della cassettiera */
+.reparti::before {
+  content: ""; position: absolute; left: -6px; right: -6px; top: -10px; height: 18px;
   background: linear-gradient(180deg, #2A4BC4, #1534A0);
   border-radius: 10px 10px 4px 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
 }
-.cassetto {
-  --o: 0;
+.reparto {
   position: relative;
-  transform-style: preserve-3d;
-  transform: translateZ(calc(var(--o) * var(--P)));
-  will-change: transform;
+  display: flex; flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #15349A;
 }
-.cassetto__fronte {
+.reparto:has(a:focus-visible) { outline: 3px solid var(--evidenziatore); outline-offset: 3px; }
+.reparto__piede a:focus-visible { outline: none; }
+
+/* l'interno del cassetto: fondo chiaro e un piano su cui stanno in piedi i prodotti */
+.reparto__vano {
   position: relative;
-  padding: 16px 18px 6px;
-  border-radius: 9px;
+  aspect-ratio: 1 / .9;
+  background:
+    linear-gradient(180deg, rgba(4, 12, 48, .3), rgba(4, 12, 48, 0) 15%),
+    linear-gradient(180deg, #FFFFFF 0%, #EEF1F6 72%, #D9DFEA 72.6%, #E8ECF2 100%);
+  box-shadow: inset 7px 0 10px -8px rgba(4, 12, 48, .4), inset -7px 0 10px -8px rgba(4, 12, 48, .4);
+}
+.pezzo {
+  position: absolute; left: var(--x); bottom: var(--b, 11%);
+  height: var(--h); width: auto;
+  transform: translateX(-50%) rotate(var(--r, 0deg));
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 8px 6px rgba(8, 21, 74, .24));
+}
+
+/* il frontale del cassetto */
+.reparto__fronte {
+  flex: 1;
+  display: flex; flex-direction: column;
+  padding: 11px 11px 0;
   color: #fff;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 30%),
     linear-gradient(180deg, #2650CF 0%, #1C40B4 50%, #15349A 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .3),
-    inset 0 -2px 0 rgba(0, 0, 0, .22),
-    0 calc(var(--o) * 22px) calc(var(--o) * 34px) calc(var(--o) * -6px) rgba(2, 8, 34, calc(var(--o) * .65));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 -8px 14px -6px rgba(2, 8, 34, .45);
 }
+.reparto__riga { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
 .portaetichetta {
-  display: inline-flex; padding: 4px;
+  display: inline-flex; padding: 3px;
   background: linear-gradient(180deg, #E4E8EF, #A6AFBE);
   border-radius: 5px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 1px 2px rgba(0, 0, 0, .35);
-  font-size: 1.08rem; line-height: 1.2;
+  font-size: .9rem; line-height: 1.15;
 }
 .portaetichetta span {
-  padding: 5px 12px 6px; background: #fff; color: var(--notte); border-radius: 2px;
-  font-weight: 800; font-stretch: 108%;
+  padding: 4px 8px 5px; background: #fff; color: var(--notte); border-radius: 2px;
+  font-weight: 800; font-stretch: 104%;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .12);
 }
 .maniglia {
-  position: absolute; right: 18px; top: 22px;
-  width: 56px; height: 12px; border-radius: 7px;
+  display: none; flex: none; margin-top: 7px;
+  width: 30px; height: 9px; border-radius: 6px;
   background: linear-gradient(180deg, #F3F5F9, #9AA4B5);
   box-shadow: 0 3px 4px rgba(0, 0, 0, .35), inset 0 -1px 0 rgba(0, 0, 0, .15);
 }
-.cassetto__descr { margin: 12px 0 4px; color: rgba(255, 255, 255, .88); font-size: .96rem; max-width: 42ch; }
-.cassetto__piede {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  font-size: .86rem; color: rgba(255, 255, 255, .7);
+.reparto__descr { margin: 9px 0 4px; color: rgba(255, 255, 255, .88); font-size: .84rem; line-height: 1.42; }
+.reparto__piede {
+  margin-top: auto;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 10px;
+  font-size: .78rem; color: rgba(255, 255, 255, .7);
 }
-.cassetto__piede a {
-  display: inline-flex; align-items: center; min-height: 44px;
+.reparto__piede span { padding-top: 6px; }
+.reparto__piede a {
+  display: inline-flex; align-items: center; min-height: 40px;
   color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 4px;
   text-decoration-color: rgba(255, 255, 255, .45);
 }
-.cassetto__piede a:hover { text-decoration-color: #fff; }
+/* tutta la scheda porta al reparto nello shop */
+.reparto__piede a::after { content: ""; position: absolute; inset: 0; }
+.reparto:hover .reparto__piede a { text-decoration-color: #fff; }
 
-/* l'interno del cassetto: fondo inclinato e oggetti in piedi */
-.cassetto__fondo {
-  position: absolute; left: 10px; right: 10px; top: 0; height: var(--P);
-  transform-origin: 50% 0;
-  transform: rotateX(-100deg) scaleY(var(--o));
-  background:
-    linear-gradient(180deg, #1A2F7A, #050E36 85%);
-  border-radius: 0 0 6px 6px;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .06);
+/* il cassetto si apre quando entra nello schermo: il vano sale dal frontale, poi i prodotti si alzano */
+.js .reparto__vano { clip-path: inset(100% 0 0 0); transition: clip-path .75s var(--molla) var(--ritardo, 0s); }
+.js .reparto.in .reparto__vano { clip-path: inset(0 0 0 0); }
+.js .pezzo {
+  opacity: 0; translate: 0 40%;
+  transition: translate .8s var(--molla), opacity .25s ease;
+  transition-delay: calc(var(--ritardo, 0s) + .2s);
 }
-.cassetto__oggetti {
-  position: absolute; left: 10px; right: 10px; bottom: calc(100% + var(--o) * 8px); height: 112px;
-  transform: translateZ(calc(var(--o) * var(--P) * -.5));
-  pointer-events: none;
-}
-.cassetto__oggetti img {
-  position: absolute; bottom: 0; left: var(--x); height: var(--h); width: auto; max-width: 52%;
-  transform: translateX(-50%) translateY(calc((1 - var(--o)) * 70%)) rotate(var(--r, 0deg));
-  opacity: clamp(0, calc(var(--o) * 1.8 - .3), 1);
-  filter: drop-shadow(0 8px 7px rgba(0, 0, 0, .45));
+.js .pezzo:nth-child(2) { transition-delay: calc(var(--ritardo, 0s) + .3s); }
+.js .pezzo:nth-child(3) { transition-delay: calc(var(--ritardo, 0s) + .4s); }
+.js .reparto.in .pezzo { opacity: 1; translate: 0 0; }
+@media (hover: hover) and (pointer: fine) {
+  .js .reparto.in:hover .pezzo { translate: 0 -7px; transition-duration: .4s; transition-delay: 0s; }
+  .js .reparto.in:hover .pezzo:nth-child(2) { transition-delay: .04s; }
+  .js .reparto.in:hover .pezzo:nth-child(3) { transition-delay: .08s; }
 }
 
 /* ---------- Settori ---------- */
@@ -667,6 +682,7 @@ button, input, textarea { font: inherit; color: inherit; }
   .dymo { font-size: .86rem; padding: 10px 16px 9px; }
   .passi__lista { gap: 40px; }
   .settori__frecce { display: flex; }
+  .maniglia { display: block; }
 }
 
 /* ---------- Desktop ---------- */
@@ -699,9 +715,14 @@ button, input, textarea { font: inherit; color: inherit; }
 
   .fatti { padding-top: 40px; padding-bottom: 64px; }
 
-  .cassettiera { --P: 112px; grid-template-columns: 1fr 1fr; gap: 14px 16px; padding: 18px; margin-top: 56px; }
-  .cassetto__fronte { padding: 20px 22px 8px; min-height: 176px; }
-  .cassetto__oggetti { height: 176px; }
+  .reparti { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 56px; padding: 14px; gap: 14px; }
+  .reparto__vano { aspect-ratio: 5 / 4; }
+  .reparto__fronte { padding: 16px 16px 2px; }
+  .portaetichetta { font-size: 1rem; }
+  .portaetichetta span { padding: 5px 10px 6px; }
+  .maniglia { width: 42px; height: 11px; margin-top: 9px; }
+  .reparto__descr { font-size: .9rem; margin-top: 12px; }
+  .reparto__piede { font-size: .82rem; }
 
   .opuscolo { flex-basis: 300px; }
   .settori__fila { padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2)); scroll-padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2)); }
@@ -732,8 +753,8 @@ button, input, textarea { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0s !important; transition-duration: .001ms !important; }
-  .cassetto { transform: none; }
-  .cassetto__fondo, .cassetto__oggetti { display: none; }
+  .js .reparto__vano { clip-path: none; }
+  .js .pezzo { opacity: 1; translate: none; }
   .js [data-dymo] .dymo { clip-path: none; }
   .js .impronta--prova { opacity: 1; }
 }

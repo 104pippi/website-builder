@@ -69,35 +69,31 @@
   }, { threshold: 0.35 });
   document.querySelectorAll('[data-dymo], [data-prova-timbro]').forEach((el) => unaVolta.observe(el));
 
+  /* ---------- Reparti: i cassetti si aprono quando entrano, uno dopo l'altro ---------- */
+  const apri = new IntersectionObserver((voci) => {
+    let n = 0;
+    voci.forEach((v) => {
+      if (!v.isIntersecting) return;
+      const el = v.target;
+      el.style.setProperty('--ritardo', `${(n++ * 0.09).toFixed(2)}s`);
+      el.classList.add('in');
+      apri.unobserve(el);
+      setTimeout(() => el.style.removeProperty('--ritardo'), 1600);
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.reparto').forEach((el) => apri.observe(el));
+
   /* ---------- Movimento legato allo scroll ---------- */
-  const cassettiera = document.querySelector('[data-cassettiera]');
-  const cassetti = [...document.querySelectorAll('[data-cassetto]')];
   const percorso = document.querySelector('[data-percorso]');
   const passi = percorso ? [...percorso.querySelectorAll('.passo')] : [];
   let inAttesa = false;
 
   const limita = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
-  const morbido = (v) => v * v * (3 - 2 * v);
 
   function aggiorna() {
     inAttesa = false;
     const vh = innerHeight;
     testata.classList.toggle('scorre', scrollY > 8);
-
-    if (cassettiera && !riduci) {
-      const r = cassettiera.getBoundingClientRect();
-      if (r.bottom > -300 && r.top < vh + 300) {
-        cassettiera.style.setProperty('--occhio', `${Math.round(vh * 0.16 - r.top)}px`);
-        const fuoco = vh * 0.54;
-        const raggio = vh * (innerWidth < 960 ? 0.24 : 0.3);
-        for (const c of cassetti) {
-          const b = c.getBoundingClientRect();
-          const o = morbido(limita(1 - Math.abs(b.top + b.height * 0.5 - fuoco) / raggio));
-          c.style.setProperty('--o', o.toFixed(3));
-          c.style.zIndex = o > 0.01 ? String(2 + Math.round(o * 10)) : '';
-        }
-      }
-    }
 
     if (percorso) {
       const r = percorso.getBoundingClientRect();
