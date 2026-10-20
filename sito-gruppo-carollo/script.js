@@ -50,7 +50,7 @@
       voci.forEach(function (v) {
         if (v.isIntersecting) { v.target.classList.add('in'); io.unobserve(v.target); }
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+    }, { rootMargin: '0px 0px 6% 0px', threshold: 0 });
     tapparelle.forEach(function (el) { io.observe(el); });
   } else {
     tapparelle.forEach(function (el) { el.classList.add('in'); });

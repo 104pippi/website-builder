@@ -228,10 +228,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
     linear-gradient(0deg, #7f878c 0 7px, #a7aeb3 7px 9px, transparent 9px),
     repeating-linear-gradient(180deg, #dfe3e5 0 7px, #c4cacd 7px 9px, #eef1f2 9px 10px, #d3d8db 10px 13px);
   transform: translateY(0);
-  transition: transform 1.25s var(--curva);
+  transition: transform .85s cubic-bezier(.55, 0, .2, 1);
 }
 .js [data-tapparella].in::after { transform: translateY(-101%); }
-.js [data-tapparella] img { transform: scale(1.07); transition: transform 1.8s var(--uscita); }
+.js [data-tapparella] img { transform: scale(1.06); transition: transform 1.4s var(--uscita); }
 .js [data-tapparella].in img { transform: scale(1); }
 
 /* Per la casa */
