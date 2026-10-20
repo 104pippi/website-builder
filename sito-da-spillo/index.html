@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pizzeria da Spillo | Pizza napoletana a Treviso e Preganziol</title>
+<meta name="description" content="Pizza napoletana della famiglia Sorbillo, forno a legna e pizza fritta: tre pizzerie a Treviso e Preganziol. Guarda il menù e prenota un tavolo.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-da-spillo.vercel.app/">
+<meta name="theme-color" content="#12291F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Pizzeria da Spillo">
+<meta property="og:title" content="Pizzeria da Spillo | Pizza napoletana a Treviso e Preganziol">
+<meta property="og:description" content="Impasto a lunga lievitazione, forno a legna e la specialità della casa: la pizza fritta. Tre pizzerie: viale Felissent, Borgo Mazzini e Preganziol.">
+<meta property="og:image" content="https://sito-da-spillo.vercel.app/assets/img/pizza-forno.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1000">
+<meta property="og:url" content="https://sito-da-spillo.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pizzeria da Spillo | Pizza napoletana a Treviso">
+<meta name="twitter:description" content="Pizza napoletana della famiglia Sorbillo dal forno a legna. Tre pizzerie tra Treviso e Preganziol.">
+<meta name="twitter:image" content="https://sito-da-spillo.vercel.app/assets/img/pizza-forno.jpg">
+
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js"
+}}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap">
+<link rel="preload" as="image" href="assets/img/hero-forno-m.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-forno.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sito-da-spillo.vercel.app/#azienda",
+      "name": "Pizzeria da Spillo",
+      "legalName": "SPILLO S.R.L.",
+      "vatID": "IT04960980268",
+      "url": "https://sito-da-spillo.vercel.app/",
+      "logo": "https://sito-da-spillo.vercel.app/assets/img/logo-da-spillo.png",
+      "founder": {"@type": "Person", "name": "Giuseppe Sorbillo"},
+      "foundingDate": "2004",
+      "sameAs": ["https://www.facebook.com/daSpillo", "https://www.tripadvisor.it/Restaurant_Review-g187869-d1926303-Reviews-Pizzeria_Spillo-Treviso_Province_of_Treviso_Veneto.html"]
+    },
+    {
+      "@type": "Restaurant",
+      "name": "Pizzeria Ristorantino da Spillo",
+      "parentOrganization": {"@id": "https://sito-da-spillo.vercel.app/#azienda"},
+      "servesCuisine": ["Pizza napoletana", "Cucina napoletana"],
+      "priceRange": "€",
+      "acceptsReservations": "True",
+      "telephone": "+390422304286",
+      "image": "https://sito-da-spillo.vercel.app/assets/img/sala-ristorantino.jpg",
+      "url": "https://sito-da-spillo.vercel.app/",
+      "menu": "https://sito-da-spillo.vercel.app/#menu",
+      "address": {"@type": "PostalAddress", "streetAddress": "Viale G. G. Felissent 18", "postalCode": "31100", "addressLocality": "Treviso", "addressRegion": "TV", "addressCountry": "IT"},
+      "geo": {"@type": "GeoCoordinates", "latitude": 45.6840866, "longitude": 12.2541993},
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "18:30", "closes": "23:30"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "14:30"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:30", "closes": "23:30"}
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "name": "Pizzeria da Spillo Treviso centro",
+      "parentOrganization": {"@id": "https://sito-da-spillo.vercel.app/#azienda"},
+      "servesCuisine": ["Pizza napoletana"],
+      "priceRange": "€",
+      "acceptsReservations": "True",
+      "telephone": "+390422545921",
+      "image": "https://sito-da-spillo.vercel.app/assets/img/pizza-forno.jpg",
+      "url": "https://sito-da-spillo.vercel.app/",
+      "menu": "https://sito-da-spillo.vercel.app/#menu",
+      "address": {"@type": "PostalAddress", "streetAddress": "Borgo Giuseppe Mazzini 20", "postalCode": "31100", "addressLocality": "Treviso", "addressRegion": "TV", "addressCountry": "IT"},
+      "geo": {"@type": "GeoCoordinates", "latitude": 45.6684089, "longitude": 12.2509506},
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "18:30", "closes": "23:30"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "14:30"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:30", "closes": "23:30"}
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "name": "Pizzeria da Spillo di Giuseppe Sorbillo",
+      "parentOrganization": {"@id": "https://sito-da-spillo.vercel.app/#azienda"},
+      "servesCuisine": ["Pizza napoletana"],
+      "priceRange": "€",
+      "acceptsReservations": "True",
+      "telephone": "+3904221781481",
+      "image": "https://sito-da-spillo.vercel.app/assets/img/pizza-forno.jpg",
+      "url": "https://sito-da-spillo.vercel.app/",
+      "menu": "https://sito-da-spillo.vercel.app/#menu",
+      "address": {"@type": "PostalAddress", "streetAddress": "Via Gorizia 22", "postalCode": "31022", "addressLocality": "Preganziol", "addressRegion": "TV", "addressCountry": "IT"},
+      "geo": {"@type": "GeoCoordinates", "latitude": 45.6005047, "longitude": 12.2409985},
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "18:30", "closes": "23:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "18:30", "closes": "23:30"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata" data-testata>
+  <div class="testata__in">
+    <a class="testata__marchio" href="#top" aria-label="Pizzeria da Spillo, torna all'inizio">
+      <img src="assets/img/scritta-da-spillo-chiaro.png" width="400" height="100" alt="da Spillo">
+    </a>
+    <nav class="testata__nav" aria-label="Sezioni">
+      <a href="#pizzerie">Le pizzerie</a>
+      <a href="#storia">La storia</a>
+      <a href="#menu">Menù</a>
+      <a href="#feste">Feste</a>
+      <a href="#dove">Orari</a>
+    </nav>
+    <button class="btn btn--pomodoro btn--piccolo testata__cta" type="button" data-prenota>Prenota un tavolo</button>
+    <button class="testata__burger" type="button" aria-expanded="false" aria-controls="menu-mobile" data-burger>
+      <span class="sr">Apri il menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden data-menu-mobile>
+  <nav aria-label="Sezioni">
+    <a href="#pizzerie">Le pizzerie</a>
+    <a href="#storia">La storia</a>
+    <a href="#menu">Il menù</a>
+    <a href="#feste">Feste e cene</a>
+    <a href="#dove">Dove siamo e orari</a>
+  </nav>
+  <div class="menu-mobile__tel">
+    <a href="tel:+390422304286"><span>Viale Felissent</span> 0422 304286</a>
+    <a href="tel:+390422545921"><span>Borgo Mazzini</span> 0422 545921</a>
+    <a href="tel:+3904221781481"><span>Preganziol</span> 0422 1781481</a>
+  </div>
+</div>
+
+<main id="contenuto">
+
+  <!-- HERO -->
+  <section class="hero" id="top" data-hero>
+    <picture class="hero__foto">
+      <source media="(max-width: 767px)" srcset="assets/img/hero-forno-m.webp" type="image/webp">
+      <source media="(max-width: 767px)" srcset="assets/img/hero-forno-m.jpg">
+      <source srcset="assets/img/hero-forno.webp" type="image/webp">
+      <img src="assets/img/hero-forno.jpg" width="1920" height="800" alt="La bocca del forno a legna di Spillo con la fiamma accesa e una pizza in cottura" fetchpriority="high">
+    </picture>
+    <div class="hero__velo" aria-hidden="true"></div>
+    <canvas class="hero__3d" aria-hidden="true" data-scena></canvas>
+    <div class="hero__testo wrap">
+      <h1 class="hero__titolo" data-stendi>
+        <span class="hero__riga" data-riga>Pizza</span>
+        <span class="hero__riga" data-riga>napoletana</span>
+        <span class="hero__riga hero__riga--dove">a Treviso dal 2004</span>
+      </h1>
+      <p class="hero__sotto">L'impasto a lunga lievitazione lo fa Beppe Sorbillo, pizzaiolo di famiglia napoletana dal 1935. Forno a legna, mozzarella DOP e pomodoro da Napoli, in tre pizzerie tra Treviso e Preganziol.</p>
+      <div class="hero__azioni">
+        <button class="btn btn--pomodoro" type="button" data-prenota>Prenota un tavolo</button>
+        <a class="btn btn--vuoto" href="#menu">Il menù</a>
+      </div>
+      <p class="hero__voto"><span class="stelle" aria-hidden="true">★★★★★</span> 4,5 su Google, 3.940 recensioni</p>
+    </div>
+  </section>
+
+  <!-- LE TRE PIZZERIE -->
+  <section class="pizzerie" id="pizzerie" aria-labelledby="pizzerie-titolo">
+    <div class="wrap">
+      <div class="pizzerie__testa">
+        <h2 class="titolo" id="pizzerie-titolo">Tre pizzerie, lo stesso impasto</h2>
+        <p class="pizzerie__nota">Venerdì, sabato e domenica conviene prenotare. Basta una telefonata.</p>
+      </div>
+      <ul class="pizzerie__lista">
+        <li class="pz" data-sede="felissent">
+          <div class="pz__nome">
+            <h3>Viale Felissent</h3>
+            <p>Santa Maria del Rovere: pizzeria e ristorantino, anche con primi e secondi</p>
+          </div>
+          <p class="pz__stato" data-stato="felissent">Orari di oggi</p>
+          <p class="pz__voto"><span class="stelle" aria-hidden="true">★</span> 4,5 <span>2.370 recensioni</span></p>
+          <a class="pz__chiama" href="tel:+390422304286"><span class="pz__icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span>0422 304286</a>
+        </li>
+        <li class="pz" data-sede="mazzini">
+          <div class="pz__nome">
+            <h3>Borgo Mazzini</h3>
+            <p>Nel centro di Treviso: forno a legna, fritti e panozzi</p>
+          </div>
+          <p class="pz__stato" data-stato="mazzini">Orari di oggi</p>
+          <p class="pz__voto"><span class="stelle" aria-hidden="true">★</span> 4,5 <span>1.213 recensioni</span></p>
+          <a class="pz__chiama" href="tel:+390422545921"><span class="pz__icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span>0422 545921</a>
+        </li>
+        <li class="pz" data-sede="preganziol">
+          <div class="pz__nome">
+            <h3>Preganziol</h3>
+            <p>In via Gorizia, aperta tutte le sere tranne il martedì</p>
+          </div>
+          <p class="pz__stato" data-stato="preganziol">Orari di oggi</p>
+          <p class="pz__voto"><span class="stelle" aria-hidden="true">★</span> 4,4 <span>357 recensioni</span></p>
+          <a class="pz__chiama" href="tel:+3904221781481"><span class="pz__icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span>0422 1781481</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STORIA -->
+  <section class="storia" id="storia" aria-labelledby="storia-titolo">
+    <div class="wrap storia__griglia">
+      <div class="storia__testo">
+        <h2 class="titolo" id="storia-titolo">Beppe Sorbillo e quattro generazioni di pizzaioli</h2>
+        <p class="lead">Giuseppe Sorbillo, per tutti Beppe, è nato a Napoli nel 1968 in una delle famiglie di pizzaioli più antiche della città. A Treviso ha portato la pizza di casa sua: bordi alti, pasta morbida e molto digeribile, ingredienti che arrivano da Napoli.</p>
+        <ol class="linea" data-linea>
+          <li><b>1935</b><span>A Napoli la famiglia Sorbillo comincia a fare la pizza.</span></li>
+          <li><b>2004</b><span>Beppe apre Spillo in viale Felissent, a Treviso. All'inizio solo pizza da asporto.</span></li>
+          <li><b>2012</b><span>La pizzeria si allarga e arrivano i tavoli: nasce il ristorantino.</span></li>
+          <li><b>Oggi</b><span>Le pizzerie sono tre, con Borgo Mazzini e Preganziol. La pasta la fa ancora lui.</span></li>
+        </ol>
+      </div>
+      <figure class="storia__foto">
+        <picture class="storia__grande">
+          <source srcset="assets/img/impasto.webp" type="image/webp">
+          <img src="assets/img/impasto.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Mani che staccano un panetto dall'impasto sul banco di granito infarinato">
+        </picture>
+        <picture class="storia__piccola">
+          <source srcset="assets/img/toto.webp" type="image/webp">
+          <img src="assets/img/toto.jpg" width="550" height="350" loading="lazy" decoding="async" alt="Una battuta di Totò scritta a mano sul muro della sala di viale Felissent, con il suo ritratto">
+        </picture>
+        <figcaption>La battuta di Totò sul muro della sala di viale Felissent.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DALLA PASTA AL FORNO -->
+  <section class="metodo" id="impasto" aria-labelledby="metodo-titolo">
+    <div class="wrap">
+      <h2 class="titolo" id="metodo-titolo">Dalla pasta al forno</h2>
+      <ol class="passi">
+        <li class="passo" data-inclina>
+          <div class="passo__foto"><picture><source srcset="assets/img/impasto.webp" type="image/webp"><img src="assets/img/impasto.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Un panetto di pasta per pizza stretto tra le mani"></picture></div>
+          <span class="passo__n" aria-hidden="true">1</span>
+          <h3>L'impasto</h3>
+          <p>Lunga lievitazione, farine selezionate e prodotti artigianali. La pasta della pizza la prepara solo Beppe.</p>
+        </li>
+        <li class="passo" data-inclina>
+          <div class="passo__foto"><picture><source srcset="assets/img/stesura.webp" type="image/webp"><img src="assets/img/stesura.jpg" width="550" height="350" loading="lazy" decoding="async" alt="Una mano che stende la pasta della pizza sul banco"></picture></div>
+          <span class="passo__n" aria-hidden="true">2</span>
+          <h3>La stesura</h3>
+          <p>A mano, lasciando i bordi alti della pizza napoletana. Viene fuori una pizza morbida, leggera da digerire.</p>
+        </li>
+        <li class="passo" data-inclina>
+          <div class="passo__foto"><picture><source srcset="assets/img/pizza-forno.webp" type="image/webp"><img src="assets/img/pizza-forno.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Una pizza con basilico e pomodoro dentro il forno a legna, con la fiamma sullo sfondo"></picture></div>
+          <span class="passo__n" aria-hidden="true">3</span>
+          <h3>Il forno a legna</h3>
+          <p>Mozzarella DOP, pomodoro pelato che arriva da Napoli, verdure fresche. Poi la cottura, tra la legna e il fuoco.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PIZZA FRITTA -->
+  <section class="fritta" id="fritta" aria-labelledby="fritta-titolo" data-fritta>
+    <div class="wrap">
+      <h2 id="fritta-titolo" class="fritta__titolo">
+        <span class="fritta__pre">La specialità della casa è la</span>
+        <span class="fritta__pizza">pizza</span>
+        <span class="fritta__parola" data-gonfia>fritta</span>
+      </h2>
+      <div class="fritta__corpo">
+        <p class="lead">Si gonfia nell'olio, esce dorata e si mangia subito. Da Spillo la fanno in sei modi: provare per credere.</p>
+        <ul class="fritta__lista">
+          <li><b>Napoletana</b><i>pomodoro, fior di latte, ricotta, cicoli, pepe</i></li>
+          <li><b>Classica</b><i>pomodoro, fior di latte, prosciutto cotto</i></li>
+          <li><b>Pugliese</b><i>pomodoro, fior di latte, olive nere</i></li>
+          <li><b>Farcita</b><i>pomodoro, fior di latte, ricotta, salamino piccante</i></li>
+          <li><b>Montanara</b><i>base fritta, pomodoro, fior di latte, parmigiano, basilico</i></li>
+          <li><b>Cetara</b><i>pomodoro, fior di latte, acciughe</i></li>
+        </ul>
+        <p class="fritta__antipasto">Prima della pizza c'è l'antipasto napoletano: arancini di patate e mozzarella in carrozza.</p>
+        <a class="link-freccia" href="#menu" data-vai-categoria="fritte">Vedi i prezzi delle pizze fritte</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTO A TUTTA LARGHEZZA -->
+  <div class="fascia" aria-hidden="true" data-fascia>
+    <picture><source srcset="assets/img/margherita-piatto.webp" type="image/webp"><img src="assets/img/margherita-piatto.jpg" width="1600" height="833" loading="lazy" decoding="async" alt=""></picture>
+  </div>
+
+  <!-- MENU -->
+  <section class="menu" id="menu" aria-labelledby="menu-titolo">
+    <div class="wrap">
+      <div class="menu__testa">
+        <h2 class="titolo" id="menu-titolo">Il menù</h2>
+        <p class="lead">69 pizze tra tradizionali, bianche e fritte, poi panozzi, antipasti e dolci. Scegli la pizzeria: i prezzi sono i suoi.</p>
+      </div>
+
+      <div class="consigliate">
+        <article class="consigliata">
+          <h3>Rodolfo</h3>
+          <p>Margherita con il bordo ripieno di ricotta. L'ha inventata Rodolfo Sorbillo, il papà di Beppe.</p>
+        </article>
+        <article class="consigliata">
+          <h3>Spillo</h3>
+          <p>Fior di latte, salsiccia e porcini: la pizza bianca che porta il nome della casa.</p>
+        </article>
+        <article class="consigliata">
+          <h3>Margherita DOP</h3>
+          <p>Mozzarella di bufala DOP, pomodorini del Piennolo del Vesuvio DOP e olio extravergine.</p>
+        </article>
+      </div>
+
+      <div class="menu__comandi">
+        <div class="sede-scelta" role="radiogroup" aria-label="Pizzeria di cui vedere i prezzi" data-sede-scelta>
+          <button type="button" role="radio" aria-checked="true" data-sede-btn="felissent">Viale Felissent</button>
+          <button type="button" role="radio" aria-checked="false" data-sede-btn="mazzini">Borgo Mazzini</button>
+          <button type="button" role="radio" aria-checked="false" data-sede-btn="preganziol">Preganziol</button>
+        </div>
+        <label class="cerca">
+          <span class="sr">Cerca nel menù</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+          <input type="search" placeholder="Cerca un ingrediente: bufala, porcini, friarielli" autocomplete="off" data-cerca>
+        </label>
+      </div>
+
+      <div class="categorie" role="tablist" aria-label="Categorie del menù" data-categorie></div>
+
+      <div class="menu__lista" data-lista aria-live="polite"></div>
+      <button class="btn btn--linea menu__altro" type="button" data-altro hidden></button>
+
+      <div class="menu__note">
+        <p data-note-sede></p>
+        <p>Tutte le pizze sono condite con grana e basilico. Coperto € 2,50. * Prodotto surgelato.</p>
+        <p>Allergie o intolleranze? Dillo quando prenoti o al tavolo.</p>
+        <a class="link-freccia" href="assets/menu/menu-spillo-viale-felissent.pdf" target="_blank" rel="noopener" data-pdf>Scarica il menù in PDF di viale Felissent</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOLCI -->
+  <section class="dolci" id="dolci" aria-labelledby="dolci-titolo">
+    <div class="dolci__foto">
+      <picture><source srcset="assets/img/baba.webp" type="image/webp"><img src="assets/img/baba.jpg" width="1600" height="833" loading="lazy" decoding="async" alt="Un babà con panna e fragola su un piatto bianco"></picture>
+    </div>
+    <div class="wrap dolci__in">
+      <h2 class="titolo" id="dolci-titolo">I dolci si fanno in casa</h2>
+      <p class="lead">Il tiramisù, perché a Treviso non può mancare. Poi la dolcezza di Napoli: babà, pastiera, cannolo con la ricotta. Tutto artigianale, con ingredienti di qualità.</p>
+      <ul class="dolci__lista">
+        <li><span>Tiramisù</span><em>6,00</em></li>
+        <li><span>Babà</span><em>6,00</em></li>
+        <li><span>Pastiera napoletana</span><em>6,00</em></li>
+        <li><span>Delizia al limone</span><em>6,00</em></li>
+        <li><span>Cannolo siciliano con ricotta</span><em>4,00</em></li>
+        <li><span>Panna cotta</span><em>6,00</em></li>
+        <li><span>Semifreddi</span><em>5,50</em></li>
+        <li><span>Tartufo, anche affogato al caffè o al liquore</span><em>da 5,50</em></li>
+      </ul>
+      <p class="dolci__nota">Su prenotazione anche le torte per compleanni e anniversari.</p>
+    </div>
+  </section>
+
+  <!-- FESTE -->
+  <section class="feste" id="feste" aria-labelledby="feste-titolo">
+    <div class="wrap feste__griglia">
+      <figure class="feste__foto">
+        <picture><source srcset="assets/img/sala-colonne.webp" type="image/webp"><img src="assets/img/sala-colonne.jpg" width="1600" height="833" loading="lazy" decoding="async" alt="Una sala di Spillo con i tavoli apparecchiati e le tovaglie chiare"></picture>
+      </figure>
+      <div class="feste__testo">
+        <h2 class="titolo" id="feste-titolo">Feste, battesimi e cene di pesce</h2>
+        <dl class="feste__voci">
+          <div>
+            <dt>Battesimi e comunioni</dt>
+            <dd>Pranzi e cene in pizzeria. Il menù si sceglie insieme, su appuntamento.</dd>
+          </div>
+          <div>
+            <dt>Compleanni e anniversari</dt>
+            <dd>Buffet di piccola rosticceria da portare via, con la torta. Basta prenotare.</dd>
+          </div>
+          <div>
+            <dt>Cene di pesce</dt>
+            <dd>Su richiesta e prenotazione, cene a base di pesce fresco.</dd>
+          </div>
+        </dl>
+        <button class="btn btn--pomodoro" type="button" data-prenota>Chiama per organizzare</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENSIONI -->
+  <section class="recensioni" id="recensioni" aria-labelledby="recensioni-titolo">
+    <div class="wrap">
+      <div class="recensioni__testa">
+        <p class="recensioni__voto" aria-hidden="true">4,5</p>
+        <div>
+          <h2 class="titolo" id="recensioni-titolo">Quasi quattromila recensioni su Google</h2>
+          <p>Viale Felissent 4,5 su 2.370, Borgo Mazzini 4,5 su 1.213, Preganziol 4,4 su 357.</p>
+        </div>
+      </div>
+      <div class="citazioni">
+        <blockquote class="citazione citazione--grande">
+          <p>Una certezza a Treviso, la pizza è ottima, straordinaria.</p>
+          <footer>Davide M., viale Felissent</footer>
+        </blockquote>
+        <blockquote class="citazione">
+          <p>Pizza napoletana autentica. Consigliatissimi i fritti! Complimenti allo staff: giovani e appassionati.</p>
+          <footer>Tommaso T., viale Felissent</footer>
+        </blockquote>
+        <blockquote class="citazione">
+          <p>Spillo è Spillo… il nome è proprio una garanzia.</p>
+          <footer>Roberto P., Borgo Mazzini</footer>
+        </blockquote>
+        <blockquote class="citazione">
+          <p>Spillo è una delle migliori pizzerie di Treviso. Ingredienti ottimi e condimento abbondante.</p>
+          <footer>Marco D. P., Preganziol</footer>
+        </blockquote>
+      </div>
+      <p class="recensioni__fonte">Recensioni pubbliche su Google Maps, ottobre 2026.</p>
+    </div>
+  </section>
+
+  <!-- DOVE SIAMO -->
+  <section class="dove" id="dove" aria-labelledby="dove-titolo">
+    <div class="wrap">
+      <h2 class="titolo" id="dove-titolo">Dove siamo e quando apriamo</h2>
+      <div class="sedi">
+        <article class="sede" data-sede="felissent">
+          <h3>Viale Felissent</h3>
+          <p class="sede__ind">Viale G. G. Felissent 18, 31100 Treviso</p>
+          <p class="sede__stato" data-stato="felissent">Orari di oggi</p>
+          <table class="orari">
+            <caption class="sr">Orari di viale Felissent</caption>
+            <tbody>
+              <tr data-g="1"><th scope="row">Lunedì</th><td>Chiuso</td></tr>
+              <tr data-g="2"><th scope="row">Martedì</th><td>18:30–23:30</td></tr>
+              <tr data-g="3"><th scope="row">Mercoledì</th><td>18:30–23:30</td></tr>
+              <tr data-g="4"><th scope="row">Giovedì</th><td>18:30–23:30</td></tr>
+              <tr data-g="5"><th scope="row">Venerdì</th><td>12–14:30, 18:30–23:30</td></tr>
+              <tr data-g="6"><th scope="row">Sabato</th><td>12–14:30, 18:30–23:30</td></tr>
+              <tr data-g="0"><th scope="row">Domenica</th><td>12–14:30, 18:30–23:30</td></tr>
+            </tbody>
+          </table>
+          <div class="sede__azioni">
+            <a class="btn btn--pomodoro btn--piccolo" href="tel:+390422304286">Chiama 0422 304286</a>
+            <a class="btn btn--linea btn--piccolo" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pizzeria%20Ristorantino%20da%20Spillo%2C%20Viale%20Felissent%2018%2C%20Treviso" target="_blank" rel="noopener">Indicazioni</a>
+          </div>
+        </article>
+        <article class="sede" data-sede="mazzini">
+          <h3>Borgo Mazzini</h3>
+          <p class="sede__ind">Borgo Giuseppe Mazzini 20, 31100 Treviso</p>
+          <p class="sede__stato" data-stato="mazzini">Orari di oggi</p>
+          <table class="orari">
+            <caption class="sr">Orari di Borgo Mazzini</caption>
+            <tbody>
+              <tr data-g="1"><th scope="row">Lunedì</th><td>Chiuso</td></tr>
+              <tr data-g="2"><th scope="row">Martedì</th><td>18:30–23:30</td></tr>
+              <tr data-g="3"><th scope="row">Mercoledì</th><td>18:30–23:30</td></tr>
+              <tr data-g="4"><th scope="row">Giovedì</th><td>18:30–23:30</td></tr>
+              <tr data-g="5"><th scope="row">Venerdì</th><td>12–14:30, 18:30–23:30</td></tr>
+              <tr data-g="6"><th scope="row">Sabato</th><td>12–14:30, 18:30–23:30</td></tr>
+              <tr data-g="0"><th scope="row">Domenica</th><td>12–14:30, 18:30–23:30</td></tr>
+            </tbody>
+          </table>
+          <div class="sede__azioni">
+            <a class="btn btn--pomodoro btn--piccolo" href="tel:+390422545921">Chiama 0422 545921</a>
+            <a class="btn btn--linea btn--piccolo" href="https://www.google.com/maps/dir/?api=1&amp;destination=Da%20Spillo%2C%20Borgo%20Mazzini%2020%2C%20Treviso" target="_blank" rel="noopener">Indicazioni</a>
+          </div>
+        </article>
+        <article class="sede" data-sede="preganziol">
+          <h3>Preganziol</h3>
+          <p class="sede__ind">Via Gorizia 22, 31022 Preganziol</p>
+          <p class="sede__stato" data-stato="preganziol">Orari di oggi</p>
+          <table class="orari">
+            <caption class="sr">Orari di Preganziol</caption>
+            <tbody>
+              <tr data-g="1"><th scope="row">Lunedì</th><td>18:30–23:00</td></tr>
+              <tr data-g="2"><th scope="row">Martedì</th><td>Chiuso</td></tr>
+              <tr data-g="3"><th scope="row">Mercoledì</th><td>18:30–23:30</td></tr>
+              <tr data-g="4"><th scope="row">Giovedì</th><td>18:30–23:30</td></tr>
+              <tr data-g="5"><th scope="row">Venerdì</th><td>18:30–23:30</td></tr>
+              <tr data-g="6"><th scope="row">Sabato</th><td>18:30–23:30</td></tr>
+              <tr data-g="0"><th scope="row">Domenica</th><td>18:30–23:30</td></tr>
+            </tbody>
+          </table>
+          <div class="sede__azioni">
+            <a class="btn btn--pomodoro btn--piccolo" href="tel:+3904221781481">Chiama 0422 1781481</a>
+            <a class="btn btn--linea btn--piccolo" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pizzeria%20da%20Spillo%2C%20Via%20Gorizia%2022%2C%20Preganziol" target="_blank" rel="noopener">Indicazioni</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="mappa">
+        <div class="mappa__schede" role="tablist" aria-label="Mappa della pizzeria">
+          <button type="button" role="tab" aria-selected="true" data-mappa="felissent">Viale Felissent</button>
+          <button type="button" role="tab" aria-selected="false" data-mappa="mazzini">Borgo Mazzini</button>
+          <button type="button" role="tab" aria-selected="false" data-mappa="preganziol">Preganziol</button>
+        </div>
+        <iframe class="mappa__frame" title="Mappa di Pizzeria da Spillo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pizzeria%20Ristorantino%20da%20Spillo%2C%20Viale%20G.%20G.%20Felissent%2018%2C%2031100%20Treviso&amp;output=embed" data-mappa-frame></iframe>
+      </div>
+      <p class="dove__nota">Nei giorni di festa gli orari possono cambiare: le aperture speciali sono sulla scheda Google di ogni pizzeria.</p>
+    </div>
+  </section>
+
+  <!-- CHIUSURA -->
+  <section class="chiusura" aria-labelledby="chiusura-titolo">
+    <div class="wrap">
+      <h2 class="chiusura__titolo" id="chiusura-titolo">Stasera pizza?</h2>
+      <p class="chiusura__stato" data-riepilogo>Scegli la pizzeria più vicina e chiama: il tavolo te lo tengono loro.</p>
+      <button class="btn btn--pomodoro btn--grande" type="button" data-prenota>Prenota un tavolo</button>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="wrap piede__griglia">
+    <img class="piede__logo" src="assets/img/logo-da-spillo-chiaro.png" width="480" height="339" loading="lazy" decoding="async" alt="da Spillo, ristorantino pizzeria">
+    <div class="piede__dati">
+      <p><b>SPILLO S.R.L.</b>, società a socio unico di Sorbillo Giuseppe<br>Viale Felissent 14-18, 31100 Treviso<br>P. IVA 04960980268</p>
+      <p class="piede__tel">
+        <a href="tel:+390422304286">Viale Felissent 0422 304286</a>
+        <a href="tel:+390422545921">Borgo Mazzini 0422 545921</a>
+        <a href="tel:+3904221781481">Preganziol 0422 1781481</a>
+      </p>
+    </div>
+    <div class="piede__link">
+      <a href="https://www.facebook.com/daSpillo" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187869-d1926303-Reviews-Pizzeria_Spillo-Treviso_Province_of_Treviso_Veneto.html" target="_blank" rel="noopener">Tripadvisor</a>
+      <details class="privacy">
+        <summary>Privacy</summary>
+        <p>Questo sito non usa cookie propri e non raccoglie dati personali: non ci sono moduli né sistemi di statistica. La mappa è fornita da Google Maps, che può usare cookie secondo la sua informativa. Titolare: SPILLO S.R.L., viale Felissent 14-18, Treviso.</p>
+      </details>
+    </div>
+  </div>
+  <div class="wrap piede__fondo">
+    <p>© <span data-anno>2026</span> SPILLO S.R.L. Sito realizzato da Alessio Mora.</p>
+    <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di Pizzeria da Spillo.</p>
+  </div>
+</footer>
+
+<div class="barra" data-barra>
+  <button class="btn btn--pomodoro" type="button" data-prenota>Prenota un tavolo</button>
+  <a class="btn btn--vuoto" href="#menu">Menù</a>
+</div>
+
+<dialog class="foglio" id="prenota" aria-labelledby="prenota-titolo" data-foglio>
+  <div class="foglio__in">
+    <button class="foglio__chiudi" type="button" data-chiudi aria-label="Chiudi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 class="foglio__titolo" id="prenota-titolo">Prenota un tavolo</h2>
+    <p class="foglio__sotto">Scegli la pizzeria e chiama. Venerdì, sabato e domenica conviene farlo presto.</p>
+    <ul class="foglio__lista">
+      <li>
+        <div><b>Viale Felissent</b><span>Santa Maria del Rovere, Treviso</span><em data-stato="felissent"></em></div>
+        <a class="btn btn--pomodoro" href="tel:+390422304286">Chiama <span>0422 304286</span></a>
+      </li>
+      <li>
+        <div><b>Borgo Mazzini</b><span>Centro storico, Treviso</span><em data-stato="mazzini"></em></div>
+        <a class="btn btn--pomodoro" href="tel:+390422545921">Chiama <span>0422 545921</span></a>
+      </li>
+      <li>
+        <div><b>Preganziol</b><span>Via Gorizia 22</span><em data-stato="preganziol"></em></div>
+        <a class="btn btn--pomodoro" href="tel:+3904221781481">Chiama <span>0422 1781481</span></a>
+      </li>
+    </ul>
+  </div>
+</dialog>
+
+<script src="script.js" defer></script>
+</body>
+</html>
