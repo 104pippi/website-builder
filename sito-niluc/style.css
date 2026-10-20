@@ -137,12 +137,12 @@ address { font-style: normal; }
 .menu-mobile .btn { align-self: flex-start; }
 
 /* ---------- hero: la calandra ---------- */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
-  background: var(--indaco-fondo);
-  color: var(--vapore);
+/* il palco resta fermo per il 70% di uno schermo: lo scroll (nativo) porta il rullo fino in fondo */
+.hero { position: relative; background: var(--indaco-fondo); color: var(--vapore); }
+.hero::after { content: ""; display: block; height: 70vh; height: 70svh; }
+.hero__palco {
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh; min-height: 560px;
   overflow: hidden;
   isolation: isolate;
 }

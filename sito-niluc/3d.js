@@ -227,6 +227,7 @@ const FRAG_VAPORE = /* glsl */`
 
 export async function avvia(host, { poster = false } = {}) {
   const mobile = matchMedia('(max-width: 760px)').matches;
+  const sezione = host.closest('.hero') || host;
   const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance', preserveDrawingBuffer: poster });
@@ -369,7 +370,7 @@ export async function avvia(host, { poster = false } = {}) {
     const a = Math.min(t / 2.6, 1);
     const intro = (zLontano - 1.6) + (zMeta - (zLontano - 1.6)) * (1 - Math.pow(1 - a, 3));
     // scroll: finisce la stiratura e porta il rullo fuori dal bordo basso
-    const corsa = Math.max(host.offsetHeight * 0.8, 1);
+    const corsa = Math.max(sezione.offsetHeight - window.innerHeight, host.offsetHeight * 0.5, 1);
     const s = Math.min(Math.max(window.scrollY / corsa, 0), 1);
     const sl = s * s * (3 - 2 * s);
     const zFine = zVicino + 1.4;
