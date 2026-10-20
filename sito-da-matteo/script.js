@@ -464,18 +464,16 @@
   }
   $('#nuova').addEventListener('click', () => { chiudi(foglio); $('#menu').scrollIntoView(); });
 
-  /* ---------- regia: cartone 3D, scacchi, parallasse ---------- */
+  /* ---------- regia: foto dell'hero in profondità, scacchi, parallasse ---------- */
   const hero = $('.hero');
-  const cartone = $('#cartone');
-  const scena = $('.hero-scena');
+  const heroImg = $('.hero-foto img');
+  const heroTesto = $('.hero-testo');
   const scacchi = $$('.scacchi i');
   const mtFoto = $('.mt-foto');
   const mtImg = $('.mt-foto img');
-  const mtImpasto = $('#mt-impasto');
   const csFoto = $('.cs-foto');
   const csImg = $('.cs-foto img');
-  const easeOutCubic = (x) => 1 - Math.pow(1 - x, 3);
-  const easeOutBack = (x) => { const c1 = 1.5, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+  const easeOutQuart = (x) => 1 - Math.pow(1 - x, 4);
   let inizio = null;
   let mx = 0, my = 0, tx = 0, ty = 0;
   let richiesto = false;
@@ -486,30 +484,18 @@
     const t = (ora - inizio) / 1000;
     let continua = false;
 
-    // cartone: intro a tempo + scroll
+    // hero: la foto si assesta (da vicino a fuoco), poi con lo scroll foto e testo si separano
     const r = hero.getBoundingClientRect();
-    if (r.bottom > -50 && r.top < innerHeight) {
-      const a = ridotto ? 1 : limita(t / 0.95);
-      const e1 = easeOutCubic(a);
-      const e2 = easeOutBack(a);
-      const tl = t - 0.75;
-      const aperto = innerWidth < 980 ? 80 : 92;
-      const lidIntro = ridotto ? aperto : (tl <= 0 ? 0 : aperto * (1 - Math.exp(-6.5 * tl) * Math.cos(11 * tl)));
-      const p = limita(-r.top / Math.max(1, r.height * 0.75));
-      mx += (tx - mx) * 0.08; my += (ty - my) * 0.08;
-      const rx = 56 + (1 - e1) * 16 - p * 14 + my * 4;
-      const rz = (innerWidth < 980 ? -4 : -9) - (1 - e1) * 16 + p * 10 + mx * 7;
-      const s = (0.84 + 0.16 * e2) * (1 + p * 0.06);
-      const st = cartone.style;
-      st.setProperty('--rx', rx.toFixed(2) + 'deg');
-      st.setProperty('--rz', rz.toFixed(2) + 'deg');
-      st.setProperty('--lid', (lidIntro + p * 22).toFixed(2) + 'deg');
-      st.setProperty('--s', s.toFixed(4));
-      st.setProperty('--ty', ((1 - e1) * 60 - p * 30).toFixed(1) + 'px');
-      st.setProperty('--lift', (p * 26).toFixed(1) + 'px');
-      st.setProperty('--vap', (limita((t - 1.25) / 0.8) * (1 - p) * 0.9).toFixed(3));
-      scena.style.opacity = limita(t / 0.3).toFixed(3);
-      if (!ridotto && (t < 2.4 || Math.abs(tx - mx) > 0.002 || Math.abs(ty - my) > 0.002)) continua = true;
+    if (r.bottom > 0 && r.top < innerHeight) {
+      const e = ridotto ? 1 : easeOutQuart(limita(t / 2.8));
+      const p = limita(-r.top / Math.max(1, r.height));
+      mx += (tx - mx) * 0.06; my += (ty - my) * 0.06;
+      heroImg.style.setProperty('--fs', (1.2 - 0.14 * e + p * 0.1).toFixed(4));
+      heroImg.style.setProperty('--fy', (p * r.height * 0.34 - my * 8).toFixed(1) + 'px');
+      heroImg.style.setProperty('--fx', (-mx * 12).toFixed(1) + 'px');
+      heroTesto.style.setProperty('--ty', (-p * r.height * 0.16).toFixed(1) + 'px');
+      heroTesto.style.setProperty('--to', limita(1 - p * 1.4).toFixed(3));
+      if (!ridotto && (t < 3 || Math.abs(tx - mx) > 0.002 || Math.abs(ty - my) > 0.002)) continua = true;
     }
 
     // scacchi che scorrono come un nastro
@@ -521,17 +507,12 @@
       el.style.setProperty('--sx', v.toFixed(1) + 'px');
     });
 
-    // l'impasto del logo che vola sopra le mani di Matteo
-    if (mtFoto) {
+    // la pizza di Matteo gira piano, come sul tagliere, mentre scorri
+    if (mtFoto && !ridotto) {
       const b = mtFoto.getBoundingClientRect();
       if (b.bottom > 0 && b.top < innerHeight) {
         const q = limita((innerHeight - b.top) / (innerHeight + b.height));
-        if (!ridotto) {
-          mtImg.style.setProperty('--py', ((q - 0.5) * -40).toFixed(1) + 'px');
-          mtImpasto.style.setProperty('--iy', (Math.sin(q * Math.PI) * -46).toFixed(1) + 'px');
-          mtImpasto.style.setProperty('--irx', (62 - q * 62).toFixed(1) + 'deg');
-          mtImpasto.style.setProperty('--irz', (q * 300 - 150).toFixed(1) + 'deg');
-        }
+        mtImg.style.setProperty('--rot', (q * 70 - 35).toFixed(2) + 'deg');
       }
     }
     if (csFoto && !ridotto) {

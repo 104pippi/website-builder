@@ -20,7 +20,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
-<link rel="preload" as="image" href="assets/img/pizza-cartone.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-mani.webp" type="image/webp" media="(max-width: 979px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-mani-desktop.webp" type="image/webp" media="(min-width: 980px)" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
@@ -58,53 +59,33 @@
 
 <main>
   <section class="hero" id="top">
+    <div class="hero-foto">
+      <picture>
+        <source media="(min-width: 980px)" srcset="assets/img/hero-mani-desktop.webp" type="image/webp">
+        <source media="(min-width: 980px)" srcset="assets/img/hero-mani-desktop.jpg">
+        <source srcset="assets/img/hero-mani.webp" type="image/webp">
+        <img src="assets/img/hero-mani.jpg" width="1170" height="1752" alt="Le mani di Matteo distribuiscono zucchine, peperoni e melanzane trifolate su una pizza appena stesa" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
     <div class="hero-testo">
       <p class="hero-dove">Pizzeria d'asporto e consegna a domicilio</p>
       <h1><span>La pizza di Matteo,</span> <span>pronta all'ora</span> <span>che scegli tu.</span></h1>
       <p class="hero-sotto">A Carbonera e Fontane di Villorba. La ritiri calda o te la portiamo a casa.</p>
       <div class="hero-azioni">
         <a class="btn btn-lime btn-grande" href="#menu" data-prenota>Prenota la pizza</a>
-        <button class="btn btn-linea btn-grande" type="button" data-chiama><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Chiama</button>
+        <button class="btn btn-chiaro btn-grande" type="button" data-chiama><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Chiama</button>
       </div>
     </div>
+  </section>
 
-    <div class="hero-scena" role="img" aria-label="Il cartone Da Matteo si apre: dentro c'è una pizza con verdure trifolate, mozzarella e basilico">
-      <div class="cartone" id="cartone">
-        <div class="c-ombra"></div>
-        <div class="c-fondo">
-          <picture class="c-pizza">
-            <source srcset="assets/img/pizza-cartone.webp" type="image/webp">
-            <img src="assets/img/pizza-cartone.jpg" width="1000" height="1000" alt="" fetchpriority="high" decoding="async">
-          </picture>
-        </div>
-        <div class="c-parete c-retro"><i class="est"></i><i class="int"></i></div>
-        <div class="c-parete c-fronte"><i class="est"></i><i class="int"></i></div>
-        <div class="c-parete c-sx"><i class="est"></i><i class="int"></i></div>
-        <div class="c-parete c-dx"><i class="est"></i><i class="int"></i></div>
-        <div class="c-vapore">
-          <svg viewBox="0 0 120 160" aria-hidden="true"><path d="M30 150c-14-20 14-34 0-56s14-36 0-60"/><path d="M62 156c-16-24 16-38 0-62s16-38 0-64"/><path d="M92 150c-12-18 12-30 0-50s12-32 0-52"/></svg>
-        </div>
-        <div class="c-coperchio">
-          <div class="cop-sopra">
-            <svg class="cop-logo" aria-hidden="true"><use href="#logo"/></svg>
-            <p class="cop-righe">Carbonera <b>0422 307124</b><br>Fontane di Villorba <b>351 486 9683</b></p>
-          </div>
-          <div class="cop-sotto">
-            <p>Se si fa in&nbsp;4 per renderti felice, è&nbsp;una&nbsp;pizza.</p>
-            <svg aria-hidden="true"><use href="#logo-icona"/></svg>
-          </div>
-          <div class="cop-bordo"></div>
-        </div>
-      </div>
-    </div>
-
+  <div class="fiducia-fascia">
     <ul class="fiducia" aria-label="Perché sceglierci">
       <li><b><svg class="ico" aria-hidden="true"><use href="#i-stella"/></svg>4,8</b><span>su Google, in tutte e due le pizzerie</span></li>
       <li><b>30+</b><span>anni di esperienza di Matteo al forno</span></li>
       <li><b>2–3&nbsp;€</b><span>la consegna, con il forno in auto</span></li>
       <li><b>18–22</b><span>ogni sera, Carbonera chiusa il lunedì</span></li>
     </ul>
-  </section>
+  </div>
 
   <div class="scacchi" aria-hidden="true"><i></i></div>
 
@@ -156,10 +137,9 @@
   <section class="matteo" id="matteo" aria-labelledby="mt-titolo">
     <div class="mt-foto">
       <picture>
-        <source srcset="assets/img/mani.webp" type="image/webp">
-        <img src="assets/img/mani.jpg" width="1100" height="1647" alt="Le mani di Matteo distribuiscono zucchine, peperoni e melanzane trifolate su una pizza" loading="lazy" decoding="async">
+        <source srcset="assets/img/pizza-cartone.webp" type="image/webp">
+        <img src="assets/img/pizza-cartone.jpg" width="1000" height="1000" alt="Pizza Da Matteo appena sfornata con verdure trifolate, mozzarella e basilico, vista dall'alto nel suo cartone" loading="lazy" decoding="async">
       </picture>
-      <svg class="mt-impasto" id="mt-impasto" aria-hidden="true" viewBox="0 0 51 20"><use href="#logo-impasto" width="51" height="20"/></svg>
     </div>
     <div class="mt-testo">
       <h2 id="mt-titolo">Ogni pizza racconta una storia: quella di Matteo.</h2>
@@ -278,7 +258,7 @@
   </div>
 </footer>
 
-<div class="barra" id="barra">
+<div class="barra nascosta" id="barra">
   <div class="barra-base">
     <button class="btn btn-scuro" type="button" data-chiama><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Chiama</button>
     <a class="btn btn-lime" href="#menu" data-prenota>Prenota la pizza</a>
