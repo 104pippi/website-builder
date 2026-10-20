@@ -58,9 +58,9 @@
       // il testo, a t = 0, finisce qui (tolta la traslazione dello scroll)
       const t = parseFloat(getComputedStyle(testo).getPropertyValue('--t')) || 0;
       const fondo = r.bottom - rp.top + t * 46;
-      const alto = fondo + 22;
-      const basso = H - 64;
-      h = Math.max(180, Math.min(basso - alto, (W * 0.64) / 0.707));
+      const alto = fondo + 30;
+      const basso = H - 66;
+      h = Math.max(180, Math.min(basso - alto, (W * 0.64) / 0.707) * 0.94);
       cx = W * 0.5;
       cy = Math.max(alto + h / 2, Math.min(basso - h / 2, (alto + basso) / 2));
       stato.aperto = { cx: .53, cy: .5, w: .8, h: .66 };
@@ -105,7 +105,9 @@
     }
     didascalia.style.opacity = p > 0.97 ? '0' : '1';
     testata.classList.toggle('testata--piena', y > corsa + innerHeight * 0.5);
-    barra.classList.toggle('barra--su', t > 0.5 || y > corsa);
+    const su = t > 0.5 || y > corsa;
+    barra.classList.toggle('barra--su', su);
+    didascalia.classList.toggle('didascalia--su', su);
   }
 
   /* ---------- orario della consegna ---------- */

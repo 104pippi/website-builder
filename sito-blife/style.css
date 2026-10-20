@@ -161,14 +161,15 @@ h2 {
 @keyframes entra { from { opacity: 0; transform: translateY(18px); } }
 
 .hero__didascalia {
-  position: absolute; left: 50%; bottom: calc(82px + env(safe-area-inset-bottom)); z-index: 3;
+  position: absolute; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 3;
   transform: translateX(-50%);
   font-size: .9rem; font-weight: 600; font-stretch: 105%;
   background: rgba(255, 255, 255, .82); border: 1px solid var(--linea);
   -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   padding: 8px 16px; border-radius: 999px; white-space: nowrap;
-  transition: opacity .3s;
+  transition: opacity .3s, bottom .35s cubic-bezier(.2, .8, .2, 1);
 }
+.hero__didascalia.didascalia--su { bottom: calc(80px + env(safe-area-inset-bottom)); }
 .hero__didascalia span { display: inline-block; }
 .hero__didascalia.cambia span { animation: cambio .45s ease; }
 @keyframes cambio { from { opacity: 0; transform: translateY(6px); } }
@@ -448,9 +449,7 @@ h2 {
 
 /* desktop */
 @media (min-width: 960px) {
-  .nav { display: flex; }
-  .btn--testata { display: inline-flex; }
-  .menu-btn, .menu { display: none !important; }
+  .btn--testata { display: inline-flex; white-space: nowrap; }
   .barra { display: none; }
   .piede { padding-bottom: 40px; }
   .filtri { flex-wrap: wrap; overflow: visible; margin: 0 0 28px; padding: 0; }
@@ -464,7 +463,7 @@ h2 {
     position: absolute; top: 50%; left: 0;
     transform: translateY(calc(-46% + var(--t, 0) * -46px));
   }
-  .hero__didascalia { bottom: 26px; }
+  .hero__didascalia, .hero__didascalia.didascalia--su { bottom: 26px; }
 
   .indice__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(11, auto); grid-auto-flow: column; column-gap: 56px; }
   .prodotti { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px 26px; }
@@ -484,6 +483,12 @@ h2 {
   .modulo { position: sticky; top: calc(var(--testata) + 24px); }
   .piede__in { grid-template-columns: minmax(0, 1fr) auto; }
   .privacy, .piede__credito { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1180px) {
+  .nav { display: flex; }
+  .nav a { white-space: nowrap; }
+  .menu-btn, .menu { display: none !important; }
 }
 
 @media (min-width: 1280px) {
