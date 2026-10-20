@@ -418,7 +418,7 @@ export async function avvia(contenitore, { riduci = false } = {}) {
     camera.aspect = W / H;
     if (contenitore.dataset.centrato) camera.clearViewOffset();
     else if (W < 900) camera.setViewOffset(W, H, 0, H * 0.1, W, H);
-    else camera.setViewOffset(W, H, -W * 0.19, -H * 0.02, W, H);
+    else camera.setViewOffset(W, H, -W * 0.19, H * 0.05, W, H);
     camera.updateProjectionMatrix();
   };
   dimensiona();
@@ -430,7 +430,7 @@ export async function avvia(contenitore, { riduci = false } = {}) {
     const hfov = 2 * Math.atan(Math.tan(vfov / 2) * camera.aspect);
     const stretto = camera.aspect < 0.8;
     // quanta macchina deve stare nello schermo (vista di 3/4: la lunghezza si accorcia)
-    const largo = stretto ? mix(4.7, 4.1, liscia(0.05, 0.55, p)) : mix(7.8, 6.5, liscia(0.05, 0.55, p));
+    const largo = stretto ? mix(4.7, 4.1, liscia(0.05, 0.55, p)) : mix(7.8, 6.9, liscia(0.05, 0.55, p));
     const altoNec = stretto ? 2.6 : 3.2;
     const dist = Math.max(largo / 2 / Math.tan(hfov / 2), altoNec / 2 / Math.tan(vfov / 2)) + (stretto ? 0.4 : 1.2);
     scena.fog.near = dist - 1.5; scena.fog.far = dist + 10;
