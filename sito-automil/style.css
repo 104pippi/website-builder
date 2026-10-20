@@ -407,7 +407,7 @@ address { font-style: normal; }
 .tetto__testa .titolo { font-size: clamp(2.2rem, 9vw, 5.4rem); }
 .tetto__testa p { margin-top: 10px; max-width: 26em; color: var(--su-notte-2); font-size: .98rem; }
 .tetto.is-avanti .tetto__testa p { opacity: 0; transform: translateY(-8px); }
-.tetto.is-avanti .tetto__testa .titolo { opacity: .22; }
+.tetto.is-avanti .tetto__testa .titolo { opacity: 0; transform: translateY(-10px); }
 .tetto__testa p, .tetto__testa .titolo { transition: opacity .5s, transform .6s var(--ease); }
 
 .tetto__passi { position: absolute; z-index: 3; left: var(--gutter); right: var(--gutter); bottom: calc(92px + env(safe-area-inset-bottom)); display: grid; }

@@ -93,8 +93,27 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
   s.quadraticCurveTo(-L2 + 0.02, 1.81, -L2, 1.70);
   s.lineTo(-L2, 0.48);
   s.quadraticCurveTo(-L2, 0.36, -L2 + 0.04, 0.36);
-  const gCarr = new THREE.ExtrudeGeometry(s, { depth: D, bevelEnabled: true, bevelThickness: B, bevelSize: B, bevelSegments: 4, curveSegments: 22 });
-  gCarr.translate(0, 0, -D / 2);
+  const ZP = 0.58;   // i passaruota stanno solo ai lati: tra -ZP e +ZP l'abitacolo è libero
+  const gCarr = (() => {
+    const g0 = new THREE.ExtrudeGeometry(s, { depth: D, steps: 6, bevelEnabled: true, bevelThickness: B, bevelSize: B, bevelSegments: 4, curveSegments: 22 });
+    g0.translate(0, 0, -D / 2);
+    const g = g0.index ? g0.toNonIndexed() : g0;
+    const nelPassa = (x, y) => y < 0.86 && (Math.abs(x + 1.42) < 0.47 || Math.abs(x - 1.48) < 0.47);
+    const pos = g.attributes.position, tieni = [];
+    for (let i = 0; i < pos.count; i += 3) {
+      let via = true;
+      for (let k = 0; k < 3 && via; k++) via = Math.abs(pos.getZ(i + k)) < ZP + 0.01 && nelPassa(pos.getX(i + k), pos.getY(i + k));
+      if (!via) tieni.push(i);
+    }
+    const out = new THREE.BufferGeometry();
+    for (const nome of ['position', 'normal', 'uv']) {
+      const att = g.attributes[nome], n = att.itemSize, arr = new Float32Array(tieni.length * 3 * n);
+      tieni.forEach((i, t) => arr.set(att.array.subarray(i * n, (i + 3) * n), t * 3 * n));
+      out.setAttribute(nome, new THREE.BufferAttribute(arr, n));
+    }
+    g0.dispose();
+    return out;
+  })();
   furgone.add(new THREE.Mesh(gCarr, vernice), new THREE.Mesh(gCarr, rivestimento));
 
   // vetri laterali (a destra +z, a sinistra -z)
@@ -183,11 +202,14 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
   const gGomma = new THREE.CylinderGeometry(0.325, 0.325, 0.215, 36); gGomma.rotateX(Math.PI / 2);
   const gCerchio = new THREE.CylinderGeometry(0.19, 0.19, 0.222, 28); gCerchio.rotateX(Math.PI / 2);
   const gMozzo = new THREE.CylinderGeometry(0.06, 0.06, 0.232, 16); gMozzo.rotateX(Math.PI / 2);
-  const gPassa = new THREE.CylinderGeometry(0.405, 0.405, W - 0.06, 28, 1, true, Math.PI / 2, Math.PI); gPassa.rotateX(Math.PI / 2);
+  const lPassa = W / 2 - ZP - 0.02;
+  const gPassa = new THREE.CylinderGeometry(0.343, 0.343, lPassa, 28, 1, true, Math.PI / 2, Math.PI); gPassa.rotateX(Math.PI / 2);
+  const gTappo = new THREE.CircleGeometry(0.362, 28, 0, Math.PI);
+  const matTappo = M({ color: '#6c7774', roughness: 0.95, side: THREE.DoubleSide });
   const ruoteVicine = [];   // lato destro: spariscono quando il furgone si apre in sezione
   for (const x of [-1.42, 1.48]) {
-    furgone.add(mesh(gPassa, passaruota, x, 0.36, 0));
     for (const z of [1, -1]) {
+      furgone.add(mesh(gPassa, passaruota, x, 0.36, z * (ZP + lPassa / 2)), mesh(gTappo, matTappo, x, 0.36, z * (ZP + 0.003)));
       const zr = z * (W / 2 - 0.12);
       const r = new THREE.Group();
       r.add(mesh(gGomma, gomma, x, 0.325, zr), mesh(gCerchio, cerchio, x, 0.325, zr), mesh(gMozzo, mozzo, x, 0.325, zr));
@@ -308,16 +330,21 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
   const interni = new THREE.Group();
   furgone.add(interni);
   interni.add(
-    box(4.3, 0.04, 1.72, pavimento, -0.12, 0.44, 0),
     box(0.44, 0.24, 1.66, cruscotto, 2.0, 1.0, 0, 0.04),
+    box(0.38, 0.54, 1.72, M({ color: '#1f2426', roughness: 0.9, side: THREE.DoubleSide }), 2.17, 0.75, 0),
   );
+  // pianale spesso: al centro tutta la lunghezza, ai lati solo fuori dai passaruota
+  const pianale = (x0, x1, z0, z1) => box(x1 - x0, 0.155, z1 - z0, pavimento, (x0 + x1) / 2, 0.3775, (z0 + z1) / 2);
+  interni.add(pianale(-2.32, 2.25, -ZP, ZP));
+  for (const [x0, x1] of [[-2.32, -1.78], [-1.06, 1.12], [1.84, 2.25]]) interni.add(pianale(x0, x1, ZP, 0.88), pianale(x0, x1, -0.88, -ZP));
   // sedili anteriori: il destro nasconde il Webasto
   const sedile = (z, base) => {
     const g = new THREE.Group();
-    g.add(box(0.52, 0.30, 0.52, base, 0, 0.62, 0), box(0.5, 0.1, 0.52, tessuto, 0.02, 0.82, 0, 0.04));
-    const sch = box(0.12, 0.66, 0.5, tessuto, -0.26, 1.16, 0, 0.05); sch.rotation.z = 0.14; g.add(sch);
-    g.add(box(0.1, 0.12, 0.3, tessuto, -0.31, 1.56, 0, 0.04));
-    g.position.set(1.42, 0, z);
+    g.add(box(0.5, 0.32, 0.5, base, 0, 0.62, 0), box(0.52, 0.11, 0.52, tessuto, 0.02, 0.84, 0, 0.045));
+    const schiena = new THREE.Group(); schiena.position.set(-0.22, 0.86, 0); schiena.rotation.z = 0.16;
+    schiena.add(box(0.13, 0.64, 0.5, tessuto, -0.03, 0.33, 0, 0.055), box(0.11, 0.17, 0.3, tessuto, -0.04, 0.74, 0, 0.045));
+    g.add(schiena);
+    g.position.set(1.4, 0, z);
     return g;
   };
   const baseSedile = M({ color: '#2b3034', roughness: 0.8, side: THREE.DoubleSide });
@@ -349,8 +376,9 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
   interni.add(box(2.7, 0.22, 0.3, mobili, -0.62, 1.64, -0.74));
   // divano posteriore che diventa letto, con la batteria dei servizi sotto
   const baseDivano = box(0.62, 0.36, 1.66, M({ color: '#d9d2c3', roughness: 0.6, side: THREE.DoubleSide }), -1.72, 0.64, 0);
-  interni.add(baseDivano, box(0.62, 0.13, 1.62, tessuto, -1.7, 0.885, 0, 0.05));
-  const schienale = box(0.15, 0.66, 1.62, tessuto, -2.05, 1.24, 0, 0.06); schienale.rotation.z = 0.12; interni.add(schienale);
+  interni.add(baseDivano, box(0.62, 0.13, 1.62, tessuto, -1.7, 0.892, 0, 0.05));
+  const schienale = new THREE.Group(); schienale.position.set(-1.98, 0.93, 0); schienale.rotation.z = 0.12;
+  schienale.add(box(0.15, 0.66, 1.62, tessuto, -0.05, 0.33, 0, 0.06)); interni.add(schienale);
   const batteria = box(0.30, 0.2, 0.17, matBatteria, -1.74, 0.57, 0.27, 0.02);
   const poli = [M({ color: '#c0262b', roughness: 0.4 }), cruscotto].map((m, i) => mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.04, 10), m, -1.82 + i * 0.16, 0.69, 0.27));
   interni.add(batteria, ...poli);
@@ -360,6 +388,39 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
   for (const z of [-0.35, 0.35]) interni.add(box(0.3, 0.05, 0.5, M({ color: '#ECEAE3', roughness: 0.9 }), 0.82, yTetto + 0.075, z, 0.02));
   dentro.position.set(-0.2, 1.45, -0.1);
   furgone.add(dentro);
+
+  /* ---------- superfici di taglio: la sezione sembra piena, non di carta ---------- */
+  const matSezione = new THREE.MeshBasicMaterial({ color: '#6a161b', side: THREE.DoubleSide });
+  const matSezPianale = new THREE.MeshBasicMaterial({ color: '#3a3129', side: THREE.DoubleSide });
+  const sezioni = new THREE.Group();
+  furgone.add(sezioni);
+  {
+    const bordo = new THREE.Path();
+    bordo.moveTo(L2, 0.42); bordo.lineTo(L2, 0.93); bordo.quadraticCurveTo(L2, 1.02, 2.26, 1.04); bordo.lineTo(2.0, 1.12);
+    bordo.lineTo(1.34, 1.74); bordo.quadraticCurveTo(1.27, 1.81, 1.14, 1.81); bordo.lineTo(-2.22, 1.81);
+    bordo.quadraticCurveTo(-L2 + 0.02, 1.81, -L2, 1.70); bordo.lineTo(-L2, 0.42);
+    const pts = bordo.getPoints(10).filter((q, i, a) => !i || q.distanceTo(a[i - 1]) > 1e-4);
+    const scosta = (d) => pts.map((q, i) => {
+      const a = pts[i - 1], b = pts[i + 1];
+      const n1 = a ? new THREE.Vector2(q.y - a.y, a.x - q.x).normalize() : null;
+      const n2 = b ? new THREE.Vector2(b.y - q.y, q.x - b.x).normalize() : null;
+      const n = (n1 && n2 ? n1.clone().add(n2) : (n1 || n2).clone()).normalize();
+      const k = n1 && n2 ? Math.max(0.55, n.dot(n1)) : 1;
+      return new THREE.Vector2(q.x + n.x * d / k, q.y + n.y * d / k);
+    });
+    const fuori = scosta(B), dentro = scosta(B - 0.045), v = [], idx = [];
+    fuori.forEach((o, i) => { v.push(o.x, o.y, 0, dentro[i].x, dentro[i].y, 0); if (i) { const j = 2 * i; idx.push(j - 2, j - 1, j, j - 1, j + 1, j); } });
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(v, 3)); g.setIndex(idx);
+    sezioni.add(new THREE.Mesh(g, matSezione));
+    sezioni.add(mesh(new THREE.PlaneGeometry(2 * (L2 + B) - 0.02, 0.18), matSezPianale, 0, 0.37, 0));
+  }
+  const sezCoperchio = mesh(new THREE.PlaneGeometry(3.41, 0.1), matSezione, (-2.22 + 1.14) / 2 - xCerniera, 0.054, 0);
+  cerniera.add(sezCoperchio);
+  const posizionaSezioni = (c) => {
+    const vis = c < 0.86;
+    sezioni.visible = sezCoperchio.visible = vis;
+    if (vis) { sezioni.position.z = c - 0.002; sezCoperchio.position.z = c - 0.002; }
+  };
 
   /* ---------- fuori: pedana, ombra, veranda, sedie ---------- */
   const tex = (w, h, draw) => { const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; };
@@ -489,6 +550,7 @@ export async function avvia({ sezione, canvas, progresso, ridotto }) {
     aggiornaTelo(aperto);
     taglio.constant = lerp(4, 0.45, sezioneAperta);
     ruoteVicine.forEach((r) => { r.visible = sezioneAperta < 0.3; });
+    posizionaSezioni(taglio.constant);
     aggiornaVeranda(srotola);
     pezziCampo.forEach((g, i) => { const e = liscio(clamp(arredo * 1.6 - i * 0.3)); g.scale.setScalar(Math.max(0.001, e)); g.visible = e > 0.002; });
 
