@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rui Sistemi di Sicurezza | Antifurto e videosorveglianza a Treviso</title>
+<meta name="description" content="Antifurto, videosorveglianza e controllo accessi per case e aziende in provincia di Treviso. Progetto su planimetria, tecnici nostri, assistenza nel tempo.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-rui-sicurezza.vercel.app/">
+<meta name="theme-color" content="#14235C">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Rui Sistemi di Sicurezza">
+<meta property="og:title" content="Rui Sistemi di Sicurezza | Antifurto e videosorveglianza a Treviso">
+<meta property="og:description" content="Impianti di sicurezza progettati sulla planimetria di casa tua, installati dai nostri tecnici e seguiti negli anni. Silea (TV).">
+<meta property="og:image" content="https://sito-rui-sicurezza.vercel.app/assets/img/og.jpg">
+<meta property="og:url" content="https://sito-rui-sicurezza.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js"}}</script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Rui Sistemi di Sicurezza",
+  "legalName": "Rui Sicurezza Srl",
+  "description": "Progettazione e installazione di impianti antifurto, videosorveglianza, controllo accessi e antincendio per case e aziende in provincia di Treviso.",
+  "url": "https://sito-rui-sicurezza.vercel.app/",
+  "image": "https://sito-rui-sicurezza.vercel.app/assets/img/og.jpg",
+  "logo": "https://sito-rui-sicurezza.vercel.app/apple-touch-icon.png",
+  "telephone": "+390422363260",
+  "email": "info@ruisicurezza.it",
+  "vatID": "IT04885230260",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Internati 1943, 35",
+    "addressLocality": "Silea",
+    "addressRegion": "TV",
+    "postalCode": "31057",
+    "addressCountry": "IT"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.6497753, "longitude": 12.3062577 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:30", "closes": "18:30"
+  }],
+  "areaServed": ["Provincia di Treviso", "Venezia", "Padova", "Belluno", "Friuli"],
+  "sameAs": ["https://www.facebook.com/ruisicurezza/"]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<svg class="definizioni" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="rui-t"><path d="M35.5 -0.5 L71 61 L0 61 Z"/></clipPath>
+    <clipPath id="rui-c"><circle cx="-15.66" cy="4.76" r="59.63"/></clipPath>
+    <symbol id="rui-logo" viewBox="0 -1 188 82">
+      <path d="M35.5 -0.5 L71 61 L0 61 Z" style="fill: var(--logo-notte, #20409A)"/>
+      <g clip-path="url(#rui-t)">
+        <circle cx="-15.66" cy="4.76" r="59.63" fill="#0077C1"/>
+        <circle cx="86.66" cy="4.76" r="59.63" fill="#0077C1"/>
+        <circle cx="86.66" cy="4.76" r="59.63" fill="#B5D5E6" clip-path="url(#rui-c)"/>
+      </g>
+      <g transform="translate(0,81) scale(0.01,-0.01)" style="fill: var(--logo-lettere, #20409A)"><path d="M5044 8068 c7 -36 71 -168 115 -238 15 -25 53 -89 84 -142 32 -54 81 -140 111 -190 29 -51 79 -138 111 -193 32 -55 70 -120 86 -145 25 -42 42 -72 124 -219 54 -96 129 -204 158 -225 28 -21 39 -21 1050 -26 l1022 -5 65 -26 c127 -51 174 -81 250 -158 143 -145 200 -302 200 -552 0 -188 -19 -282 -82 -409 -85 -170 -226 -295 -386 -343 -63 -19 -101 -21 -613 -26 -442 -5 -549 -9 -562 -20 -35 -28 -13 -110 54 -208 18 -26 49 -77 69 -113 21 -36 52 -91 71 -122 19 -31 52 -89 74 -129 46 -81 144 -251 205 -354 77 -131 146 -250 200 -345 49 -88 102 -178 188 -325 20 -33 52 -89 73 -125 20 -36 85 -148 144 -250 59 -102 127 -219 150 -260 23 -41 65 -113 92 -160 28 -47 85 -146 128 -220 42 -74 91 -157 108 -185 17 -27 49 -84 72 -125 23 -41 60 -106 81 -144 45 -81 93 -132 140 -152 45 -19 1539 -20 1594 -1 62 21 90 127 58 218 -12 35 -86 161 -231 394 -28 44 -71 114 -97 155 -26 41 -69 111 -97 155 -52 83 -137 221 -207 337 -23 37 -68 110 -101 162 -33 53 -78 125 -100 162 -22 36 -64 105 -94 153 -30 47 -76 122 -104 166 -27 44 -67 106 -89 137 -66 99 -61 152 21 214 206 157 417 407 547 649 105 194 208 502 243 725 33 203 30 550 -5 740 -42 227 -145 536 -223 668 -17 29 -31 57 -31 61 0 16 -123 196 -196 288 -273 340 -680 599 -1082 688 -125 27 -199 56 -208 79 -6 14 -169 16 -1596 16 l-1590 0 6 -32z M11141 8028 c-9 -58 -11 -526 -8 -2193 3 -1902 5 -2128 19 -2195 9 -41 28 -127 41 -190 99 -460 423 -901 877 -1188 155 -99 438 -233 550 -262 25 -6 95 -26 155 -45 112 -35 177 -48 440 -87 129 -19 191 -22 435 -22 244 0 306 3 435 22 251 38 325 52 419 82 50 16 125 38 166 50 41 12 120 42 175 66 442 195 750 438 977 769 120 175 238 449 278 643 51 253 50 192 50 2415 1 1620 -2 2086 -12 2139 l-12 68 -773 0 -773 0 -5 -27 c-4 -16 -9 -37 -13 -48 -4 -11 -9 -951 -12 -2090 l-5 -2070 -28 -90 c-118 -380 -578 -584 -1107 -490 -46 8 -108 22 -138 30 -72 21 -223 103 -287 157 -70 57 -155 173 -183 249 -54 148 -52 69 -52 2239 1 1563 -2 2020 -12 2072 l-12 68 -786 0 -786 0 -13 -72z M17194 8068 c-9 -39 -18 -5949 -9 -6026 5 -39 14 -62 35 -85 l28 -32 684 -3 c376 -2 725 0 776 3 l92 7 0 3084 0 3084 -799 0 -799 0 -8 -32z"/></g>
+      <text x="0.5" y="78.5" textLength="187" lengthAdjust="spacing" style="font: 300 15px Archivo, Arial, sans-serif; fill: var(--logo-lettere, #20409A)">sistemi di sicurezza</text>
+    </symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3l1.6 4.2-2 1.4a12 12 0 0 0 6.8 6.8l1.4-2L21 15l-.5 2.4A3 3 0 0 1 17.6 20 14.6 14.6 0 0 1 4 6.4a3 3 0 0 1 2.6-2.9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="testata">
+  <div class="testata__in">
+    <a class="testata__logo" href="#inizio" aria-label="Rui Sistemi di Sicurezza, torna all'inizio">
+      <svg viewBox="0 -1 188 82" aria-hidden="true"><use href="#rui-logo"/></svg>
+    </a>
+    <nav class="testata__nav" aria-label="Sezioni della pagina">
+      <a href="#servizi">Cosa installiamo</a>
+      <a href="#perchi">Casa e azienda</a>
+      <a href="#metodo">Come lavoriamo</a>
+      <a href="#chi">Chi siamo</a>
+      <a href="#recensioni">Recensioni</a>
+    </nav>
+    <a class="btn btn--luce btn--piccolo testata__tel" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>0422 363260</a>
+    <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu-mobile">Menu</button>
+  </div>
+</header>
+  <div class="menu" id="menu-mobile" hidden>
+  <nav aria-label="Menu">
+    <a href="#servizi">Cosa installiamo</a>
+    <a href="#perchi">Casa e azienda</a>
+    <a href="#metodo">Come lavoriamo</a>
+    <a href="#chi">Chi siamo</a>
+    <a href="#recensioni">Recensioni</a>
+    <a href="#assistenza">Assistenza</a>
+    <a href="#sopralluogo">Contatti</a>
+  </nav>
+  <p class="menu__orari">Dal lunedì al venerdì, 8:30-18:30</p>
+  <a class="btn btn--luce" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>Chiama 0422 363260</a>
+</div>
+
+<main id="contenuto">
+
+  <section class="hero" id="inizio" data-stato="pronto" aria-labelledby="titolo-hero">
+    <div class="hero__palco">
+      <div class="hero__scena"></div>
+      <div class="hero__velo" aria-hidden="true"></div>
+      <div class="hero__testo contenitore">
+        <h1 class="hero__titolo" id="titolo-hero">Sistemi di sicurezza disegnati sulla tua casa.</h1>
+        <p class="hero__sotto">Antifurto, videosorveglianza e controllo accessi per case e aziende in provincia di Treviso. Partiamo dalla planimetria, installiamo con tecnici nostri e restiamo al tuo fianco negli anni.</p>
+        <div class="hero__azioni">
+          <a class="btn btn--luce" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>Chiama 0422 363260</a>
+          <a class="btn btn--vetro" href="#sopralluogo">Richiedi un sopralluogo</a>
+        </div>
+      </div>
+      <div class="hero__dopo contenitore">
+        <p class="hero__dopo-titolo">Inserito.</p>
+        <p class="hero__dopo-testo">Ogni rilevatore sta dove l'abbiamo deciso sulla tua planimetria, non su un catalogo.</p>
+      </div>
+      <div class="hero__fondo">
+        <p class="hero__stato" role="status"><span class="led" aria-hidden="true"></span><span class="hero__stato-testo">Impianto disinserito</span></p>
+        <p class="hero__scorri" aria-hidden="true">Scorri per inserirlo</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="misure" aria-label="Rui Sistemi di Sicurezza in breve">
+    <div class="contenitore misure__griglia">
+      <div class="misura">
+        <p class="misura__valore">5,0<span class="misura__stella" aria-hidden="true">★</span></p>
+        <p class="misura__testo">su Google, con 44 recensioni</p>
+      </div>
+      <div class="misura">
+        <p class="misura__valore">1974</p>
+        <p class="misura__testo">l'anno in cui Cesare Rui ha cominciato a progettare impianti</p>
+      </div>
+      <div class="misura">
+        <p class="misura__valore">5.000+</p>
+        <p class="misura__testo">impianti progettati e seguiti da Cesare in carriera</p>
+      </div>
+      <div class="misura">
+        <p class="misura__valore">6</p>
+        <p class="misura__testo">tecnici nostri dipendenti, formati e tenuti alla riservatezza</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto" id="specialisti" aria-labelledby="titolo-manifesto">
+    <div class="contenitore manifesto__griglia">
+      <div class="manifesto__testo">
+        <blockquote class="manifesto__citazione">
+          <p id="titolo-manifesto">“Anche i ladri studiano e si aggiornano.”</p>
+          <footer>Cesare Rui, nel settore dal 1974</footer>
+        </blockquote>
+        <p>Per questo da noi la sicurezza non è un lavoro in più accanto all'impianto elettrico: è l'unico che facciamo. Tante aziende fanno un po' di tutto; noi abbiamo scelto di approfondire solo questo, perché è un campo che cambia in fretta e chiede specialisti.</p>
+        <p>Niente kit uguali per tutti e niente dispositivi che chiunque può comprare: i sistemi più diffusi sono anche i più studiati. Progettiamo l'impianto sulla tua casa e lo installano i nostri tecnici.</p>
+        <ul class="garanzie">
+          <li><strong>Progetto a norma, certificato a fine lavoro.</strong> Nessuna sorpresa durante l'installazione.</li>
+          <li><strong>Tecnici nostri.</strong> Formati di continuo e tenuti alla riservatezza: quello che sanno della tua casa resta tra noi.</li>
+          <li><strong>Assistenza nel tempo.</strong> Scegli tu come essere seguito. Un cliente Rui non rimane mai solo.</li>
+        </ul>
+      </div>
+      <div class="manifesto__foto cornice" data-rivela>
+        <figure>
+          <img src="assets/img/tecnico.jpg" width="1043" height="661" loading="lazy" decoding="async" alt="Un tecnico Rui con la giacca blu aziendale al lavoro sulla centrale di un impianto d'allarme">
+          <figcaption>Un nostro tecnico al lavoro sulla centrale d'allarme.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="legenda" id="servizi" aria-labelledby="titolo-servizi">
+    <div class="contenitore">
+      <div class="legenda__testa">
+        <h2 id="titolo-servizi">Cosa installiamo</h2>
+        <p>La legenda dei nostri progetti. Ogni simbolo è un sistema che scegliamo e dimensioniamo per il tuo spazio, con marchi professionali che non trovi sugli scaffali.</p>
+      </div>
+      <ul class="legenda__lista">
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><rect x="5" y="6" width="9" height="7" rx="1.5"/><path d="M12 12 50 28M12 12l30 34M12 12l9 38"/><path d="M50 28c-2 8-8 16-16 21" stroke-dasharray="2.5 3"/><path d="M38 23c-1 6-5 11-11 15" stroke-dasharray="2.5 3"/></svg>
+          <h3>Antifurto e antintrusione</h3>
+          <p>Sensori volumetrici, contatti su porte e finestre, barriere per giardini e perimetri. Impianti cablati, senza fili o ibridi, e li comandi dal telefono.</p>
+        </li>
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="14" width="18" height="10" rx="2"/><path d="M8 24v6h6"/><path d="M22 16 52 6M22 22l30 18"/><path d="M52 6v34" stroke-dasharray="2.5 3"/></svg>
+          <h3>Videosorveglianza</h3>
+          <p>Telecamere IP ad alto dettaglio, termiche e con videoanalisi che riconosce le situazioni di pericolo. Ti aiutiamo anche con la documentazione per la privacy.</p>
+        </li>
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><rect x="15" y="5" width="26" height="46" rx="3"/><circle cx="28" cy="18" r="6"/><path d="M21 33h14M21 40h14"/><path d="M6 20v16M50 20v16" stroke-dasharray="2.5 3"/></svg>
+          <h3>Controllo accessi</h3>
+          <p>Sai sempre chi entra e chi esce, blocchi gli estranei e chiudi a orari stabiliti. Si gestisce da pc, tablet o smartphone.</p>
+        </li>
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="22" r="16"/><circle cx="28" cy="22" r="5"/><path d="M10 48c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 9 0"/></svg>
+          <h3>Antincendio, gas e allagamento</h3>
+          <p>Rilevazione elettronica di fumi, gas e perdite d'acqua: lo sai in pochi secondi e intervieni prima che il danno cresca.</p>
+        </li>
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="6" width="44" height="40" rx="2"/><circle cx="28" cy="26" r="9"/><path d="M28 17v-3M37 26h3M28 35v3M19 26h-3"/><path d="M10 46v5M46 46v5"/></svg>
+          <h3>Casseforti e armadi blindati</h3>
+          <p>Le migliori marche, con chiusura a chiave, a combinazione meccanica o elettronica, per oggetti di valore e documenti importanti.</p>
+        </li>
+        <li class="voce">
+          <svg class="voce__simbolo" viewBox="0 0 56 56" aria-hidden="true"><path d="M10 51V5h36v46"/><path d="M4 51h48"/><path d="M28 15l10 4v8c0 7-5 11-10 13-5-2-10-6-10-13v-8z"/></svg>
+          <h3>Stanze di sicurezza</h3>
+          <p>Panic room su progetto: un rifugio dove ripararsi in caso di intrusione, tenere d'occhio la situazione e chiedere aiuto.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="perchi" id="perchi" aria-labelledby="titolo-perchi">
+    <div class="contenitore">
+      <div class="perchi__testa">
+        <h2 id="titolo-perchi">Una casa non è un capannone.</h2>
+        <p>Ogni luogo ha i suoi rischi e le sue abitudini. Scegli il tuo e ti diciamo come lo proteggiamo.</p>
+        <div class="perchi__selettore" role="tablist" aria-label="Scegli il tipo di luogo" data-attiva="casa">
+          <button type="button" role="tab" id="tab-casa" aria-selected="true" aria-controls="pannello-casa" data-scheda="casa">Casa</button>
+          <button type="button" role="tab" id="tab-azienda" aria-selected="false" aria-controls="pannello-azienda" data-scheda="azienda" tabindex="-1">Azienda</button>
+        </div>
+      </div>
+
+      <div class="perchi__pannello" id="pannello-casa" role="tabpanel" aria-labelledby="tab-casa">
+        <article class="caso caso--grande">
+          <img src="assets/img/cantiere.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Una casa in costruzione con le impalcature, vista dal giardino">
+          <div class="caso__testo">
+            <h3>Stai costruendo o ristrutturando</h3>
+            <p>È il momento migliore per chiamarci. Partiamo dalla planimetria, veniamo in cantiere e decidiamo le predisposizioni prima che si chiudano i muri. Non lasciare l'allarme a chi sta già facendo l'impianto elettrico: quello che scegli oggi te lo porti dietro per vent'anni.</p>
+          </div>
+        </article>
+        <article class="caso">
+          <img src="assets/img/casa.jpg" width="600" height="400" loading="lazy" decoding="async" alt="Una casa a due piani con giardino">
+          <div class="caso__testo">
+            <h3>Ci abiti già da anni</h3>
+            <p>Impianti senza fili o ibridi: niente tracce nei muri e niente lavori in casa. Sono sistemi professionali, che si difendono da sabotaggi e disturbi esterni.</p>
+          </div>
+        </article>
+        <article class="caso">
+          <img src="assets/img/villa.jpg" width="1174" height="788" loading="lazy" decoding="async" alt="Una villa veneta con barchesse e giardino all'italiana">
+          <div class="caso__testo">
+            <h3>Villa o dimora di pregio</h3>
+            <p>Grandi superfici scoperte, molti accessi, un'estetica da rispettare. Qui servono le soluzioni meno convenzionali: alcuni di questi lavori ci hanno fatto vincere premi nazionali.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="perchi__pannello" id="pannello-azienda" role="tabpanel" aria-labelledby="tab-azienda" hidden>
+        <article class="caso caso--grande">
+          <img src="assets/img/telecamera.jpg" width="600" height="400" loading="lazy" decoding="async" alt="Telecamera a cupola sotto la copertura di uno stabilimento">
+          <div class="caso__testo">
+            <h3>Industrie e stabilimenti</h3>
+            <p>Materie prime rubate, persone dove non dovrebbero essere, un principio d'incendio non rilevato: basta poco per fermare la produzione. Facciamo con te la valutazione del rischio, installiamo in tempi rapidi e restiamo per l'assistenza. Tra i nostri clienti ci sono alcune delle realtà industriali più importanti di Treviso e del Veneto.</p>
+          </div>
+        </article>
+        <article class="caso caso--testo">
+          <div class="caso__testo">
+            <h3>Negozi e attività commerciali</h3>
+            <p>I furti arrivano da fuori e, a volte, da dentro. Allarme, videosorveglianza e antirapina per negozi di abbigliamento, gioiellerie, bar ed esercizi pubblici, con qualche segreto del mestiere.</p>
+          </div>
+        </article>
+        <article class="caso caso--testo">
+          <div class="caso__testo">
+            <h3>Uffici e studi</h3>
+            <p>Archivi, server, dati dei clienti. Chi entra, dove, a che ora: il controllo accessi risponde anche al rischio che arriva dall'interno.</p>
+          </div>
+        </article>
+        <article class="caso">
+          <img src="assets/img/museo.jpg" width="1200" height="898" loading="lazy" decoding="async" alt="Facciata di un museo a Treviso con la scalinata d'ingresso">
+          <div class="caso__testo">
+            <h3>Musei e mostre</h3>
+            <p>Orari variabili, decine di persone che passano da una sala all'altra. Siamo stati chiamati più volte a progettare la sicurezza di mostre e musei importanti.</p>
+          </div>
+        </article>
+        <article class="caso">
+          <img src="assets/img/palazzo.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Palazzo storico con facciata gialla nel centro di Treviso">
+          <div class="caso__testo">
+            <h3>Enti pubblici</h3>
+            <p>Palestre, scuole, municipi: tanti impianti e tanti utenti autorizzati. Lavoriamo con gli uffici tecnici dal progetto in poi, con assistenza anche da remoto.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="metodo" id="metodo" aria-labelledby="titolo-metodo">
+    <div class="contenitore metodo__griglia">
+      <div class="metodo__lato">
+        <h2 id="titolo-metodo">Dalla planimetria al certificato, in sette passi.</h2>
+        <p>Lo stesso percorso per una villetta e per uno stabilimento. Cambia la scala, non la cura.</p>
+        <div class="metodo__foto cornice" data-rivela>
+          <img src="assets/img/planimetria.jpg" width="1400" height="934" loading="lazy" decoding="async" alt="Una planimetria di casa sul tavolo con matita, righello e una piccola casa di legno">
+        </div>
+      </div>
+      <ol class="passi">
+        <li><h3>Ti ascoltiamo, planimetria alla mano</h3><p>Un colloquio per capire chi vive gli spazi, come li usa e che cosa ti preoccupa.</p></li>
+        <li><h3>Sopralluogo</h3><p>Veniamo a vedere spazi, ingombri e possibili ostacoli all'installazione.</p></li>
+        <li><h3>Preventivo dettagliato</h3><p>Voce per voce, e prima di scegliere ti mostriamo le apparecchiature funzionanti.</p></li>
+        <li><h3>Installazione</h3><p>La fanno i nostri tecnici dipendenti, che sanno in anticipo che cosa trovano e che cosa fare.</p></li>
+        <li><h3>Collaudo e spiegazioni</h3><p>Proviamo tutto insieme e ti spieghiamo l'impianto e l'app con calma, anche le domande da profano.</p></li>
+        <li><h3>Consegna</h3><p>Planimetrie aggiornate, istruzioni semplici fatte per te e certificato di conformità dell'impianto.</p></li>
+        <li><h3>Negli anni</h3><p>Conserviamo i dati del tuo impianto in modo sicuro e, se vuoi, teniamo noi il calendario delle manutenzioni.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="persone" id="chi" aria-labelledby="titolo-persone">
+    <div class="contenitore persone__griglia">
+      <div class="persone__foto cornice" data-rivela>
+        <figure>
+          <img src="assets/img/cesare-alberto.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Cesare e Alberto Rui in giacca e cravatta, in piedi davanti a un pannello con i loghi di un evento">
+          <figcaption>Cesare e Alberto Rui.</figcaption>
+        </figure>
+      </div>
+      <div class="persone__testo">
+        <h2 id="titolo-persone">Padre e figlio, e una squadra di sei tecnici.</h2>
+        <p><strong>Cesare</strong> progetta impianti di sicurezza dal 1974. Ha guidato il reparto tecnico del Gruppo Compiano, allora la realtà più grande del settore a Treviso, e nel 1999 ha fondato la sua azienda. In carriera ha seguito oltre 5.000 impianti: abitazioni importanti, musei, mostre d'arte e quello che, quando fu installato, era il più grande impianto di rilevazione fumi d'Europa.</p>
+        <p><strong>Alberto</strong> è ingegnere e appassionato di tecnologia. Il suo nome torna in quasi ogni recensione, dal sopralluogo all'assistenza.</p>
+        <p>Intorno a loro, sei tecnici dipendenti e un laboratorio da cui controllare gli impianti a distanza quando serve, soprattutto nelle urgenze.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="recensioni" id="recensioni" aria-labelledby="titolo-recensioni">
+    <div class="contenitore">
+      <div class="recensioni__testa">
+        <p class="voto"><span class="voto__numero">5,0</span><span class="voto__stelle" role="img" aria-label="5 stelle su 5">★★★★★</span></p>
+        <h2 id="titolo-recensioni">44 recensioni su Google, tutte da cinque o quattro stelle.</h2>
+        <p>Qui sotto alcune parole dei clienti, da Google e dalle testimonianze raccolte negli anni.</p>
+      </div>
+      <ul class="citazioni">
+        <li class="citazione">
+          <blockquote><p>I ragazzi che hanno provveduto all'installazione sono stati davvero bravissimi: non hanno lasciato, a montaggio finito, un solo granello di polvere a terra.</p></blockquote>
+          <p class="citazione__chi">Federico B. <span>Google</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Professionale dal primo appuntamento, quello per il sopralluogo, fino a quello del montaggio. Impianto studiato davvero su tutto quanto avevo richiesto.</p></blockquote>
+          <p class="citazione__chi">Fabio Vincenzo L. <span>Google</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>L'installazione è stata precisa e pulita, con grande attenzione alla casa. Anche dopo il montaggio Alberto si è dimostrato sempre disponibile per dubbi o chiarimenti.</p></blockquote>
+          <p class="citazione__chi">Olga B. <span>Google</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Prima di questa fase c'è stato un attento sopralluogo della casa con incluso studio della planimetria da parte del gentilissimo Alberto per verificare le soluzioni migliori e personalizzate.</p></blockquote>
+          <p class="citazione__chi">Christian L., Mogliano Veneto <span>Testimonianza</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Da oltre 10 anni siamo clienti […]: pienamente soddisfatti per professionalità ed assistenza nel tempo. Un “BRAVI” a voce alta!</p></blockquote>
+          <p class="citazione__chi">Famiglia Favaretto <span>Testimonianza</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Anche negli anni successivi il servizio post vendita si è dimostrato rapido, efficace ed efficiente. Super consigliato.</p></blockquote>
+          <p class="citazione__chi">Michela M. <span>Google</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Disponibili subito ad un sopralluogo e una veloce offerta su misura. Preparati […] pazienti […] corretti […] insomma 5 stelle tutte meritate.</p></blockquote>
+          <p class="citazione__chi">Stefania D. <span>Testimonianza</span></p>
+        </li>
+        <li class="citazione">
+          <blockquote><p>Vista l'urgenza sono usciti subito per una perizia e ci hanno montato pochi giorni dopo il sistema d'allarme. […] Da subito ci hanno tranquillizzato e rassicurato.</p></blockquote>
+          <p class="citazione__chi">Francesca N., Treviso <span>Testimonianza</span></p>
+        </li>
+      </ul>
+      <a class="link-freccia" href="https://maps.google.com/?cid=1186425624505026763" target="_blank" rel="noopener">Leggi tutte le recensioni su Google</a>
+    </div>
+  </section>
+
+  <section class="assistenza" id="assistenza" aria-labelledby="titolo-assistenza">
+    <div class="contenitore assistenza__griglia">
+      <div class="assistenza__foto cornice" data-rivela>
+        <img src="assets/img/furgone.jpg" width="1400" height="1049" loading="lazy" decoding="async" alt="Il furgone bianco di Rui Sistemi di Sicurezza con logo, telefono e sito sulla fiancata">
+      </div>
+      <div class="assistenza__testo">
+        <h2 id="titolo-assistenza">L'impianto l'ha montato qualcun altro? Lo seguiamo noi.</h2>
+        <p>Succede spesso. L'allarme era già in casa quando l'hai comprata, l'installatore non si fa più trovare, oppure non vuoi più averci a che fare. Batterie da verificare, un sensore che dà falsi allarmi, un controllo completo: veniamo noi.</p>
+        <h3>Il tuo allarme ha più di quindici anni?</h3>
+        <p>Tanti impianti degli anni Novanta e dei primi Duemila funzionano ancora, ma si inseriscono con le vecchie chiavette: si perdono, si rubano e oggi si copiano con schede comprate in internet. Li aggiorniamo con centrali e comandi di oggi, da usare anche dal telefono.</p>
+        <a class="btn btn--luce" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>Chiama per l'assistenza</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="zona" id="zona" aria-labelledby="titolo-zona">
+    <div class="contenitore zona__griglia">
+      <div class="zona__testo">
+        <h2 id="titolo-zona">Da Silea, in tutta la Marca.</h2>
+        <p>Lavoriamo in tutta la provincia di Treviso e nelle zone vicine: Venezia, Padova, Belluno e il Friuli.</p>
+        <h3>Marchi che installiamo</h3>
+        <ul class="marchi">
+          <li>Inim</li><li>Kert</li><li>Optex</li><li>Flir</li><li>Notifier</li><li>Hesa</li><li>Bosch</li><li>Honeywell</li><li>Avigilon</li><li>Suprema</li><li>Politec</li><li>Elkron</li><li>Hochiki</li><li>Esser</li><li>Aritech</li><li>Bettini</li>
+        </ul>
+      </div>
+      <ul class="comuni" aria-label="Alcuni comuni dove lavoriamo">
+        <li>Treviso</li><li>Silea</li><li>Carbonera</li><li>Casier</li><li>Casale sul Sile</li><li>Roncade</li><li>San Biagio di Callalta</li><li>Preganziol</li><li>Breda di Piave</li><li>Villorba</li><li>Quinto di Treviso</li><li>Ponzano Veneto</li><li>Quarto d'Altino</li><li>Maserada sul Piave</li><li>Monastier</li><li>Paese</li><li>Mogliano Veneto</li><li>Zero Branco</li><li>Meolo</li><li>Spresiano</li><li>Ponte di Piave</li><li>Zenson di Piave</li><li>Salgareda</li><li>Mestre</li><li>Venezia</li><li>Conegliano</li><li>Vittorio Veneto</li><li>San Fior</li><li>Castelfranco Veneto</li><li>Resana</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contatti" id="sopralluogo" aria-labelledby="titolo-contatti">
+    <div class="contenitore contatti__griglia">
+      <div class="contatti__lato">
+        <h2 id="titolo-contatti">Raccontaci la tua casa. Il progetto lo facciamo insieme.</h2>
+        <div class="referente">
+          <img src="assets/img/alberto.jpg" width="625" height="776" loading="lazy" decoding="async" alt="Ritratto di Alberto Rui">
+          <p><strong>Alberto Rui</strong>Ingegnere e titolare</p>
+        </div>
+        <a class="contatti__tel" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>0422 363260</a>
+        <p class="contatti__orari">Dal lunedì al venerdì, 8:30-18:30</p>
+        <dl class="contatti__dati">
+          <div><dt>Email</dt><dd><a href="mailto:info@ruisicurezza.it">info@ruisicurezza.it</a></dd></div>
+          <div><dt>Sede</dt><dd>Via Internati 1943, 35<br>31057 Silea (TV)</dd></div>
+        </dl>
+      </div>
+
+      <form class="form" id="form-sopralluogo" novalidate>
+        <h3 class="form__titolo">Richiedi un sopralluogo</h3>
+        <p class="form__nota">Compila e premi il pulsante: si apre la tua email con la richiesta già scritta. Ti richiamiamo per fissare il giorno.</p>
+        <div class="form__riga">
+          <label class="campo"><span>Nome e cognome</span><input name="nome" autocomplete="name" required></label>
+          <label class="campo"><span>Telefono</span><input name="telefono" type="tel" autocomplete="tel" inputmode="tel" required></label>
+        </div>
+        <div class="form__riga">
+          <label class="campo"><span>Comune</span><input name="comune" autocomplete="address-level2"></label>
+          <fieldset class="campo pillole">
+            <legend>Per</legend>
+            <label><input type="radio" name="per" value="Casa" checked><span>Casa</span></label>
+            <label><input type="radio" name="per" value="Azienda"><span>Azienda</span></label>
+          </fieldset>
+        </div>
+        <label class="campo"><span>Che cosa ti serve</span>
+          <select name="servizio">
+            <option>Un nuovo impianto d'allarme</option>
+            <option>Videosorveglianza</option>
+            <option>Controllo accessi</option>
+            <option>Antincendio, gas o allagamento</option>
+            <option>Cassaforte o stanza di sicurezza</option>
+            <option>Assistenza su un impianto esistente</option>
+            <option>Aggiornare un vecchio impianto</option>
+            <option>Altro</option>
+          </select>
+        </label>
+        <label class="campo"><span>Messaggio (facoltativo)</span><textarea name="messaggio" rows="3" placeholder="Per esempio: casa su due piani con giardino, ci entriamo a marzo."></textarea></label>
+        <label class="consenso"><input type="checkbox" name="privacy"><span>Acconsento al trattamento dei miei dati per essere ricontattato (<a href="privacy.html">informativa</a>).</span></label>
+        <p class="form__errore" role="alert"></p>
+        <button class="btn btn--luce btn--pieno" type="submit">Prepara la richiesta</button>
+        <p class="form__fatto" hidden>Si è aperta la tua email: controlla e premi Invia. Se non si apre, chiamaci allo <a href="tel:+390422363260">0422 363260</a>.</p>
+      </form>
+    </div>
+
+    <div class="contenitore mappa">
+      <iframe title="Mappa della sede di Rui Sistemi di Sicurezza a Silea" src="https://www.google.com/maps?q=Rui+Sistemi+di+Sicurezza,+Via+Internati+1943+35,+31057+Silea+TV&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a class="mappa__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rui+Sistemi+di+Sicurezza+Via+Internati+1943+35+Silea+TV" target="_blank" rel="noopener">Indicazioni stradali</a>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="contenitore piede__griglia">
+    <div class="piede__marca">
+      <svg class="piede__logo" viewBox="0 -1 188 82" aria-hidden="true"><use href="#rui-logo"/></svg>
+      <p>Rui Sicurezza Srl<br>Via Internati 1943, 35, 31057 Silea (TV)<br>P.IVA 04885230260</p>
+    </div>
+    <div class="piede__colonna">
+      <p><a href="tel:+390422363260">0422 363260</a><br><a href="mailto:info@ruisicurezza.it">info@ruisicurezza.it</a></p>
+      <p>Dal lunedì al venerdì, 8:30-18:30</p>
+    </div>
+    <div class="piede__colonna">
+      <p><a href="https://www.facebook.com/ruisicurezza/" target="_blank" rel="noopener">Facebook</a><br><a href="privacy.html">Privacy</a></p>
+    </div>
+  </div>
+  <div class="contenitore piede__fondo">
+    <p>© <span data-anno>2026</span> Rui Sicurezza Srl. Sito realizzato da Alessio Mora.</p>
+    <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di Rui Sistemi di Sicurezza.</p>
+  </div>
+</footer>
+
+<nav class="barra" aria-label="Contatti rapidi">
+  <a class="btn btn--luce" href="tel:+390422363260"><svg aria-hidden="true"><use href="#i-tel"/></svg>Chiama</a>
+  <a class="btn btn--vetro" href="#sopralluogo">Sopralluogo</a>
+</nav>
+
+<script src="script.js" defer></script>
+</body>
+</html>

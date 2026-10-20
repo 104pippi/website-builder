@@ -62,6 +62,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-residenza-al-fagare](./sito-residenza-al-fagare) | https://sito-residenza-al-fagare.vercel.app | [video](./sito-residenza-al-fagare/video) |
 | [sito-riello](./sito-riello) | https://sito-riello.vercel.app | [video](./sito-riello/video) |
 | [sito-rossi-mario](./sito-rossi-mario) | https://sito-rossi-mario.vercel.app | [video](./sito-rossi-mario/video) |
+| [sito-rui-sicurezza](./sito-rui-sicurezza) | https://sito-rui-sicurezza.vercel.app | [video](./sito-rui-sicurezza/video) |
 | [sito-s1-pro](./sito-s1-pro) | https://sito-s1-pro.vercel.app | [video](./sito-s1-pro/video) |
 | [sito-sanitaria-cinel](./sito-sanitaria-cinel) | https://sito-sanitaria-cinel.vercel.app | [video](./sito-sanitaria-cinel/video) |
 | [sito-santucci-service](./sito-santucci-service) | https://sito-santucci-service.vercel.app | [video](./sito-santucci-service/video) |
