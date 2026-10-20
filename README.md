@@ -38,6 +38,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-fde-steel](./sito-fde-steel) | https://sito-fde-steel.vercel.app | [video](./sito-fde-steel/video) |
 | [sito-felkart](./sito-felkart) | https://sito-felkart.vercel.app | [video](./sito-felkart/video) |
 | [sito-ferramenta-montagner](./sito-ferramenta-montagner) | https://sito-ferramenta-montagner.vercel.app | [video](./sito-ferramenta-montagner/video) |
+| [sito-fincenter](./sito-fincenter) | https://sito-fincenter.vercel.app | [video](./sito-fincenter/video) |
 | [sito-gamba-meccanica](./sito-gamba-meccanica) | https://sito-gamba-meccanica.vercel.app | [video](./sito-gamba-meccanica/video) |
 | [sito-gammaplast](./sito-gammaplast) | https://sito-gammaplast.vercel.app | [video](./sito-gammaplast/video) |
 | [sito-gdm-lattonerie-girotto](./sito-gdm-lattonerie-girotto) | https://sito-gdm-lattonerie-girotto.vercel.app | [video](./sito-gdm-lattonerie-girotto/video) |
