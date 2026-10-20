@@ -79,7 +79,7 @@
     const passo = s < 0.5 ? 0 : clamp(Math.round(s), 1, 4);
     if (passo !== ultimoPasso) {
       ultimoPasso = passo;
-      tabs.forEach((t) => t.setAttribute('aria-selected', String(Number(t.dataset.passo) === passo)));
+      tabs.forEach((t) => t.setAttribute('aria-pressed', String(Number(t.dataset.passo) === passo)));
     }
   };
   tabs.forEach((t) => t.addEventListener('click', () => {

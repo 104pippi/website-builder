@@ -154,7 +154,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   min-height: 40px; border: 0; border-radius: 7px; background: transparent; cursor: pointer;
   font-size: .8rem; font-weight: 620; font-stretch: 96%; color: var(--testo2); padding: 0 2px; transition: background-color .25s, color .25s;
 }
-.palco__schede button[aria-selected="true"] { background: var(--inchiostro); color: #fff; }
+.palco__schede button[aria-pressed="true"] { background: var(--inchiostro); color: #fff; }
 .palco__barra { grid-column: 1 / -1; height: 3px; background: rgba(24,22,23,.1); border-radius: 2px; overflow: hidden; margin: 2px 4px 0; }
 .palco__barra i { display: block; height: 100%; width: 100%; background: var(--rosso); transform-origin: 0 50%; transform: scaleX(0); }
 
