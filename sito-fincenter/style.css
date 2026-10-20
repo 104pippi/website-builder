@@ -170,17 +170,18 @@ p { margin: 0; }
   }
   .hero__img { object-position: 74% 36%; }
   .hero__parola {
-    top: 13svh; left: 2.6vw; right: auto;
-    font-size: 21vw; text-align: left;
+    top: 12svh; left: 2.6vw; right: auto;
+    font-size: min(21vw, 36svh); text-align: left;
   }
   .hero__sfuma {
     top: auto; bottom: 0; left: 33%; height: 22svh;
   }
   .hero__testo {
     position: absolute; left: var(--gutter); bottom: 8svh;
-    width: min(28vw, 450px); padding: 0;
+    width: min(31vw, 470px); padding: 0;
   }
-  .hero h1 { font-size: clamp(2.2rem, 3.1vw, 3.3rem); max-width: none; }
+  .hero h1 { font-size: clamp(2rem, min(3.1vw, 5.4svh), 3.3rem); max-width: none; }
+  .hero__azioni .btn { padding: 0 22px; }
   .hero__sotto { font-size: 1.04rem; }
 }
 
