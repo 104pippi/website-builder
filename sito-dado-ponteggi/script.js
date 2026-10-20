@@ -51,11 +51,11 @@
     rivela.forEach(el => el.classList.add('in'));
   } else {
     $$('.galleria, .squadra, .voci, .scheda').forEach(g => {
-      $$('[data-rivela]', g).forEach((el, i) => el.style.setProperty('--d', ((i % 4) * 0.08).toFixed(2) + 's'));
+      $$('[data-rivela]', g).forEach((el, i) => el.style.setProperty('--d', ((i % 4) * 0.05).toFixed(2) + 's'));
     });
     const io = new IntersectionObserver(voci => {
       voci.forEach(v => { if (v.isIntersecting) { v.target.classList.add('in'); io.unobserve(v.target); } });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    }, { rootMargin: '0px 0px 12% 0px', threshold: 0.01 });
     rivela.forEach(el => io.observe(el));
   }
 

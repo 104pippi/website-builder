@@ -413,9 +413,9 @@ body.menu-aperto { overflow: hidden; }
 body.menu-aperto .barra { transform: translateY(140%); }
 
 /* Rivelazioni: le foto salgono dal basso come un piano di ponteggio */
-.js [data-rivela] { opacity: 0; transition: opacity .7s ease var(--d, 0s); }
+.js [data-rivela] { opacity: 0; transition: opacity .45s ease var(--d, 0s); }
 .js [data-rivela].in { opacity: 1; }
-.js [data-rivela] img { clip-path: inset(100% 0 0 0); transition: clip-path 1.05s var(--ease-io) var(--d, 0s), transform .8s var(--ease); }
+.js [data-rivela] img { clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--ease-io) var(--d, 0s), transform .8s var(--ease); }
 .js [data-rivela].in img { clip-path: inset(0 0 0 0); }
 @media (prefers-reduced-motion: reduce) {
   .js [data-rivela], .js [data-rivela] img { opacity: 1; clip-path: none; transition: none; }
