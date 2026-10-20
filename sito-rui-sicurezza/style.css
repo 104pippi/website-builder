@@ -511,7 +511,7 @@ p { text-wrap: pretty; }
 .pagina h2 { font-size: 1.4rem; margin-top: 36px; }
 .pagina p, .pagina li { margin-top: 12px; max-width: 42em; }
 .pagina ul { list-style: disc; padding-left: 1.2em; }
-.pagina .testata { background: var(--notte); }
+.pagina-privacy .testata { background: var(--notte); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
