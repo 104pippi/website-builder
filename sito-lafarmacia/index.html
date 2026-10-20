@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lafarmacia. | Farmacie dei servizi nel Nord e Centro Italia</title>
+<meta name="description" content="Oltre 620 farmacie tra Nord e Centro Italia: trova la più vicina, aperta ora, e prenota ECG, autoanalisi, test e vaccino antinfluenzale.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-lafarmacia.vercel.app/">
+<meta name="theme-color" content="#00313C">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Lafarmacia.">
+<meta property="og:title" content="Lafarmacia. | Il punto che fa la differenza">
+<meta property="og:description" content="669 indirizzi in 15 regioni: trova la farmacia più vicina, aperta ora, e prenota un servizio.">
+<meta property="og:image" content="https://sito-lafarmacia.vercel.app/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sito-lafarmacia.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lafarmacia. | Il punto che fa la differenza">
+<meta name="twitter:description" content="Trova la farmacia più vicina, aperta ora, e prenota un servizio.">
+<meta name="twitter:image" content="https://sito-lafarmacia.vercel.app/assets/img/og.jpg">
+
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js"
+}}</script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js" crossorigin>
+<link rel="modulepreload" href="3d.js">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&family=Outfit:wght@300..700&display=swap">
+<link rel="preload" href="assets/dati/farmacie.json" as="fetch" type="application/json" crossorigin>
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sito-lafarmacia.vercel.app/#azienda",
+      "name": "Lafarmacia.",
+      "legalName": "Hippocrates Holding S.p.A.",
+      "vatID": "IT10264830968",
+      "url": "https://sito-lafarmacia.vercel.app/",
+      "logo": "https://sito-lafarmacia.vercel.app/assets/img/logo-lafarmacia.svg",
+      "foundingDate": "2018",
+      "founder": [{"@type": "Person", "name": "Davide Tavaniello"}, {"@type": "Person", "name": "Rodolfo Guarino"}],
+      "numberOfEmployees": {"@type": "QuantitativeValue", "minValue": 3200},
+      "address": {"@type": "PostalAddress", "streetAddress": "Via Emilio Cornalia 11", "postalCode": "20124", "addressLocality": "Milano", "addressRegion": "MI", "addressCountry": "IT"},
+      "sameAs": ["https://www.lafarmacia.it/"]
+    },
+    {
+      "@type": "Pharmacy",
+      "name": "Lafarmacia. Centro Milano",
+      "parentOrganization": {"@id": "https://sito-lafarmacia.vercel.app/#azienda"},
+      "address": {"@type": "PostalAddress", "streetAddress": "Via Broletto 1", "addressLocality": "Milano", "addressCountry": "IT"},
+      "url": "https://sito-lafarmacia.vercel.app/#trova"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata" data-testata>
+  <div class="testata__in">
+    <a class="testata__marchio" href="#top" aria-label="Lafarmacia., torna all'inizio">
+      <img class="logo logo--chiaro" src="assets/img/logo-lafarmacia-chiaro.svg" width="197" height="29" alt="Lafarmacia.">
+      <img class="logo logo--scuro" src="assets/img/logo-lafarmacia.svg" width="197" height="29" alt="" aria-hidden="true">
+    </a>
+    <nav class="testata__nav" aria-label="Sezioni">
+      <a href="#trova">Trova farmacia</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#ricetta">Ricetta online</a>
+      <a href="#fedelta">Carta fedeltà</a>
+      <a href="#chi-siamo">Chi siamo</a>
+    </nav>
+    <a class="btn btn--rosso btn--piccolo testata__cta" href="#servizi">Prenota un servizio</a>
+    <button class="testata__burger" type="button" aria-expanded="false" aria-controls="menu-mobile" data-burger>
+      <span class="sr">Apri il menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden data-menu-mobile>
+  <nav aria-label="Sezioni">
+    <a href="#trova">Trova farmacia</a>
+    <a href="#servizi">Prenota un servizio</a>
+    <a href="#evidenza">Vaccino ed ECG</a>
+    <a href="#ricetta">Farmaci con ricetta</a>
+    <a href="#fedelta">Carta fedeltà</a>
+    <a href="#chi-siamo">Chi siamo</a>
+    <a href="#eventi">Eventi gratuiti</a>
+    <a href="#lavora">Lavora con noi</a>
+  </nav>
+</div>
+
+<main id="contenuto">
+
+  <!-- HERO: un punto che diventa 669 -->
+  <section class="hero" id="top" data-hero>
+    <div class="hero__mappa" aria-hidden="true">
+      <img class="hero__poster" src="assets/img/mappa-poster.png" width="900" height="1100" alt="">
+      <canvas class="hero__3d" data-scena></canvas>
+    </div>
+    <div class="hero__testo wrap">
+      <h1 class="hero__titolo" data-titolo>
+        <span class="hero__riga"><span>Il punto</span></span>
+        <span class="hero__riga"><span>che fa la</span></span>
+        <span class="hero__riga"><span>differenza<i class="punto" aria-hidden="true"></i></span></span>
+      </h1>
+      <p class="hero__sotto">Oltre 620 farmacie tra Nord e Centro Italia. Prenoti un ECG, un'autoanalisi o il vaccino antinfluenzale, e i farmaci con ricetta li trovi già pronti.</p>
+      <div class="hero__azioni">
+        <a class="btn btn--rosso" href="#trova" data-vicino-hero>Trova la farmacia più vicina</a>
+        <a class="btn btn--vuoto" href="#servizi">Prenota un servizio</a>
+      </div>
+      <p class="hero__legenda"><i class="punto punto--piccolo" aria-hidden="true"></i>Ogni punto è una farmacia della rete: <b data-conta-aperte>669 indirizzi in 15 regioni</b></p>
+    </div>
+  </section>
+
+  <!-- FIDUCIA -->
+  <section class="fiducia" aria-label="Lafarmacia. in numeri">
+    <ul class="wrap fiducia__lista">
+      <li><b>620+</b><span>farmacie</span></li>
+      <li><b>15</b><span>regioni</span></li>
+      <li><b>50+</b><span>servizi in farmacia</span></li>
+      <li><b>3.200</b><span>persone</span></li>
+      <li class="fiducia__bcorp"><b>B Corp</b><span>certificata</span></li>
+    </ul>
+  </section>
+
+  <!-- TROVA FARMACIA -->
+  <section class="trova" id="trova" aria-labelledby="trova-titolo">
+    <div class="wrap">
+      <div class="trova__testa">
+        <h2 class="titolo" id="trova-titolo">Trova la tua farmacia<i class="punto" aria-hidden="true"></i></h2>
+        <p class="lead">Cerca per comune, CAP o nome. Oppure chiedi al telefono dove sei: ti mostriamo le più vicine, con gli orari di adesso.</p>
+      </div>
+      <div class="cerca-box">
+        <label class="cerca">
+          <span class="sr">Comune, CAP o nome della farmacia</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+          <input type="search" placeholder="Comune, CAP o farmacia" autocomplete="off" enterkeyhint="search" data-cerca>
+        </label>
+        <button class="btn btn--rosso cerca-box__vicino" type="button" data-vicino>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" class="pieno"/></svg>
+          Vicino a me
+        </button>
+      </div>
+      <div class="filtri">
+        <button class="chip" type="button" aria-pressed="false" data-aperta>Aperta ora</button>
+        <label class="seleziona">
+          <span class="sr">Servizio</span>
+          <select data-servizio>
+            <option value="">Tutti i servizi</option>
+          </select>
+        </label>
+      </div>
+      <div class="citta" data-citta aria-label="Città con più farmacie">
+        <button type="button" data-q="Milano">Milano</button>
+        <button type="button" data-q="Roma">Roma</button>
+        <button type="button" data-q="Genova">Genova</button>
+        <button type="button" data-q="Venezia">Venezia</button>
+        <button type="button" data-q="Bologna">Bologna</button>
+        <button type="button" data-q="Padova">Padova</button>
+        <button type="button" data-q="Torino">Torino</button>
+        <button type="button" data-q="Firenze">Firenze</button>
+      </div>
+      <p class="risultati__stato" data-stato-ricerca aria-live="polite">Carico le farmacie…</p>
+      <ol class="risultati" data-risultati></ol>
+      <button class="btn btn--linea risultati__altre" type="button" data-altre hidden>Mostra altre farmacie</button>
+      <p class="trova__nota">Orari presi dalle schede ufficiali delle farmacie. Nei giorni festivi possono cambiare: controlla la scheda prima di andare.</p>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi" aria-labelledby="servizi-titolo">
+    <div class="wrap">
+      <div class="servizi__testa">
+        <h2 class="titolo" id="servizi-titolo">Prenota un servizio<i class="punto" aria-hidden="true"></i></h2>
+        <p class="lead">38 servizi prenotabili online: esami del cuore, autoanalisi, test, vaccini e consulenze. Scegli il servizio, poi la farmacia dove farlo.</p>
+      </div>
+      <div class="servizi__corpo">
+      <div class="servizi__schede" role="tablist" aria-label="Categorie di servizi"><button type="button" role="tab" id="tab-cardiovascolare" aria-controls="pan-cardiovascolare" aria-selected="true" data-tab="cardiovascolare">Cardiovascolare<span>4</span></button><button type="button" role="tab" id="tab-check-up" aria-controls="pan-check-up" aria-selected="false" data-tab="check-up">Check-up<span>6</span></button><button type="button" role="tab" id="tab-autoanalisi" aria-controls="pan-autoanalisi" aria-selected="false" data-tab="autoanalisi">Autoanalisi<span>5</span></button><button type="button" role="tab" id="tab-intolleranze-e-salute-intestinale" aria-controls="pan-intolleranze-e-salute-intestinale" aria-selected="false" data-tab="intolleranze-e-salute-intestinale">Intolleranze e salute intestinale<span>6</span></button><button type="button" role="tab" id="tab-test-genetici-e-del-dna" aria-controls="pan-test-genetici-e-del-dna" aria-selected="false" data-tab="test-genetici-e-del-dna">Test genetici e del DNA<span>7</span></button><button type="button" role="tab" id="tab-test-rapidi" aria-controls="pan-test-rapidi" aria-selected="false" data-tab="test-rapidi">Test rapidi<span>2</span></button><button type="button" role="tab" id="tab-vaccini" aria-controls="pan-vaccini" aria-selected="false" data-tab="vaccini">Vaccini<span>2</span></button><button type="button" role="tab" id="tab-consulenze-professionali" aria-controls="pan-consulenze-professionali" aria-selected="false" data-tab="consulenze-professionali">Consulenze professionali<span>6</span></button></div>
+      <div class="servizi__pannello" role="tabpanel" id="pan-cardiovascolare" aria-labelledby="tab-cardiovascolare" data-pannello="cardiovascolare">
+        <picture class="servizi__foto"><source srcset="assets/img/cat-cardiovascolare.webp" type="image/webp"><img src="assets/img/cat-cardiovascolare.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Un apparecchio per il monitoraggio cardiaco su un tavolo in farmacia"></picture>
+        <div class="servizi__elenco"><h3>Cardiovascolare</h3><ul><li class="serv"><div class="serv__info"><h4>Monitoraggio Apnee notturne</h4><p>in 501 farmacie</p></div><p class="serv__prezzo">190 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/cardiovascolare/polisonnografia-apnee-notturne-osas" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="polisonnografia-apnee-notturne-osas">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Elettrocardiogramma</h4><p>in 405 farmacie</p></div><p class="serv__prezzo">35 €<small>30 € con la carta</small></p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/cardiovascolare/elettrocardiogramma-ecg" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="elettrocardiogramma-ecg">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Holter Pressorio 24h</h4><p>in 383 farmacie</p></div><p class="serv__prezzo">65 €<small>60 € con la carta</small></p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/cardiovascolare/holter-pressorio-24h" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="holter-pressorio-24h">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Holter Cardiaco 24H</h4><p>in 381 farmacie</p></div><p class="serv__prezzo">80 €<small>75 € con la carta</small></p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/cardiovascolare/holter-cardiaco-24h-ecg-dinamico" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="holter-cardiaco-24h-ecg-dinamico">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-check-up" aria-labelledby="tab-check-up" data-pannello="check-up" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-check-up.webp" type="image/webp"><img src="assets/img/cat-check-up.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Una farmacista misura la pressione a un paziente"></picture>
+        <div class="servizi__elenco"><h3>Check-up</h3><ul><li class="serv"><div class="serv__info"><h4>Check-up pressione Cardiovascolare</h4><p>in 248 farmacie</p></div><p class="serv__prezzo">da 73 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/rischio-cardiovascolare-pressione-24h" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="rischio-cardiovascolare-pressione-24h">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>BMI e Massa corporea</h4><p>in 169 farmacie</p></div><p class="serv__prezzo">20 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/analisi-bmi-e-massa-corporea" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="analisi-bmi-e-massa-corporea">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Check-up Cuore con ECG</h4><p>in 150 farmacie</p></div><p class="serv__prezzo">da 48 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/cuore-e-ecg" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="cuore-e-ecg">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Benessere Fisico e Cardiovascolare</h4><p>in 148 farmacie</p></div><p class="serv__prezzo">24 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/benessere-e-composizione-corporea" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="benessere-e-composizione-corporea">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Check-up Cuore con Holter</h4><p>in 144 farmacie</p></div><p class="serv__prezzo">da 93 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/cuore-holter-24h" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="cuore-holter-24h">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Gratuito dell&#x27;Udito</h4><p>in 1 farmacia</p></div><p class="serv__prezzo">Gratuito</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/check-up/test-udito-gratuito" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-udito-gratuito">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-autoanalisi" aria-labelledby="tab-autoanalisi" data-pannello="autoanalisi" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-autoanalisi.webp" type="image/webp"><img src="assets/img/cat-autoanalisi.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Una goccia di sangue su un dito per l&#x27;autoanalisi"></picture>
+        <div class="servizi__elenco"><h3>Autoanalisi</h3><ul><li class="serv"><div class="serv__info"><h4>Autoanalisi del sangue per la Glicemia</h4><p>in 370 farmacie</p></div><p class="serv__prezzo">5 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/autoanalisi/del-sangue-per-glicemia" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="del-sangue-per-glicemia">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Autoanalisi del sangue per il Profilo Lipidico</h4><p>in 350 farmacie</p></div><p class="serv__prezzo">18 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/autoanalisi/del-sangue-per-profilo-lipidico" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="del-sangue-per-profilo-lipidico">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Autoanalisi del sangue per il Colesterolo</h4><p>in 270 farmacie</p></div><p class="serv__prezzo">6 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/autoanalisi/del-sangue-per-colesterolo" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="del-sangue-per-colesterolo">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Autoanalisi del sangue per l&#x27;Emoglobina Glicata</h4><p>in 221 farmacie</p></div><p class="serv__prezzo">18 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/autoanalisi/del-sangue-per-emoglobina-glicata" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="del-sangue-per-emoglobina-glicata">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Autoanalisi del sangue per i Trigliceridi</h4><p>in 114 farmacie</p></div><p class="serv__prezzo">6 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/autoanalisi/del-sangue-per-trigliceridi" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="del-sangue-per-trigliceridi">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-intolleranze-e-salute-intestinale" aria-labelledby="tab-intolleranze-e-salute-intestinale" data-pannello="intolleranze-e-salute-intestinale" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-intolleranze.webp" type="image/webp"><img src="assets/img/cat-intolleranze.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Una provetta per il test delle intolleranze alimentari"></picture>
+        <div class="servizi__elenco"><h3>Intolleranze e salute intestinale</h3><ul><li class="serv"><div class="serv__info"><h4>Test Intolleranze 92 Alimenti</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">159 €<small>129 € con la carta</small></p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/igg-92-alimenti" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="igg-92-alimenti">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Disbiosi e Permeabilità Intestinale</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">179 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/test-disbiosi-e-permeabilita-intestinale" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-disbiosi-e-permeabilita-intestinale">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Intolleranze 184 alimenti</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">219 €<small>189 € con la carta</small></p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/igg-184-alimenti" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="igg-184-alimenti">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Breath test per Lattulosio</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">139 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/breath-test-per-lattulosio" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="breath-test-per-lattulosio">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Breath test per Lattosio</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">129 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/breath-test-lattosio" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="breath-test-lattosio">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Permeabilità</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">129 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/intolleranze-e-salute-intestinale/test-permeabilita-intestinale" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-permeabilita-intestinale">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-test-genetici-e-del-dna" aria-labelledby="tab-test-genetici-e-del-dna" data-pannello="test-genetici-e-del-dna" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-dna.webp" type="image/webp"><img src="assets/img/cat-dna.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Un farmacista guarda un&#x27;analisi del DNA al computer"></picture>
+        <div class="servizi__elenco"><h3>Test genetici e del DNA</h3><ul><li class="serv"><div class="serv__info"><h4>Genonutrizione: Test DNA per nutrizione</h4><p>in 521 farmacie</p></div><p class="serv__prezzo">189 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/test-dna-genonutrizione-per-alimentazione" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-dna-genonutrizione-per-alimentazione">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Genetico per la salute del Cuore</h4><p>in 496 farmacie</p></div><p class="serv__prezzo">199 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/test-dna-rischio-cardiovascolare-prevenzione" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-dna-rischio-cardiovascolare-prevenzione">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test DNA Sportivo</h4><p>in 319 farmacie</p></div><p class="serv__prezzo">229 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/analisi-dna-per-predisposizione-sportiva" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="analisi-dna-per-predisposizione-sportiva">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test DNA per Intolleranze Alimentari</h4><p>in 319 farmacie</p></div><p class="serv__prezzo">129 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/test-dna-intolleranze-lattosio-celiachia-disbiosi" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-dna-intolleranze-lattosio-celiachia-disbiosi">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test DNA Prevenzione</h4><p>in 319 farmacie</p></div><p class="serv__prezzo">229 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/analisi-dna-prevenzione" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="analisi-dna-prevenzione">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>DNA Skin Test: Test DNA Anti-Age</h4><p>in 311 farmacie</p></div><p class="serv__prezzo">149 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/test-dna-per-invecchiamento-cutaneo-anti-eta" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-dna-per-invecchiamento-cutaneo-anti-eta">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Test Genetico Risposta Infiammatoria &amp; Immunitaria</h4><p>in 239 farmacie</p></div><p class="serv__prezzo">da 149 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-genetici-e-del-dna/test-inflammation-immunity" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="test-inflammation-immunity">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-test-rapidi" aria-labelledby="tab-test-rapidi" data-pannello="test-rapidi" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-test-rapidi.webp" type="image/webp"><img src="assets/img/cat-test-rapidi.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Un test rapido appoggiato sul banco"></picture>
+        <div class="servizi__elenco"><h3>Test rapidi</h3><ul><li class="serv"><div class="serv__info"><h4>Tampone per lo Streptococco</h4><p>in 297 farmacie</p></div><p class="serv__prezzo">12 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-rapidi/tampone-streptococco" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="tampone-streptococco">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Tampone Antigenico per il Covid</h4><p>in 263 farmacie</p></div><p class="serv__prezzo">da 15 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/test-rapidi/tampone-antigenico-covid" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="tampone-antigenico-covid">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-vaccini" aria-labelledby="tab-vaccini" data-pannello="vaccini" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-vaccini.webp" type="image/webp"><img src="assets/img/cat-vaccini.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Una fiala di vaccino e una siringa"></picture>
+        <div class="servizi__elenco"><h3>Vaccini</h3><ul><li class="serv"><div class="serv__info"><h4>Vaccino Anti-influenzali</h4><p>in 103 farmacie</p></div><p class="serv__prezzo">25 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/vaccini/anti-influenzali" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="anti-influenzali">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Vaccino Anti Covid</h4><p>in 49 farmacie</p></div><p class="serv__prezzo">Gratuito</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/vaccini/anti-covid" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="anti-covid">Dove</a></div></li></ul></div>
+      </div><div class="servizi__pannello" role="tabpanel" id="pan-consulenze-professionali" aria-labelledby="tab-consulenze-professionali" data-pannello="consulenze-professionali" hidden>
+        <picture class="servizi__foto"><source srcset="assets/img/cat-consulenze.webp" type="image/webp"><img src="assets/img/cat-consulenze.jpg" width="760" height="760" loading="lazy" decoding="async" alt="Un fisioterapista prepara il lettino"></picture>
+        <div class="servizi__elenco"><h3>Consulenze professionali</h3><ul><li class="serv"><div class="serv__info"><h4>Foratura lobi</h4><p>in 397 farmacie</p></div><p class="serv__prezzo">Gratuito</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/foratura-lobi" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="foratura-lobi">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Lavaggi auricolari</h4><p>in 12 farmacie</p></div><p class="serv__prezzo">35 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/lavaggi-auricolari" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="lavaggi-auricolari">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Medicazioni semplici e complesse</h4><p>in 11 farmacie</p></div><p class="serv__prezzo">da 10 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/medicazioni" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="medicazioni">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Iniezioni</h4><p>in 9 farmacie</p></div><p class="serv__prezzo">35 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/iniezioni" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="iniezioni">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Servizi infermieristici</h4><p>in 8 farmacie</p></div><p class="serv__prezzo">in farmacia</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/servizi-infermieristici" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="servizi-infermieristici">Dove</a></div></li><li class="serv"><div class="serv__info"><h4>Fisioterapia</h4><p>in 2 farmacie</p></div><p class="serv__prezzo">valutazione 35 €, trattamento 70 €</p><div class="serv__azioni"><a class="btn btn--rosso btn--piccolo" href="https://www.lafarmacia.it/servizi/consulenze-professionali/fisioterapia" target="_blank" rel="noopener">Prenota</a><a class="serv__dove" href="#trova" data-filtra-servizio="fisioterapia">Dove</a></div></li></ul></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN EVIDENZA -->
+  <section class="evidenza" id="evidenza" aria-label="In evidenza">
+    <article class="evid evid--vaccino">
+      <picture class="evid__foto"><source srcset="assets/img/evidenza-vaccino.webp" type="image/webp"><img src="assets/img/evidenza-vaccino.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Una farmacista fa il vaccino sul braccio di un paziente"></picture>
+      <div class="evid__testo">
+        <p class="evid__quando">Da ottobre</p>
+        <h2 class="titolo titolo--medio">È tempo di vaccino antinfluenzale<i class="punto" aria-hidden="true"></i></h2>
+        <p>La prevenzione comincia in farmacia: il vaccino si prenota online e si fa in farmacia, senza code. <b>25 €</b>, in <b data-conta-servizio="anti-influenzali">oltre 100</b> farmacie della rete.</p>
+        <div class="evid__azioni">
+          <a class="btn btn--rosso" href="https://www.lafarmacia.it/servizi/vaccini/anti-influenzali" target="_blank" rel="noopener">Prenota il vaccino</a>
+          <a class="btn btn--linea" href="#trova" data-filtra-servizio="anti-influenzali">Chi lo fa vicino a me</a>
+        </div>
+      </div>
+    </article>
+    <article class="evid evid--ecg">
+      <picture class="evid__foto"><source srcset="assets/img/evidenza-ecg.webp" type="image/webp"><img src="assets/img/evidenza-ecg.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Un tracciato di elettrocardiogramma letto da un medico"></picture>
+      <div class="evid__testo">
+        <p class="evid__quando">Referto in 24 ore</p>
+        <h2 class="titolo titolo--medio">ECG in farmacia, letto da un cardiologo<i class="punto" aria-hidden="true"></i></h2>
+        <p>L'elettrocardiogramma dura 20 minuti e lo referta un cardiologo in telemedicina, di solito entro 24 ore. Utile anche per il certificato medico sportivo. <b>35 €, 30 € con la carta fedeltà</b>.</p>
+        <svg class="ecg-linea" viewBox="0 0 600 80" aria-hidden="true" data-ecg><path d="M0 50 H170 l12 -6 l10 6 h20 l8 22 l14 -70 l14 64 l8 -16 h30 l16 -10 l18 10 H600"/></svg>
+        <div class="evid__azioni">
+          <a class="btn btn--rosso" href="https://www.lafarmacia.it/servizi/cardiovascolare/elettrocardiogramma-ecg" target="_blank" rel="noopener">Prenota l'ECG</a>
+          <a class="btn btn--linea" href="#trova" data-filtra-servizio="elettrocardiogramma-ecg">Chi lo fa vicino a me</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- RICETTA ONLINE -->
+  <section class="ricetta" id="ricetta" aria-labelledby="ricetta-titolo">
+    <div class="wrap ricetta__griglia">
+      <div class="ricetta__testo">
+        <h2 class="titolo" id="ricetta-titolo">I farmaci con ricetta, già pronti<i class="punto" aria-hidden="true"></i></h2>
+        <p class="lead">Carichi la ricetta elettronica, la farmacia ti conferma che i farmaci ci sono e passi a ritirarli quando vuoi. Niente attese al banco.</p>
+        <ol class="passi">
+          <li><span>1</span>Scegli la farmacia più vicina a te.</li>
+          <li><span>2</span>Carica le tue ricette.</li>
+          <li><span>3</span>Ricevi la conferma di disponibilità.</li>
+          <li><span>4</span>Passa in farmacia a ritirare i farmaci.</li>
+        </ol>
+        <a class="btn btn--rosso" href="https://www.lafarmacia.it/farmaci-con-ricetta-online" target="_blank" rel="noopener">Prenota i farmaci con ricetta</a>
+      </div>
+      <figure class="ricetta__foto" data-profondita>
+        <picture><source srcset="assets/img/ricetta.webp" type="image/webp"><img src="assets/img/ricetta.jpg" width="1200" height="984" loading="lazy" decoding="async" alt="Una mano tiene uno smartphone con la pagina per inserire le ricette davanti a un grande cerchio rosso"></picture>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CARTA FEDELTA -->
+  <section class="fedelta" id="fedelta" aria-labelledby="fedelta-titolo">
+    <div class="wrap fedelta__griglia">
+      <figure class="fedelta__foto">
+        <picture><source srcset="assets/img/fedelta.webp" type="image/webp"><img src="assets/img/fedelta.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Una cliente sorridente mostra la carta fedeltà Lafarmacia."></picture>
+        <div class="carta" aria-hidden="true" data-carta><img src="assets/img/logo-lafarmacia-chiaro.svg" width="197" height="29" alt=""><span>Fidelity card</span></div>
+      </figure>
+      <div class="fedelta__testo">
+        <h2 class="titolo" id="fedelta-titolo">La carta fedeltà è gratis<i class="punto" aria-hidden="true"></i></h2>
+        <ul class="vantaggi">
+          <li><b>1 punto ogni 3 €</b><span>su parafarmaci, servizi e dispositivi medici, in negozio e online.</span></li>
+          <li><b>Buoni spesa</b><span>i punti diventano buoni e arrivano promozioni riservate.</span></li>
+          <li><b>Servizi che costano meno</b><span>per esempio l'ECG: 30 € invece di 35 €, l'holter pressorio 60 € invece di 65 €.</span></li>
+        </ul>
+        <a class="btn btn--rosso" href="https://www.lafarmacia.it/fidelity-card" target="_blank" rel="noopener">Richiedi la carta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SIAMO -->
+  <section class="chi" id="chi-siamo" aria-labelledby="chi-titolo">
+    <div class="wrap">
+      <div class="chi__testa">
+        <h2 class="titolo" id="chi-titolo">Tutto il piacere di stare bene<i class="punto" aria-hidden="true"></i></h2>
+        <p class="lead">Lafarmacia. vuole diventare il primo retail farmaceutico italiano socialmente responsabile: un punto fermo per la salute e la dignità delle persone, dove trovi sempre uno specialista a disposizione.</p>
+      </div>
+      <ol class="tappe">
+        <li class="tappa">
+          <div class="tappa__cerchio"><img src="assets/img/storia-2018.jpg" width="820" height="820" loading="lazy" decoding="async" alt="Davide Tavaniello e Rodolfo Guarino in farmacia"><span class="tappa__anno">2018</span></div>
+          <h3>Il punto di partenza</h3>
+          <p>Davide Tavaniello e Rodolfo Guarino fondano Hippocrates Holding, con il sostegno di alcune famiglie imprenditoriali italiane.</p>
+        </li>
+        <li class="tappa">
+          <div class="tappa__cerchio"><img src="assets/img/storia-2020.jpg" width="820" height="820" loading="lazy" decoding="async" alt="La vetrina del flagship Lafarmacia. in piazza Cordusio a Milano"><span class="tappa__anno">2020</span></div>
+          <h3>Apre a Milano Lafarmacia.</h3>
+          <p>Il 5 giugno apre il primo flagship in piazza Cordusio: due piani, con uno spazio per workshop, conferenze e incontri.</p>
+        </li>
+        <li class="tappa">
+          <div class="tappa__cerchio"><img src="assets/img/storia-2022.jpg" width="820" height="820" loading="lazy" decoding="async" alt="L'interno luminoso di una Lafarmacia. con gli scaffali e il soffitto verde acqua"><span class="tappa__anno">Oggi</span></div>
+          <h3>Un network in crescita</h3>
+          <p>Oltre 620 farmacie e più di 3.200 persone tra Nord e Centro Italia, con un marchio certificato B Corp.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- EVENTI -->
+  <section class="eventi" id="eventi" aria-labelledby="eventi-titolo">
+    <div class="wrap">
+      <div class="eventi__testa">
+        <h2 class="titolo" id="eventi-titolo">Eventi gratuiti in farmacia<i class="punto" aria-hidden="true"></i></h2>
+        <p class="lead">Giornate di controlli, prevenzione, benessere e bellezza nelle farmacie della rete. Con Wellness on the Road incontri una nutrizionista per una consulenza gratuita.</p>
+      </div>
+      <ul class="eventi__lista">
+        <li><a href="https://www.lafarmacia.it/eventi" target="_blank" rel="noopener"><picture><source srcset="assets/img/evento-controlli.webp" type="image/webp"><img src="assets/img/evento-controlli.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Controllo dell'udito in farmacia"></picture><span>Controlli gratuiti</span></a></li>
+        <li><a href="https://www.lafarmacia.it/eventi" target="_blank" rel="noopener"><picture><source srcset="assets/img/evento-prevenzione.webp" type="image/webp"><img src="assets/img/evento-prevenzione.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Una farmacista sorridente saluta dal banco"></picture><span>Prevenzione</span></a></li>
+        <li><a href="https://www.lafarmacia.it/wellness-on-the-road" target="_blank" rel="noopener"><picture><source srcset="assets/img/evento-benessere.webp" type="image/webp"><img src="assets/img/evento-benessere.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Una ragazza con una ciotola di frutta dopo l'allenamento"></picture><span>Wellness on the Road</span></a></li>
+        <li><a href="https://www.lafarmacia.it/eventi" target="_blank" rel="noopener"><picture><source srcset="assets/img/evento-bellezza.webp" type="image/webp"><img src="assets/img/evento-bellezza.jpg" width="900" height="900" loading="lazy" decoding="async" alt="Prodotti di bellezza e foglie su un piano bianco"></picture><span>Bellezza</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NOLEGGIO E LAVORO -->
+  <section class="doppio" aria-label="Noleggio ausili e lavoro">
+    <div class="wrap doppio__griglia">
+      <article class="riquadro riquadro--noleggio">
+        <picture><source srcset="assets/img/noleggio.webp" type="image/webp"><img src="assets/img/noleggio.jpg" width="1100" height="816" loading="lazy" decoding="async" alt="Una farmacista mostra un apparecchio elettromedicale davanti a un cerchio rosso"></picture>
+        <div>
+          <h2 class="titolo titolo--piccolo">Noleggio ausili sanitari<i class="punto" aria-hidden="true"></i></h2>
+          <p>In Lombardia: ausili ed elettromedicali a noleggio, sicuri e subito disponibili per la cura a casa.</p>
+          <a class="link-sotto" href="https://www.lafarmacia.it/noleggio-ausili-sanitari-lombardia" target="_blank" rel="noopener">Scopri il noleggio</a>
+        </div>
+      </article>
+      <article class="riquadro riquadro--lavora" id="lavora">
+        <picture><source srcset="assets/img/lavora.webp" type="image/webp"><img src="assets/img/lavora.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Una farmacista con un tablet sistema gli scaffali"></picture>
+        <div>
+          <h2 class="titolo titolo--piccolo">Lavora con noi<i class="punto" aria-hidden="true"></i></h2>
+          <p>Più di 3.200 persone in oltre 620 farmacie. Anche percorsi dall'università al lavoro.</p>
+          <a class="link-sotto" href="https://www.lafarmacia.it/lavora-con-noi" target="_blank" rel="noopener">Scopri le posizioni aperte</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CHIUSURA -->
+  <section class="chiusura" aria-labelledby="chiusura-titolo">
+    <div class="wrap">
+      <h2 class="chiusura__titolo" id="chiusura-titolo">La tua farmacia è più vicina di quanto pensi<i class="punto" aria-hidden="true"></i></h2>
+      <div class="chiusura__azioni">
+        <a class="btn btn--rosso btn--grande" href="#trova" data-vicino-hero>Trova la farmacia più vicina</a>
+        <a class="btn btn--vuoto btn--grande" href="https://www.lafarmacia.it/assistenza-clienti" target="_blank" rel="noopener">Scrivi all'assistenza</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="wrap piede__griglia">
+    <img class="piede__logo" src="assets/img/logo-lafarmacia-chiaro.svg" width="197" height="29" loading="lazy" alt="Lafarmacia.">
+    <div class="piede__dati">
+      <p><b>Hippocrates Holding S.p.A.</b><br>Via Emilio Cornalia 11, 20124 Milano<br>P. IVA 10264830968, REA MI-2517818</p>
+    </div>
+    <nav class="piede__link" aria-label="Link utili">
+      <a href="https://www.lafarmacia.it/assistenza-clienti" target="_blank" rel="noopener">Assistenza clienti</a>
+      <a href="https://www.lafarmacia.it/domande-frequenti" target="_blank" rel="noopener">Domande frequenti</a>
+      <a href="https://www.lafarmacia.it/certificazione-b-corp" target="_blank" rel="noopener">Certificazione B Corp</a>
+      <a href="https://www.lafarmacia.it/privacy-policy" target="_blank" rel="noopener">Privacy</a>
+    </nav>
+  </div>
+  <div class="wrap piede__fondo">
+    <p>© <span data-anno>2026</span> Hippocrates Holding S.p.A. Sito realizzato da Alessio Mora. Confini regionali: openpolis, CC BY 4.0.</p>
+    <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di Lafarmacia.</p>
+  </div>
+</footer>
+
+<div class="barra" data-barra>
+  <a class="btn btn--rosso" href="#trova" data-vicino-hero>Trova farmacia</a>
+  <a class="btn btn--vuoto" href="#servizi">Prenota</a>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
