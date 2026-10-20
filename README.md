@@ -44,6 +44,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-gdm-lattonerie-girotto](./sito-gdm-lattonerie-girotto) | https://sito-gdm-lattonerie-girotto.vercel.app | [video](./sito-gdm-lattonerie-girotto/video) |
 | [sito-gruppo-carollo](./sito-gruppo-carollo) | https://sito-gruppo-carollo.vercel.app | [video](./sito-gruppo-carollo/video) |
 | [sito-hartnagel-handels](./sito-hartnagel-handels) | https://sito-hartnagel-handels.vercel.app | [video](./sito-hartnagel-handels/video) |
+| [sito-idrogroup-impianti](./sito-idrogroup-impianti) | https://sito-idrogroup-impianti.vercel.app | [video](./sito-idrogroup-impianti/video) |
 | [sito-idrotermica-mazzarolo](./sito-idrotermica-mazzarolo) | https://sito-idrotermica-mazzarolo.vercel.app | [video](./sito-idrotermica-mazzarolo/video) |
 | [sito-incotess](./sito-incotess) | https://sito-incotess.vercel.app | [video](./sito-incotess/video) |
 | [sito-italservice](./sito-italservice) | https://sito-italservice.vercel.app | [video](./sito-italservice/video) |
