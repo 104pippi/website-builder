@@ -73,6 +73,7 @@ export async function avvia(canvas, hero, opz = {}) {
   const N = F.length;
   const rnd = semi(620);
   const MILANO = proj(45.4642, 9.19);
+  const ALTO = 0.75; // quota da cui parte il punto
   const fine = new Float32Array(N * 2);
   const ritardo = new Float32Array(N);
   const arco = new Float32Array(N);
@@ -136,7 +137,7 @@ export async function avvia(canvas, hero, opz = {}) {
     new THREE.SphereGeometry(0.8, 64, 48),
     new THREE.MeshPhysicalMaterial({ color: 0xc8001a, roughness: 0.24, clearcoat: 1, clearcoatRoughness: 0.05, toneMapped: false })
   );
-  sfera.position.set(MILANO[0], MILANO[1], 1.4);
+  sfera.position.set(MILANO[0], MILANO[1], ALTO);
   mappa.add(sfera);
 
   /* --- inquadratura: la zona con le farmacie riempie la tela --- */
@@ -154,7 +155,7 @@ export async function avvia(canvas, hero, opz = {}) {
     camera.position.set(0, 0, Z);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
-    inq = { x: -(BOX.x0 + BOX.x1) / 2 + (mobile ? 0.45 : 0), y: -(BOX.y0 + BOX.y1) / 2 * Math.cos(TILT) + (mobile ? 0.75 : 0) };
+    inq = { x: -(BOX.x0 + BOX.x1) / 2 + (mobile ? 0.45 : 0), y: -(BOX.y0 + BOX.y1) / 2 * Math.cos(TILT) + (mobile ? 0.75 : -0.35) };
   }
   adatta();
 
@@ -173,19 +174,19 @@ export async function avvia(canvas, hero, opz = {}) {
     const via = clamp((t - T_SCOPPIO) / 0.14);
     const s = Math.max(0.0001, kS * (1 - via));
     sfera.scale.set(s * (1 + comp * 0.12), s * (1 - comp * 0.14), s * (1 + comp * 0.12));
-    sfera.position.z = 1.4 + Math.sin(t * 2.4) * 0.05 * (1 - comp);
+    sfera.position.z = ALTO + Math.sin(t * 2.4) * 0.05 * (1 - comp);
     sfera.visible = via < 1;
 
     const ora = t - T_SCOPPIO;
     for (let i = 0; i < N; i++) {
       const u = clamp((ora - ritardo[i]) / VOLO);
       let x, y, z, k;
-      if (u <= 0) { x = MILANO[0]; y = MILANO[1]; z = 1.4; k = 0; }
+      if (u <= 0) { x = MILANO[0]; y = MILANO[1]; z = ALTO; k = 0; }
       else {
         const e = easeInOutCubic(u);
         x = mix(MILANO[0], fine[i * 2], e);
         y = mix(MILANO[1], fine[i * 2 + 1], e);
-        z = mix(1.4, 0, e) + Math.sin(Math.PI * e) * arco[i] * 0.5;
+        z = mix(ALTO, 0, e) + Math.sin(Math.PI * e) * arco[i] * 0.5;
         // atterraggio: un piccolo "plop"
         const atterra = clamp((u - 0.86) / 0.14);
         k = u < 0.86 ? 0.75 : mix(1.45, 1, easeOutCubic(atterra));
@@ -223,7 +224,7 @@ export async function avvia(canvas, hero, opz = {}) {
     const intro = 1 - easeOutCubic(clamp(t / 3.2));
     base.position.set(0, e * 1.6, 0);
     mappa.position.set(inq.x, inq.y, 0);
-    mappa.rotation.set(TILT - e * 0.32 + pt.y * 0.06 + intro * 0.25, pt.x * 0.08 + Math.sin(t * 0.21) * 0.035, 0.05 * Math.sin(t * 0.17) + e * 0.12 - intro * 0.08);
+    mappa.rotation.set(TILT - e * 0.32 + pt.y * 0.06 + intro * 0.12, pt.x * 0.08 + Math.sin(t * 0.21) * 0.035, 0.05 * Math.sin(t * 0.17) + e * 0.12 - intro * 0.08);
     canvas.style.opacity = String(ridotto ? 1 : easeOutCubic(clamp(t / 0.4)));
     renderer.render(scene, camera);
   }
