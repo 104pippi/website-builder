@@ -556,9 +556,9 @@ export async function avvia({ canvas, palco, ridotto = false, pronto = () => {} 
     const ritratto = clamp((1.15 - a) / 0.55, 0, 1); // 1 = telefono in verticale
     const hero = 1 - sstep(0.15, 0.85, s);
     // dove sta il container sullo schermo (frazioni) e quanto spazio ha
-    const fx = lerp(lerp(0.67, 0.68, 1 - hero), 0.5, ritratto);
+    const fx = lerp(lerp(0.67, 0.68, 1 - hero), lerp(0.5, 0.535, hero), ritratto);
     const fy = lerp(lerp(0.56, 0.5, 1 - hero), lerp(0.355, 0.7, hero), ritratto);
-    const semiW = lerp(lerp(0.4, 0.44, 1 - hero), lerp(0.86, 0.94, hero), ritratto);
+    const semiW = lerp(lerp(0.4, 0.44, 1 - hero), lerp(0.86, 0.82, hero), ritratto);
     const semiH = lerp(lerp(0.6, 0.66, 1 - hero), lerp(0.36, 0.38, hero), ritratto);
     // regìa interpolata
     const i0 = clamp(Math.floor(s), 0, 4), i1 = clamp(i0 + 1, 0, 4), f = sstep(0, 1, s - i0);

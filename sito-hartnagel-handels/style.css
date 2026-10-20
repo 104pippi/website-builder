@@ -136,9 +136,11 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .palco__azioni { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .palco__azioni .btn--linea { padding: 0 16px; }
 .palco__indizio {
-  position: absolute; z-index: 3; left: 0; right: 0; bottom: calc(86px + env(safe-area-inset-bottom)); text-align: center;
+  position: absolute; z-index: 3; left: 0; right: 0; bottom: calc(74px + env(safe-area-inset-bottom)); text-align: center;
   font-size: .8rem; font-weight: 560; color: var(--testo2); display: flex; justify-content: center; align-items: center; gap: 10px;
+  pointer-events: none;
 }
+.palco__indizio { width: max-content; margin-inline: auto; padding: 6px 14px 6px 12px; border-radius: 99px; background: rgba(248,249,248,.86); }
 .palco__freccia { width: 2px; height: 26px; background: linear-gradient(var(--inchiostro) 50%, transparent 50%) 0 0 / 2px 12px; animation: freccia 1.4s linear infinite; }
 @keyframes freccia { to { background-position: 0 12px; } }
 
@@ -186,7 +188,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   .palco__sopra { font-size: .92rem; max-width: none; }
   .palco__testo { font-size: 1.08rem; margin-top: 20px; }
   .palco__azioni { margin-top: 28px; }
-  .palco__indizio { left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); right: auto; bottom: 40px; justify-content: flex-start; }
+  .palco__indizio { left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); right: auto; bottom: 40px; margin: 0; }
   .palco__schede { left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); right: auto; width: 440px; top: calc(var(--testata) + 24px); }
   .palco__schede button { font-size: .88rem; min-height: 42px; }
   .palco__pannelli { inset: 50% auto auto max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); width: 440px; }
