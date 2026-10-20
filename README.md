@@ -21,6 +21,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
 | [sito-clever-due](./sito-clever-due) | https://sito-clever-due.vercel.app | [video](./sito-clever-due/video) |
 | [sito-cogim](./sito-cogim) | https://sito-cogim.vercel.app | [video](./sito-cogim/video) |
+| [sito-dado-ponteggi](./sito-dado-ponteggi) | https://sito-dado-ponteggi.vercel.app | [video](./sito-dado-ponteggi/video) |
 | [sito-defam](./sito-defam) | https://sito-defam.vercel.app | [video](./sito-defam/video) |
 | [sito-doxon](./sito-doxon) | https://sito-doxon.vercel.app | [video](./sito-doxon/video) |
 | [sito-drigo-bergamin](./sito-drigo-bergamin) | https://sito-drigo-bergamin.vercel.app | [video](./sito-drigo-bergamin/video) |

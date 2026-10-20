@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DaDo Ponteggi | Noleggio, vendita e montaggio ponteggi a Treviso e Verona</title>
+<meta name="description" content="Ponteggi certificati per imprese del Nord Italia: progetto 3D, noleggio, vendita e montaggio. Sedi a Istrana (TV) e Negrar (VR). Preventivo in 3 giorni.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-dado-ponteggi.vercel.app/">
+<meta name="theme-color" content="#050B43">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="DaDo Ponteggi | Ponteggi per chi punta in alto">
+<meta property="og:description" content="Progetto 3D, noleggio, vendita e montaggio di ponteggi certificati. Sedi a Istrana (TV) e Negrar di Valpolicella (VR).">
+<meta property="og:image" content="https://sito-dado-ponteggi.vercel.app/assets/img/og.jpg">
+<meta property="og:url" content="https://sito-dado-ponteggi.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-campanile-m.jpg" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-campanile.jpg" media="(min-width: 900px)" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "DaDo Ponteggi",
+  "legalName": "DaDo Ponteggi Srl",
+  "slogan": "Per chi punta in alto",
+  "description": "Vendita, noleggio, progetto, montaggio e smontaggio di ponteggi fissi ed elettrici certificati e opere provvisionali per cantieri del Nord Italia.",
+  "url": "https://sito-dado-ponteggi.vercel.app/",
+  "image": "https://sito-dado-ponteggi.vercel.app/assets/img/og.jpg",
+  "logo": "https://sito-dado-ponteggi.vercel.app/assets/img/logo-blu.png",
+  "telephone": "+390422307911",
+  "email": "info@dadoponteggi.it",
+  "vatID": "IT05315560267",
+  "foundingDate": "2012",
+  "address": {"@type": "PostalAddress", "streetAddress": "Via Montello, 56", "postalCode": "31036", "addressLocality": "Istrana", "addressRegion": "TV", "addressCountry": "IT"},
+  "department": [{"@type": "HomeAndConstructionBusiness", "name": "DaDo Ponteggi, filiale di Verona", "telephone": "+390422307911",
+    "address": {"@type": "PostalAddress", "streetAddress": "Via Firenze snc", "postalCode": "37024", "addressLocality": "Negrar di Valpolicella", "addressRegion": "VR", "addressCountry": "IT"}}],
+  "openingHours": ["Mo-Fr 08:30-12:30", "Mo-Fr 13:30-17:30"],
+  "areaServed": "Nord Italia",
+  "sameAs": ["https://facebook.com/dadoponteggi", "https://www.instagram.com/dadoponteggi.it", "https://it.linkedin.com/company/da-do-ponteggi"]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata" id="testata">
+  <div class="testata__in">
+    <a class="testata__logo" href="#top" aria-label="DaDo Ponteggi, torna all'inizio">
+      <img src="assets/img/logo-bianco.png" width="560" height="127" alt="DaDo Ponteggi">
+    </a>
+    <nav class="testata__nav" aria-label="Sezioni">
+      <a href="#servizi">Servizi</a>
+      <a href="#progetto-3d">Progetto 3D</a>
+      <a href="#prodotti">Prodotti</a>
+      <a href="#cantieri">Cantieri</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="testata__tel" href="tel:+390422307911">0422 307911</a>
+    <a class="btn btn--verde btn--piccolo testata__cta" href="#preventivo">Chiedi un preventivo</a>
+    <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu-mobile">Menu</button>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden>
+  <nav aria-label="Menu">
+    <a href="#servizi">Servizi</a>
+    <a href="#progetto-3d">Progetto 3D</a>
+    <a href="#prodotti">Prodotti</a>
+    <a href="#cantieri">Cantieri</a>
+    <a href="#casi">Casi</a>
+    <a href="#chi-siamo">Chi siamo</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <div class="menu-mobile__azioni">
+    <a class="btn btn--verde" href="#preventivo">Chiedi un preventivo</a>
+    <a class="btn btn--linea-chiara" href="tel:+390422307911">Chiama 0422 307911</a>
+  </div>
+</div>
+
+<main id="contenuto">
+
+<section class="hero" id="top" aria-labelledby="titolo-hero">
+  <div class="hero__foto">
+    <picture>
+      <source media="(min-width: 900px)" srcset="assets/img/hero-campanile.jpg">
+      <img src="assets/img/hero-campanile-m.jpg" width="825" height="1100" fetchpriority="high" decoding="async"
+           alt="Campanile in mattoni avvolto da un ponteggio DaDo Ponteggi fino alla cella campanaria, contro un cielo azzurro">
+    </picture>
+    <div class="hero__piani" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div class="hero__testo">
+    <h1 id="titolo-hero" class="hero__titolo">
+      <span class="riga"><span>Ponteggi per</span></span>
+      <span class="riga"><span>chi punta</span></span>
+      <span class="riga"><span>in alto.</span></span>
+    </h1>
+    <p class="hero__sotto">Progettiamo, noleggiamo, vendiamo e montiamo ponteggi certificati per imprese edili, restauratori e industrie del Nord Italia. Sedi a Istrana (TV) e Negrar di Valpolicella (VR).</p>
+    <div class="hero__azioni">
+      <a class="btn btn--verde" href="#preventivo">Chiedi un preventivo</a>
+      <a class="btn btn--linea-chiara" href="tel:+390422307911">Chiama 0422 307911</a>
+    </div>
+    <p class="hero__nota">Sopralluogo in cantiere e preventivo in 3 giorni lavorativi.</p>
+  </div>
+</section>
+
+<section class="fatti" aria-label="DaDo Ponteggi in numeri">
+  <ul class="fatti__lista">
+    <li><strong>2012</strong><span>l'anno in cui siamo partiti, da un garage a Treviso</span></li>
+    <li><strong>277</strong><span>cantieri acquisiti nel 2025</span></li>
+    <li><strong>23</strong><span>dipendenti, dall'ufficio tecnico ai ponteggiatori</span></li>
+    <li><strong>+21%</strong><span>nuovi clienti nel 2024</span></li>
+    <li class="fatti__iso"><strong>ISO 9001</strong><span>sistema qualità certificato UNI EN ISO 9001:2015</span></li>
+  </ul>
+</section>
+
+<section class="servizi" id="servizi" aria-labelledby="titolo-servizi">
+  <div class="contenitore">
+    <div class="intestazione" data-rivela>
+      <h2 id="titolo-servizi">Dal sopralluogo allo smontaggio, un solo interlocutore.</h2>
+      <p>Affianchiamo imprese e professionisti con un servizio completo e certificato: studiamo il ponteggio sul tuo cantiere, lo forniamo a noleggio o in vendita e lo montiamo con le nostre squadre.</p>
+    </div>
+    <div class="telaio">
+      <article class="servizio" data-rivela>
+        <div class="servizio__testo">
+          <h3>Progetti</h3>
+          <p>Ogni cantiere ha spazi, tempi e vincoli diversi. Facciamo il sopralluogo, studiamo la soluzione con te e prepariamo progetto e documentazione conformi alle normative vigenti.</p>
+        </div>
+        <figure class="servizio__foto"><img src="assets/img/servizio-progetti.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Ponteggio multidirezionale montato all'interno di una chiesa, sopra i banchi coperti dai teli"></figure>
+      </article>
+      <article class="servizio" data-rivela>
+        <div class="servizio__testo">
+          <h3>Noleggio</h3>
+          <p>Un parco nolo moderno e sempre aggiornato: ponteggi fissi, ponteggi elettrici autosollevanti, montacarichi, parapetti, coperture mobili e sistemi di sicurezza pronti all'uso. Tempi di consegna brevi, per ogni durata e budget.</p>
+        </div>
+        <figure class="servizio__foto"><img src="assets/img/servizio-noleggio.jpg" width="960" height="540" loading="lazy" decoding="async" alt="Due camion con gru di DaDo Ponteggi pronti per la consegna del materiale in cantiere"></figure>
+      </article>
+      <article class="servizio" data-rivela>
+        <div class="servizio__testo">
+          <h3>Vendita</h3>
+          <p>Materiali nuovi e usati, certificati e conformi alle normative di sicurezza. Ponteggi multidirezionali e da pittori in alluminio Altrad, ponteggi a telaio tradizionale Edilponte. Ti aiutiamo a scegliere quello giusto per il tuo lavoro.</p>
+        </div>
+        <figure class="servizio__foto"><img src="assets/img/servizio-vendita.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Telai di ponteggio in acciaio zincato impilati in magazzino"></figure>
+      </article>
+      <article class="servizio" data-rivela>
+        <div class="servizio__testo">
+          <h3>Montaggio e smontaggio</h3>
+          <p>Montiamo e smontiamo ponteggi nostri e di terzi con personale qualificato, nei tempi concordati e in sinergia con il cantiere, perché l'installazione fili senza intoppi.</p>
+        </div>
+        <figure class="servizio__foto"><img src="assets/img/servizio-montaggio.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Ponteggiatori al lavoro sulla facciata di un palazzo storico, con la strada in porfido delimitata"></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pista" id="progetto-3d" aria-labelledby="titolo-3d">
+  <div class="palco">
+    <img class="palco__poster" src="assets/img/poster-progetto.jpg" width="1022" height="739" loading="lazy" decoding="async"
+         alt="Disegno tecnico di un ponteggio multidirezionale curvo progettato da DaDo Ponteggi">
+    <div class="palco__scena" id="scena3d" aria-hidden="true"></div>
+    <div class="palco__velo" aria-hidden="true"></div>
+    <div class="palco__testa">
+      <h2 id="titolo-3d">Il tuo ponteggio, prima del cantiere.</h2>
+      <p>Lo disegniamo in 3D e te lo mostriamo prima di montarlo. Ecco come lavoriamo, dal primo sopralluogo all'ultimo tubo.</p>
+    </div>
+    <ol class="passi">
+      <li class="passo" data-passo="0"><span class="passo__n">1</span><div><h3>Sopralluogo in cantiere</h3><p>Un nostro tecnico viene sul posto e rileva misure, accessi e vincoli dell'edificio.</p></div></li>
+      <li class="passo" data-passo="1"><span class="passo__n">2</span><div><h3>Preventivo in 3 giorni lavorativi</h3><p>Ricevi un'offerta chiara e dettagliata, costruita su quello che serve davvero al tuo cantiere.</p></div></li>
+      <li class="passo" data-passo="2"><span class="passo__n">3</span><div><h3>Progetto e documentazione</h3><p>Disegniamo il ponteggio in 3D e prepariamo i documenti per il coordinatore della sicurezza, i collaudi e le verifiche.</p></div></li>
+      <li class="passo" data-passo="3"><span class="passo__n">4</span><div><h3>Trasporto e noleggio</h3><p>Portiamo il materiale in cantiere con i nostri camion con gru, nei tempi concordati.</p></div></li>
+      <li class="passo" data-passo="4"><span class="passo__n">5</span><div><h3>Montaggio e smontaggio</h3><p>Le nostre squadre montano il ponteggio in sicurezza e lo smontano a fine lavori.</p></div></li>
+    </ol>
+    <div class="palco__fine">
+      <blockquote>
+        <p>«Abbiamo scelto DaDo Ponteggi fin dall'inizio perché ci ha dato disponibilità e risposte concrete, fornendo in anteprima il progetto 3D del ponteggio installato.»</p>
+        <footer>Daniele Pellizzari, amministratore unico di Edilpellizzari Costruzioni Generali</footer>
+      </blockquote>
+      <a class="btn btn--verde" href="#preventivo">Chiedi un preventivo</a>
+    </div>
+    <div class="palco__barra" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<section class="prodotti" id="prodotti" aria-labelledby="titolo-prodotti">
+  <div class="contenitore">
+    <div class="intestazione" data-rivela>
+      <h2 id="titolo-prodotti">Attrezzature certificate, pronte per il cantiere.</h2>
+      <p>Selezioniamo solo prodotti certificati, sicuri e ad alte prestazioni. Li noleggiamo, li vendiamo e li montiamo noi.</p>
+    </div>
+    <div class="scheda">
+      <article class="prodotto" data-rivela>
+        <figure class="prodotto__foto"><img src="assets/img/prodotto-fisso.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Palazzina di sei piani avvolta da un ponteggio fisso in acciaio zincato"></figure>
+        <div class="prodotto__testo">
+          <h3>Ponteggio fisso</h3>
+          <p>Acciaio zincato resistente alla corrosione, moduli che si adattano anche a superfici irregolari, incastri rapidi da montare. Multidirezionale Altrad e a telaio tradizionale Edilponte.</p>
+        </div>
+        <p class="prodotto__dato"><strong>300 kg/m²</strong><span>capacità di carico minima garantita</span></p>
+      </article>
+      <article class="prodotto" data-rivela>
+        <figure class="prodotto__foto"><img src="assets/img/prodotto-montacarichi.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Ponteggio elettrico autosollevante sulla facciata di un edificio alto a Verona"></figure>
+        <div class="prodotto__testo">
+          <h3>Montacarichi e ponteggi elettrici</h3>
+          <p>Ponteggi autosollevanti per facciate di grandi edifici, vetrate, restauri, pile di ponti e viadotti. Meno fatica per la squadra, meno tempi morti in cantiere.</p>
+        </div>
+        <p class="prodotto__dato"><strong>2.300 kg</strong><span>di portata, con sollevamento anche oltre i 100 metri</span></p>
+      </article>
+      <article class="prodotto" data-rivela>
+        <figure class="prodotto__foto"><img src="assets/img/prodotto-parapetti.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Parapetti provvisori lungo il bordo di un tetto in coppi affacciato su un canale di Venezia"></figure>
+        <div class="prodotto__testo">
+          <h3>Parapetti provvisori</h3>
+          <p>Proteggono dalle cadute dall'alto su solai, coperture piane e inclinate, scale e lucernari. Si trasportano e si montano in fretta, per mettere subito in sicurezza il cantiere.</p>
+        </div>
+        <p class="prodotto__dato"><strong>Classi A, B, C</strong><span>per ogni tipo di copertura</span></p>
+      </article>
+      <article class="prodotto" data-rivela>
+        <figure class="prodotto__foto"><img src="assets/img/prodotto-copertura.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Copertura scorrevole montata sopra un edificio in ristrutturazione, con la gru di cantiere"></figure>
+        <div class="prodotto__testo">
+          <h3>Copertura scorrevole</h3>
+          <p>Struttura modulare in alluminio e teloni in PVC anti-UV e ignifughi, su binari in acciaio zincato. Il cantiere resta operativo anche con pioggia e vento.</p>
+        </div>
+        <p class="prodotto__dato"><strong>100 km/h</strong><span>protezione certificata contro il vento</span></p>
+      </article>
+      <article class="prodotto" data-rivela>
+        <figure class="prodotto__foto"><img src="assets/img/prodotto-allarme.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Tecnico che installa un sensore d'allarme sul tubo di un ponteggio coperto dalla rete"></figure>
+        <div class="prodotto__testo">
+          <h3>Allarme antintrusione</h3>
+          <p>Sistemi d'allarme pensati per ponteggi e assiti di cantiere. Si installano senza interventi invasivi e si spostano con l'avanzare dei lavori.</p>
+        </div>
+        <p class="prodotto__dato"><strong>Da remoto</strong><span>attivazione anche a distanza, sorveglianza continua</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cantieri" id="cantieri" aria-labelledby="titolo-cantieri">
+  <div class="contenitore">
+    <div class="intestazione" data-rivela>
+      <h2 id="titolo-cantieri">Campanili, ponti, silos, palazzi.</h2>
+      <p>Alcuni dei cantieri che abbiamo seguito tra Veneto e Friuli. Ogni ponteggio è studiato per quell'edificio.</p>
+    </div>
+    <div class="galleria">
+      <figure class="tessera tessera--alta" data-rivela><img src="assets/img/cantiere-campanile-lanze.jpg" width="533" height="800" loading="lazy" decoding="async" alt="Campanile completamente rivestito da ponteggio e rete, con montacarichi laterale"><figcaption><strong>Campanile</strong><span>Tutto Restauro, Lanze (VI)</span></figcaption></figure>
+      <figure class="tessera tessera--larga" data-rivela><img src="assets/img/cantiere-ponte-cavarzere.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Ponte stradale visto dal drone con due torri di ponteggio che scendono verso il fiume"><figcaption><strong>Ponte Martiri della Libertà</strong><span>Impresa Costruire, Cavarzere (VE)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-silos-pederobba.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Ponteggio attorno a un silo industriale"><figcaption><strong>Silos</strong><span>Camis, Pederobba (TV)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-natatorium.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Ponteggio all'interno di una piscina coperta"><figcaption><strong>Piscina coperta</strong><span>Natatorium, Treviso</span></figcaption></figure>
+      <figure class="tessera tessera--larga" data-rivela><img src="assets/img/cantiere-istrana.jpg" width="1100" height="496" loading="lazy" decoding="async" alt="Struttura di ponteggio costruita attorno a un aereo militare su un prato"><figcaption><strong>Attorno a un aereo</strong><span>Istrana (TV)</span></figcaption></figure>
+      <figure class="tessera tessera--alta" data-rivela><img src="assets/img/cantiere-favret-sacile.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Edificio alto rivestito di rete bianca con montacarichi"><figcaption><strong>Facciate</strong><span>Favret, Sacile (PN)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-silea.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Cantiere di nuova costruzione visto dal drone, con i ponteggi perimetrali"><figcaption><strong>Nuova costruzione</strong><span>Impresa Costruire, Silea (TV)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-italtelo.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Torre residenziale vista dal basso con ponteggio elettrico in facciata"><figcaption><strong>Torre residenziale</strong><span>Italtelo, Verona</span></figcaption></figure>
+      <figure class="tessera tessera--alta" data-rivela><img src="assets/img/cantiere-chiesa.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Ponteggio interno davanti all'altare dorato di una chiesa"><figcaption><strong>Interno di una chiesa</strong><span>Restauro conservativo</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-deon-cornuda.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Palazzina con ponteggio vista dal drone"><figcaption><strong>Residenziale</strong><span>Deon, Cornuda (TV)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-phol-padova.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Due edifici rivestiti di rete con gru rossa"><figcaption><strong>Riqualificazione</strong><span>Phol, Padova</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-venezia.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Ponteggio dentro la struttura in cemento di un campanile, visto dal basso"><figcaption><strong>Campanile in cemento</strong><span>Venezia</span></figcaption></figure>
+      <figure class="tessera tessera--larga-d" data-rivela><img src="assets/img/cantiere-grezzana.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Villa storica tra i cipressi con la chiesa avvolta dal ponteggio"><figcaption><strong>Villa Arvedi</strong><span>Tutto Restauro, Grezzana (VR)</span></figcaption></figure>
+      <figure class="tessera" data-rivela><img src="assets/img/cantiere-montacarichi.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Montacarichi da cantiere montato sulla facciata di un edificio coperto dalla rete"><figcaption><strong>Montacarichi</strong><span>Noleggio e montaggio</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="casi" id="casi" aria-labelledby="titolo-casi">
+  <div class="contenitore">
+    <div class="intestazione" data-rivela>
+      <h2 id="titolo-casi">Cosa raccontano le imprese che lavorano con noi.</h2>
+    </div>
+
+    <article class="caso" data-rivela>
+      <figure class="caso__foto"><img src="assets/img/caso-tutto-restauro.jpg" width="1100" height="734" loading="lazy" decoding="async" alt="Villa Arvedi tra i cipressi con la chiesa di San Carlo coperta dal ponteggio"></figure>
+      <div class="caso__testo">
+        <p class="caso__chi">Tutto Restauro<br><span>Chiesa di San Carlo, Villa Arvedi, Grezzana (VR)</span></p>
+        <h3>Una chiesa del Settecento, senza toccarne le forme.</h3>
+        <dl>
+          <dt>La sfida</dt><dd>Restauro conservativo integrale delle facciate esterne, nel rispetto dei volumi architettonici e lasciando libero il passaggio nel sito.</dd>
+          <dt>La soluzione</dt><dd>Un ponteggio multidirezionale progettato su misura, con partenza a sbalzo, e assistenza tecnica dal rilievo fino a fine lavori.</dd>
+        </dl>
+        <blockquote><p>«Abbiamo trovato in DaDo Ponteggi la capacità di adattarsi realmente alle esigenze specifiche del cantiere.»</p></blockquote>
+      </div>
+    </article>
+
+    <article class="caso caso--inverso" data-rivela>
+      <figure class="caso__foto"><img src="assets/img/caso-costruire.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Ponteggio sospeso sotto l'impalcato di un ponte, con gli operai sopra il fiume"></figure>
+      <div class="caso__testo">
+        <p class="caso__chi">Impresa Costruire<br><span>Ponte Martiri della Libertà, Cavarzere (VE)</span></p>
+        <h3>Sotto il ponte, sopra l'acqua.</h3>
+        <dl>
+          <dt>La sfida</dt><dd>Risanare le selle Gerber lavorando sotto l'impalcato del ponte, in uno spazio attraversato dal fiume.</dd>
+          <dt>La soluzione</dt><dd>Ponteggi multidirezionali progettati e montati dalle nostre squadre, dall'ufficio tecnico ai ponteggiatori, per operare in totale sicurezza.</dd>
+        </dl>
+        <p class="caso__nota">Matteo Bugno, direttore tecnico, apprezza la nostra affidabilità e la prontezza nel risolvere i problemi di cantiere.</p>
+      </div>
+    </article>
+
+    <article class="caso" data-rivela>
+      <figure class="caso__foto"><img src="assets/img/caso-bortoletto.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Piano di lavoro sospeso sotto la copertura di un capannone, con il carroponte giallo"></figure>
+      <div class="caso__testo">
+        <p class="caso__chi">Bortoletto Metal Construction<br><span>Magazzino doganale Zuin Autotrasporti</span></p>
+        <h3>Un piano sospeso, e il magazzino resta aperto.</h3>
+        <dl>
+          <dt>La sfida</dt><dd>Consolidare una copertura deteriorata senza colonne interne e senza fermare la movimentazione delle merci.</dd>
+          <dt>La soluzione</dt><dd>Un piano di lavoro sospeso in ponteggio multidirezionale, montato in due fasi, con un ponteggio elettrico autosollevante per portare in quota persone e materiali.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <div class="voci">
+      <figure class="voce" data-rivela>
+        <blockquote><p>«DaDo Ponteggi ha dimostrato competenza e professionalità, aiutandoci a gestire progetti più o meno complessi in maniera ottimale.»</p></blockquote>
+        <figcaption>Marco Mazzer, socio di EPA Tinteggiature</figcaption>
+      </figure>
+      <figure class="voce" data-rivela>
+        <blockquote><p>«Azienda precisa e coerente, sia a livello documentale/progettuale che sulla gestione della commessa. Disponibilità e attenzione alla sicurezza […]. Da sottolineare buona capacità di preventivazione senza extracosti a fine lavori.»</p></blockquote>
+        <figcaption>Alberto Visentin, recensione</figcaption>
+      </figure>
+      <figure class="voce" data-rivela>
+        <blockquote><p>«Azienda di comprovata esperienza nel settore dei ponteggi. Sempre a disposizione del cliente. Ottimo servizio di installazione e ponteggi esteticamente impeccabili. Sono molto soddisfatta.»</p></blockquote>
+        <figcaption>Monica Gazzola, recensione</figcaption>
+      </figure>
+      <figure class="voce" data-rivela>
+        <blockquote><p>«Mi sono rivolto a loro per un lavoro, i migliori nel territorio per quanto riguarda questo settore. Consiglio vivamente questa azienda, personale professionale e competente!»</p></blockquote>
+        <figcaption>Giacomo Pasqualin, recensione</figcaption>
+      </figure>
+      <figure class="voce" data-rivela>
+        <blockquote><p>«Professionali e disponibili. Troverete un servizio attento alle vostre esigenze e con massima disponibilità a trovare la giusta soluzione di ponteggio da voi richiesta. Bravi.»</p></blockquote>
+        <figcaption>Gabriele Gaspari, recensione</figcaption>
+      </figure>
+      <figure class="voce voce--fatto" data-rivela>
+        <blockquote><p>Cinello Finiture doveva risanare le facciate tra maggio e luglio. Ponteggi consegnati nei tempi e documenti per il coordinatore della sicurezza forniti subito.</p></blockquote>
+        <figcaption>Cinello Finiture, risanamento facciate</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="chi" id="chi-siamo" aria-labelledby="titolo-chi">
+  <figure class="chi__foto" data-rivela>
+    <img src="assets/img/squadra-mezzi.jpg" width="1400" height="668" loading="lazy" decoding="async" alt="La squadra di DaDo Ponteggi schierata davanti ai camion con gru e ai furgoni aziendali">
+  </figure>
+  <div class="contenitore chi__griglia">
+    <div class="chi__storia" data-rivela>
+      <h2 id="titolo-chi">Nati in un garage a Treviso, cresciuti sui cantieri del Nord Italia.</h2>
+      <p>DaDo Ponteggi nasce nel 2012 dalla visione di Daniele Foresto e Domenico Cappelletti, oggi soci con Miscel Minato. Da un piccolo garage abbiamo costruito un'azienda solida e in crescita, con una seconda sede a Negrar di Valpolicella per seguire da vicino i cantieri di Verona, del Trentino e della Lombardia orientale.</p>
+      <p>Crediamo che per lavorare bene si debba dare valore alle persone, e in particolare ai giovani: in squadra ci sono tanti ragazzi tra i 23 e i 28 anni, formati sul campo. L'obiettivo è diventare un riferimento del settore nel Nord-Est entro il 2030.</p>
+    </div>
+    <aside class="chi__stampa" data-rivela>
+      <img src="assets/img/corriere.jpg" width="476" height="700" loading="lazy" decoding="async" alt="Pagina del Corriere della Sera con l'intervista a DaDo Ponteggi sull'apertura della filiale di Verona">
+      <div>
+        <p class="chi__testata">Corriere della Sera</p>
+        <p>Ha raccontato l'apertura della filiale di Verona con un'intervista a Daniele Foresto: crescita media del 25% e fatturato che raddoppia ogni tre anni.</p>
+      </div>
+      <img class="chi__iso" src="assets/img/iso-9001.jpg" width="600" height="404" loading="lazy" decoding="async" alt="Certificazione Accredia e DiQu: sistema di gestione qualità UNI EN ISO 9001:2015">
+    </aside>
+  </div>
+  <div class="contenitore">
+    <h3 class="squadra__titolo" data-rivela>Le persone che trovi al telefono e in cantiere</h3>
+    <ul class="squadra">
+      <li data-rivela><img src="assets/img/team/daniele-foresto.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Daniele Foresto"><strong>Daniele Foresto</strong><span>Socio e direttore finanziario</span></li>
+      <li data-rivela><img src="assets/img/team/domenico-cappelletti.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Domenico Cappelletti"><strong>Domenico Cappelletti</strong><span>Socio e responsabile vendite</span></li>
+      <li data-rivela><img src="assets/img/team/miscel-minato.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Miscel Minato"><strong>Miscel Minato</strong><span>Socio e tecnico commerciale</span></li>
+      <li data-rivela><img src="assets/img/team/filippo-pozzobon.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Filippo Pozzobon"><strong>Filippo Pozzobon</strong><span>Direttore della filiale di Verona</span></li>
+      <li data-rivela><img src="assets/img/team/kevin-tosatto.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Kevin Tosatto"><strong>Kevin Tosatto</strong><span>Responsabile tecnico</span></li>
+      <li data-rivela><img src="assets/img/team/mourad-el-hamzaoui.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Mourad El Hamzaoui"><strong>Mourad El Hamzaoui</strong><span>Tecnico progettista</span></li>
+      <li data-rivela><img src="assets/img/team/matteo-belvini.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Matteo Belvini"><strong>Matteo Belvini</strong><span>Tecnico commerciale, area BL, PN, TV, UD</span></li>
+      <li data-rivela><img src="assets/img/team/matteo-rossi.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Matteo Rossi"><strong>Matteo Rossi</strong><span>Tecnico commerciale, area PD, VE, VI, RO</span></li>
+      <li data-rivela><img src="assets/img/team/raffaele-carotenuto.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Raffaele Carotenuto"><strong>Raffaele Carotenuto</strong><span>Responsabile logistica</span></li>
+      <li data-rivela><img src="assets/img/team/erind-shyti.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Erind Shyti"><strong>Erind Shyti</strong><span>Capo cantiere</span></li>
+      <li data-rivela><img src="assets/img/team/arben-jacelli.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Arben Jacelli"><strong>Arben Jacelli</strong><span>Ponteggiatore</span></li>
+      <li data-rivela><img src="assets/img/team/gentian-shyti.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Gentian Shyti"><strong>Gentian Shyti</strong><span>Ponteggiatore</span></li>
+      <li data-rivela><img src="assets/img/team/federica-muraro.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Federica Muraro"><strong>Federica Muraro</strong><span>Responsabile amministrazione</span></li>
+      <li data-rivela><img src="assets/img/team/giulia-cancian.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Giulia Cancian"><strong>Giulia Cancian</strong><span>Amministrazione</span></li>
+      <li data-rivela><img src="assets/img/team/isabel-vaira.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Isabel Vaira"><strong>Isabel Vaira</strong><span>Marketing</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="preventivo" id="preventivo" aria-labelledby="titolo-preventivo">
+  <div class="contenitore preventivo__griglia">
+    <div class="preventivo__intro" data-rivela>
+      <h2 id="titolo-preventivo">Chiedi un preventivo.</h2>
+      <p>Raccontaci il cantiere: ti risponde il tecnico che segue la tua zona. Sopralluogo e preventivo in 3 giorni lavorativi.</p>
+      <div class="tecnico" id="tecnico" aria-live="polite">
+        <img class="tecnico__foto" id="tecnico-foto" src="assets/img/marchio.svg" width="320" height="480" loading="lazy" decoding="async" alt="">
+        <div class="tecnico__dati">
+          <p class="tecnico__ruolo" id="tecnico-ruolo">Ufficio di Istrana</p>
+          <p class="tecnico__nome" id="tecnico-nome">Ti smistiamo noi al tecnico giusto</p>
+          <p class="tecnico__zona" id="tecnico-zona">Scegli la provincia del cantiere per vedere chi ti segue.</p>
+          <div class="tecnico__azioni">
+            <a class="btn btn--verde btn--piccolo" id="tecnico-tel" href="tel:+390422307911">Chiama 0422 307911</a>
+            <a class="btn btn--linea-chiara btn--piccolo" id="tecnico-mail" href="mailto:info@dadoponteggi.it">Scrivi una email</a>
+          </div>
+        </div>
+      </div>
+      <p class="preventivo__orari">Ufficio aperto dal lunedì al venerdì, 8:30–12:30 e 13:30–17:30.</p>
+    </div>
+
+    <form class="modulo" id="modulo" novalidate data-rivela>
+      <div class="campo campo--pieno">
+        <label for="f-provincia">Dove si trova il cantiere?</label>
+        <select id="f-provincia" name="provincia" required>
+          <option value="">Scegli la provincia</option>
+          <optgroup label="Veneto">
+            <option value="TV">Treviso</option><option value="VE">Venezia</option><option value="PD">Padova</option>
+            <option value="VR">Verona</option><option value="VI">Vicenza</option><option value="BL">Belluno</option><option value="RO">Rovigo</option>
+          </optgroup>
+          <optgroup label="Friuli-Venezia Giulia">
+            <option value="PN">Pordenone</option><option value="UD">Udine</option>
+          </optgroup>
+          <optgroup label="Lombardia e Trentino">
+            <option value="BG">Bergamo</option><option value="BS">Brescia</option><option value="MN">Mantova</option><option value="TN">Trento</option>
+          </optgroup>
+          <option value="ALTRO">Altra provincia</option>
+        </select>
+        <p class="campo__aiuto" id="f-tecnico-riga" aria-live="polite">Ti risponde il tecnico della zona del cantiere.</p>
+      </div>
+      <div class="campo">
+        <label for="f-nome">Nome e cognome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+      </div>
+      <div class="campo">
+        <label for="f-azienda">Azienda</label>
+        <input id="f-azienda" name="azienda" type="text" autocomplete="organization">
+      </div>
+      <div class="campo">
+        <label for="f-tel">Telefono</label>
+        <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required>
+      </div>
+      <div class="campo">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email">
+      </div>
+      <fieldset class="campo campo--pieno">
+        <legend>Cosa ti serve</legend>
+        <div class="scelte">
+          <label><input type="checkbox" name="cosa" value="Ponteggio fisso"><span>Ponteggio fisso</span></label>
+          <label><input type="checkbox" name="cosa" value="Montacarichi o ponteggio elettrico"><span>Montacarichi o ponteggio elettrico</span></label>
+          <label><input type="checkbox" name="cosa" value="Parapetti provvisori"><span>Parapetti provvisori</span></label>
+          <label><input type="checkbox" name="cosa" value="Copertura scorrevole"><span>Copertura scorrevole</span></label>
+          <label><input type="checkbox" name="cosa" value="Allarme antintrusione"><span>Allarme antintrusione</span></label>
+          <label><input type="checkbox" name="cosa" value="Solo montaggio e smontaggio"><span>Solo montaggio</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="campo campo--pieno">
+        <legend>Noleggio o acquisto?</legend>
+        <div class="scelte">
+          <label><input type="radio" name="formula" value="Noleggio" checked><span>Noleggio</span></label>
+          <label><input type="radio" name="formula" value="Acquisto"><span>Acquisto</span></label>
+          <label><input type="radio" name="formula" value="Da valutare insieme"><span>Da valutare</span></label>
+        </div>
+      </fieldset>
+      <div class="campo campo--pieno">
+        <label for="f-messaggio">Il cantiere in due righe</label>
+        <textarea id="f-messaggio" name="messaggio" rows="4" placeholder="Indirizzo, tipo di edificio, altezza indicativa, quando vorresti partire"></textarea>
+      </div>
+      <label class="privacy campo--pieno"><input type="checkbox" name="privacy" required><span>Ho letto l'<a href="https://dadoponteggi.it/privacy-policy/" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattato.</span></label>
+      <p class="modulo__errore" id="modulo-errore" role="alert" hidden></p>
+      <button class="btn btn--verde btn--largo" type="submit">Chiedi il preventivo</button>
+      <p class="modulo__nota" id="modulo-nota">Si apre la tua email con la richiesta già scritta per il tecnico della tua zona: ti basta premere Invia.</p>
+    </form>
+  </div>
+</section>
+
+<section class="contatti" id="contatti" aria-labelledby="titolo-contatti">
+  <div class="contenitore contatti__griglia">
+    <div class="contatti__testo" data-rivela>
+      <h2 id="titolo-contatti">Due sedi, tutto il Nord Italia.</h2>
+      <div class="sedi">
+        <button class="sede is-attiva" type="button" data-mappa="Via Montello 56, 31036 Istrana TV" aria-pressed="true">
+          <strong>Sede di Istrana</strong>
+          <span>Via Montello, 56<br>31036 Istrana (TV)</span>
+        </button>
+        <button class="sede" type="button" data-mappa="Via Firenze, 37024 Negrar di Valpolicella VR" aria-pressed="false">
+          <strong>Filiale di Verona</strong>
+          <span>Via Firenze snc<br>37024 Negrar di Valpolicella (VR)</span>
+        </button>
+      </div>
+      <ul class="recapiti">
+        <li><span>Telefono</span><a href="tel:+390422307911">0422 307911</a></li>
+        <li><span>Email</span><a href="mailto:info@dadoponteggi.it">info@dadoponteggi.it</a></li>
+        <li><span>Orari</span><p>Lunedì–venerdì<br>8:30–12:30 e 13:30–17:30</p></li>
+      </ul>
+      <a class="indicazioni" id="indicazioni" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Montello%2056%2C%2031036%20Istrana%20TV" target="_blank" rel="noopener">Indicazioni stradali per la sede selezionata</a>
+    </div>
+    <div class="mappa" data-rivela>
+      <iframe id="mappa" title="Mappa della sede di DaDo Ponteggi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Via%20Montello%2056%2C%2031036%20Istrana%20TV&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="lavora" id="lavora-con-noi" aria-labelledby="titolo-lavora">
+  <div class="contenitore lavora__in" data-rivela>
+    <img class="lavora__foto" src="assets/img/team/erind-shyti.jpg" width="320" height="480" loading="lazy" decoding="async" alt="Erind Shyti, capo cantiere di DaDo Ponteggi">
+    <div>
+      <h2 id="titolo-lavora">Costruiamo in alto. Cresciamo insieme.</h2>
+      <p>Operaio specializzato, tecnico commerciale o giovane da formare: da noi trovi un percorso chiaro, obiettivi reali e opportunità concrete di crescita.</p>
+      <a class="btn btn--blu" href="mailto:info@dadoponteggi.it?subject=Candidatura%20DaDo%20Ponteggi">Invia la tua candidatura</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede">
+  <div class="contenitore piede__griglia">
+    <div class="piede__marchio">
+      <img src="assets/img/logo-bianco.png" width="560" height="127" loading="lazy" decoding="async" alt="DaDo Ponteggi">
+      <p>Per chi punta in alto.</p>
+    </div>
+    <div>
+      <p class="piede__titolo">Sedi</p>
+      <p>Via Montello, 56<br>31036 Istrana (TV)</p>
+      <p>Via Firenze snc<br>37024 Negrar di Valpolicella (VR)</p>
+    </div>
+    <div>
+      <p class="piede__titolo">Contatti</p>
+      <p><a href="tel:+390422307911">0422 307911</a><br><a href="mailto:info@dadoponteggi.it">info@dadoponteggi.it</a></p>
+      <p>Lunedì–venerdì<br>8:30–12:30 e 13:30–17:30</p>
+    </div>
+    <div>
+      <p class="piede__titolo">Seguici</p>
+      <p><a href="https://www.instagram.com/dadoponteggi.it" target="_blank" rel="noopener">Instagram</a><br>
+         <a href="https://facebook.com/dadoponteggi" target="_blank" rel="noopener">Facebook</a><br>
+         <a href="https://it.linkedin.com/company/da-do-ponteggi" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </div>
+  <div class="contenitore piede__legale">
+    <p>DaDo Ponteggi Srl, P.IVA 05315560267, capitale sociale 10.000,00 € i.v. <a href="https://dadoponteggi.it/privacy-policy/" target="_blank" rel="noopener">Privacy</a> <a href="https://dadoponteggi.it/cookie-policy/" target="_blank" rel="noopener">Cookie</a> © <span id="anno">2026</span></p>
+    <p class="piede__credito">Sito realizzato da Alessio Mora. Demo non ufficiale: non è il sito ufficiale di DaDo Ponteggi.</p>
+  </div>
+</footer>
+
+<nav class="barra" aria-label="Azioni rapide">
+  <a class="barra__chiama" href="tel:+390422307911"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Chiama</a>
+  <a class="barra__preventivo" href="#preventivo">Chiedi un preventivo</a>
+</nav>
+
+<script src="script.js" defer></script>
+</body>
+</html>
