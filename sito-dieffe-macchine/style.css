@@ -133,7 +133,7 @@ body.menu-aperto .testata .marchio-scuro { display: none !important; }
   position: fixed; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh;
   pointer-events: none; z-index: 0;
 }
-.scena { opacity: 0; transition: opacity 1.1s ease; }
+.scena { opacity: 0; transition: opacity .6s ease; }
 .scena.davanti { z-index: 3; }
 .scena.pronta { opacity: 1; }
 .torbido {

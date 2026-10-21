@@ -6,7 +6,7 @@ import * as THREE from 'three';
 const H = 0.62; // mezza altezza del cestello
 
 const VERT = /* glsl */ `
-  uniform float uTime, uAngle, uIntro, uSep, uRise, uDrop, uPix, uRef, uAlpha, uAcqua, uForma, uSpin, uDens;
+  uniform float uTime, uAngle, uIntro, uIntroD, uSep, uRise, uDrop, uPix, uRef, uAlpha, uAcqua, uForma, uSpin, uDens;
   uniform vec2 uWide;
   uniform vec2 uRes;
   attribute vec4 aA; // r0, angolo, quota, peso
@@ -24,7 +24,7 @@ const VERT = /* glsl */ `
   mat2 ruota(float a) { float c = cos(a), s = sin(a); return mat2(c, -s, s, c); }
 
   // dove sta il granello, dA radianti fa (serve per la scia)
-  vec3 posizione(float dA, out float a, out float sp) {
+  vec3 posizione(float dA, float dI, out float a, out float sp) {
     float sol = 1.0 - aKind;
     float k = aA.w;
     float y0 = mix(-H, H, aA.z);
@@ -67,11 +67,11 @@ const VERT = /* glsl */ `
     }
 
     // apertura: una nuvola torbida che riempie lo schermo e si avvita nel cestello
-    float ip = smoothstep(aB.w * 0.45, aB.w * 0.45 + 0.55, uIntro);
+    float ip = smoothstep(aB.w * 0.45, aB.w * 0.45 + 0.55, uIntro - dI);
     vec3 w = vec3(aB.x * uWide.x, aB.y * uWide.y, aB.z * 2.4);
     w.xz = ruota((1.0 - ip) * 2.6 + giroAng * 0.12) * w.xz;
     p = mix(w, p, ip);
-    a *= mix(0.55, 1.0, ip);
+    a *= mix(0.85, 1.0, ip);
     return p;
   }
 
@@ -79,14 +79,14 @@ const VERT = /* glsl */ `
     float sol = 1.0 - aKind;
     float k = aA.w;
     float a, sp, a2, sp2;
-    vec3 p = posizione(0.0, a, sp);
+    vec3 p = posizione(0.0, 0.0, a, sp);
     float ip0 = smoothstep(aB.w * 0.45, aB.w * 0.45 + 0.55, uIntro);
-    vec3 q = posizione(min(uSpin * 0.055, 0.2), a2, sp2);
+    vec3 q = posizione(min(uSpin * 0.055, 0.2), uIntroD, a2, sp2);
     mat4 mvp = projectionMatrix * modelViewMatrix;
     vec4 c1 = mvp * vec4(p, 1.0);
     vec4 c2 = mvp * vec4(q, 1.0);
     vec2 d = (c1.xy / c1.w - c2.xy / c2.w) * 0.5 * uRes;
-    float len = min(length(d), 30.0 * uPix);
+    float len = min(length(d), 24.0 * uPix);
     vDir = len > 0.01 ? normalize(d) : vec2(1.0, 0.0);
     vLen = len;
     gl_Position = mix(c1, c2, 0.5);
@@ -206,7 +206,7 @@ export async function avvia({ canvas, velo, vasca, macchina, fasi, fermo }) {
   geo.setAttribute('aB', new THREE.BufferAttribute(aB, 4));
   geo.setAttribute('aKind', new THREE.BufferAttribute(aKind, 1));
   const uni = {
-    uTime: { value: 0 }, uAngle: { value: 0 }, uIntro: { value: fermo ? 1 : 0 },
+    uTime: { value: 0 }, uAngle: { value: 0 }, uIntro: { value: fermo ? 1 : 0 }, uIntroD: { value: 0 },
     uSep: { value: 0.42 }, uRise: { value: 0 }, uDrop: { value: 0 },
     uPix: { value: pr }, uRef: { value: 5 }, uAlpha: { value: telefono ? 0.85 : 0.95 }, uAcqua: { value: 0.25 }, uForma: { value: 0 }, uSpin: { value: 1 }, uDens: { value: 0.16 },
     uRes: { value: new THREE.Vector2(1, 1) },
@@ -320,7 +320,8 @@ export async function avvia({ canvas, velo, vasca, macchina, fasi, fermo }) {
 
     const s = progresso();
     const st = stato(s);
-    if (!fermo) intro = liscio(0.15, 2.9, tempo);
+    if (!fermo) intro = liscio(0.1, 2.9, tempo);
+    const introD = fermo ? 0 : intro - liscio(0.1, 2.9, tempo - 0.1);
 
     // inquadratura: nell'hero segue la macchina, nelle fasi va al suo posto
     const mobile = W < 960;
@@ -363,6 +364,7 @@ export async function avvia({ canvas, velo, vasca, macchina, fasi, fermo }) {
     if (!fermo) uni.uAngle.value += spin * dt;
     uni.uTime.value = tempo;
     uni.uIntro.value = intro;
+    uni.uIntroD.value = introD;
     uni.uSep.value = st.sep;
     uni.uRise.value = st.rise;
     uni.uDrop.value = st.drop;
@@ -400,6 +402,7 @@ export async function avvia({ canvas, velo, vasca, macchina, fasi, fermo }) {
   }
 
   misura();
+  try { await renderer.compileAsync(scena, camera); } catch (err) { /* si compila al primo disegno */ }
   disegna(performance.now());
   canvas.classList.add('pronta');
   riparti();
