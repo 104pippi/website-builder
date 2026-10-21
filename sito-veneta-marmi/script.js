@@ -215,7 +215,7 @@
   /* ---------- foto dei prodotti che escono come una lastra dal taglio ---------- */
   const io = new IntersectionObserver((voci) => voci.forEach((v) => {
     if (v.isIntersecting) { v.target.classList.add('visto'); io.unobserve(v.target); }
-  }), { rootMargin: '0px 0px -12% 0px' });
+  }), { rootMargin: '0px 0px 30% 0px' });
   $$('.prodotto').forEach((p) => io.observe(p));
 
   /* ---------- vista aerea in parallasse ---------- */
@@ -328,6 +328,9 @@
     const oggetto = 'Richiesta preventivo dal sito' + (azienda ? ' - ' + azienda : ' - ' + nome);
     location.href = `mailto:info@venetamarmi.it?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(righe.join('\n'))}`;
   });
+
+  // il link all'informativa la apre, oltre a scorrere fin lì
+  $$('a[href="#privacy"]').forEach((a) => a.addEventListener('click', () => { $('#privacy').open = true; }));
 
   disegnaScelti();
 })();

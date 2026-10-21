@@ -246,7 +246,7 @@ section { position: relative; }
 .specifiche div { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--linea); font-size: .93rem; }
 .specifiche dt { color: var(--polvere); font-stretch: 92%; }
 .specifiche dd { margin: 0; }
-.js .prodotto-foto img { clip-path: inset(0 0 0 100%); transition: clip-path 1.2s cubic-bezier(.65,0,.2,1); }
+.js .prodotto-foto img { clip-path: inset(0 0 0 100%); transition: clip-path .9s cubic-bezier(.65,0,.2,1); }
 .js .prodotto.visto .prodotto-foto img { clip-path: inset(0); }
 
 /* ---------- CAMPIONARIO ---------- */
