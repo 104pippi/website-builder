@@ -170,7 +170,7 @@
     ultimoP = p;
     const t = temperatura(p);
     numTemp.textContent = Math.round(t);
-    numTemp.style.fontWeight = Math.round(300 + 600 * p);
+    numTemp.style.fontStretch = `${(75 + 25 * p).toFixed(1)}%`;
     const secondi = Math.round(p * 14 * 60);
     numTempo.textContent = `${Math.floor(secondi / 60)}:${String(secondi % 60).padStart(2, '0')}`;
     taglio.setAttribute('width', (p * 300).toFixed(1));
