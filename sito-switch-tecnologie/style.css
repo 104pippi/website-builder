@@ -771,6 +771,15 @@ h3 {
   .piede__demo { text-align: right; }
 }
 
+@media (min-width: 1024px) {
+  .testata__nav a, .testata__tel, .testata__cta { white-space: nowrap; }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .testata__nav { gap: 1.1rem; margin-left: .6rem; }
+  .testata__tel { display: none; }
+  .testata__cta { margin-left: auto; }
+}
+
 @media (min-width: 1440px) {
   .hero__rack { left: 45%; }
 }
