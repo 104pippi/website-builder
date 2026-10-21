@@ -99,6 +99,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-trevisostampa](./sito-trevisostampa) | https://sito-trevisostampa.vercel.app | [video](./sito-trevisostampa/video) |
 | [sito-unionpark](./sito-unionpark) | https://sito-unionpark.vercel.app | [video](./sito-unionpark/video) |
 | [sito-utensilea](./sito-utensilea) | https://sito-utensilea.vercel.app | [video](./sito-utensilea/video) |
+| [sito-veneta-marmi](./sito-veneta-marmi) | https://sito-veneta-marmi.vercel.app | [video](./sito-veneta-marmi/video) |
 | [sito-wildkart](./sito-wildkart) | https://sito-wildkart.vercel.app | [video](./sito-wildkart/video) |
 | [sito-zago-pietro](./sito-zago-pietro) | https://sito-zago-pietro.vercel.app | [video](./sito-zago-pietro/video) |
 | [sito-zanon-architetti](./sito-zanon-architetti) | https://sito-zanon-architetti.vercel.app | [video](./sito-zanon-architetti/video) |
