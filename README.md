@@ -39,6 +39,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-due-esse](./sito-due-esse) | https://sito-due-esse.vercel.app | [video](./sito-due-esse/video) |
 | [sito-duepigreco](./sito-duepigreco) | https://sito-duepigreco.vercel.app | [video](./sito-duepigreco/video) |
 | [sito-emmepi](./sito-emmepi) | https://sito-emmepi.vercel.app | [video](./sito-emmepi/video) |
+| [sito-eurofiltri-group](./sito-eurofiltri-group) | https://sito-eurofiltri-group.vercel.app | [video](./sito-eurofiltri-group/video) |
 | [sito-europass](./sito-europass) | https://sito-europass.vercel.app | [video](./sito-europass/video) |
 | [sito-europosa](./sito-europosa) | https://sito-europosa.vercel.app | [video](./sito-europosa/video) |
 | [sito-fde-steel](./sito-fde-steel) | https://sito-fde-steel.vercel.app | [video](./sito-fde-steel/video) |
