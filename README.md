@@ -15,6 +15,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-aquatek](./sito-aquatek) | https://sito-aquatek.vercel.app | [video](./sito-aquatek/video) |
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |
 | [sito-as-group](./sito-as-group) | https://sito-as-group.vercel.app | [video](./sito-as-group/video) |
+| [sito-ateikon](./sito-ateikon) | https://sito-ateikon.vercel.app | [video](./sito-ateikon/video) |
 | [sito-automil](./sito-automil) | https://sito-automil.vercel.app | [video](./sito-automil/video) |
 | [sito-bertoncello-gomme](./sito-bertoncello-gomme) | https://sito-bertoncello-gomme.vercel.app | [video](./sito-bertoncello-gomme/video) |
 | [sito-blife](./sito-blife) | https://sito-blife.vercel.app | [video](./sito-blife/video) |
