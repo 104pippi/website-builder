@@ -140,12 +140,12 @@
     dopo.checked = true;
     stato.colore = dopo.value;
     aggiornaConfiguratore();
-    giro = setTimeout(prossimoColore, 2300);
+    giro = setTimeout(prossimoColore, 1900);
   }
   new IntersectionObserver(([e]) => {
     const prima = configuraInVista;
     configuraInVista = e.isIntersecting;
-    if (configuraInVista && !prima && !toccato) { clearTimeout(giro); giro = setTimeout(prossimoColore, 2600); }
+    if (configuraInVista && !prima && !toccato) { clearTimeout(giro); giro = setTimeout(prossimoColore, 1100); }
     if (!configuraInVista) clearTimeout(giro);
   }, { threshold: 0.35 }).observe($('[data-scena-cancello]'));
 
