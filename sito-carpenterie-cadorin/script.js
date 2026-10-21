@@ -132,11 +132,12 @@
   // Finché nessuno tocca, i colori girano da soli quando la sezione è in vista
   let giro = 0;
   let configuraInVista = false;
-  const colori = $$('input[name="colore"]');
+  // Il giro salta tra colori lontani, così il cambio si nota subito
+  const giroColori = ['3003', '9016', '6005', '8017', '7035', 'micaceo', '9005', '7016'];
   function prossimoColore() {
     if (toccato || ridotto || !configuraInVista) return;
-    const i = colori.findIndex((c) => c.checked);
-    const dopo = colori[(i + 1) % colori.length];
+    const i = giroColori.indexOf(stato.colore);
+    const dopo = $(`input[name="colore"][value="${giroColori[(i + 1) % giroColori.length]}"]`);
     dopo.checked = true;
     stato.colore = dopo.value;
     aggiornaConfiguratore();
