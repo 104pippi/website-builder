@@ -23,6 +23,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-cadel-stufe-camini](./sito-cadel-stufe-camini) | https://sito-cadel-stufe-camini.vercel.app | [video](./sito-cadel-stufe-camini/video) |
 | [sito-camtex](./sito-camtex) | https://sito-camtex.vercel.app | [video](./sito-camtex/video) |
 | [sito-carmas](./sito-carmas) | https://sito-carmas.vercel.app | [video](./sito-carmas/video) |
+| [sito-carpenterie-cadorin](./sito-carpenterie-cadorin) | https://sito-carpenterie-cadorin.vercel.app | [video](./sito-carpenterie-cadorin/video) |
 | [sito-cescon-servizi](./sito-cescon-servizi) | https://sito-cescon-servizi.vercel.app | [video](./sito-cescon-servizi/video) |
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
 | [sito-clever-due](./sito-clever-due) | https://sito-clever-due.vercel.app | [video](./sito-clever-due/video) |
