@@ -85,6 +85,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-sorrisi-del-futuro](./sito-sorrisi-del-futuro) | https://sito-sorrisi-del-futuro.vercel.app | [video](./sito-sorrisi-del-futuro/video) |
 | [sito-studio-michelet](./sito-studio-michelet) | https://sito-studio-michelet.vercel.app | [video](./sito-studio-michelet/video) |
 | [sito-studio-pigreco](./sito-studio-pigreco) | https://sito-studio-pigreco.vercel.app | [video](./sito-studio-pigreco/video) |
+| [sito-switch-tecnologie](./sito-switch-tecnologie) | https://sito-switch-tecnologie.vercel.app | [video](./sito-switch-tecnologie/video) |
 | [sito-tech-mec](./sito-tech-mec) | https://sito-tech-mec.vercel.app | [video](./sito-tech-mec/video) |
 | [sito-tecnodiesel](./sito-tecnodiesel) | https://sito-tecnodiesel.vercel.app | [video](./sito-tecnodiesel/video) |
 | [sito-tecnomeccanica](./sito-tecnomeccanica) | https://sito-tecnomeccanica.vercel.app | [video](./sito-tecnomeccanica/video) |
