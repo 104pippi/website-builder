@@ -34,6 +34,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-da-spillo](./sito-da-spillo) | https://sito-da-spillo.vercel.app | [video](./sito-da-spillo/video) |
 | [sito-dado-ponteggi](./sito-dado-ponteggi) | https://sito-dado-ponteggi.vercel.app | [video](./sito-dado-ponteggi/video) |
 | [sito-defam](./sito-defam) | https://sito-defam.vercel.app | [video](./sito-defam/video) |
+| [sito-dieffe-macchine](./sito-dieffe-macchine) | https://sito-dieffe-macchine.vercel.app | [video](./sito-dieffe-macchine/video) |
 | [sito-doxon](./sito-doxon) | https://sito-doxon.vercel.app | [video](./sito-doxon/video) |
 | [sito-drigo-bergamin](./sito-drigo-bergamin) | https://sito-drigo-bergamin.vercel.app | [video](./sito-drigo-bergamin/video) |
 | [sito-dt-color](./sito-dt-color) | https://sito-dt-color.vercel.app | [video](./sito-dt-color/video) |
