@@ -297,7 +297,6 @@ sup { font-size: .55em; line-height: 0; vertical-align: .9em; }
 .fase p { color: #3c4955; grid-column: 2; }
 
 .js .fase__foto img { clip-path: inset(0 100% 0 0); transform: scale(1.08); }
-.js .fase.in .fase__foto img { clip-path: inset(0 0 0 0); transform: none; transition: clip-path 1.1s cubic-bezier(.65, 0, .2, 1), transform 1.6s cubic-bezier(.2, .8, .1, 1); }
 
 /* ---------- accessori ---------- */
 .accessori { background: var(--noce); color: #fff; padding: clamp(72px, 11vw, 140px) 0; }

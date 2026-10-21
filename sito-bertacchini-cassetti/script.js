@@ -41,6 +41,7 @@
   const fotoAzienda = document.querySelector('.azienda__foto img');
   const tempo = document.querySelector('.tempo__linea');
   const ventaglio = document.getElementById('ventaglio');
+  const fotoFasi = [...document.querySelectorAll('.fase__foto img')];
   let inCoda = false;
   const aggiorna = () => {
     inCoda = false;
@@ -64,6 +65,14 @@
       const e = 1 - Math.pow(1 - p, 3);
       ventaglio.style.setProperty('--ap', e.toFixed(3));
     }
+    // fasi della produzione: la foto si scopre come un taglio di sega, seguendo lo scroll
+    fotoFasi.forEach(img => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.top > vh || r.bottom < 0) return;
+      const e = 1 - Math.pow(1 - clamp((vh - r.top) / (vh * .38)), 3);
+      img.style.clipPath = `inset(0 ${((1 - e) * 100).toFixed(2)}% 0 0)`;
+      img.style.transform = `scale(${(1.08 - .08 * e).toFixed(4)})`;
+    });
   };
   const chiedi = () => { if (!inCoda) { inCoda = true; requestAnimationFrame(aggiorna); } };
   addEventListener('scroll', chiedi, { passive: true });
@@ -72,14 +81,6 @@
   if (!ridotto && tempo) tempo.style.setProperty('--t', '0');
   aggiorna();
 
-  /* fasi della produzione: il taglio della foto parte quando la fase entra */
-  const fasi = document.querySelectorAll('.fase');
-  if ('IntersectionObserver' in window && !ridotto) {
-    const io = new IntersectionObserver(voci => {
-      voci.forEach(v => { if (v.isIntersecting) { v.target.classList.add('in'); io.unobserve(v.target); } });
-    }, { threshold: .2, rootMargin: '0px 0px -8% 0px' });
-    fasi.forEach(f => io.observe(f));
-  } else fasi.forEach(f => f.classList.add('in'));
 
   /* scheda lavorazioni: la foto grande segue la voce attiva */
   const voci = [...document.querySelectorAll('.voce')];
