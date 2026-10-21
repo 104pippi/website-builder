@@ -84,6 +84,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-s1-pro](./sito-s1-pro) | https://sito-s1-pro.vercel.app | [video](./sito-s1-pro/video) |
 | [sito-sanitaria-cinel](./sito-sanitaria-cinel) | https://sito-sanitaria-cinel.vercel.app | [video](./sito-sanitaria-cinel/video) |
 | [sito-santucci-service](./sito-santucci-service) | https://sito-santucci-service.vercel.app | [video](./sito-santucci-service/video) |
+| [sito-scuole-bertolini](./sito-scuole-bertolini) | https://sito-scuole-bertolini.vercel.app | [video](./sito-scuole-bertolini/video) |
 | [sito-si-viaggiare](./sito-si-viaggiare) | https://sito-si-viaggiare.vercel.app | [video](./sito-si-viaggiare/video) |
 | [sito-sipam-energy](./sito-sipam-energy) | https://sito-sipam-energy.vercel.app | [video](./sito-sipam-energy/video) |
 | [sito-sorrisi-del-futuro](./sito-sorrisi-del-futuro) | https://sito-sorrisi-del-futuro.vercel.app | [video](./sito-sorrisi-del-futuro/video) |
