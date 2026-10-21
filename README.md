@@ -22,6 +22,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-blife](./sito-blife) | https://sito-blife.vercel.app | [video](./sito-blife/video) |
 | [sito-burtet-paolo](./sito-burtet-paolo) | https://sito-burtet-paolo.vercel.app | [video](./sito-burtet-paolo/video) |
 | [sito-cadel-stufe-camini](./sito-cadel-stufe-camini) | https://sito-cadel-stufe-camini.vercel.app | [video](./sito-cadel-stufe-camini/video) |
+| [sito-caffe-galliano](./sito-caffe-galliano) | https://sito-caffe-galliano.vercel.app | [video](./sito-caffe-galliano/video) |
 | [sito-camtex](./sito-camtex) | https://sito-camtex.vercel.app | [video](./sito-camtex/video) |
 | [sito-carmas](./sito-carmas) | https://sito-carmas.vercel.app | [video](./sito-carmas/video) |
 | [sito-carpenterie-cadorin](./sito-carpenterie-cadorin) | https://sito-carpenterie-cadorin.vercel.app | [video](./sito-carpenterie-cadorin/video) |
