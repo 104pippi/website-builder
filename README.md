@@ -90,6 +90,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-tech-mec](./sito-tech-mec) | https://sito-tech-mec.vercel.app | [video](./sito-tech-mec/video) |
 | [sito-tecnodiesel](./sito-tecnodiesel) | https://sito-tecnodiesel.vercel.app | [video](./sito-tecnodiesel/video) |
 | [sito-tecnomeccanica](./sito-tecnomeccanica) | https://sito-tecnomeccanica.vercel.app | [video](./sito-tecnomeccanica/video) |
+| [sito-teco](./sito-teco) | https://sito-teco.vercel.app | [video](./sito-teco/video) |
 | [sito-tezcar](./sito-tezcar) | https://sito-tezcar.vercel.app | [video](./sito-tezcar/video) |
 | [sito-tlm-evolution](./sito-tlm-evolution) | https://sito-tlm-evolution.vercel.app | [video](./sito-tlm-evolution/video) |
 | [sito-trevihouse](./sito-trevihouse) | https://sito-trevihouse.vercel.app | [video](./sito-trevihouse/video) |
