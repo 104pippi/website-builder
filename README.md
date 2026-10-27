@@ -19,6 +19,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-automil](./sito-automil) | https://sito-automil.vercel.app | [video](./sito-automil/video) |
 | [sito-bertacchini-cassetti](./sito-bertacchini-cassetti) | https://sito-bertacchini-cassetti.vercel.app | [video](./sito-bertacchini-cassetti/video) |
 | [sito-bertoncello-gomme](./sito-bertoncello-gomme) | https://sito-bertoncello-gomme.vercel.app | [video](./sito-bertoncello-gomme/video) |
+| [sito-bioedilizia-restauri](./sito-bioedilizia-restauri) | https://sito-bioedilizia-restauri.vercel.app | — |
 | [sito-blife](./sito-blife) | https://sito-blife.vercel.app | [video](./sito-blife/video) |
 | [sito-burtet-paolo](./sito-burtet-paolo) | https://sito-burtet-paolo.vercel.app | [video](./sito-burtet-paolo/video) |
 | [sito-cadel-stufe-camini](./sito-cadel-stufe-camini) | https://sito-cadel-stufe-camini.vercel.app | [video](./sito-cadel-stufe-camini/video) |
@@ -27,7 +28,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-carmas](./sito-carmas) | https://sito-carmas.vercel.app | [video](./sito-carmas/video) |
 | [sito-carpenterie-cadorin](./sito-carpenterie-cadorin) | https://sito-carpenterie-cadorin.vercel.app | [video](./sito-carpenterie-cadorin/video) |
 | [sito-cescon-servizi](./sito-cescon-servizi) | https://sito-cescon-servizi.vercel.app | [video](./sito-cescon-servizi/video) |
-| [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | [video](./sito-cinema-edera/video) |
+| [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | — |
 | [sito-clever-due](./sito-clever-due) | https://sito-clever-due.vercel.app | [video](./sito-clever-due/video) |
 | [sito-cogim](./sito-cogim) | https://sito-cogim.vercel.app | [video](./sito-cogim/video) |
 | [sito-da-matteo](./sito-da-matteo) | https://sito-da-matteo.vercel.app | [video](./sito-da-matteo/video) |
@@ -64,7 +65,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-lafarmacia](./sito-lafarmacia) | https://sito-lafarmacia.vercel.app | [video](./sito-lafarmacia/video) |
 | [sito-lelettrica](./sito-lelettrica) | https://sito-lelettrica.vercel.app | [video](./sito-lelettrica/video) |
 | [sito-metallica](./sito-metallica) | https://sito-metallica.vercel.app | [video](./sito-metallica/video) |
-| [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | [video](./sito-metem-fit/video) |
+| [sito-metem-fit](./sito-metem-fit) | https://sito-metem-fit.vercel.app | — |
 | [sito-moby-italy](./sito-moby-italy) | https://sito-moby-italy.vercel.app | [video](./sito-moby-italy/video) |
 | [sito-modi](./sito-modi) | https://sito-modi.vercel.app | [video](./sito-modi/video) |
 | [sito-multistudio](./sito-multistudio) | https://sito-multistudio.vercel.app | [video](./sito-multistudio/video) |
@@ -87,7 +88,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-scuole-bertolini](./sito-scuole-bertolini) | https://sito-scuole-bertolini.vercel.app | [video](./sito-scuole-bertolini/video) |
 | [sito-si-viaggiare](./sito-si-viaggiare) | https://sito-si-viaggiare.vercel.app | [video](./sito-si-viaggiare/video) |
 | [sito-sipam-energy](./sito-sipam-energy) | https://sito-sipam-energy.vercel.app | [video](./sito-sipam-energy/video) |
-| [sito-sorrisi-del-futuro](./sito-sorrisi-del-futuro) | https://sito-sorrisi-del-futuro.vercel.app | [video](./sito-sorrisi-del-futuro/video) |
+| [sito-sorrisi-del-futuro](./sito-sorrisi-del-futuro) | https://sito-sorrisi-del-futuro.vercel.app | — |
 | [sito-studio-michelet](./sito-studio-michelet) | https://sito-studio-michelet.vercel.app | [video](./sito-studio-michelet/video) |
 | [sito-studio-pigreco](./sito-studio-pigreco) | https://sito-studio-pigreco.vercel.app | [video](./sito-studio-pigreco/video) |
 | [sito-switch-tecnologie](./sito-switch-tecnologie) | https://sito-switch-tecnologie.vercel.app | [video](./sito-switch-tecnologie/video) |
@@ -108,7 +109,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-zanon-architetti](./sito-zanon-architetti) | https://sito-zanon-architetti.vercel.app | [video](./sito-zanon-architetti/video) |
 
 - Deploy su Vercel da CLI dalla cartella del sito (`vercel --prod`), progetto `sito-<slug>`: Vercel non è collegato a GitHub.
-- Video di presentazione in `sito-<slug>/video/`, fuori dal deploy grazie al `.vercelignore` della cartella.
+- Video di presentazione (solo i siti fatti fino al 27/10/2026) in `sito-<slug>/video/`, fuori dal deploy grazie al `.vercelignore`.
 - Procedura completa: `~/.claude/skills/website-builder/SKILL.md` e il CLAUDE.md della cartella WEBSIDE BUILDER.
 - Questa tabella la genera `~/.claude/skills/website-builder/monorepo/aggiorna-readme.sh`: non modificarla a mano.
 
