@@ -11,6 +11,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-al-noleggio](./sito-al-noleggio) | https://sito-al-noleggio.vercel.app | [video](./sito-al-noleggio/video) |
 | [sito-alessandro-international](./sito-alessandro-international) | https://sito-alessandro-international.vercel.app | [video](./sito-alessandro-international/video) |
 | [sito-allegranzi](./sito-allegranzi) | https://sito-allegranzi.vercel.app | [video](./sito-allegranzi/video) |
+| [sito-almasoft](./sito-almasoft) | https://sito-almasoft.vercel.app | — |
 | [sito-aperuzza](./sito-aperuzza) | https://sito-aperuzza.vercel.app | [video](./sito-aperuzza/video) |
 | [sito-aquatek](./sito-aquatek) | https://sito-aquatek.vercel.app | [video](./sito-aquatek/video) |
 | [sito-areabyte](./sito-areabyte) | https://sito-areabyte.vercel.app | [video](./sito-areabyte/video) |

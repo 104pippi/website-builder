@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alma | Consulenza, formazione e software BIM a Rende (CS)</title>
+<meta name="description" content="Alma, società del gruppo ACCA software: consulenza BIM, formazione certificata e sviluppo software per tecnici, imprese e PA. A Rende (CS) dal 2005.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-almasoft.vercel.app/">
+<meta name="theme-color" content="#EDF0F2">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Alma | Il BIM fatto da chi lo sviluppa e lo insegna">
+<meta property="og:description" content="Consulenza, formazione e software BIM per tecnici, imprese e Pubbliche Amministrazioni. Rende (CS), nel gruppo ACCA software.">
+<meta property="og:image" content="https://sito-almasoft.vercel.app/assets/img/og.jpg">
+<meta property="og:url" content="https://sito-almasoft.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@300..800,0,0..100&display=swap">
+<link rel="preload" as="image" href="assets/img/modello-poster-m.jpg" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/modello-poster.jpg" media="(min-width: 900px)" fetchpriority="high">
+
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alma S.r.l.",
+  "alternateName": "ALMA – An openBIM Company",
+  "description": "Consulenza BIM, formazione BIM e sviluppo software per tecnici, imprese e Pubbliche Amministrazioni.",
+  "url": "https://sito-almasoft.vercel.app/",
+  "image": "https://sito-almasoft.vercel.app/assets/img/og.jpg",
+  "logo": "https://sito-almasoft.vercel.app/favicon.svg",
+  "telephone": "+390984402165",
+  "email": "info@almasoft.it",
+  "vatID": "IT02427680646",
+  "foundingDate": "2005",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Verdi 9",
+    "postalCode": "87036",
+    "addressLocality": "Rende",
+    "addressRegion": "CS",
+    "addressCountry": "IT"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 39.33984, "longitude": 16.24157 },
+  "parentOrganization": { "@type": "Organization", "name": "ACCA software S.p.A." },
+  "sameAs": [
+    "https://www.linkedin.com/company/35702485",
+    "https://www.facebook.com/almasoftware",
+    "https://www.instagram.com/alma_an_openbim_company/"
+  ]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata">
+  <div class="testata__fila">
+    <a class="testata__logo" href="#modello" aria-label="Alma, torna all'inizio">
+      <svg viewBox="0 0 187.3 50.8" aria-hidden="true"><use href="#logo-alma"/></svg>
+    </a>
+    <nav class="testata__nav" aria-label="Sezioni">
+      <a href="#servizi">Consulenza</a>
+      <a href="#pa">Per la PA</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#formazione">Formazione</a>
+      <a href="#ricerca">Software e ricerca</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="testata__tel" href="tel:+390984402165">0984 402165</a>
+    <a class="bottone bottone--rosso testata__cta" href="#contatti">Richiedi una consulenza</a>
+    <button class="testata__menu" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="testata__menu-righe" aria-hidden="true"></span>
+      <span class="testata__menu-testo">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menu">
+    <a href="#servizi">Consulenza BIM</a>
+    <a href="#pa">Per la Pubblica Amministrazione</a>
+    <a href="#lavori">Lavori</a>
+    <a href="#formazione">Formazione</a>
+    <a href="#ricerca">Software e ricerca</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <div class="menu__contatti">
+    <a class="bottone bottone--rosso" href="#contatti">Richiedi una consulenza</a>
+    <a class="menu__tel" href="tel:+390984402165">Chiama lo 0984 402165</a>
+  </div>
+</div>
+
+<main id="contenuto">
+
+  <!-- Palco 3D: hero + dal rilievo al gemello digitale -->
+  <section class="modello" id="modello" aria-labelledby="titolo-eroe">
+    <div class="modello__palco" data-fase="0">
+      <picture>
+        <source media="(max-width: 899px)" srcset="assets/img/modello-poster-m.jpg" width="780" height="1688">
+        <img class="modello__poster" src="assets/img/modello-poster.jpg" width="1440" height="900" alt="Nuvola di punti di un edificio con tetto a capanna, rilevata con laser scanner" fetchpriority="high" decoding="async">
+      </picture>
+      <canvas class="modello__tela" aria-hidden="true"></canvas>
+      <div class="modello__etichette" aria-hidden="true">
+        <span class="sensore" data-sensore="0">Temperatura</span>
+        <span class="sensore" data-sensore="1">Qualità dell'aria</span>
+        <span class="sensore" data-sensore="2">Inclinometro</span>
+      </div>
+
+      <div class="eroe">
+        <h1 class="eroe__titolo" id="titolo-eroe">Il BIM fatto da chi lo sviluppa e lo insegna.</h1>
+        <p class="eroe__testo">Consulenza, formazione e software BIM per tecnici, imprese e Pubbliche Amministrazioni. Da Rende, dal 2005, nel gruppo ACCA software.</p>
+        <div class="eroe__azioni">
+          <a class="bottone bottone--rosso" href="#contatti">Richiedi una consulenza</a>
+          <a class="bottone bottone--linea" href="#formazione">Vedi i corsi</a>
+        </div>
+        <p class="eroe__scorri" aria-hidden="true"><span></span>Scorri: dal rilievo al gemello digitale</p>
+      </div>
+
+      <ol class="fasi" aria-label="Dal rilievo al gemello digitale">
+        <li class="fase" data-fase="1">
+          <span class="fase__num">1</span>
+          <h2 class="fase__titolo">Rilievo</h2>
+          <p>Partiamo dall'edificio com'è: laser scanner e fotogrammetria lo trasformano in una nuvola di punti misurata.</p>
+        </li>
+        <li class="fase" data-fase="2">
+          <span class="fase__num">2</span>
+          <h2 class="fase__titolo">Modello</h2>
+          <p>Dalla nuvola nasce il modello informativo: architettura, strutture e impianti, nel formato aperto IFC.</p>
+        </li>
+        <li class="fase" data-fase="3">
+          <span class="fase__num">3</span>
+          <h2 class="fase__titolo">Impianti</h2>
+          <p>Modelliamo gli impianti e li coordiniamo fra loro: le interferenze si risolvono sul modello, non in cantiere.</p>
+          <ul class="legenda" aria-label="Discipline">
+            <li style="--c: var(--aria)">Aria</li>
+            <li style="--c: var(--acqua)">Acqua</li>
+            <li style="--c: var(--scarichi)">Scarichi</li>
+            <li style="--c: var(--elettrico)">Elettrico</li>
+          </ul>
+        </li>
+        <li class="fase" data-fase="4">
+          <span class="fase__num">4</span>
+          <h2 class="fase__titolo">Gemello digitale</h2>
+          <p>Collegato ai sensori IoT, il modello diventa il gemello digitale dell'opera: manutenzione e gestione si fanno sui dati.</p>
+        </li>
+      </ol>
+      <div class="avanzamento" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </section>
+
+  <!-- Fiducia -->
+  <section class="fiducia" aria-label="Alma in breve">
+    <ul class="fiducia__lista">
+      <li><strong>Dal 2005</strong><span>ingegneria e informatica nello stesso gruppo di lavoro</span></li>
+      <li><strong>PMI Innovativa</strong><span>riconosciuta dal 2017</span></li>
+      <li><strong>Gruppo ACCA software</strong><span>la società italiana del software tecnico e BIM</span></li>
+      <li><strong>31 persone</strong><span>tra consulenza, formazione e sviluppo, a Rende</span></li>
+      <li><strong>Soci IBIMI</strong><span>il capitolo italiano di buildingSMART International</span></li>
+    </ul>
+  </section>
+
+  <!-- Consulenza -->
+  <section class="sezione servizi" id="servizi" aria-labelledby="titolo-servizi">
+    <div class="contenitore">
+      <div class="testa">
+        <h2 id="titolo-servizi">Consulenza BIM, in ogni fase della commessa</h2>
+        <p>Dai requisiti informativi alla gestione dell'opera: modelli, verifiche, documenti e piattaforme, conformi agli standard nazionali e internazionali. Ogni cliente ha un percorso su misura, con la formazione che serve per adottare il BIM fin dall'inizio.</p>
+      </div>
+
+      <div class="albero">
+        <div class="albero__lista" role="list">
+          <details class="nodo" name="servizi" open data-img="0" role="listitem">
+            <summary><span class="nodo__nome">Produzione informativa BIM</span><span class="nodo__meta">architettura e impianti MEP</span></summary>
+            <div class="nodo__corpo">
+              <p>Trasformiamo il costruito in digitale, dalla nuvola di punti alla realtà aumentata. Modelli BIM architettonici e impiantistici: HVAC, elettrici, idraulici, antincendio, gas, fotovoltaici e solari termici.</p>
+              <img src="assets/img/mep-commerciale.jpg" width="1000" height="800" alt="Modello BIM degli impianti di una struttura commerciale" loading="lazy" decoding="async">
+            </div>
+          </details>
+          <details class="nodo" name="servizi" data-img="1" role="listitem">
+            <summary><span class="nodo__nome">Coordinamento BIM</span><span class="nodo__meta">verifica e validazione</span></summary>
+            <div class="nodo__corpo">
+              <p>Controlli geometrici e informativi sui modelli openBIM IFC, in coerenza con la UNI 11337 e con gli standard IDS. Il progetto arriva in cantiere corretto e affidabile.</p>
+              <img src="assets/img/coordinamento.jpg" width="1000" height="800" alt="Coordinamento dei modelli impiantistici in ambiente BIM" loading="lazy" decoding="async">
+            </div>
+          </details>
+          <details class="nodo" name="servizi" data-img="2" role="listitem">
+            <summary><span class="nodo__nome">Management BIM</span><span class="nodo__meta">documenti strategici</span></summary>
+            <div class="nodo__corpo">
+              <p>Piani e offerte di gestione informativa, programmi di consegna, matrici di coordinamento e schemi di informatizzazione degli asset, su standard openBIM (IFC, bSDD, IDS).</p>
+              <img src="assets/img/ids-verifica.jpg" width="1000" height="800" alt="Verifica dell'incidenza informativa di un modello secondo gli standard IDS" loading="lazy" decoding="async">
+            </div>
+          </details>
+          <details class="nodo" name="servizi" data-img="3" role="listitem">
+            <summary><span class="nodo__nome">CDE Management</span><span class="nodo__meta">ambiente di condivisione dati</span></summary>
+            <div class="nodo__corpo">
+              <p>Configuriamo l'ACDat di progetto e digitalizziamo i flussi informativi fra committenza, impresa e progettisti. Dentro l'ambiente di condivisione dati nasce il gemello virtuale dell'opera reale.</p>
+              <img src="assets/img/cde.jpg" width="1000" height="800" alt="Ambiente di condivisione dati di una commessa" loading="lazy" decoding="async">
+            </div>
+          </details>
+          <details class="nodo" name="servizi" data-img="4" role="listitem">
+            <summary><span class="nodo__nome">Adempimenti PA</span><span class="nodo__meta">D.Lgs. 36/2023</span></summary>
+            <div class="nodo__corpo">
+              <p>Accompagniamo le Pubbliche Amministrazioni nella digitalizzazione prevista dal Codice dei contratti pubblici, con soluzioni BIM su misura. <a href="#pa">Che cosa serve all'ente</a>.</p>
+              <img src="assets/img/atto-organizzativo.jpg" width="1000" height="800" alt="Atto organizzativo BIM di una stazione appaltante" loading="lazy" decoding="async">
+            </div>
+          </details>
+          <details class="nodo" name="servizi" data-img="5" role="listitem">
+            <summary><span class="nodo__nome">Digital twin</span><span class="nodo__meta">IoT, asset e facility</span></summary>
+            <div class="nodo__corpo">
+              <p>Gemelli digitali per PA, imprese e professionisti: sensori IoT, gestione intelligente di asset e facility, con il supporto della realtà virtuale e aumentata.</p>
+              <img src="assets/img/west-horsley-twin.jpg" width="1000" height="800" alt="Gemello digitale di una dimora storica con i punti di monitoraggio" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </div>
+        <figure class="albero__vista" aria-hidden="true">
+          <img src="assets/img/mep-commerciale.jpg" width="1000" height="800" alt="" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+      <div class="chiusa">
+        <p>Avete una commessa da impostare o un modello da verificare?</p>
+        <a class="bottone bottone--rosso" href="#contatti" data-tipo="Consulenza BIM">Richiedi una consulenza</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PA -->
+  <section class="sezione pa" id="pa" aria-labelledby="titolo-pa">
+    <div class="contenitore pa__griglia">
+      <div class="pa__testo">
+        <h2 id="titolo-pa">Per la Pubblica Amministrazione il BIM è un obbligo, non una scelta</h2>
+        <p>Il Codice dei contratti pubblici (D.Lgs. 36/2023) chiede alle stazioni appaltanti di adottare la gestione informativa digitale delle opere. Prima della prima gara in BIM l'ente deve avere pronti alcuni documenti e il personale formato: li prepariamo insieme.</p>
+        <ul class="pa__documenti">
+          <li><strong>Atto organizzativo</strong><span>come l'ente gestisce i processi BIM e chi ne è responsabile</span></li>
+          <li><strong>Piano di formazione</strong><span>le competenze da costruire nel personale tecnico</span></li>
+          <li><strong>Piano di aggiornamento tecnologico</strong><span>hardware, software e ambiente di condivisione dati</span></li>
+          <li><strong>Capitolato informativo</strong><span>che cosa chiedere ai progettisti in ogni gara</span></li>
+          <li><strong>Sistema di gestione BIM</strong><span>procedure e modulistica secondo la UNI/PdR 74:2019</span></li>
+        </ul>
+        <p class="pa__nota">Per i tecnici dell'ente c'è anche il corso online di BIM Management per la PA, su norme, capitolato informativo e validazione del progetto.</p>
+        <a class="bottone bottone--rosso" href="#contatti" data-tipo="Adempimenti PA">Parliamo del vostro ente</a>
+      </div>
+      <figure class="pa__foto">
+        <img src="assets/img/atto-organizzativo.jpg" width="1000" height="800" alt="Pagina di un atto organizzativo BIM con la valutazione dell'infrastruttura tecnologica" loading="lazy" decoding="async">
+        <figcaption>Un atto organizzativo preparato per una stazione appaltante.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Lavori -->
+  <section class="sezione lavori" id="lavori" aria-labelledby="titolo-lavori">
+    <div class="contenitore">
+      <div class="testa">
+        <h2 id="titolo-lavori">Alcuni lavori</h2>
+        <p>Dimore storiche, musei, cantieri commerciali, università: ogni modello risponde a una domanda precisa del committente.</p>
+      </div>
+
+      <article class="caso caso--grande">
+        <div class="caso__foto">
+          <img class="caso__img caso__img--a" src="assets/img/west-horsley-render.jpg" width="1000" height="800" alt="Render del modello BIM di West Horsley Place, cortile con facciata in mattoni" loading="lazy" decoding="async">
+          <img class="caso__img caso__img--b caso__img--largo" src="assets/img/west-horsley-twin-largo.jpg" width="1000" height="568" alt="Gemello digitale di West Horsley Place con i punti di controllo del degrado" loading="lazy" decoding="async">
+        </div>
+        <div class="caso__testo">
+          <p class="caso__luogo">Surrey, Regno Unito</p>
+          <h3>West Horsley Place, con la University of Surrey</h3>
+          <p>La digitalizzazione di una dimora storica inglese: dalla nuvola di punti al modello BIM com'è oggi, con la mappatura del degrado e del quadro fessurativo. Un archivio unico di tutte le informazioni per gestire il bene nel tempo.</p>
+        </div>
+      </article>
+
+      <article class="caso caso--grande caso--rovescio">
+        <div class="caso__foto">
+          <img class="caso__img caso__img--a" src="assets/img/mep-commerciale-vista.jpg" width="1000" height="800" alt="Modello BIM degli impianti di una nuova struttura commerciale" loading="lazy" decoding="async">
+          <img class="caso__img caso__img--b" src="assets/img/mep-colonne.jpg" width="600" height="600" alt="Dettaglio delle colonne impiantistiche nel modello MEP" loading="lazy" decoding="async">
+        </div>
+        <div class="caso__testo">
+          <p class="caso__luogo">Cantiere, per l'impresa di costruzione</p>
+          <h3>Impianti di una nuova struttura commerciale</h3>
+          <p>Modelli BIM degli impianti meccanici, idrico-sanitari, antincendio (sprinkler e naspi), elettrici e fonia-dati, coordinati fra loro per produrre gli elaborati costruttivi. L'impresa ha anticipato le criticità di cantiere prima di aprirlo.</p>
+        </div>
+      </article>
+
+      <ul class="registro">
+        <li>
+          <p class="registro__luogo">Catanzaro</p>
+          <h3>Palazzo Morano, con Impresa Gallo</h3>
+          <p>Offerta tecnica migliorativa in BIM per il rafforzamento della sede dell'Ufficio Territoriale del Governo, con un gemello digitale per il cantiere e la manutenzione.</p>
+        </li>
+        <li>
+          <p class="registro__luogo">Paestum</p>
+          <h3>Museo Archeologico, progetto EUMEDIA</h3>
+          <p>L'ambiente di condivisione dati per i lavori di riqualificazione, costruito su committenza, impresa e progettisti, e la formazione del personale per proseguire in autonomia.</p>
+        </li>
+        <li>
+          <p class="registro__luogo">Rende</p>
+          <h3>Università della Calabria</h3>
+          <p>Supporto alla divisione tecnica nella digitalizzazione del progetto definitivo di un edificio per la didattica: architettura, strutture e impianti, con verifica dei modelli.</p>
+        </li>
+        <li>
+          <p class="registro__luogo">Roma</p>
+          <h3>Sapienza Università di Roma</h3>
+          <p>Un modello IFC collegato ai sensori IoT e una web app per leggere i dati di monitoraggio direttamente dal modello 3D.</p>
+        </li>
+        <li>
+          <p class="registro__luogo">Per Ohmega Progettazione</p>
+          <h3>Un ufficio da visitare in realtà virtuale</h3>
+          <p>Modello di un immobile esistente, architettura e impianto elettrico, navigabile in scala 1:1 per scegliere arredi e materiali dentro il progetto.</p>
+        </li>
+        <li>
+          <p class="registro__luogo">Strutture ospedaliere e sportive</p>
+          <h3>Digitalizzazione e coordinamento MEP</h3>
+          <p>Modellazione informativa degli impianti, coordinamento multidisciplinare e gestione dell'ACDat per strutture sanitarie e impianti sportivi.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Formazione -->
+  <section class="sezione formazione" id="formazione" aria-labelledby="titolo-formazione">
+    <div class="contenitore">
+      <div class="testa">
+        <h2 id="titolo-formazione">Formazione BIM, dal primo modello alla certificazione</h2>
+        <p>Abbiamo progettato con l'Università della Calabria il Master di II livello in BIM Manager e costruzioni ecosostenibili, e ne abbiamo curato la didattica pratica per quattro edizioni. Con ACCA software proponiamo corsi online con certificazione; per aziende ed enti costruiamo percorsi su misura.</p>
+      </div>
+
+      <div class="mosaico">
+        <figure class="mosaico__a">
+          <img src="assets/img/aula-corso.jpg" width="1400" height="1050" alt="Aula di un corso BIM con i corsisti al lavoro sui portatili e il modello proiettato" loading="lazy" decoding="async">
+          <figcaption>In aula, sui software ACCA</figcaption>
+        </figure>
+        <figure class="mosaico__b">
+          <img src="assets/img/master-bim-challenge.jpg" width="1400" height="1050" alt="Gli studenti del Master BIM dell'Università della Calabria seduti sulle gradinate" loading="lazy" decoding="async">
+          <figcaption>BIM Challenge del Master Unical</figcaption>
+        </figure>
+        <figure class="mosaico__c">
+          <img src="assets/img/bimgame-besancon.jpg" width="1200" height="900" alt="Plastico in cartone del progetto BIMGAME visto dall'alto a Besançon" loading="lazy" decoding="async">
+          <figcaption>BIMGAME Erasmus+ a Besançon</figcaption>
+        </figure>
+        <figure class="mosaico__d">
+          <img src="assets/img/hbim-ninfeo.jpg" width="1080" height="810" alt="Corsisti durante il rilievo digitale nella grotta del Parco del Ninfeo" loading="lazy" decoding="async">
+          <figcaption>Rilievo HBIM al Parco del Ninfeo, Carolei</figcaption>
+        </figure>
+      </div>
+
+      <div class="corsi">
+        <div class="corsi__testa">
+          <h3>Corsi online con certificazione</h3>
+          <p>Lezioni on demand, dispense, esercitazioni ed esame da casa. I corsi sono erogati con ACCA software; la certificazione delle figure professionali è sotto accreditamento ACCREDIA.</p>
+        </div>
+        <div class="tabella" role="region" aria-label="Elenco dei corsi online" tabindex="0">
+          <table>
+            <thead>
+              <tr><th scope="col">Corso</th><th scope="col">Durata</th><th scope="col">Accesso</th><th scope="col">CFP architetti</th><th scope="col"><span class="visually-hidden">Scheda</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">BIM Specialist Architettura</th><td>18 ore, 16 lezioni</td><td>un anno</td><td>20</td><td><a href="https://www.acca.it/corso-bim-specialist-architettura" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">BIM Specialist MEP</th><td>21 ore, 17 lezioni</td><td>un anno</td><td>20</td><td><a href="https://www.acca.it/corso-online-bim-specialist-mep" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">BIM Coordinator</th><td>18 ore, 8 lezioni e 7 masterclass</td><td>tre mesi</td><td>20</td><td><a href="https://www.acca.it/corso-bim-coordinator" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">BIM Manager</th><td>13 ore, 6 lezioni</td><td>un anno</td><td>13</td><td><a href="https://www.acca.it/corso-bim-manager" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">CDE Manager</th><td>12 ore, 6 lezioni</td><td>tre mesi</td><td>12</td><td><a href="https://www.acca.it/corso-cde-manager" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">IFC openBIM expert</th><td>12 ore: 6 di lezioni, 6 di studio</td><td>–</td><td>12</td><td><a href="https://www.acca.it/corso-ifc-open-bim-expert" target="_blank" rel="noopener">Scheda</a></td></tr>
+              <tr><th scope="row">BIM Management per la PA</th><td>circa 8 ore, 6 lezioni</td><td>un anno</td><td>–</td><td><a href="https://www.acca.it/corso-bim-management-pa" target="_blank" rel="noopener">Scheda</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="su-misura">
+        <div>
+          <h3>Formazione su misura per aziende ed enti</h3>
+          <p>Software di BIM authoring e ambiente di condivisione dati, metodologia per guidare una commessa BIM, standard internazionali e ISO 19650. Il programma si costruisce sul vostro gruppo di lavoro.</p>
+        </div>
+        <div class="su-misura__azioni">
+          <a class="bottone bottone--rosso" href="#contatti" data-tipo="Formazione e corsi">Chiedi informazioni sui corsi</a>
+          <a class="collegamento" href="mailto:formazione@almasoft.it">formazione@almasoft.it</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software e ricerca -->
+  <section class="sezione ricerca" id="ricerca" aria-labelledby="titolo-ricerca">
+    <div class="contenitore">
+      <div class="testa">
+        <h2 id="titolo-ricerca">Software e ricerca</h2>
+        <p>Una parte della squadra scrive software per il mondo delle costruzioni, in metodologia Agile Scrum e in piccoli gruppi. L'altra lo usa ogni giorno sulle commesse: è da qui che arrivano le idee per i progetti di ricerca.</p>
+      </div>
+
+      <ul class="stack">
+        <li><h3>Desktop</h3><p>Applicazioni Windows su piattaforma Microsoft .NET con librerie DevExpress, per un'esperienza d'uso moderna ed efficace.</p></li>
+        <li><h3>Cloud</h3><p>Applicazioni cloud native su AWS con i servizi nativi della piattaforma e Docker, con lo sguardo su AI, machine learning e IoT.</p></li>
+        <li><h3>Web</h3><p>Applicazioni web con .NET Core, ASP.NET, Node.js, React e web services, testate da un gruppo dedicato a test automation e QA.</p></li>
+      </ul>
+
+      <h3 class="ricerca__sotto">Progetti di ricerca e sviluppo</h3>
+      <ol class="cronologia">
+        <li>
+          <p class="cronologia__quando">POR Calabria FESR 2007/13</p>
+          <h4>STD e Illuminotecnica</h4>
+          <p>Software per il calcolo dinamico degli impianti solari termici e per la prestazione energetica dei sistemi di illuminazione.</p>
+        </li>
+        <li>
+          <p class="cronologia__quando">POR Calabria 2014/20</p>
+          <h4>Building Automation e S3HM</h4>
+          <p>Un software di domotica indipendente dai protocolli, con Unical e Sapienza; il monitoraggio strutturale a basso costo degli edifici nei centri storici del Savuto.</p>
+        </li>
+        <li>
+          <p class="cronologia__quando">PON Imprese e Competitività 2014-20</p>
+          <h4>Open I-BIM e PRESMA Infinity BIM</h4>
+          <p>Il BIM per le grandi opere, con facility management e machine learning; la realtà aumentata collegata ai modelli IFC per il digital twin delle costruzioni.</p>
+        </li>
+        <li>
+          <p class="cronologia__quando">Accordi per l'Innovazione, DM 31/12/2021</p>
+          <h4>BIM_BI-AI</h4>
+          <p>Business intelligence sui dati dell'ambiente di condivisione, con sensori IoT, insieme ad ACCA software e alla Federico II di Napoli.</p>
+        </li>
+        <li>
+          <p class="cronologia__quando">PN RIC 2021-27, DM 13/07/2023</p>
+          <h4>BIM for LCA</h4>
+          <p>Una piattaforma openBIM in cloud che calcola l'impatto ambientale di un'opera civile su tutto il ciclo di vita, a partire dal modello.</p>
+        </li>
+      </ol>
+
+      <p class="partner">Lavoriamo con l'Università della Calabria (DIMES), la Sapienza (DIAEE), il CIRIAF dell'Università di Perugia, la Federico II, ECD, Talent Garden Cosenza e il Polo di innovazione Green HoMe.</p>
+
+      <div class="lavora">
+        <p><strong>Cerchiamo sviluppatori.</strong> Laurea in ingegneria informatica o informatica, voglia di lavorare in Agile su progetti di ricerca. React, Node.js, Docker e AWS sono un vantaggio.</p>
+        <a class="collegamento" href="mailto:selezione@almasoft.it">Invia il CV a selezione@almasoft.it</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clienti -->
+  <section class="sezione clienti" aria-labelledby="titolo-clienti">
+    <div class="contenitore">
+      <h2 id="titolo-clienti">Hanno lavorato con noi</h2>
+      <ul class="clienti__loghi">
+        <li><img src="assets/img/clienti/terna.png" width="387" height="120" alt="Terna" loading="lazy" decoding="async"></li>
+        <li class="stemma"><img src="assets/img/clienti/marina-militare.png" width="194" height="120" alt="Marina Militare" loading="lazy" decoding="async"></li>
+        <li><img src="assets/img/clienti/infn.png" width="191" height="120" alt="Istituto Nazionale di Fisica Nucleare" loading="lazy" decoding="async"></li>
+        <li class="stemma"><img src="assets/img/clienti/sacal.png" width="175" height="120" alt="SACAL, aeroporti della Calabria" loading="lazy" decoding="async"></li>
+        <li><img src="assets/img/clienti/sapienza.png" width="400" height="120" alt="Sapienza Università di Roma" loading="lazy" decoding="async"></li>
+        <li><img src="assets/img/clienti/university-of-surrey.png" width="456" height="120" alt="University of Surrey, Institute for Sustainability" loading="lazy" decoding="async"></li>
+        <li class="stemma"><img src="assets/img/clienti/citta-metropolitana-rc.png" width="117" height="120" alt="Città Metropolitana di Reggio Calabria" loading="lazy" decoding="async"></li>
+        <li><img src="assets/img/clienti/techfem.png" width="496" height="120" alt="Techfem" loading="lazy" decoding="async"></li>
+        <li><img src="assets/img/clienti/ab2.png" width="193" height="120" alt="AB2 Engineering" loading="lazy" decoding="async"></li>
+        <li class="stemma"><img src="assets/img/clienti/sis.png" width="120" height="120" alt="SIS s.r.l." loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Squadra -->
+  <section class="sezione squadra" aria-labelledby="titolo-squadra">
+    <div class="contenitore">
+      <div class="testa">
+        <h2 id="titolo-squadra">Trentuno persone, una squadra con il cliente</h2>
+        <p>Ascoltiamo prima di modellare: capire le esigenze di chi ci affida un progetto ci aiuta ad anticipare le criticità. A guidare Alma è Andrea Aiello, amministratore unico, che da anni porta il lavoro della squadra ai tavoli di buildingSMART International.</p>
+      </div>
+      <dl class="organi">
+        <div><dt>Direzione</dt><dd>Andrea Aiello, Fedele Rende, Franco Lanzillotta</dd></div>
+        <div><dt>Amministrazione e bandi R&amp;S</dt><dd>Elena A. De Cicco, Angelo Mauro</dd></div>
+        <div class="organi__largo"><dt>Formazione e consulenza BIM</dt><dd>Marika Vasta, Teresa Cuconati, Antonietta Pellegrino, Lucia Bria, Francesca Nisticò, Martina Settino, Fabiola Sbano, Elsa Pellegrini, Aurora Laino, Debora Scrivo, Caterina Napoli, Roberta Dodaro</dd></div>
+        <div><dt>Sviluppo desktop</dt><dd>Antonino Panella, Angela Corniola, Vittorio Leo, Ignazio La Barbera, Francesco Bafaro</dd></div>
+        <div><dt>Sviluppo cloud e AI</dt><dd>Giuseppe Verduci, Francesco Aiello, Francesco De Vito, Stefania Fratto, Enzo Aggazio, Marco Longo</dd></div>
+        <div><dt>Test automation e QA</dt><dd>Giuseppina Timpano</dd></div>
+        <div><dt>DevOps</dt><dd>Fabrizio Tassone, Andrea Raso</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section class="sezione contatti" id="contatti" aria-labelledby="titolo-contatti">
+    <div class="contenitore contatti__griglia">
+      <div class="contatti__info">
+        <h2 id="titolo-contatti">Raccontateci il progetto</h2>
+        <p>Una commessa da impostare, un ente da accompagnare, un gruppo da formare: rispondiamo con una proposta concreta.</p>
+        <a class="contatti__tel" href="tel:+390984402165">0984 402165</a>
+        <ul class="contatti__dati">
+          <li><span>Informazioni</span><a href="mailto:info@almasoft.it">info@almasoft.it</a></li>
+          <li><span>Corsi</span><a href="mailto:formazione@almasoft.it">formazione@almasoft.it</a></li>
+          <li><span>Sede operativa</span>Via Verdi 9, 87036 Rende (CS)</li>
+          <li><span>Sede legale</span>Via Sant'Eustachio 2/z, 83048 Montella (AV)</li>
+        </ul>
+      </div>
+
+      <form class="modulo" id="modulo" novalidate>
+        <div class="modulo__riga">
+          <label for="f-nome">Nome e cognome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+        </div>
+        <div class="modulo__riga">
+          <label for="f-ente">Azienda, studio o ente</label>
+          <input id="f-ente" name="ente" type="text" autocomplete="organization">
+        </div>
+        <div class="modulo__doppia">
+          <div class="modulo__riga">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="modulo__riga">
+            <label for="f-tel">Telefono <span>(facoltativo)</span></label>
+            <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <fieldset class="modulo__tipi">
+          <legend>Di che cosa avete bisogno?</legend>
+          <label><input type="radio" name="tipo" value="Consulenza BIM" checked><span>Consulenza BIM</span></label>
+          <label><input type="radio" name="tipo" value="Adempimenti PA"><span>Adempimenti PA</span></label>
+          <label><input type="radio" name="tipo" value="Formazione e corsi"><span>Formazione e corsi</span></label>
+          <label><input type="radio" name="tipo" value="Sviluppo software"><span>Sviluppo software</span></label>
+        </fieldset>
+        <div class="modulo__riga">
+          <label for="f-msg">Il progetto in poche righe</label>
+          <textarea id="f-msg" name="messaggio" rows="4" required></textarea>
+        </div>
+        <p class="modulo__errore" role="alert" hidden></p>
+        <button class="bottone bottone--rosso modulo__invia" type="submit">Invia la richiesta</button>
+        <p class="modulo__nota">Si apre la vostra app di posta con il messaggio già scritto, indirizzato a <span class="modulo__dest">info@almasoft.it</span>.</p>
+      </form>
+
+      <div class="mappa">
+        <iframe title="Mappa della sede Alma a Rende" src="https://www.google.com/maps?q=39.33984,16.24157&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="collegamento" href="https://www.google.com/maps/dir/?api=1&amp;destination=39.33984,16.24157" target="_blank" rel="noopener">Indicazioni per Via Verdi 9, Rende</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="contenitore piede__griglia">
+    <div>
+      <svg class="piede__logo" viewBox="0 0 187.3 50.8" aria-label="Alma" role="img"><use href="#logo-alma"/></svg>
+      <p>An ACCA software company</p>
+    </div>
+    <div class="piede__dati">
+      <p><strong>Alma S.r.l.</strong>, Via Verdi 9, 87036 Rende (CS)</p>
+      <p>Sede legale: Via Sant'Eustachio 2/z, 83048 Montella (AV)</p>
+      <p>R.I. di Avellino, P.IVA e C.F. 02427680646, Cap. Soc. € 100.000,00 i.v.</p>
+      <p>PEC: alma@registerpec.it</p>
+    </div>
+    <div class="piede__link">
+      <a href="https://www.linkedin.com/company/35702485" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/almasoftware" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/alma_an_openbim_company/" target="_blank" rel="noopener">Instagram</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="contenitore piede__fondo">
+    <p>© <span class="anno">2026</span> Alma S.r.l.</p>
+    <p>Sito realizzato da Alessio Mora</p>
+    <p class="piede__demo">Demo non ufficiale: non è il sito ufficiale di Alma S.r.l.</p>
+  </div>
+</footer>
+
+<nav class="barra" aria-label="Contatto rapido">
+  <a href="tel:+390984402165" class="barra__chiama">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Chiama
+  </a>
+  <a href="#contatti" class="barra__scrivi">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H19.6zM4 8.6V17h16V8.6l-8 5.4z"/></svg>
+    Richiedi una consulenza
+  </a>
+</nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-alma" viewBox="0 0 187.3 50.8">
+    <path d="M166.77,29.22l20.53,21.26h-9.41l-17.55-18.48-21.2-22.33s-.09-.08-.13-.13c-2.77-2.81-7.58-.84-7.58,3.12v21.21h26.95v6.64h-26.95v9.96h-7.07V9.62l.24-1.58c.1-.43.24-.85.4-1.27l.21-.63c.38-1.15,1-2.21,1.81-3.1.08-.1.16-.16.22-.24l.17-.16c.44-.43.93-.81,1.46-1.12l.32-.19c.61-.37,1.26-.67,1.94-.88l.3-.1.05-.02c.63-.22,1.3-.33,1.96-.32h1.34c.67,0,1.34.08,1.98.24.24.06.48.14.7.26l.86.42c.99.5,1.9,1.15,2.69,1.92l.5.48,3.7,3.65,6.06,6.31,15.48,15.93Z"/>
+    <path d="M62.94,41.85v8.63h-7.06v-9.96h-26.95v-6.64h26.95V12.66c0-3.96-4.79-5.93-7.6-3.12-.03.05-.07.09-.11.13l-21.19,22.33-17.55,18.48H0l20.54-21.26,15.47-15.93,6.07-6.33,3.7-3.65.48-.48c.8-.77,1.71-1.42,2.71-1.92l.84-.42c.23-.11.47-.2.72-.26C51.18.08,51.85,0,52.52,0h1.34c.67,0,1.33.1,1.96.32l.05.02.3.1c.68.21,1.32.51,1.93.88l.32.19c.53.32,1.03.7,1.47,1.14l.17.17c.07.08.14.16.21.24.82.89,1.45,1.95,1.83,3.1l.21.63c.16.41.29.83.38,1.27l.24,1.58v32.23Z"/>
+    <path d="M107.91,50.8h-7.86v-19.34c0-1.34-.11-2.26-.33-2.78-.22-.52-1.27-.77-1.83-.77-1.02,0-2.19,1.2-2.19,3.59v19.31h-7.85v-21.79c0-3.62.26-4.74,2.11-7.27s4.09-3.14,6.74-3.14,5.16.84,7.32,3.87c2.16-3.02,4.6-3.87,7.31-3.87s4.88.61,6.74,3.14,2.11,3.65,2.11,7.27v21.79h-7.86v-19.31c0-2.39-1.17-3.59-2.19-3.59-.56,0-1.61.26-1.83.77s-.33,1.45-.33,2.78v19.34h-7.86"/>
+    <path d="M78.75,44.3l4.69-.12v6.4h-5.99c-.28,0-.56,0-.89-.02s-.65-.04-.97-.07h-.11c-.35-.08-.7-.15-1.06-.25s-.72-.2-1.08-.32c-.81-.3-1.58-.71-2.28-1.21-.71-.52-1.37-1.1-1.96-1.76-.69-.8-1.2-1.74-1.51-2.75-.34-1.13-.5-2.31-.48-3.49v-22.23h6.68v20.52c-.01.78.07,1.55.25,2.31.15.62.38,1.21.69,1.77.27.39.64.7,1.08.89.69.28,1.43.41,2.17.38"/>
+  </symbol>
+</svg>
+
+<script src="script.js" defer></script>
+</body>
+</html>
