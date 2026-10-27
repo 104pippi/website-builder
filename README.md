@@ -29,6 +29,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-camtex](./sito-camtex) | https://sito-camtex.vercel.app | [video](./sito-camtex/video) |
 | [sito-carmas](./sito-carmas) | https://sito-carmas.vercel.app | [video](./sito-carmas/video) |
 | [sito-carpenterie-cadorin](./sito-carpenterie-cadorin) | https://sito-carpenterie-cadorin.vercel.app | [video](./sito-carpenterie-cadorin/video) |
+| [sito-carrozzeria-barzan](./sito-carrozzeria-barzan) | https://sito-carrozzeria-barzan.vercel.app | — |
 | [sito-cescon-servizi](./sito-cescon-servizi) | https://sito-cescon-servizi.vercel.app | [video](./sito-cescon-servizi/video) |
 | [sito-cinema-edera](./sito-cinema-edera) | https://sito-cinema-edera.vercel.app | — |
 | [sito-clever-due](./sito-clever-due) | https://sito-clever-due.vercel.app | [video](./sito-clever-due/video) |
