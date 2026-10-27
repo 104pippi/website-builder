@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>Blues Pub | Birreria e cucina a Montebelluna dal 1998</title>
+<meta name="description" content="Birre spillate ad arte, hamburger di Scottona, club sandwich, fajitas e cous cous. Montebelluna, via Castellana 126: aperti tutte le sere fino all'una.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://sito-blues-pub.vercel.app/">
+<meta name="theme-color" content="#1c1a3d">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Blues Pub">
+<meta property="og:title" content="Blues Pub | Birreria e cucina a Montebelluna dal 1998">
+<meta property="og:description" content="Birre spillate ad arte, hamburger di Scottona e piatti etnici. Tutte le sere dalle 18:30 all'una, in via Castellana 126.">
+<meta property="og:image" content="https://sito-blues-pub.vercel.app/assets/img/og.jpg">
+<meta property="og:url" content="https://sito-blues-pub.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-m.webp" media="(max-width: 700px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero.webp" media="(min-width: 701px)" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+
+<script type="importmap">{"imports":{
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js",
+  "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js"}}</script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.min.js">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Blues Pub",
+  "legalName": "Blues Pub S.r.l.",
+  "vatID": "IT03372090260",
+  "foundingDate": "1998",
+  "url": "https://sito-blues-pub.vercel.app/",
+  "image": "https://sito-blues-pub.vercel.app/assets/img/og.jpg",
+  "telephone": "+390423603930",
+  "email": "mail@bluespub.net",
+  "servesCuisine": ["Hamburger", "Sandwich", "Messicana", "Etnica"],
+  "acceptsReservations": true,
+  "hasMenu": "https://sito-blues-pub.vercel.app/#menu",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Castellana, 126",
+    "addressLocality": "Montebelluna",
+    "addressRegion": "TV",
+    "postalCode": "31044",
+    "addressCountry": "IT"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.76796, "longitude": 12.02750 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "18:30", "closes": "01:00"
+  }],
+  "sameAs": ["https://www.facebook.com/BluesPub.Montebelluna", "https://www.instagram.com/bluespub_montebelluna/"]
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" class="sr" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-ora" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.6 2.1-.8 1.3L11 13V6.5h2z"/></symbol>
+  <symbol id="i-foglia" viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 3.5C11 3 4.5 7.5 4.5 14.5c0 1.6.4 3 1.1 4.2-1 .9-1.8 2-2.1 2.8l1.5.6c.3-.7 1-1.6 1.8-2.3 1.4 1.1 3.1 1.7 5 1.7 7 0 9.6-8 8.7-18zM8 17.5c1.6-3.5 4.5-6.6 8-8.3-3 2.4-5.3 5.3-6.6 8.9z"/></symbol>
+  <symbol id="i-pinta" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3h12l-1.2 16.2A2 2 0 0 1 14.8 21H9.2a2 2 0 0 1-2-1.8zm1.7 3 .2 3h8.2l.2-3z"/></symbol>
+  <symbol id="i-mela" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1.9-3.9.9s-2.1-.9-3.4-.9a5 5 0 0 0-4.3 2.6c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.3 2.6 1.3 0 1.8-.8 3.4-.8s2 .8 3.4.8 2.3-1.3 3.1-2.6c1-1.5 1.4-2.9 1.4-3a4.5 4.5 0 0 1-2.7-4.2zM13.9 4.9A4.4 4.4 0 0 0 15 1.7a4.6 4.6 0 0 0-3 1.5 4.2 4.2 0 0 0-1 3.1 3.8 3.8 0 0 0 2.9-1.4z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M4.2 2.4 13.6 12l-9.4 9.6a1.5 1.5 0 0 1-.7-1.3V3.7c0-.6.3-1 .7-1.3zm10.6 8.4 2.6-2.6-11-6.3zm0 2.4-8.4 8.9 11-6.3zm4.3-4.1 2.5 1.4c.9.6.9 1.8 0 2.4l-2.5 1.4-2.8-2.6z"/></symbol>
+  <symbol id="i-moto" viewBox="0 0 24 24"><path fill="currentColor" d="M5 18.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.8a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm14 1.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.8a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zM13 6h3l3.5 6.6-1.6.8L16.6 11 13.5 15H9.4A4.5 4.5 0 0 0 5 11.5V10h5.5l1.2 1.6L14.3 8H13z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4a21 21 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm5-9.2a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM20.9 7.3c-.1-1.5-.4-2.8-1.5-3.9S17 2 15.6 1.9C14.1 1.8 9.9 1.8 8.4 1.9 6.9 2 5.6 2.3 4.5 3.4S3 5.8 3 7.3c-.1 1.5-.1 5.9 0 7.4.1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-5.9 0-7.4zm-2 9.4a3 3 0 0 1-1.7 1.7c-1.2.5-3.9.4-5.2.4s-4 .1-5.2-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-3.9-.4-5.2s-.1-4 .4-5.2a3 3 0 0 1 1.7-1.7C8 4.1 10.7 4.2 12 4.2s4-.1 5.2.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 3.9.4 5.2s.1 4-.4 5.2z"/></symbol>
+</svg>
+
+<a class="salta" href="#principale">Vai al contenuto</a>
+
+<header class="testata" id="testata">
+  <a class="marchio" href="#top" aria-label="Blues Pub, torna all'inizio">
+    <img src="assets/logo.svg" alt="Blues Pub, since 1998" width="160" height="40">
+  </a>
+  <nav class="nav" aria-label="Sezioni">
+    <a href="#birre">Birre</a>
+    <a href="#cucina">Cucina</a>
+    <a href="#menu">Menù</a>
+    <a href="#storia">Storia</a>
+    <a href="#asporto">Asporto</a>
+    <a href="#dove">Dove siamo</a>
+  </nav>
+  <a class="btn btn-ambra btn-piccolo testata-cta" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Prenota</a>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-mobile"><span></span><span></span><span class="sr">Apri il menu del sito</span></button>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden>
+  <nav aria-label="Sezioni">
+    <a href="#birre">Birre</a>
+    <a href="#cucina">Cucina</a>
+    <a href="#menu">Il menù</a>
+    <a href="#storia">La storia</a>
+    <a href="#asporto">Asporto</a>
+    <a href="#dove">Dove siamo</a>
+  </nav>
+  <a class="btn btn-ambra" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Prenota: 0423 603930</a>
+</div>
+
+<main id="principale">
+
+<section class="hero" id="top">
+  <picture class="hero-foto">
+    <source media="(max-width: 700px)" srcset="assets/img/hero-m.webp" type="image/webp">
+    <source media="(max-width: 700px)" srcset="assets/img/hero-m.jpg">
+    <source srcset="assets/img/hero.webp" type="image/webp">
+    <img src="assets/img/hero.jpg" width="1920" height="1280" alt="Il bancone del Blues Pub con l'insegna dorata, le spine e i bicchieri" fetchpriority="high">
+  </picture>
+  <div class="hero-velo"></div>
+  <div class="pinta" id="pinta-box" aria-hidden="true"><canvas id="pinta" title="Tocca la pinta per spillarne un'altra"></canvas></div>
+  <div class="hero-testo">
+    <p class="stato" id="stato"><span class="spia"></span><span id="stato-testo">Tutte le sere dalle 18:30 all'una</span></p>
+    <h1><span class="riga"><span>Birra spillata</span></span> <span class="riga"><span>ad arte.</span></span> <span class="riga"><span>Dal 1998.</span></span></h1>
+    <p class="hero-sub">Birreria e cucina a Montebelluna: hamburger di Scottona, club sandwich, fajitas e cous cous, fino a mezzanotte.</p>
+    <div class="hero-cta">
+      <a class="btn btn-ambra" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Prenota un tavolo</a>
+      <a class="btn btn-vetro" href="#menu">Guarda il menù</a>
+    </div>
+  </div>
+</section>
+
+<section class="fatti" aria-label="Il Blues Pub in breve">
+  <ul>
+    <li><strong>Dal 1998</strong><span>a Montebelluna</span></li>
+    <li><strong>18:30 – 01:00</strong><span>tutte le sere, domenica compresa</span></li>
+    <li><strong>Cucina fino alle 24</strong><span>anche per chi arriva tardi</span></li>
+    <li><strong>6 classiche alla spina</strong><span>più le artigianali a rotazione</span></li>
+  </ul>
+</section>
+
+<section class="sezione birre" id="birre">
+  <div class="contenitore">
+    <div class="intesta">
+      <h2>Alla spina</h2>
+      <p class="intro">Le classiche ci sono sempre: Leffe, Hoegaarden, Guinness e le altre che chi viene da anni ordina senza guardare. Accanto, le artigianali italiane ed estere, scelte a rotazione secondo la stagione. E per finire una carta di bottiglie, anche senza glutine e analcoliche.</p>
+    </div>
+  </div>
+  <div class="spine" id="spine">
+    <article class="spina">
+      <div class="spina-foto"><img src="assets/img/birra-guinness.jpg" width="720" height="911" loading="lazy" decoding="async" alt="Una pinta di Guinness sul bancone del Blues Pub"></div>
+      <h3>Guinness</h3>
+      <p class="stile">Stout irlandese, 4,2%</p>
+      <p>Tostata, con caffè e cacao in bocca.</p>
+      <p class="formati">40 cl €&nbsp;6,50</p>
+    </article>
+    <article class="spina">
+      <div class="spina-foto"><img src="assets/img/birra-hoegaarden.jpg" width="720" height="911" loading="lazy" decoding="async" alt="Un bicchiere di Hoegaarden con le patatine"></div>
+      <h3>Hoegaarden</h3>
+      <p class="stile">Bianca di frumento, 4,9%</p>
+      <p>Bucce d'arancia, curaçao e coriandolo.</p>
+      <p class="formati">25 cl €&nbsp;4,00 <span>50 cl €&nbsp;6,50</span></p>
+    </article>
+    <article class="spina">
+      <div class="spina-foto"><img src="assets/img/birra-jupiler.jpg" width="720" height="911" loading="lazy" decoding="async" alt="Una Jupiler nel bicchiere con il logo del Blues Pub"></div>
+      <h3>Jupiler</h3>
+      <p class="stile">Bionda belga, 5,2%</p>
+      <p>La chiara più bevuta in Belgio, fresca e appena luppolata.</p>
+      <p class="formati">25 cl €&nbsp;3,00 <span>40 cl €&nbsp;5,00</span></p>
+    </article>
+    <article class="spina">
+      <div class="spina-foto"><img src="assets/img/birra-leffe.jpg" width="720" height="911" loading="lazy" decoding="async" alt="Un calice di Leffe Rouge con le patatine"></div>
+      <h3>Leffe Rouge</h3>
+      <p class="stile">Birra d'abbazia, 6,6%</p>
+      <p>Rosso intenso, forte e generosa.</p>
+      <p class="formati">25 cl €&nbsp;4,00 <span>40 cl €&nbsp;6,00</span></p>
+    </article>
+  </div>
+  <div class="contenitore artigianali">
+    <div class="artigianali-testo">
+      <h3>Adesso alle spine artigianali</h3>
+      <ul class="lista-art">
+        <li><b>1291 Pils</b><span>Birra Mastino, Verona. Bohemian Pils a tre decozioni, fresca e floreale.</span><em>30 cl €&nbsp;4,50 · 40 cl €&nbsp;6,50</em></li>
+        <li><b>Hope</b><span>Birra Mastino, Verona. Session IPA: arancia, mandarino, pompelmo rosa.</span><em>30 cl €&nbsp;5,00 · 40 cl €&nbsp;6,80</em></li>
+        <li><b>Huxley</b><span>Birrificio Italiano. Cold IPA secca e tagliente, con pompelmo e ananas.</span><em>20 cl €&nbsp;3,50 · 40 cl €&nbsp;6,80</em></li>
+      </ul>
+      <a class="link-freccia" href="#menu" data-cat="spina">Tutte le birre e i prezzi</a>
+    </div>
+    <figure class="artigianali-foto">
+      <img src="assets/img/spine.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="Le spine dorate del Blues Pub e la Guinness illuminata">
+    </figure>
+  </div>
+</section>
+
+<section class="sezione cucina" id="cucina">
+  <div class="contenitore">
+    <div class="intesta">
+      <h2>Lo snack è il principe</h2>
+      <p class="intro">Un panino leggero, non unto, con ingredienti di prima scelta. Il pane quasi tutto da un panificio della zona; le bruschette sul pane artigianale; l'arabo al Kamut per chi vuole qualcosa di diverso.</p>
+    </div>
+    <div class="piatti">
+      <figure class="piatto piatto-grande">
+        <img src="assets/img/hamburger.jpg" width="1000" height="1000" loading="lazy" decoding="async" alt="Baconburger con patate a spicchi e salsa BBQ">
+        <figcaption><b>Hamburger di Scottona, 200 g</b><span>Dieci ricette sul pane artigianale, con patate fritte. Da €&nbsp;13,00</span></figcaption>
+      </figure>
+      <figure class="piatto">
+        <img src="assets/img/club-sandwich.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Club sandwich al salmone tagliato a triangoli con salsa rosa">
+        <figcaption><b>Club sandwich</b><span>Quattordici versioni, dal classico al tartare. Da €&nbsp;12,00</span></figcaption>
+      </figure>
+      <figure class="piatto">
+        <img src="assets/img/bruschetta.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Bruschetta alla parmigiana tagliata a fette">
+        <figcaption><b>Bruschette e spianate</b><span>Sul pane artigianale o sulla piadina all'olio. Da €&nbsp;6,00</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="etnico">
+      <div class="etnico-testo">
+        <h3>Poi c'è il viaggio</h3>
+        <p>L'etnico è la proposta alternativa, divertente e saporita. Ogni piatto arriva con la sua birra consigliata.</p>
+        <ul class="abbinamenti">
+          <li><span>Fajitas di manzo</span><span class="con">con una Leffe Rossa</span></li>
+          <li><span>Fajitas di gamberi</span><span class="con">con una Mastino Hope</span></li>
+          <li><span>Blues kebab</span><span class="con">con una 1291 Pils</span></li>
+          <li><span>Cous cous di gamberi</span><span class="con">con una Jupiler</span></li>
+          <li><span>Gamberi al curry</span><span class="con">con una Hoegaarden</span></li>
+        </ul>
+        <a class="link-freccia" href="#menu" data-cat="piatti">Tutti i piatti</a>
+      </div>
+      <div class="etnico-foto">
+        <figure class="piatto"><img src="assets/img/fajitas.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Fajitas di pollo sulla piastra con tortillas, guacamole e panna acida"><figcaption><b>Fajitas</b><span>di pollo, manzo o gamberi</span></figcaption></figure>
+        <figure class="piatto"><img src="assets/img/cous-cous.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Cous cous di gamberi con zucchine croccanti"><figcaption><b>Cous cous</b><span>vegetariano, di gamberi o al manzo</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="dolci">
+      <h3>I dolci li facciamo noi</h3>
+      <p>Pochi, ma tutti nostri. Ognuno a €&nbsp;6,00.</p>
+      <div class="dolci-righe">
+        <figure><img src="assets/img/tiramisu.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Tiramisù nella pirofila"><figcaption>Tiramisù</figcaption></figure>
+        <figure><img src="assets/img/tortino.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Tortino al cioccolato e pere su crema al mascarpone"><figcaption>Tortino cioccolato e pere</figcaption></figure>
+        <figure><img src="assets/img/cheesecake.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Fetta di cheesecake con salsa di fragole"><figcaption>Cheesecake</figcaption></figure>
+        <figure><img src="assets/img/crema-catalana.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Crema catalana caramellata"><figcaption>Crema catalana</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione carta" id="menu">
+  <div class="contenitore">
+    <div class="carta-testa">
+      <h2>Il menù</h2>
+      <p>Lo stesso che trovi sul tavolo, con i prezzi. Scegli una sezione.</p>
+    </div>
+    <div class="carta-barra" id="carta-barra">
+      <div class="schede" role="tablist" aria-label="Sezioni del menù" id="schede"></div>
+      <label class="filtro"><input type="checkbox" id="solo-veg"><span class="interruttore" aria-hidden="true"></span>Solo vegetariano</label>
+    </div>
+    <div class="carta-corpo" id="carta-corpo" aria-live="polite"></div>
+    <div class="carta-note">
+      <p><b>Pane e coperto</b> €&nbsp;1,50</p>
+      <p><b>Variazioni e aggiunte</b> €&nbsp;1,00 – 2,00</p>
+      <p><b>La cucina chiude</b> alle 24:00</p>
+      <p class="legenda"><svg class="ico" aria-hidden="true"><use href="#i-foglia"/></svg> vegetariano <svg class="ico" aria-hidden="true"><use href="#i-foglia"/></svg><svg class="ico" aria-hidden="true"><use href="#i-foglia"/></svg> vegano. Segnalate allergie e intolleranze quando ordinate: il personale ha la documentazione sugli allergeni. Alcuni prodotti possono essere surgelati.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sezione storia" id="storia">
+  <div class="storia-fondo" aria-hidden="true"><img src="assets/img/insegna-legno.jpg" width="1200" height="800" loading="lazy" decoding="async" alt=""></div>
+  <div class="contenitore">
+    <div class="intesta">
+      <h2>Nato in una piazzetta, cresciuto con Montebelluna</h2>
+    </div>
+    <ol class="anni">
+      <li><span class="anno">1998</span><p>In una piccola piazza di Montebelluna apre il Blues Pub. L'idea è di Beppe, che la birra la conosceva bene: da anni riforniva i locali della zona. Il posto è piccolo, la birra è buona, la musica trascina.</p></li>
+      <li><span class="anno">2003</span><p>Manuel entra come socio e diventa il compagno di viaggio. Da qui in avanti ci credono in due.</p></li>
+      <li><span class="anno">2009</span><p>Il vecchio pub chiude e il Blues riapre in via Castellana, in una sede molto più grande. Restano le cose che contano: birra spillata bene, cucina originale, musica scelta.</p></li>
+      <li><span class="anno">Oggi</span><p>Un menù che va dal club sandwich alle fajitas, e un posto dove le famiglie con i bambini stanno bene quanto i gruppi di amici.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sezione locale" id="locale">
+  <div class="contenitore locale-griglia">
+    <figure class="locale-a"><img src="assets/img/sala-sud.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="La sala del primo piano con travi in legno, mattoni e ritratti blues alle pareti"></figure>
+    <figure class="locale-b"><img src="assets/img/lavagna.jpg" width="1500" height="722" loading="lazy" decoding="async" alt="La parete a lavagna del piano terra: Blues Pub since 1998, birra artigianale, burgers, Mexican food"></figure>
+    <div class="locale-testo">
+      <h2>Due piani, travi a vista e la musica giusta</h2>
+      <p>Mattoni, legno e i ritratti dei bluesman alle pareti. C'è posto per la cena in famiglia, per il gruppo dopo l'allenamento e per la birra al bancone.</p>
+      <ul class="spunte">
+        <li>Le partite di Sky Sport</li>
+        <li>Seggioloni e spazio per i bambini</li>
+        <li>Piatti vegetariani e vegani</li>
+        <li>Birre senza glutine e analcoliche</li>
+      </ul>
+    </div>
+    <figure class="locale-c"><img src="assets/img/sala-est.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Tavoli pieni la sera nella sala con le chitarre dipinte"></figure>
+  </div>
+</section>
+
+<section class="sezione voci" id="recensioni">
+  <div class="contenitore">
+    <h2>Lo dicono loro</h2>
+    <div class="citazioni">
+      <blockquote><p>Una delle migliori birrerie del montebellunese, sia come qualità che come scelta. Il personale è rapido ed estremamente cortese, anche nelle serate di punta.</p><cite>Pier Mercury72</cite></blockquote>
+      <blockquote><p>Erano anni che non mangiavo una bruschetta degna del suo nome e birra alla spina ottima, patatine fritte croccanti per nulla unte.</p><cite>Corinne B.</cite></blockquote>
+      <blockquote><p>Se avete dubbi sulla birra da gustare affidatevi all'esperienza di Gualtiero.</p><cite>Michele Z.</cite></blockquote>
+      <blockquote><p>Ieri siamo stati con le nostre gemelline e siamo stati felicissimi di aver trovato disponibili i seggioloni!</p><cite>Beatrice C.</cite></blockquote>
+      <blockquote><p>Le fajitas di manzo sono qualcosa di indescrivibile.</p><cite>Enrico G.</cite></blockquote>
+      <blockquote><p>Il Blues è ormai uno dei locali storici di Montebelluna, capace di rinnovarsi e di soddisfare le aspettative anno dopo anno.</p><cite>Nicola P.</cite></blockquote>
+    </div>
+    <p class="fonte">Recensioni dei clienti pubblicate sul sito del Blues Pub.</p>
+  </div>
+</section>
+
+<section class="sezione asporto" id="asporto">
+  <div class="contenitore asporto-griglia">
+    <div class="asporto-testo">
+      <h2>Stasera mangi a casa?</h2>
+      <p>Ordina dall'app del Blues Pub, oppure chiamaci dalle 18:00 e passa a ritirare. Se non vuoi uscire, ti porta tutto a casa Foodracers.</p>
+      <div class="asporto-azioni">
+        <a class="btn btn-crema" href="https://apps.apple.com/it/app/blues-pub/id1511547430" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mela"/></svg>App Store</a>
+        <a class="btn btn-crema" href="https://play.google.com/store/apps/details?id=com.kuokko.bluespub" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        <a class="btn btn-linea" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Ordina al telefono</a>
+        <a class="btn btn-linea" href="https://www.foodracers.com/it/cities/montebelluna/restaurants/blues-pub-montebelluna" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-moto"/></svg>Consegna con Foodracers</a>
+      </div>
+    </div>
+    <figure class="asporto-foto"><img src="assets/img/stracco.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Il piatto Stracco: hamburger alto al sangue con bacon croccante, stracchino e patate"></figure>
+  </div>
+</section>
+
+<section class="sezione dove" id="dove">
+  <div class="contenitore dove-griglia">
+    <div class="dove-testo">
+      <h2>Ti aspettiamo in via Castellana</h2>
+      <ul class="recapiti">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Via Castellana, 126<br>31044 Montebelluna (TV)</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ora"/></svg><span>Tutte le sere dalle 18:30 all'01:00<br>La cucina chiude a mezzanotte</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg><span><a href="tel:+390423603930">0423 603930</a><br><a href="mailto:mail@bluespub.net">mail@bluespub.net</a></span></li>
+      </ul>
+      <div class="dove-azioni">
+        <a class="btn btn-ambra" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Prenota un tavolo</a>
+        <a class="btn btn-linea" href="https://www.google.com/maps/dir/?api=1&amp;destination=45.76796%2C12.02750" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Indicazioni</a>
+      </div>
+      <p class="consiglio">Nelle serate di punta i tavoli finiscono presto: una telefonata e te lo teniamo.</p>
+    </div>
+    <div class="mappa" id="mappa">
+      <button class="mappa-apri" id="mappa-apri" type="button">
+        <span class="mappa-pin"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <span>Mostra la mappa</span>
+        <small>Si apre Google Maps: solo allora vengono caricati i suoi cookie.</small>
+      </button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede">
+  <div class="contenitore piede-griglia">
+    <div>
+      <img src="assets/logo.svg" alt="Blues Pub, since 1998" width="180" height="45" loading="lazy">
+      <p>Blues Pub S.r.l.<br>Via Castellana, 126, 31044 Montebelluna (TV)<br>P.IVA 03372090260</p>
+    </div>
+    <div class="piede-link">
+      <a href="https://www.facebook.com/BluesPub.Montebelluna" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+      <a href="https://www.instagram.com/bluespub_montebelluna/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="contenitore piede-fondo">
+    <p>© <span id="anno">2026</span> Blues Pub S.r.l.</p>
+    <p>Sito realizzato da Alessio Mora</p>
+    <p class="demo">Demo non ufficiale: non è il sito ufficiale di Blues Pub.</p>
+  </div>
+</footer>
+
+<nav class="barra" aria-label="Azioni rapide">
+  <a class="btn btn-ambra" href="tel:+390423603930"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>Chiama e prenota</a>
+  <a class="btn btn-vetro" href="#menu">Menù</a>
+</nav>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

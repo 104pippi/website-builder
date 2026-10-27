@@ -21,6 +21,7 @@ GitHub contiene solo il codice: **il sito online si apre dal link nella colonna 
 | [sito-bertoncello-gomme](./sito-bertoncello-gomme) | https://sito-bertoncello-gomme.vercel.app | [video](./sito-bertoncello-gomme/video) |
 | [sito-bioedilizia-restauri](./sito-bioedilizia-restauri) | https://sito-bioedilizia-restauri.vercel.app | — |
 | [sito-blife](./sito-blife) | https://sito-blife.vercel.app | [video](./sito-blife/video) |
+| [sito-blues-pub](./sito-blues-pub) | https://sito-blues-pub.vercel.app | — |
 | [sito-burtet-paolo](./sito-burtet-paolo) | https://sito-burtet-paolo.vercel.app | [video](./sito-burtet-paolo/video) |
 | [sito-cadel-stufe-camini](./sito-cadel-stufe-camini) | https://sito-cadel-stufe-camini.vercel.app | [video](./sito-cadel-stufe-camini/video) |
 | [sito-caffe-galliano](./sito-caffe-galliano) | https://sito-caffe-galliano.vercel.app | [video](./sito-caffe-galliano/video) |
